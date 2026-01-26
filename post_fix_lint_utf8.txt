@@ -1,0 +1,1375 @@
+﻿
+F:\cps\components\tools\CategoryPageClient.tsx
+  17:31  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\converters\AngleConverter.tsx
+  84:46  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\converters\AreaConverter.tsx
+  88:40  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\converters\CookingUnitConverter.tsx
+  87:45  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\converters\DigitalStoragePro.tsx
+  95:45  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\converters\EnergyConverter.tsx
+  83:45  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\converters\FrequencyConverter.tsx
+  81:42  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\converters\FuelEconomyConverter.tsx
+  79:52  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\converters\PowerConverter.tsx
+  81:52  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\converters\PressureConverter.tsx
+  87:41  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\converters\RomanNumeralConverter.tsx
+  18:18  error  'k' is never reassigned. Use 'const' instead  prefer-const
+
+F:\cps\components\tools\converters\SpeedConverter.tsx
+  86:43  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\converters\TemperatureConverter.tsx
+  76:52  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\converters\VolumeConverter.tsx
+  89:42  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\daily\DailyPlanner.tsx
+  86:114  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+F:\cps\components\tools\daily\MeditationTimer.tsx
+  24:13  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+F:\cps\components\tools\daily\MeditationTimer.tsx:24:13
+  22 |             }, 1000);
+  23 |         } else if (timeLeft === 0) {
+> 24 |             setIsActive(false);
+     |             ^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  25 |             if (timerRef.current) clearInterval(timerRef.current);
+  26 |         } else {
+  27 |             if (timerRef.current) clearInterval(timerRef.current);  react-hooks/set-state-in-effect
+
+F:\cps\components\tools\daily\Metronome.tsx
+  46:75  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  @typescript-eslint/no-explicit-any
+  51:13  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+F:\cps\components\tools\daily\Metronome.tsx:51:13
+  49 |         } else {
+  50 |             if (timerID.current) cancelAnimationFrame(timerID.current);
+> 51 |             setCount(0);
+     |             ^^^^^^^^ Avoid calling setState() directly within an effect
+  52 |         }
+  53 |         return () => {
+  54 |             if (timerID.current) cancelAnimationFrame(timerID.current);  react-hooks/set-state-in-effect
+
+F:\cps\components\tools\design\BorderRadiusGen.tsx
+  75:65  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\design\BoxShadowGen.tsx
+  86:70  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\design\ColorPaletteGenerator.tsx
+  40:9  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+F:\cps\components\tools\design\ColorPaletteGenerator.tsx:40:9
+  38 |
+  39 |     useEffect(() => {
+> 40 |         generatePalette();
+     |         ^^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  41 |     }, [count]);
+  42 |
+  43 |     const copyToClipboard = (color: string, index: number) => {  react-hooks/set-state-in-effect
+
+F:\cps\components\tools\design\CustomButtonGenerator.tsx
+  100:64  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\design\FlexboxPlayground.tsx
+   55:57  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   56:56  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   57:50  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   93:59  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  109:49  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\design\GlassmorphismPro.tsx
+  78:80  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\design\GoldenRatioCalc.tsx
+  72:47  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\design\GridLayoutHelper.tsx
+  80:59  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\design\NeuomorphismGen.tsx
+  91:60  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\design\PixelToRem.tsx
+  75:99  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+F:\cps\components\tools\developer\BashScriptValidator.tsx
+  11:42  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\developer\CSVJSONConverter.tsx
+  43:32  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  65:29  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  70:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\developer\CronExpressionGen.tsx
+  68:52  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\developer\JSMinifierTiny.tsx
+  19:13  error  'result' is never reassigned. Use 'const' instead  prefer-const
+
+F:\cps\components\tools\developer\JSONFormatter.tsx
+  27:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\developer\JWTDecoderPro.tsx
+  12:44  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  31:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  37:36  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\developer\MimeTypeLookup.tsx
+  137:75  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  137:82  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+F:\cps\components\tools\developer\RegexTester.tsx
+  19:13  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+F:\cps\components\tools\developer\RegexTester.tsx:19:13
+  17 |     useEffect(() => {
+  18 |         if (!pattern) {
+> 19 |             setMatches([]);
+     |             ^^^^^^^^^^ Avoid calling setState() directly within an effect
+  20 |             setError(null);
+  21 |             return;
+  22 |         }  react-hooks/set-state-in-effect
+  40:21  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\developer\XMLJSONConverter.tsx
+  36:50  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  37:32  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  81:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\developer\YAMLJSONConverter.tsx
+  23:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\education\AssignmentTracker.tsx
+  105:96   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  105:108  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  105:167  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  105:176  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  105:179  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  105:185  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  105:192  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  105:202  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+F:\cps\components\tools\education\CircuitSolverPro.tsx
+   45:115  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  127:111  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  136:49   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\education\ComplexNumberPro.tsx
+   54:35  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   99:55  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  136:44  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\education\DifferentialEqPro.tsx
+  11:42  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\education\EssayOutlineGen.tsx
+  12:44  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  91:59  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\education\FinalGradeRequired.tsx
+  79:49  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\education\GasLawAdvanced.tsx
+   58:116  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  101:70   error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\education\GraphingToolLite.tsx
+  123:49  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\education\MatrixCalculator.tsx
+  136:43  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  149:28  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\education\MolarMassPro.tsx
+   19:42  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   79:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  163:40  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\education\PHCalculatorPro.tsx
+   79:69  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  133:52  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  146:51  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\education\PercentageGPASolver.tsx
+  103:39  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\education\PeriodicTablePro.tsx
+   23:46  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  110:38  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  119:37  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\education\PhysicsFormulaSolver.tsx
+   11:38  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  110:28  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  114:52  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\education\PrimeNumberAnalyzer.tsx
+  11:42  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  92:86  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  93:85  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\education\ProbabilityPro.tsx
+  161:49  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\education\ProjectileSimulator.tsx
+   17:29  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  166:80  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  178:42  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\education\ReactionKineticsPro.tsx
+   68:74  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  142:47  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\education\RelativityDilation.tsx
+  30:75  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  98:46  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  98:81  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+F:\cps\components\tools\education\ScientificCalculator.tsx
+  102:75  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  115:44  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\education\StudyPlannerPro.tsx
+   39:23  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  @typescript-eslint/no-explicit-any
+   45:13  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+F:\cps\components\tools\education\StudyPlannerPro.tsx:45:13
+  43 |             }, 1000);
+  44 |         } else if (timeLeft === 0) {
+> 45 |             setIsActive(false);
+     |             ^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  46 |             if (activeTaskId) markCompleted(activeTaskId);
+  47 |         }
+  48 |         return () => clearInterval(interval);  react-hooks/set-state-in-effect
+  170:37  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\education\UnitCircleInteractive.tsx
+  103:44  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\education\VectorCalcPro.tsx
+   81:53  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  101:39  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\education\VennDiagramMaker.tsx
+  65:76  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  90:83  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  90:93  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\education\VocabularyBuilder.tsx
+  64:71  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  64:84  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+F:\cps\components\tools\finance\MortgageCalculator.tsx
+  72:73  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\finance\RetirementPlanner.tsx
+  86:119  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  86:132  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+F:\cps\components\tools\finance\SalaryTaxCalc.tsx
+  155:59  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  167:50  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\finance\UnitPriceCalc.tsx
+  27:73  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  27:83  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  47:80  error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\gaming\AimConsistency.tsx
+   30:20  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+F:\cps\components\tools\gaming\AimConsistency.tsx:30:20
+  28 |     useEffect(() => {
+  29 |         const saved = localStorage.getItem('aim_history');
+> 30 |         if (saved) setSessions(JSON.parse(saved));
+     |                    ^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  31 |     }, []);
+  32 |
+  33 |     const spawnTarget = useCallback(() => {  react-hooks/set-state-in-effect
+  216:39  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            react/no-unescaped-entities
+  216:49  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            react/no-unescaped-entities
+  216:55  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            react/no-unescaped-entities
+  216:64  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            react/no-unescaped-entities
+
+F:\cps\components\tools\gaming\BlindTypingChallenge.tsx
+  82:70  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  82:79  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+F:\cps\components\tools\gaming\BurstTimingTrainer.tsx
+  16:29  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\gaming\ButterflyClick.tsx
+   56:32  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+F:\cps\components\tools\gaming\ButterflyClick.tsx:56:32
+  54 |         if (isFinished) {
+  55 |             const cps = clicks / 10;
+> 56 |             if (cps > bestCPS) setBestCPS(cps);
+     |                                ^^^^^^^^^^ Avoid calling setState() directly within an effect
+  57 |         }
+  58 |     }, [isFinished, clicks, bestCPS]);
+  59 |  react-hooks/set-state-in-effect
+  154:85  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           react/no-unescaped-entities
+  154:98  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           react/no-unescaped-entities
+
+F:\cps\components\tools\gaming\CM360Calculator.tsx
+   36:13   error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+F:\cps\components\tools\gaming\CM360Calculator.tsx:36:13
+  34 |             const inches = 360 / (d * s * yaw);
+  35 |             const cm = inches * 2.54;
+> 36 |             setResult({ cm, inches });
+     |             ^^^^^^^^^ Avoid calling setState() directly within an effect
+  37 |         } else {
+  38 |             setResult(null);
+  39 |         }  react-hooks/set-state-in-effect
+   73:69   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    @typescript-eslint/no-explicit-any
+  139:138  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             react/no-unescaped-entities
+
+F:\cps\components\tools\gaming\CPSTest.tsx
+  342:62  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  343:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\gaming\CircleClick.tsx
+  19:35  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+F:\cps\components\tools\gaming\CircleClick.tsx:19:35
+  17 |         const newTargets = [];
+  18 |         for (let i = 0; i < 8; i++) {
+> 19 |             newTargets.push({ id: Math.random(), angle: (i * 45) * (Math.PI / 180) });
+     |                                   ^^^^^^^^^^^^^ Cannot call impure function
+  20 |         }
+  21 |         setTargets(newTargets);
+  22 |     };  react-hooks/purity
+
+F:\cps\components\tools\gaming\ClickTimingTrainer.tsx
+   14:29  error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+   18:18  error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+   22:25  error  'next' is never reassigned. Use 'const' instead                  prefer-const
+  115:42  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  115:54  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  115:60  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  115:78  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+F:\cps\components\tools\gaming\CrosshairGenerator.tsx
+   80:88   error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   83:64   error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  187:180  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  192:181  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\gaming\CursorPrecisionBench.tsx
+  14:29  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\gaming\DPIAnalyzer.tsx
+   79:44  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       react/no-unescaped-entities
+   85:38  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       react/no-unescaped-entities
+   98:30  error  Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+F:\cps\components\tools\gaming\DPIAnalyzer.tsx:98:30
+   96 |                             onMouseDownCapture={captureStart}
+   97 |                         >
+>  98 |                             {!startX.current ? (
+      |                              ^^^^^^^^^^^^^^^ Cannot access ref value during render
+   99 |                                 <p className="font-bold text-zinc-500">CLICK AND HOLD TO START MOVING</p>
+  100 |                             ) : (
+  101 |                                 <div className="text-center">                                                                                                                               react-hooks/refs
+   98:31  error  Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+F:\cps\components\tools\gaming\DPIAnalyzer.tsx:98:31
+   96 |                             onMouseDownCapture={captureStart}
+   97 |                         >
+>  98 |                             {!startX.current ? (
+      |                               ^^^^^^^^^^^^^^ Cannot access ref value during render
+   99 |                                 <p className="font-bold text-zinc-500">CLICK AND HOLD TO START MOVING</p>
+  100 |                             ) : (
+  101 |                                 <div className="text-center">
+
+To initialize a ref only once, check that the ref is null with the pattern `if (ref.current == null) { ref.current = ... }`  react-hooks/refs
+  140:74  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       react/no-unescaped-entities
+  156:32  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       react/no-unescaped-entities
+  156:58  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       react/no-unescaped-entities
+
+F:\cps\components\tools\gaming\DragClickTest.tsx
+  48:13  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+F:\cps\components\tools\gaming\DragClickTest.tsx:48:13
+  46 |             const elapsed = (10 - timeLeft) || 0.1;
+  47 |             const currentCps = clicks / elapsed;
+> 48 |             setCps(currentCps);
+     |             ^^^^^^ Avoid calling setState() directly within an effect
+  49 |             if (!isActive && currentCps > bestCps) setBestCps(currentCps);
+  50 |         }
+  51 |     }, [clicks, timeLeft, isActive, bestCps]);  react-hooks/set-state-in-effect
+
+F:\cps\components\tools\gaming\EDPICalculator.tsx
+   20:13  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+F:\cps\components\tools\gaming\EDPICalculator.tsx:20:13
+  18 |         const s = parseFloat(sensitivity);
+  19 |         if (!isNaN(d) && !isNaN(s)) {
+> 20 |             setEdpi(d * s);
+     |             ^^^^^^^ Avoid calling setState() directly within an effect
+  21 |         } else {
+  22 |             setEdpi(null);
+  23 |         }  react-hooks/set-state-in-effect
+  100:73  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        react/no-unescaped-entities
+  100:78  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        react/no-unescaped-entities
+
+F:\cps\components\tools\gaming\EsportsWarmup.tsx
+  197:95   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  197:106  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  208:28   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  209:47   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+F:\cps\components\tools\gaming\FPSCalculator.tsx
+  34:13  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+F:\cps\components\tools\gaming\FPSCalculator.tsx:34:13
+  32 |             if (smoothness > 100) smoothness = 100 + (Math.log10(f / h) * 10);
+  33 |
+> 34 |             setStats({ frameTime, monitorInterval, usageRatio, smoothness });
+     |             ^^^^^^^^ Avoid calling setState() directly within an effect
+  35 |         } else {
+  36 |             setStats(null);
+  37 |         }  react-hooks/set-state-in-effect
+
+F:\cps\components\tools\gaming\FlickTrainer.tsx
+  31:13  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+F:\cps\components\tools\gaming\FlickTrainer.tsx:31:13
+  29 |             }, 1000);
+  30 |         } else if (timeLeft === 0) {
+> 31 |             setIsActive(false);
+     |             ^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  32 |         }
+  33 |         return () => clearInterval(timerInterval);
+  34 |     }, [isActive, timeLeft]);  react-hooks/set-state-in-effect
+
+F:\cps\components\tools\gaming\GamingDeskHeight.tsx
+  100:72  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\gaming\GrenadeCalculator.tsx
+  97:50  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  97:56  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+F:\cps\components\tools\gaming\GridShotMini.tsx
+  13:29  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      @typescript-eslint/no-explicit-any
+  38:33  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+F:\cps\components\tools\gaming\GridShotMini.tsx:38:33
+  36 |
+  37 |     const spawnTarget = () => {
+> 38 |         const next = Math.floor(Math.random() * 9);
+     |                                 ^^^^^^^^^^^^^ Cannot call impure function
+  39 |         setActiveTarget(next);
+  40 |     };
+  41 |  react-hooks/purity
+
+F:\cps\components\tools\gaming\InputLagEstimator.tsx
+   16:74  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                @typescript-eslint/no-explicit-any
+   26:9   error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+F:\cps\components\tools\gaming\InputLagEstimator.tsx:26:9
+  24 |
+  25 |         const total = displayLag + mouseLag + renderLag + vsyncLag;
+> 26 |         setEstimate({ total, breakdown: { displayLag, mouseLag, renderLag, vsyncLag } });
+     |         ^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  27 |     }, [hz, polling, vSync, gpuType]);
+  28 |
+  29 |     return (  react-hooks/set-state-in-effect
+   90:75  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                @typescript-eslint/no-explicit-any
+  173:21  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         react/no-unescaped-entities
+  173:47  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         react/no-unescaped-entities
+
+F:\cps\components\tools\gaming\JitterClick.tsx
+   57:32  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+F:\cps\components\tools\gaming\JitterClick.tsx:57:32
+  55 |         if (isFinished) {
+  56 |             const cps = clicks / duration;
+> 57 |             if (cps > bestCPS) setBestCPS(cps);
+     |                                ^^^^^^^^^^ Avoid calling setState() directly within an effect
+  58 |         }
+  59 |     }, [isFinished, clicks, duration, bestCPS]);
+  60 |  react-hooks/set-state-in-effect
+  195:30  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               @typescript-eslint/no-explicit-any
+  214:24  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\gaming\KeyGhostingTest.tsx
+  82:56   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  82:202  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  82:216  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  82:232  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  82:247  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+F:\cps\components\tools\gaming\KeyWobbleTest.tsx
+  61:52   error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+F:\cps\components\tools\gaming\KeyWobbleTest.tsx:61:52
+  59 |                             style={{
+  60 |                                 transform: isHovered
+> 61 |                                     ? `translate(${Math.random() * wobble * 2 - wobble}px, ${Math.random() * wobble * 2 - wobble}px)`
+     |                                                    ^^^^^^^^^^^^^ Cannot call impure function
+  62 |                                     : 'none'
+  63 |                             }}
+  64 |                         >                                            react-hooks/purity
+  61:94   error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+F:\cps\components\tools\gaming\KeyWobbleTest.tsx:61:94
+  59 |                             style={{
+  60 |                                 transform: isHovered
+> 61 |                                     ? `translate(${Math.random() * wobble * 2 - wobble}px, ${Math.random() * wobble * 2 - wobble}px)`
+     |                                                                                              ^^^^^^^^^^^^^ Cannot call impure function
+  62 |                                     : 'none'
+  63 |                             }}
+  64 |                         >  react-hooks/purity
+  89:174  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         react/no-unescaped-entities
+  89:180  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         react/no-unescaped-entities
+
+F:\cps\components\tools\gaming\KeyboardAudioLatency.tsx
+  17:74   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  90:114  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+F:\cps\components\tools\gaming\KeyboardDebounceTester.tsx
+  10:42  error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  49:66  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  49:78  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  90:69  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  90:78  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+F:\cps\components\tools\gaming\KeyboardLatency.tsx
+  138:35  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  138:62  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  138:72  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+F:\cps\components\tools\gaming\KeyboardPollingRateCheck.tsx
+  12:38  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  95:48  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\gaming\KohiClick.tsx
+  56:32  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+F:\cps\components\tools\gaming\KohiClick.tsx:56:32
+  54 |         if (isFinished) {
+  55 |             const cps = clicks / 10;
+> 56 |             if (cps > bestCPS) setBestCPS(cps);
+     |                                ^^^^^^^^^^ Avoid calling setState() directly within an effect
+  57 |         }
+  58 |     }, [isFinished, clicks, bestCPS]);
+  59 |  react-hooks/set-state-in-effect
+
+F:\cps\components\tools\gaming\LODTestGuide.tsx
+  69:179  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  69:185  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+F:\cps\components\tools\gaming\LeftRightClick.tsx
+  71:48  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+F:\cps\components\tools\gaming\MicroFlickDrills.tsx
+  13:29  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\gaming\MonitorDistanceMatcher.tsx
+  36:68  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  36:77  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  73:76  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  73:90  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+F:\cps\components\tools\gaming\MonitorPPICalculator.tsx
+  57:87  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  61:87  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  65:87  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  69:82  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  80:57  error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  95:5   error  ES2015 module syntax is preferred over namespaces                @typescript-eslint/no-namespace
+  97:26  error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\gaming\MotionBlurTest.tsx
+  116:81   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  116:89   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  116:94   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  116:101  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  156:73   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  157:68   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  157:74   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  162:99   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  162:109  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  162:114  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  162:128  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+F:\cps\components\tools\gaming\MouseAcceleration.tsx
+  130:71   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  130:86   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  165:44   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  165:70   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  186:150  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+F:\cps\components\tools\gaming\MouseGlideTest.tsx
+   11:38   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+   38:37   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  129:133  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  129:142  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+F:\cps\components\tools\gaming\MouseLatencyTester.tsx
+  13:31  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\gaming\MousePixelSkippingCheck.tsx
+  83:79  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  83:84  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+F:\cps\components\tools\gaming\MouseSensorJitterTest.tsx
+  11:42  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  14:28  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\gaming\NKRORolloverPro.tsx
+  39:13  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+F:\cps\components\tools\gaming\NKRORolloverPro.tsx:39:13
+  37 |     useEffect(() => {
+  38 |         if (pressedKeys.size > 0) {
+> 39 |             setHistory(prev => [pressedKeys.size, ...prev].slice(0, 10));
+     |             ^^^^^^^^^^ Avoid calling setState() directly within an effect
+  40 |         }
+  41 |     }, [pressedKeys.size]);
+  42 |  react-hooks/set-state-in-effect
+  93:55  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\gaming\NKROTester.tsx
+  157:82  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  157:87  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+F:\cps\components\tools\gaming\NumpadSpeedTest.tsx
+  15:29  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\gaming\PeripheralVisionTrainer.tsx
+  14:29  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\gaming\PingJitterAnalyzer.tsx
+   11:40  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   14:29  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   34:32  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  131:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  133:49  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  145:58  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\gaming\PressureReflexTest.tsx
+  13:29  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\gaming\ReactionTest.tsx
+   63:9   error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+F:\cps\components\tools\gaming\ReactionTest.tsx:63:9
+  61 |
+  62 |     useEffect(() => {
+> 63 |         startTest();
+     |         ^^^^^^^^^ Avoid calling setState() directly within an effect
+  64 |         return () => {
+  65 |             if (timeoutRef.current) clearTimeout(timeoutRef.current);
+  66 |         };  react-hooks/set-state-in-effect
+  175:64  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\gaming\RecoilTrainer.tsx
+  38:13  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+F:\cps\components\tools\gaming\RecoilTrainer.tsx:38:13
+  36 |             }, 100);
+  37 |         } else if (shotIndex >= RECOIL_PATTERNS[selectedGun].length) {
+> 38 |             setIsFiring(false);
+     |             ^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  39 |         }
+  40 |         return () => clearInterval(interval);
+  41 |     }, [isFiring, shotIndex, selectedGun]);  react-hooks/set-state-in-effect
+  59:68  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\gaming\ReflexPatternMatch.tsx
+  17:29  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 @typescript-eslint/no-explicit-any
+  42:35  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+F:\cps\components\tools\gaming\ReflexPatternMatch.tsx:42:35
+  40 |
+  41 |     const nextRound = () => {
+> 42 |         const target = Math.floor(Math.random() * 4);
+     |                                   ^^^^^^^^^^^^^ Cannot call impure function
+  43 |         setTargetColor(target);
+  44 |         setOptions([0, 1, 2, 3].sort(() => Math.random() - 0.5));
+  45 |     };  react-hooks/purity
+
+F:\cps\components\tools\gaming\RightClickSpeedTest.tsx
+  13:29  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\gaming\ScrollSpeedTester.tsx
+  11:44  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  13:29  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\gaming\ScrollTest.tsx
+  152:75  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  152:89  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+F:\cps\components\tools\gaming\SensitivityMatch.tsx
+   26:13  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+F:\cps\components\tools\gaming\SensitivityMatch.tsx:26:13
+  24 |             const edpi2 = d2 * s2;
+  25 |             const diff = ((edpi2 - edpi1) / edpi1) * 100;
+> 26 |             setResult({ edpi1, edpi2, diff });
+     |             ^^^^^^^^^ Avoid calling setState() directly within an effect
+  27 |         } else {
+  28 |             setResult(null);
+  29 |         }  react-hooks/set-state-in-effect
+  141:53  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             react/no-unescaped-entities
+
+F:\cps\components\tools\gaming\SensitivityRandomizer.tsx
+  141:97   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  141:105  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+F:\cps\components\tools\gaming\SoundDirectionTest.tsx
+  101:138  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+F:\cps\components\tools\gaming\SoundReactionTest.tsx
+  13:31  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          @typescript-eslint/no-explicit-any
+  25:23  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+F:\cps\components\tools\gaming\SoundReactionTest.tsx:25:23
+  23 |     const startTest = () => {
+  24 |         setState('waiting');
+> 25 |         const delay = Math.random() * 3000 + 2000;
+     |                       ^^^^^^^^^^^^^ Cannot call impure function
+  26 |         timeoutRef.current = setTimeout(() => {
+  27 |             setState('ready');
+  28 |             startTimeRef.current = performance.now();  react-hooks/purity
+  36:64  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\gaming\SpacebarCounter.tsx
+   63:35  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+F:\cps\components\tools\gaming\SpacebarCounter.tsx:63:35
+  61 |     useEffect(() => {
+  62 |         if (isFinished) {
+> 63 |             if (hits > bestScore) setBestScore(hits);
+     |                                   ^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  64 |         }
+  65 |     }, [isFinished, hits, bestScore]);
+  66 |  react-hooks/set-state-in-effect
+  161:56  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        react/no-unescaped-entities
+
+F:\cps\components\tools\gaming\StrafeAimingSim.tsx
+  14:29  error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  48:17  error  'next' is never reassigned. Use 'const' instead                  prefer-const
+  58:17  error  'next' is never reassigned. Use 'const' instead                  prefer-const
+  89:86  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  89:96  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+F:\cps\components\tools\gaming\TargetTrackingPro.tsx
+  18:29  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 @typescript-eslint/no-explicit-any
+  25:26  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+F:\cps\components\tools\gaming\TargetTrackingPro.tsx:25:26
+  23 |         setTime(30);
+  24 |         setPos({ x: 50, y: 50 });
+> 25 |         setVelocity({ x: Math.random() * 0.4 + 0.2, y: Math.random() * 0.4 + 0.2 });
+     |                          ^^^^^^^^^^^^^ Cannot call impure function
+  26 |
+  27 |         timerRef.current = setInterval(() => {
+  28 |             setTime(prev => {                                react-hooks/purity
+  25:56  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+F:\cps\components\tools\gaming\TargetTrackingPro.tsx:25:56
+  23 |         setTime(30);
+  24 |         setPos({ x: 50, y: 50 });
+> 25 |         setVelocity({ x: Math.random() * 0.4 + 0.2, y: Math.random() * 0.4 + 0.2 });
+     |                                                        ^^^^^^^^^^^^^ Cannot call impure function
+  26 |
+  27 |         timerRef.current = setInterval(() => {
+  28 |             setTime(prev => {  react-hooks/purity
+
+F:\cps\components\tools\gaming\TrackingTrainer.tsx
+  52:58  error  Error: Cannot access variable before it is declared
+
+`update` is accessed before it is declared, which prevents the earlier access from updating when this value changes over time.
+
+F:\cps\components\tools\gaming\TrackingTrainer.tsx:52:58
+  50 |         }
+  51 |
+> 52 |         requestRef.current = requestAnimationFrame(() => update());
+     |                                                          ^^^^^^ `update` accessed before it is declared
+  53 |     }, [velocity, isTracking]);
+  54 |
+  55 |     useEffect(() => {
+
+F:\cps\components\tools\gaming\TrackingTrainer.tsx:18:5
+  16 |     const requestRef = useRef<number>(null);
+  17 |
+> 18 |     const update = useCallback(() => {
+     |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 19 |         setTargetPos(prev => {
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 20 |             let nextX = prev.x + velocity.x;
+     ÔÇª
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 52 |         requestRef.current = requestAnimationFrame(() => update());
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 53 |     }, [velocity, isTracking]);
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ `update` is declared here
+  54 |
+  55 |     useEffect(() => {
+  56 |         if (isActive) {  react-hooks/immutability
+
+F:\cps\components\tools\gaming\TypingSpeedTest.tsx
+  22:13  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+F:\cps\components\tools\gaming\TypingSpeedTest.tsx:22:13
+  20 |             const timeElapsed = (Date.now() - (startTime || Date.now())) / 60000; // in minutes
+  21 |             const wordsTyped = text.length / 5;
+> 22 |             setWpm(Math.round(wordsTyped / (timeElapsed || 0.01)));
+     |             ^^^^^^ Avoid calling setState() directly within an effect
+  23 |
+  24 |             let correctChars = 0;
+  25 |             for (let i = 0; i < text.length; i++) {  react-hooks/set-state-in-effect
+
+F:\cps\components\tools\image\BarcodeGenerator.tsx
+  61:45  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+F:\cps\components\tools\image\BarcodeGenerator.tsx:61:45
+  59 |                                 className="bg-black transition-all duration-300"
+  60 |                                 style={{
+> 61 |                                     width: (Math.random() > 0.5 ? 2 : 4) + 'px',
+     |                                             ^^^^^^^^^^^^^ Cannot call impure function
+  62 |                                     height: (80 + Math.random() * 20) + '%'
+  63 |                                 }}
+  64 |                             />  react-hooks/purity
+  62:51  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+F:\cps\components\tools\image\BarcodeGenerator.tsx:62:51
+  60 |                                 style={{
+  61 |                                     width: (Math.random() > 0.5 ? 2 : 4) + 'px',
+> 62 |                                     height: (80 + Math.random() * 20) + '%'
+     |                                                   ^^^^^^^^^^^^^ Cannot call impure function
+  63 |                                 }}
+  64 |                             />
+  65 |                         ))}                                                 react-hooks/purity
+
+F:\cps\components\tools\image\EXIFViewer.tsx
+  10:46  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\image\ImageCropper.tsx
+  241:56  error  Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+F:\cps\components\tools\image\ImageCropper.tsx:241:56
+  239 |                                                 alt="Crop Preview"
+  240 |                                                 className="absolute max-w-none"
+> 241 |                                                 style={{
+      |                                                        ^
+> 242 |                                                     width: imageRef.current?.clientWidth,
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 243 |                                                     height: imageRef.current?.clientHeight,
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 244 |                                                     left: `-${(crop.x / imageSize.width) * (imageRef.current?.clientWidth || 0)}px`,
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 245 |                                                     top: `-${(crop.y / imageSize.height) * (imageRef.current?.clientHeight || 0)}px`,
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 246 |                                                 }}
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Cannot access ref value during render
+  247 |                                             />
+  248 |                                             {/* Grid Lines */}
+  249 |                                             <div className="absolute inset-0 grid grid-cols-3 grid-rows-3 opacity-30">  react-hooks/refs
+  242:60  error  Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+F:\cps\components\tools\image\ImageCropper.tsx:242:60
+  240 |                                                 className="absolute max-w-none"
+  241 |                                                 style={{
+> 242 |                                                     width: imageRef.current?.clientWidth,
+      |                                                            ^^^^^^^^^^^^^^^^ Cannot access ref value during render
+  243 |                                                     height: imageRef.current?.clientHeight,
+  244 |                                                     left: `-${(crop.x / imageSize.width) * (imageRef.current?.clientWidth || 0)}px`,
+  245 |                                                     top: `-${(crop.y / imageSize.height) * (imageRef.current?.clientHeight || 0)}px`,                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     react-hooks/refs
+  242:60  error  Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+F:\cps\components\tools\image\ImageCropper.tsx:242:60
+  240 |                                                 className="absolute max-w-none"
+  241 |                                                 style={{
+> 242 |                                                     width: imageRef.current?.clientWidth,
+      |                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Cannot access ref value during render
+  243 |                                                     height: imageRef.current?.clientHeight,
+  244 |                                                     left: `-${(crop.x / imageSize.width) * (imageRef.current?.clientWidth || 0)}px`,
+  245 |                                                     top: `-${(crop.y / imageSize.height) * (imageRef.current?.clientHeight || 0)}px`,                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        react-hooks/refs
+  243:61  error  Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+F:\cps\components\tools\image\ImageCropper.tsx:243:61
+  241 |                                                 style={{
+  242 |                                                     width: imageRef.current?.clientWidth,
+> 243 |                                                     height: imageRef.current?.clientHeight,
+      |                                                             ^^^^^^^^^^^^^^^^ Cannot access ref value during render
+  244 |                                                     left: `-${(crop.x / imageSize.width) * (imageRef.current?.clientWidth || 0)}px`,
+  245 |                                                     top: `-${(crop.y / imageSize.height) * (imageRef.current?.clientHeight || 0)}px`,
+  246 |                                                 }}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 react-hooks/refs
+  243:61  error  Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+F:\cps\components\tools\image\ImageCropper.tsx:243:61
+  241 |                                                 style={{
+  242 |                                                     width: imageRef.current?.clientWidth,
+> 243 |                                                     height: imageRef.current?.clientHeight,
+      |                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Cannot access ref value during render
+  244 |                                                     left: `-${(crop.x / imageSize.width) * (imageRef.current?.clientWidth || 0)}px`,
+  245 |                                                     top: `-${(crop.y / imageSize.height) * (imageRef.current?.clientHeight || 0)}px`,
+  246 |                                                 }}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   react-hooks/refs
+  244:93  error  Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+F:\cps\components\tools\image\ImageCropper.tsx:244:93
+  242 |                                                     width: imageRef.current?.clientWidth,
+  243 |                                                     height: imageRef.current?.clientHeight,
+> 244 |                                                     left: `-${(crop.x / imageSize.width) * (imageRef.current?.clientWidth || 0)}px`,
+      |                                                                                             ^^^^^^^^^^^^^^^^ Cannot access ref value during render
+  245 |                                                     top: `-${(crop.y / imageSize.height) * (imageRef.current?.clientHeight || 0)}px`,
+  246 |                                                 }}
+  247 |                                             />                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           react-hooks/refs
+  244:93  error  Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+F:\cps\components\tools\image\ImageCropper.tsx:244:93
+  242 |                                                     width: imageRef.current?.clientWidth,
+  243 |                                                     height: imageRef.current?.clientHeight,
+> 244 |                                                     left: `-${(crop.x / imageSize.width) * (imageRef.current?.clientWidth || 0)}px`,
+      |                                                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Cannot access ref value during render
+  245 |                                                     top: `-${(crop.y / imageSize.height) * (imageRef.current?.clientHeight || 0)}px`,
+  246 |                                                 }}
+  247 |                                             />                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              react-hooks/refs
+  244:93  error  Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+F:\cps\components\tools\image\ImageCropper.tsx:244:93
+  242 |                                                     width: imageRef.current?.clientWidth,
+  243 |                                                     height: imageRef.current?.clientHeight,
+> 244 |                                                     left: `-${(crop.x / imageSize.width) * (imageRef.current?.clientWidth || 0)}px`,
+      |                                                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Cannot access ref value during render
+  245 |                                                     top: `-${(crop.y / imageSize.height) * (imageRef.current?.clientHeight || 0)}px`,
+  246 |                                                 }}
+  247 |                                             />                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         react-hooks/refs
+  245:93  error  Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+F:\cps\components\tools\image\ImageCropper.tsx:245:93
+  243 |                                                     height: imageRef.current?.clientHeight,
+  244 |                                                     left: `-${(crop.x / imageSize.width) * (imageRef.current?.clientWidth || 0)}px`,
+> 245 |                                                     top: `-${(crop.y / imageSize.height) * (imageRef.current?.clientHeight || 0)}px`,
+      |                                                                                             ^^^^^^^^^^^^^^^^ Cannot access ref value during render
+  246 |                                                 }}
+  247 |                                             />
+  248 |                                             {/* Grid Lines */}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      react-hooks/refs
+  245:93  error  Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+F:\cps\components\tools\image\ImageCropper.tsx:245:93
+  243 |                                                     height: imageRef.current?.clientHeight,
+  244 |                                                     left: `-${(crop.x / imageSize.width) * (imageRef.current?.clientWidth || 0)}px`,
+> 245 |                                                     top: `-${(crop.y / imageSize.height) * (imageRef.current?.clientHeight || 0)}px`,
+      |                                                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Cannot access ref value during render
+  246 |                                                 }}
+  247 |                                             />
+  248 |                                             {/* Grid Lines */}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        react-hooks/refs
+  245:93  error  Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+F:\cps\components\tools\image\ImageCropper.tsx:245:93
+  243 |                                                     height: imageRef.current?.clientHeight,
+  244 |                                                     left: `-${(crop.x / imageSize.width) * (imageRef.current?.clientWidth || 0)}px`,
+> 245 |                                                     top: `-${(crop.y / imageSize.height) * (imageRef.current?.clientHeight || 0)}px`,
+      |                                                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Cannot access ref value during render
+  246 |                                                 }}
+  247 |                                             />
+  248 |                                             {/* Grid Lines */}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   react-hooks/refs
+  389:27  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\image\ImageFilters.tsx
+  119:62  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\productivity\LineNumberer.tsx
+  56:48  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  56:51  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  56:56  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  56:59  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+F:\cps\components\tools\productivity\LoremIpsumGenerator.tsx
+  16:13  error  'text' is never reassigned. Use 'const' instead  prefer-const
+
+F:\cps\components\tools\productivity\MorseCodeTranslator.tsx
+  48:60  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\productivity\PasswordGenerator.tsx
+  35:9  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+F:\cps\components\tools\productivity\PasswordGenerator.tsx:35:9
+  33 |
+  34 |     useEffect(() => {
+> 35 |         generatePassword();
+     |         ^^^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  36 |     }, [generatePassword]);
+  37 |
+  38 |     const copyToClipboard = () => {  react-hooks/set-state-in-effect
+
+F:\cps\components\tools\productivity\PomodoroTimer.tsx
+  29:13  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+F:\cps\components\tools\productivity\PomodoroTimer.tsx:29:13
+  27 |             const nextMode = mode === 'work' ? 'break' : 'work';
+  28 |             toast.success(mode === 'work' ? 'Time for a break!' : 'Back to work!');
+> 29 |             switchMode(nextMode);
+     |             ^^^^^^^^^^ Avoid calling setState() directly within an effect
+  30 |         }
+  31 |         return () => clearInterval(timer);
+  32 |     }, [isRunning, timeLeft, mode, switchMode]);  react-hooks/set-state-in-effect
+
+F:\cps\components\tools\productivity\SentenceCounterPro.tsx
+  54:67  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  54:78  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\productivity\SmallTextGenerator.tsx
+  30:30  error  Compilation Skipped: Existing memoization could not be preserved
+
+React Compiler has skipped optimizing this component because the existing manual memoization could not be preserved. The inferred dependencies did not match the manually specified dependencies, which could cause the value to change more or less frequently than expected. The inferred dependency was `convert`, but the source dependencies were [text]. Inferred different dependency than source.
+
+F:\cps\components\tools\productivity\SmallTextGenerator.tsx:30:30
+  28 |     };
+  29 |
+> 30 |     const tinyCaps = useMemo(() => convert(CAPS_MAP), [text]);
+     |                              ^^^^^^^^^^^^^^^^^^^^^^^ Could not preserve existing manual memoization
+  31 |     const superScript = useMemo(() => convert(SUPER_MAP), [text]);
+  32 |     const subScript = useMemo(() => convert(SUB_MAP), [text]);
+  33 |                                                         react-hooks/preserve-manual-memoization
+  31:33  error  Compilation Skipped: Existing memoization could not be preserved
+
+React Compiler has skipped optimizing this component because the existing manual memoization could not be preserved. The inferred dependencies did not match the manually specified dependencies, which could cause the value to change more or less frequently than expected. The inferred dependency was `convert`, but the source dependencies were [text]. Inferred different dependency than source.
+
+F:\cps\components\tools\productivity\SmallTextGenerator.tsx:31:33
+  29 |
+  30 |     const tinyCaps = useMemo(() => convert(CAPS_MAP), [text]);
+> 31 |     const superScript = useMemo(() => convert(SUPER_MAP), [text]);
+     |                                 ^^^^^^^^^^^^^^^^^^^^^^^^ Could not preserve existing manual memoization
+  32 |     const subScript = useMemo(() => convert(SUB_MAP), [text]);
+  33 |
+  34 |     const copy = (val: string) => {                        react-hooks/preserve-manual-memoization
+  32:31  error  Compilation Skipped: Existing memoization could not be preserved
+
+React Compiler has skipped optimizing this component because the existing manual memoization could not be preserved. The inferred dependencies did not match the manually specified dependencies, which could cause the value to change more or less frequently than expected. The inferred dependency was `convert`, but the source dependencies were [text]. Inferred different dependency than source.
+
+F:\cps\components\tools\productivity\SmallTextGenerator.tsx:32:31
+  30 |     const tinyCaps = useMemo(() => convert(CAPS_MAP), [text]);
+  31 |     const superScript = useMemo(() => convert(SUPER_MAP), [text]);
+> 32 |     const subScript = useMemo(() => convert(SUB_MAP), [text]);
+     |                               ^^^^^^^^^^^^^^^^^^^^^^ Could not preserve existing manual memoization
+  33 |
+  34 |     const copy = (val: string) => {
+  35 |         if (!val) return;  react-hooks/preserve-manual-memoization
+
+F:\cps\components\tools\productivity\ZalgoText.tsx
+  42:42  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+F:\cps\components\tools\productivity\ZalgoText.tsx:42:42
+  40 |         for (let i = 0; i < text.length; i++) {
+  41 |             result += text[i];
+> 42 |             const numZalgos = Math.floor(Math.random() * intensity[0]);
+     |                                          ^^^^^^^^^^^^^ Cannot call impure function
+  43 |             for (let j = 0; j < numZalgos; j++) {
+  44 |                 const choice = Math.floor(Math.random() * 3);
+  45 |                 if (choice === 0) result += ZALGO_UP[Math.floor(Math.random() * ZALGO_UP.length)];                                                                                                                        react-hooks/purity
+  44:43  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+F:\cps\components\tools\productivity\ZalgoText.tsx:44:43
+  42 |             const numZalgos = Math.floor(Math.random() * intensity[0]);
+  43 |             for (let j = 0; j < numZalgos; j++) {
+> 44 |                 const choice = Math.floor(Math.random() * 3);
+     |                                           ^^^^^^^^^^^^^ Cannot call impure function
+  45 |                 if (choice === 0) result += ZALGO_UP[Math.floor(Math.random() * ZALGO_UP.length)];
+  46 |                 else if (choice === 1) result += ZALGO_MID[Math.floor(Math.random() * ZALGO_MID.length)];
+  47 |                 else result += ZALGO_DOWN[Math.floor(Math.random() * ZALGO_DOWN.length)];  react-hooks/purity
+  45:65  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+F:\cps\components\tools\productivity\ZalgoText.tsx:45:65
+  43 |             for (let j = 0; j < numZalgos; j++) {
+  44 |                 const choice = Math.floor(Math.random() * 3);
+> 45 |                 if (choice === 0) result += ZALGO_UP[Math.floor(Math.random() * ZALGO_UP.length)];
+     |                                                                 ^^^^^^^^^^^^^ Cannot call impure function
+  46 |                 else if (choice === 1) result += ZALGO_MID[Math.floor(Math.random() * ZALGO_MID.length)];
+  47 |                 else result += ZALGO_DOWN[Math.floor(Math.random() * ZALGO_DOWN.length)];
+  48 |             }                                      react-hooks/purity
+  46:71  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+F:\cps\components\tools\productivity\ZalgoText.tsx:46:71
+  44 |                 const choice = Math.floor(Math.random() * 3);
+  45 |                 if (choice === 0) result += ZALGO_UP[Math.floor(Math.random() * ZALGO_UP.length)];
+> 46 |                 else if (choice === 1) result += ZALGO_MID[Math.floor(Math.random() * ZALGO_MID.length)];
+     |                                                                       ^^^^^^^^^^^^^ Cannot call impure function
+  47 |                 else result += ZALGO_DOWN[Math.floor(Math.random() * ZALGO_DOWN.length)];
+  48 |             }
+  49 |         }                                                                        react-hooks/purity
+  47:54  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+F:\cps\components\tools\productivity\ZalgoText.tsx:47:54
+  45 |                 if (choice === 0) result += ZALGO_UP[Math.floor(Math.random() * ZALGO_UP.length)];
+  46 |                 else if (choice === 1) result += ZALGO_MID[Math.floor(Math.random() * ZALGO_MID.length)];
+> 47 |                 else result += ZALGO_DOWN[Math.floor(Math.random() * ZALGO_DOWN.length)];
+     |                                                      ^^^^^^^^^^^^^ Cannot call impure function
+  48 |             }
+  49 |         }
+  50 |         return result;                                                                                                                                react-hooks/purity
+
+F:\cps\components\tools\seo\ALTTextAccessibility.tsx
+  11:44  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\seo\AdSenseRevenueCalc.tsx
+  31:80  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+F:\cps\components\tools\seo\BacklinkAnchorGen.tsx
+  14:44  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\seo\CanonicalURLChecker.tsx
+  54:103  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  54:112  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+F:\cps\components\tools\seo\DomainHistoryLookup.tsx
+  60:71   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  60:79   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  60:140  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  60:147  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  68:49   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  77:45   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\seo\InternalLinkStrategist.tsx
+  109:59  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\seo\KeywordDensityChecker.tsx
+   16:40  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  126:78  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  139:58  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\seo\NicheKeywordResearch.tsx
+  11:44  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\seo\OpenGraphInspector.tsx
+  66:49  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\seo\PageLoadSimulator.tsx
+   96:126  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  109:67   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\seo\RobotsTxtValidator.tsx
+  11:42  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cps\components\tools\seo\SchemaMarkupMaker.tsx
+  47:85  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  47:93  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+F:\cps\components\tools\seo\StructuredDataBench.tsx
+  105:37  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  109:31  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+Ô£û 342 problems (342 errors, 0 warnings)
+  6 errors and 0 warnings potentially fixable with the `--fix` option.
+

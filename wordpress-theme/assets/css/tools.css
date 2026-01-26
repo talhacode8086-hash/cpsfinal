@@ -1,0 +1,203 @@
+/* Tool-specific styles */
+
+/* CPS Test Tool */
+.cps-test-container {
+    text-align: center;
+    padding: 2rem;
+}
+
+.cps-click-area {
+    width: 200px;
+    height: 200px;
+    margin: 2rem auto;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.1s;
+    user-select: none;
+}
+
+.cps-click-area:active {
+    transform: scale(0.95);
+}
+
+.cps-score {
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+}
+
+/* Aim Trainer Tool */
+.aim-trainer-canvas {
+    width: 100%;
+    max-width: 800px;
+    height: 600px;
+    background: #1a1a2e;
+    border-radius: var(--radius);
+    margin: 0 auto;
+    display: block;
+    cursor: crosshair;
+}
+
+.aim-stats {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1rem;
+    gap: 1rem;
+}
+
+.stat-box {
+    background: rgba(99, 102, 241, 0.1);
+    padding: 1rem;
+    border-radius: var(--radius);
+    text-align: center;
+    flex: 1;
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.stat-label {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+/* Word Counter Tool */
+.word-counter-textarea {
+    width: 100%;
+    min-height: 300px;
+    padding: 1rem;
+    background: var(--dark-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    color: var(--text-primary);
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    resize: vertical;
+}
+
+.counter-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+/* JSON Formatter Tool */
+.json-formatter-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.json-input,
+.json-output {
+    min-height: 400px;
+    padding: 1rem;
+    background: var(--dark-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+}
+
+.json-output {
+    background: #1a1a2e;
+    overflow-x: auto;
+}
+
+/* QR Code Generator */
+.qr-code-display {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--radius);
+    display: inline-block;
+    margin: 1rem auto;
+}
+
+/* Reaction Time Test */
+.reaction-test-area {
+    width: 100%;
+    height: 400px;
+    background: var(--dark-bg);
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    user-select: none;
+}
+
+.reaction-test-area.ready {
+    background: linear-gradient(135deg, #10b981, #059669);
+    border-color: #10b981;
+}
+
+.reaction-test-area.too-soon {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    border-color: #ef4444;
+}
+
+/* Button Styles for Tools */
+.tool-button {
+    padding: 0.75rem 1.5rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.tool-button:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+}
+
+.tool-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Loading Spinner */
+.tool-loading {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(99, 102, 241, 0.1);
+    border-top-color: var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive Tool Layouts */
+@media (max-width: 768px) {
+    .json-formatter-container {
+        grid-template-columns: 1fr;
+    }
+
+    .aim-trainer-canvas {
+        height: 400px;
+    }
+
+    .aim-stats {
+        flex-direction: column;
+    }
+}

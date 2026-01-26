@@ -1,0 +1,62 @@
+/*
+Theme Name: ToolsHub Pro
+Theme URI: https://toolshub.com
+Author: ToolsHub Team
+Author URI: https://toolshub.com
+Description: A premium WordPress theme with full Elementor support for ToolsHub - featuring 70+ interactive tools for gaming, productivity, SEO, and development.
+Version: 1.0.0
+Requires at least: 6.0
+Tested up to: 6.4
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: toolshub
+Tags: elementor, tools, gaming, productivity, custom-header, custom-menu, featured-images, threaded-comments, translation-ready
+*/
+
+/* 
+This theme is designed to work with Elementor page builder.
+Main styling is handled through Tailwind CSS and custom CSS files.
+*/
+
+:root {
+    --primary-color: #6366f1;
+    --secondary-color: #8b5cf6;
+    --accent-color: #ec4899;
+    --dark-bg: #0f172a;
+    --card-bg: #1e293b;
+    --text-primary: #f1f5f9;
+    --text-secondary: #cbd5e1;
+    --border-color: #334155;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--dark-bg);
+    color: var(--text-primary);
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Elementor Compatibility */
+.elementor-section {
+    position: relative;
+}
+
+.elementor-widget-container {
+    word-wrap: break-word;
+}
