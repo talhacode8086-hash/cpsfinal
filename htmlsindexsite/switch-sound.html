@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch Sound Test - AssetsToolsHub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sidebar.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .tool-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .switch-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .switch-card {
+            background: #0d1117;
+            border: 1px solid var(--card-border);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            cursor: pointer;
+            transition: 0.2s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .switch-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .switch-card:active {
+            transform: scale(0.95);
+        }
+
+        .switch-card.active {
+            border-color: var(--primary);
+            background: rgba(99, 102, 241, 0.1);
+        }
+
+        .stem-color {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .wave-visual {
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3px;
+            margin-top: 1rem;
+        }
+
+        .bar {
+            width: 4px;
+            height: 10px;
+            background: #4b5563;
+            border-radius: 2px;
+            transition: 0.1s;
+        }
+
+        .switch-card:hover .bar {
+            height: 20px;
+            background: var(--primary);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-content">
+        <div class="tool-container">
+            <h1 style="font-size: 2.5rem; font-weight:900; margin-bottom: 1rem;">Switch Sound Profiles</h1>
+            <p style="color:var(--text-muted); margin-bottom: 3rem;">Click to hear and compare synthesized mechanical
+                switch sounds.</p>
+
+            <div class="switch-grid">
+                <!-- Blue Switch -->
+                <div class="switch-card" onclick="playSound('blue')">
+                    <div class="stem-color" style="background: #3b82f6;"></div>
+                    <h3 style="margin-bottom:0.5rem">Blue (Clicky)</h3>
+                    <p style="font-size:0.8rem; color:var(--text-muted)">High-pitched click. Loud & tactile.</p>
+                    <div class="wave-visual">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                </div>
+
+                <!-- Brown Switch -->
+                <div class="switch-card" onclick="playSound('brown')">
+                    <div class="stem-color" style="background: #92400e;"></div>
+                    <h3 style="margin-bottom:0.5rem">Brown (Tactile)</h3>
+                    <p style="font-size:0.8rem; color:var(--text-muted)">Subtle bump. Moderate sound.</p>
+                    <div class="wave-visual">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                </div>
+
+                <!-- Red Switch -->
+                <div class="switch-card" onclick="playSound('red')">
+                    <div class="stem-color" style="background: #ef4444;"></div>
+                    <h3 style="margin-bottom:0.5rem">Red (Linear)</h3>
+                    <p style="font-size:0.8rem; color:var(--text-muted)">Smooth. Quiet plastic clack.</p>
+                    <div class="wave-visual">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                </div>
+
+                <!-- Black Switch -->
+                <div class="switch-card" onclick="playSound('black')">
+                    <div class="stem-color" style="background: #111827; border: 1px solid #374151"></div>
+                    <h3 style="margin-bottom:0.5rem">Black (Heavy)</h3>
+                    <p style="font-size:0.8rem; color:var(--text-muted)">Deep thud. Heavy actuation.</p>
+                    <div class="wave-visual">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align:left; background:rgba(0,0,0,0.2); padding:2rem; border-radius:1rem;">
+                <h3>Why do they sound different?</h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; line-height:1.6; margin-top:0.5rem">
+                    <b>Clicky (Blue):</b> Uses a "click jacket" part that slams down to create noise.<br>
+                    <b>Tactile (Brown):</b> bump in the leg creates a physical feel but less noise.<br>
+                    <b>Linear (Red/Black):</b> No bump, sound is mostly the keycap hitting the bottom housing
+                    (bottom-out).
+                </p>
+                <div style="margin-top:1rem; font-size:0.8rem; color:#6b7280">
+                    * Sounds are simulated. Actual sound depends on keyboard case, plate material, and keycap profile.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="layout.js"></script>
+    <script>
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+        function playSound(type) {
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+
+            const t = audioCtx.currentTime;
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            const noise = audioCtx.createBufferSource();
+
+            // White noise buffer for click/clack texture
+            const bufferSize = audioCtx.sampleRate * 0.1;
+            const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+            const data = buffer.getChannelData(0);
+            for (let i = 0; i < bufferSize; i++) data[i] = Math.random() * 2 - 1;
+
+            noise.buffer = buffer;
+            const noiseGain = audioCtx.createGain();
+
+            osc.connect(gain);
+            noise.connect(noiseGain);
+            gain.connect(audioCtx.destination);
+            noiseGain.connect(audioCtx.destination);
+
+            if (type === 'blue') {
+                // High Pitch Click
+                osc.frequency.setValueAtTime(1500, t);
+                osc.type = 'triangle';
+                gain.gain.setValueAtTime(0.5, t);
+                gain.gain.exponentialRampToValueAtTime(0.01, t + 0.05);
+
+                // Sharp noise click
+                noiseGain.gain.setValueAtTime(0.8, t);
+                noiseGain.gain.exponentialRampToValueAtTime(0.01, t + 0.03);
+            } else if (type === 'brown') {
+                // Mid Pitch Bump
+                osc.frequency.setValueAtTime(400, t);
+                osc.type = 'square';
+                gain.gain.setValueAtTime(0.3, t);
+                gain.gain.exponentialRampToValueAtTime(0.01, t + 0.08);
+
+                // Softer noise
+                noiseGain.gain.setValueAtTime(0.4, t);
+                noiseGain.gain.exponentialRampToValueAtTime(0.01, t + 0.05);
+            } else if (type === 'red') {
+                // Low Pitch Thud (Plastic)
+                osc.frequency.setValueAtTime(200, t);
+                osc.type = 'sine';
+                gain.gain.setValueAtTime(0.4, t);
+                gain.gain.exponentialRampToValueAtTime(0.01, t + 0.08);
+
+                noiseGain.gain.setValueAtTime(0.2, t);
+                noiseGain.gain.exponentialRampToValueAtTime(0.01, t + 0.05);
+            } else if (type === 'black') {
+                // Deep Thud
+                osc.frequency.setValueAtTime(150, t);
+                osc.type = 'sine';
+                gain.gain.setValueAtTime(0.5, t);
+                gain.gain.exponentialRampToValueAtTime(0.01, t + 0.1);
+
+                noiseGain.gain.setValueAtTime(0.1, t);
+                noiseGain.gain.exponentialRampToValueAtTime(0.01, t + 0.05);
+            }
+
+            osc.start(t);
+            osc.stop(t + 0.1);
+            noise.start(t);
+            noise.stop(t + 0.1);
+        }
+    </script>
+</body>
+
+</html>

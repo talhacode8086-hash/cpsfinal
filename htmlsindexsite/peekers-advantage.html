@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peekers Advantage Sim - AssetsToolsHub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sidebar.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .tool-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .sim-view {
+            height: 400px;
+            background: #111;
+            border: 2px solid var(--card-border);
+            border-radius: 1rem;
+            position: relative;
+            overflow: hidden;
+            perspective: 800px;
+            margin: 2rem 0;
+        }
+
+        .wall {
+            position: absolute;
+            width: 300px;
+            height: 400px;
+            background: #374151;
+            left: 100px;
+            top: 0;
+            z-index: 5;
+            box-shadow: 10px 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .enemy {
+            width: 50px;
+            height: 120px;
+            background: #ef4444;
+            position: absolute;
+            top: 140px;
+            left: 0px;
+            transition: none;
+            /* JS controlled */
+            z-index: 2;
+        }
+
+        .controls {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: var(--card-bg);
+            border-radius: 1rem;
+        }
+
+        input[type=range] {
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-content">
+        <div class="tool-container">
+            <h1 style="font-size: 2.5rem; font-weight:900; margin-bottom: 1rem;">Peekers Advantage Sim</h1>
+            <p style="color:var(--text-muted); margin-bottom: 3rem;">Simulate how latency (ping) affects when you see an
+                enemy peeking.</p>
+
+            <div class="controls">
+                <div>
+                    <label>Enemy Ping: <span id="pingVal">50</span>ms</label><br>
+                    <input type="range" min="0" max="200" value="50" oninput="updatePing(this.value)">
+                </div>
+                <div>
+                    <button class="join-pro-btn" style="width:auto; padding:0.5rem 1rem" onclick="peek()">SIMULATE
+                        PEEK</button>
+                    <button class="join-pro-btn" style="width:auto; padding:0.5rem 1rem; background:#374151"
+                        onclick="reset()">RESET</button>
+                </div>
+            </div>
+
+            <div class="sim-view">
+                <div class="wall"></div>
+                <!-- Enemy (Real Server Position) -->
+                <div class="enemy" id="serverEnemy"
+                    style="background:rgba(255,255,255,0.2); border:2px dashed white; z-index:1"></div>
+                <!-- Enemy (Client View) -->
+                <div class="enemy" id="clientEnemy"></div>
+
+                <div style="position:absolute; bottom:10px; left:10px; color:rgba(255,255,255,0.2)">Ghost = Server Pos,
+                    Red = Your View</div>
+            </div>
+
+            <p id="status" style="height:30px; color:#10b981; font-weight:bold"></p>
+        </div>
+    </div>
+
+    <script src="layout.js"></script>
+    <script>
+        const clientEnemy = document.getElementById('clientEnemy');
+        const serverEnemy = document.getElementById('serverEnemy');
+        const pingVal = document.getElementById('pingVal');
+        const status = document.getElementById('status');
+
+        let ping = 50;
+        let pos = 0; // 0 to 400
+        let serverPos = 0;
+        let clientPos = 0;
+        let animationId;
+        let isPeeking = false;
+
+        function updatePing(v) {
+            ping = parseInt(v);
+            pingVal.innerText = ping;
+        }
+
+        function reset() {
+            cancelAnimationFrame(animationId);
+            serverPos = 0;
+            clientPos = 0;
+            serverEnemy.style.left = '0px';
+            clientEnemy.style.left = '0px';
+            isPeeking = false;
+        }
+
+        function peek() {
+            if (isPeeking) return;
+            reset();
+            isPeeking = true;
+            status.innerText = "Enemy is peeking...";
+
+            let startTime = performance.now();
+
+            function loop(now) {
+                let elapsed = now - startTime;
+
+                // Server moves continuously: 500px/sec
+                serverPos = Math.min(600, elapsed * 0.5);
+                serverEnemy.style.left = serverPos + 'px';
+
+                // Client sees it Delayed by Ping
+                let clientTime = elapsed - ping;
+                if (clientTime < 0) clientTime = 0;
+                clientPos = Math.min(600, clientTime * 0.5);
+                clientEnemy.style.left = clientPos + 'px';
+
+                if (serverPos < 600 || clientPos < 600) {
+                    animationId = requestAnimationFrame(loop);
+                } else {
+                    isPeeking = false;
+                    status.innerText = "Peek Complete. Note the delay.";
+                }
+            }
+
+            animationId = requestAnimationFrame(loop);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse Text - AssetsToolsHub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sidebar.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .tool-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        textarea {
+            width: 100%;
+            height: 150px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--card-border);
+            border-radius: 1rem;
+            padding: 1rem;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        button {
+            padding: 0.75rem 1.5rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            filter: brightness(1.1);
+        }
+
+        .output {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            min-height: 100px;
+            word-break: break-all;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-content">
+        <div class="tool-container">
+            <h1 style="font-size: 2.5rem; font-weight:900; margin-bottom: 1rem;">Reverse Text Tool</h1>
+            <p style="color:var(--text-muted); margin-bottom: 2rem;">Reverse text, words, or lines instantly.</p>
+
+            <textarea id="input" placeholder="Type or paste text here..."></textarea>
+
+            <div class="btn-group">
+                <button onclick="process('chars')">Reverse Characters</button>
+                <button onclick="process('words')">Reverse Words</button>
+                <button onclick="process('lines')">Reverse Lines</button>
+            </div>
+
+            <h3 style="margin-bottom:0.5rem">Result:</h3>
+            <textarea id="output" readonly></textarea>
+            <button onclick="copy()"
+                style="margin-top:1rem; background:transparent; border:1px solid var(--primary)">Copy Result</button>
+        </div>
+    </div>
+
+    <script src="layout.js"></script>
+    <script>
+        function process(mode) {
+            const text = document.getElementById('input').value;
+            let res = '';
+
+            if (mode === 'chars') {
+                res = text.split('').reverse().join('');
+            } else if (mode === 'words') {
+                res = text.split(' ').reverse().join(' ');
+            } else if (mode === 'lines') {
+                res = text.split('\n').reverse().join('\n');
+            }
+
+            document.getElementById('output').value = res;
+        }
+
+        function copy() {
+            const el = document.getElementById('output');
+            el.select();
+            document.execCommand('copy');
+            alert('Copied!');
+        }
+    </script>
+</body>
+
+</html>

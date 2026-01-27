@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resolution Scaler - AssetsToolsHub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sidebar.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .tool-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 2rem;
+            padding: 3rem;
+        }
+
+        .aspect-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .aspect-btn {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--card-border);
+            color: var(--text-muted);
+            padding: 1rem;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all 0.2s;
+        }
+
+        .aspect-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .result-panel {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .res-text {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: white;
+        }
+
+        .scale-info {
+            text-align: right;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-content">
+        <div class="tool-container">
+            <div class="tool-header" style="text-align: center; margin-bottom: 3rem;">
+                <h1 style="font-size: 2.5rem; font-weight:800">Resolution Scaler</h1>
+                <p style="color:var(--text-muted)">Find the best render resolution for your performance needs.</p>
+            </div>
+
+            <div class="input-group">
+                <label class="input-label">Base Resolution</label>
+                <select id="base-res" class="select-field"
+                    style="width:100%; background:rgba(255,255,255,0.05); border:1px solid var(--card-border); color:white; padding:1rem; border-radius:12px; font-size:1.1rem; outline:none">
+                    <option value="1920x1080">1920 x 1080 (1080p)</option>
+                    <option value="2560x1440">2560 x 1440 (1440p)</option>
+                    <option value="3840x2160">3840 x 2160 (4K)</option>
+                    <option value="1280x720">1280 x 720 (720p)</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label class="input-label">Aspect Ratio</label>
+                <div class="aspect-grid">
+                    <button class="aspect-btn active" data-ratio="1.777">16:9</button>
+                    <button class="aspect-btn" data-ratio="1.333">4:3</button>
+                    <button class="aspect-btn" data-ratio="1.6">16:10</button>
+                    <button class="aspect-btn" data-ratio="2.333">21:9</button>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <div style="display:flex; justify-content:space-between">
+                    <label class="input-label">Render Scale</label>
+                    <span id="percent-val" style="font-weight:800; color:var(--primary)">75%</span>
+                </div>
+                <input type="range" id="scale" min="25" max="100" value="75"
+                    style="width:100%; margin-top:1rem; accent-color:var(--primary)">
+            </div>
+
+            <div class="result-panel">
+                <div class="res-text" id="target-res">1440 x 810</div>
+                <div class="scale-info">
+                    <div style="font-weight:800; color:white">Performance Gain</div>
+                    <div id="perf-gain" style="color:#10b981">+43% Approx.</div>
+                </div>
+            </div>
+
+            <p style="margin-top: 2rem; color:var(--text-muted); font-size:0.85rem">
+                *Calculation: Render Resolution is determined by scaling the horizontal and vertical dimensions by the
+                scale factor. Area reduction (which improves FPS) is typically quadratic (e.g., 50% scale = 25% original
+                pixel count).
+            </p>
+        </div>
+    </div>
+
+    <script src="layout.js"></script>
+    <script>
+        const baseSelect = document.getElementById('base-res');
+        const scaleInput = document.getElementById('scale');
+        const aspectBtns = document.querySelectorAll('.aspect-btn');
+        let currentRatio = 1.777;
+
+        function update() {
+            const base = baseSelect.value.split('x');
+            const hBase = parseInt(base[0]);
+            const vBase = parseInt(base[1]);
+            const scale = parseInt(scaleInput.value) / 100;
+
+            document.getElementById('percent-val').innerText = (scale * 100).toFixed(0) + '%';
+
+            // New Resolution
+            const newH = Math.round(hBase * scale);
+            const newV = Math.round(vBase * scale);
+
+            document.getElementById('target-res').innerText = `${newH} x ${newV}`;
+
+            // Perf Gain = 1 / (scale^2) - 1
+            const gain = (1 / (scale * scale)) - 1;
+            document.getElementById('perf-gain').innerText = `+${(gain * 100).toFixed(0)}% Approx.`;
+        }
+
+        aspectBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                aspectBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentRatio = parseFloat(btn.dataset.ratio);
+                update();
+            });
+        });
+
+        baseSelect.addEventListener('change', update);
+        scaleInput.addEventListener('input', update);
+        update();
+    </script>
+</body>
+
+</html>

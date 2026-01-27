@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown to Text - AssetsToolsHub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sidebar.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        .tool-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        textarea {
+            width: 100%;
+            height: 250px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--card-border);
+            border-radius: 1rem;
+            padding: 1rem;
+            color: white;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-content">
+        <div class="tool-container">
+            <h1 style="font-size: 2.5rem; font-weight:900; margin-bottom: 1rem;">Markdown to Text</h1>
+            <p style="color:var(--text-muted); margin-bottom: 2rem;">Strip markdown formatting to get clean plain text.
+            </p>
+
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem">
+                <div>
+                    <h3>Markdown Input</h3>
+                    <textarea id="input" placeholder="# Heading..." oninput="convert()"></textarea>
+                </div>
+                <div>
+                    <h3>Plain Text Output</h3>
+                    <textarea id="output" readonly></textarea>
+                </div>
+            </div>
+
+            <button onclick="copy()" class="join-pro-btn" style="width:100%">Copy Plain Text</button>
+        </div>
+    </div>
+
+    <script src="layout.js"></script>
+    <script>
+        function convert() {
+            const md = document.getElementById('input').value;
+            // Strategy: Convert MD to HTML using marked, then strip tags.
+            // Or use regex. regex is hard for md.
+            // Let's use simple regex replacers for common md.
+
+            // Or use marked to get HTML then textContent.
+            // Assuming marked is available via CDN.
+            try {
+                if (window.marked) {
+                    const html = marked.parse(md);
+                    const tmp = document.createElement("DIV");
+                    tmp.innerHTML = html;
+                    document.getElementById('output').value = tmp.textContent || tmp.innerText || "";
+                } else {
+                    // Fallback regex
+                    let text = md
+                        .replace(/^#+\s+/gm, '') // Headers
+                        .replace(/(\*\*|__)(.*?)\1/g, '$2') // Bold
+                        .replace(/(\*|_)(.*?)\1/g, '$2') // Italic
+                        .replace(/!\[.*?\]\(.*?\)/g, '') // Images
+                        .replace(/\[(.*?)\]\(.*?\)/g, '$1') // Links
+                        .replace(/`{3}[\s\S]*?`{3}/g, '') // Code blocks
+                        .replace(/`(.+?)`/g, '$1') // Inline code
+                        .replace(/^\s*-\s+/gm, '') // List items
+                        .replace(/^\s*\d+\.\s+/gm, '') // Ordered list
+                        .replace(/^\s*>\s+/gm, ''); // Blockquotes
+                    document.getElementById('output').value = text;
+                }
+            } catch (e) {
+                console.error(e);
+            }
+        }
+
+        function copy() {
+            document.getElementById('output').select();
+            document.execCommand('copy');
+            alert('Copied!');
+        }
+    </script>
+</body>
+
+</html>

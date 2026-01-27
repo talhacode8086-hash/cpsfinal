@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Skipping Checker - AssetsToolsHub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sidebar.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .tool-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .checker-box {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 2rem;
+            padding: 3rem;
+            margin: 2rem 0;
+        }
+
+        .status-pill {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 0.8rem;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+        }
+
+        .pixel-grid {
+            display: grid;
+            grid-template-columns: repeat(20, 1fr);
+            gap: 2px;
+            margin: 2rem 0;
+            background: #111;
+            padding: 2px;
+            border-radius: 4px;
+        }
+
+        .pixel-cell {
+            background: #333;
+            aspect-ratio: 1;
+            border-radius: 1px;
+        }
+
+        .pixel-cell.active {
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary-glow);
+        }
+
+        .input-group-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            text-align: left;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-content">
+        <div class="tool-container">
+            <h1 style="font-size: 2.5rem; font-weight:900; margin-bottom: 1rem;">Pixel Skipping Checker <span
+                    style="color:#fbbf24; font-size:1rem; vertical-align:middle; margin-left:10px">PRO</span></h1>
+            <p style="color:var(--text-muted); margin-bottom: 3rem;">Detect if your high sensitivity setting is causing
+                'staircase' aiming.</p>
+
+            <div class="checker-box">
+                <div id="status" class="status-pill" style="background: rgba(16, 185, 129, 0.1); color: #10b981;">NO
+                    SKIPPING DETECTED</div>
+
+                <p style="font-weight: 700;">Slowly move your mouse horizontally in the box below:</p>
+                <div class="pixel-grid" id="grid"></div>
+
+                <div class="input-group-row">
+                    <div class="input-group">
+                        <label class="input-label">In-Game Sensitivity</label>
+                        <input type="number" id="sens" class="input-field" value="1.0" step="0.1">
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label">Windows Multiplier (6/11 = 1.0)</label>
+                        <select id="win" class="input-field" style="background: #111; color: white;">
+                            <option value="0.03125">1/11</option>
+                            <option value="0.0625">2/11</option>
+                            <option value="0.25">3/11</option>
+                            <option value="0.5">4/11</option>
+                            <option value="0.75">5/11</option>
+                            <option value="1.0" selected>6/11 (Default)</option>
+                            <option value="1.5">7/11</option>
+                            <option value="2.0">8/11</option>
+                            <option value="2.5">9/11</option>
+                            <option value="3.0">10/11</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: left; background: rgba(0,0,0,0.2); padding: 2rem; border-radius: 1.5rem;">
+                <h3 style="margin-bottom: 1rem">What is Pixel Skipping?</h3>
+                <p style="color:var(--text-muted); line-height:1.6">Pixel skipping occurs when the software multiplier
+                    (Windows or Game) is set high enough that 1 mouse count (dot) results in a movement of 2 or more
+                    pixels. This is generally undesirable for precise aim. <b>Rule of thumb:</b> Keep Windows at 6/11
+                    and use higher DPI instead of higher in-game sens.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="layout.js"></script>
+    <script>
+        const grid = document.getElementById('grid');
+        const status = document.getElementById('status');
+        const sensInp = document.getElementById('sens');
+        const winInp = document.getElementById('win');
+
+        // Initialize grid
+        for (let i = 0; i < 60; i++) {
+            const cell = document.createElement('div');
+            cell.className = 'pixel-cell';
+            grid.appendChild(cell);
+        }
+
+        let currentPos = 0;
+        let lastX = 0;
+
+        grid.addEventListener('mousemove', (e) => {
+            const sens = parseFloat(sensInp.value) || 1.0;
+            const win = parseFloat(winInp.value) || 1.0;
+            const multiplier = sens * win;
+
+            const dx = e.clientX - lastX;
+            if (Math.abs(dx) > 0) {
+                currentPos = (currentPos + dx) % 60;
+                if (currentPos < 0) currentPos += 60;
+
+                // Update visual
+                const cells = document.querySelectorAll('.pixel-cell');
+                cells.forEach(c => c.classList.remove('active'));
+
+                const idx = Math.floor(currentPos);
+                cells[idx].classList.add('active');
+
+                // Skipping Check
+                if (multiplier > 1.0) {
+                    status.innerText = `SKIPPING DETECTED (${multiplier.toFixed(1)}x)`;
+                    status.style.background = "rgba(239, 68, 68, 0.1)";
+                    status.style.color = "#ef4444";
+                } else {
+                    status.innerText = "NO SKIPPING DETECTED";
+                    status.style.background = "rgba(16, 185, 129, 0.1)";
+                    status.style.color = "#10b981";
+                }
+            }
+            lastX = e.clientX;
+        });
+    </script>
+</body>
+
+</html>

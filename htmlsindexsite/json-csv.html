@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON to CSV Converter - AssetsToolsHub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sidebar.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .tool-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        textarea {
+            width: 100%;
+            height: 300px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--card-border);
+            border-radius: 1rem;
+            padding: 1rem;
+            color: white;
+            margin-bottom: 1rem;
+            font-family: monospace;
+            resize: vertical;
+        }
+
+        button {
+            padding: 0.75rem 1.5rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-content">
+        <div class="tool-container">
+            <h1 style="font-size: 2.5rem; font-weight:900; margin-bottom: 1rem;">JSON to CSV Converter</h1>
+            <p style="color:var(--text-muted); margin-bottom: 2rem;">Convert JSON data to CSV format for spreadsheets.
+            </p>
+
+            <div class="grid">
+                <div>
+                    <h3>Input JSON</h3>
+                    <textarea id="json" placeholder='[{"name":"John","age":30}]'></textarea>
+                </div>
+                <div>
+                    <h3>Output CSV</h3>
+                    <textarea id="csv" readonly></textarea>
+                </div>
+            </div>
+
+            <button onclick="convert()">Convert JSON to CSV</button>
+        </div>
+    </div>
+
+    <script src="layout.js"></script>
+    <script>
+        function convert() {
+            try {
+                const json = JSON.parse(document.getElementById('json').value);
+                if (!Array.isArray(json) || json.length === 0) {
+                    alert("Please provide a valid JSON array.");
+                    return;
+                }
+
+                const headers = Object.keys(json[0]);
+                const csv = [headers.join(',')];
+
+                for (const obj of json) {
+                    const row = headers.map(h => {
+                        const val = obj[h] || '';
+                        return typeof val === 'string' && val.includes(',') ? `"${val}"` : val;
+                    });
+                    csv.push(row.join(','));
+                }
+
+                document.getElementById('csv').value = csv.join('\n');
+            } catch (e) {
+                alert("Invalid JSON: " + e.message);
+            }
+        }
+    </script>
+</body>
+
+</html>

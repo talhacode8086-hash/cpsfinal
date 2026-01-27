@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burst Timing Trainer - AssetsToolsHub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sidebar.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .tool-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .rhythm-bar {
+            height: 100px;
+            background: #111;
+            border: 2px solid var(--card-border);
+            border-radius: 1rem;
+            position: relative;
+            overflow: hidden;
+            margin: 3rem 0;
+        }
+
+        .hit-marker {
+            width: 4px;
+            height: 100%;
+            background: white;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+
+        .note {
+            width: 20px;
+            height: 60px;
+            background: var(--primary);
+            border-radius: 10px;
+            position: absolute;
+            top: 20px;
+            box-shadow: 0 0 15px var(--primary);
+        }
+
+        .feedback-text {
+            height: 50px;
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-content">
+        <div class="tool-container">
+            <h1 style="font-size: 2.5rem; font-weight:900; margin-bottom: 1rem;">Burst Timing Trainer</h1>
+            <p style="color:var(--text-muted); margin-bottom: 3rem;">Click exactly when the block crosses the center
+                line to master burst rhythm.</p>
+
+            <div class="feedback-text" id="feedback"></div>
+
+            <div class="rhythm-bar" id="track">
+                <div class="hit-marker"></div>
+            </div>
+
+            <div style="display:flex; justify-content:center; gap:2rem">
+                <div>
+                    <div style="font-size:3rem; font-weight:900; color:white" id="score">0</div>
+                    <div style="color:var(--text-muted)">STREAK</div>
+                </div>
+                <div>
+                    <div style="font-size:3rem; font-weight:900; color:var(--primary)" id="best">0</div>
+                    <div style="color:var(--text-muted)">BEST</div>
+                </div>
+            </div>
+
+            <button class="join-pro-btn" style="width:100%; margin-top:3rem" onclick="start()" id="startBtn">START
+                TRAINING</button>
+            <p style="margin-top:1rem; color:var(--text-muted)">Press <b>SPACE</b> or <b>CLICK</b> anywhere to hit.</p>
+        </div>
+    </div>
+
+    <script src="layout.js"></script>
+    <script>
+        const track = document.getElementById('track');
+        const feedback = document.getElementById('feedback');
+        const scoreEl = document.getElementById('score');
+        const bestEl = document.getElementById('best');
+        const startBtn = document.getElementById('startBtn');
+
+        let isRunning = false;
+        let notes = [];
+        let score = 0;
+        let best = 0;
+        let speed = 5; // px per frame
+        let intervalId;
+
+        // Audio
+        const ac = new (window.AudioContext || window.webkitAudioContext)();
+
+        function start() {
+            if (ac.state === 'suspended') ac.resume();
+            if (isRunning) return;
+
+            isRunning = true;
+            score = 0;
+            notes = [];
+            scoreEl.innerText = 0;
+            startBtn.style.display = 'none';
+            track.innerHTML = '<div class="hit-marker"></div>';
+
+            loop();
+            spawnLoop();
+        }
+
+        function spawnLoop() {
+            if (!isRunning) return;
+            spawnNote();
+            // Random interval between 1s and 2s
+            setTimeout(spawnLoop, Math.random() * 1000 + 800);
+        }
+
+        function spawnNote() {
+            const note = document.createElement('div');
+            note.className = 'note';
+            // Start from right
+            note.style.left = '800px';
+            track.appendChild(note);
+            notes.push({ el: note, x: 800, active: true });
+        }
+
+        function loop() {
+            if (!isRunning) return;
+
+            notes.forEach(n => {
+                if (!n.active) return;
+                n.x -= speed;
+                n.el.style.left = n.x + 'px';
+
+                // Miss check
+                if (n.x < 350 && n.active) { // Center is ~400. if passed...
+                    // Wait, center is 50% of 800 = 400.
+                    // If note width is 20, center is 400. Hit zone 380-420.
+                    if (n.x < 360) {
+                        n.active = false;
+                        n.el.style.opacity = 0.5;
+                        n.el.style.backgroundColor = '#ef4444';
+                        endStreak();
+                    }
+                }
+            });
+
+            // Cleanup
+            notes = notes.filter(n => n.x > -50);
+
+            requestAnimationFrame(loop);
+        }
+
+        function checkHit() {
+            if (!isRunning) return;
+
+            // Find closest note
+            const target = notes.find(n => n.active && Math.abs(n.x - 390) < 60); // 390 to account for width
+
+            if (target) {
+                const diff = target.x - 390; // 0 is perfect
+                const absDiff = Math.abs(diff);
+
+                if (absDiff < 15) {
+                    showFeedback("PERFECT!", "#10b981");
+                    score++;
+                    playHitSound(800);
+                } else if (absDiff < 40) {
+                    showFeedback("GOOD", "#3b82f6");
+                    score++;
+                    playHitSound(600);
+                } else {
+                    showFeedback("MISS", "#ef4444");
+                    endStreak();
+                    return;
+                }
+
+                target.active = false;
+                target.el.remove();
+
+                scoreEl.innerText = score;
+                if (score > best) {
+                    best = score;
+                    bestEl.innerText = best;
+                }
+            } else {
+                // Clicked with no target
+                showFeedback("MISS", "#ef4444");
+                endStreak();
+            }
+        }
+
+        function endStreak() {
+            score = 0;
+            scoreEl.innerText = 0;
+            feedback.innerText = "MISS!";
+            feedback.style.color = "#ef4444";
+        }
+
+        function showFeedback(text, color) {
+            feedback.innerText = text;
+            feedback.style.color = color;
+            feedback.style.transform = "scale(1.2)";
+            setTimeout(() => feedback.style.transform = "scale(1)", 100);
+        }
+
+        function playHitSound(freq) {
+            const osc = ac.createOscillator();
+            const g = ac.createGain();
+            osc.connect(g);
+            g.connect(ac.destination);
+            osc.frequency.value = freq;
+            g.gain.value = 0.1;
+            g.gain.exponentialRampToValueAtTime(0.01, ac.currentTime + 0.1);
+            osc.start();
+            osc.stop(ac.currentTime + 0.1);
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.code === 'Space') {
+                e.preventDefault();
+                checkHit();
+            }
+        });
+
+        document.addEventListener('mousedown', (e) => {
+            if (e.target.tagName !== 'BUTTON') checkHit();
+        });
+
+    </script>
+</body>
+
+</html>

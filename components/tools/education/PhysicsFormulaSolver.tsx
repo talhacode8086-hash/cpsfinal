@@ -65,8 +65,8 @@ export default function PhysicsFormulaSolver() {
                             )}
                             {mode === 'Force' && (
                                 <>
-                                    <PhyInput label="Mass (m)" sub="kg" value={vals.m} onChange={(v) => setVals({ ...vals, m: v })} />
-                                    <PhyInput label="Accel (a)" sub="m/sÂ²" value={vals.a} onChange={(v) => setVals({ ...vals, a: v })} />
+                                    <PhyInput label="Mass (m)" sub="kg" value={vals.m} onChange={(v: string) => setVals({ ...vals, m: v })} />
+                                    <PhyInput label="Accel (a)" sub="m/s²" value={vals.a} onChange={(v: string) => setVals({ ...vals, a: v })} />
                                 </>
                             )}
                             {mode === 'Energy' && (

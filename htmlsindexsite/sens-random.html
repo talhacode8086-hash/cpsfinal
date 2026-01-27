@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sensitivity Randomizer - AssetsToolsHub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sidebar.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .tool-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 2rem;
+            padding: 3rem;
+        }
+
+        .random-box {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 2rem;
+            padding: 4rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            border: 1px solid var(--card-border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .random-val {
+            font-size: 5rem;
+            font-weight: 900;
+            color: var(--primary);
+            text-shadow: 0 0 40px var(--primary-glow);
+            transition: transform 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .controls-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .btn-generate {
+            grid-column: span 2;
+            background: white;
+            color: black;
+            border: none;
+            padding: 1.5rem;
+            border-radius: 15px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            cursor: pointer;
+            margin-top: 2rem;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .btn-generate:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-content">
+        <div class="tool-container">
+            <div class="tool-header" style="text-align: center; margin-bottom: 3rem;">
+                <h1 style="font-size: 2.5rem; font-weight:800">Sensitivity Randomizer</h1>
+                <p style="color:var(--text-muted)">Break aim plateaus by training with varying sensitivities.</p>
+            </div>
+
+            <div class="random-box">
+                <div class="random-val" id="res-val">1.00</div>
+                <div
+                    style="font-weight:700; color:var(--text-muted); margin-top:1rem; text-transform:uppercase; letter-spacing:0.1em">
+                    Current Training Sensitivity</div>
+            </div>
+
+            <div class="controls-grid">
+                <div class="input-group">
+                    <label class="input-label">Base Sensitivity</label>
+                    <input type="number" id="base" class="input-field" value="1.0" step="0.01">
+                </div>
+                <div class="input-group">
+                    <label class="input-label">Variation Range (± %)</label>
+                    <input type="number" id="range" class="input-field" value="20" min="1" max="100">
+                </div>
+                <button class="btn-generate" id="gen-btn">
+                    <i data-lucide="dice-5"></i> GENERATE NEW SENS
+                </button>
+            </div>
+
+            <div style="margin-top: 3rem; background:rgba(255,255,255,0.02); padding:2rem; border-radius:1.5rem">
+                <h3 style="margin-bottom: 1rem">Theory: Why Randomize?</h3>
+                <p style="color:var(--text-muted); font-size:0.95rem; line-height:1.6">
+                    Professional coaches (like those in Voltaic) recommend practicing with slightly different
+                    sensitivities to force your brain to focus on <b>pure mouse control</b> rather than relying on
+                    autopilot muscle memory. This makes your aim more adaptable and consistent.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="layout.js"></script>
+    <script>
+        const genBtn = document.getElementById('gen-btn');
+        const resVal = document.getElementById('res-val');
+
+        function generate() {
+            const base = parseFloat(document.getElementById('base').value) || 1.0;
+            const range = parseFloat(document.getElementById('range').value) || 20;
+
+            const multiplier = 1 + ((Math.random() * 2 - 1) * (range / 100));
+            const result = base * multiplier;
+
+            // Animation
+            resVal.style.transform = 'scale(0.8)';
+            setTimeout(() => {
+                resVal.innerText = result.toFixed(2);
+                resVal.style.transform = 'scale(1)';
+            }, 50);
+        }
+
+        genBtn.addEventListener('click', generate);
+    </script>
+</body>
+
+</html>

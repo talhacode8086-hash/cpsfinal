@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Latency Test - AssetsToolsHub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sidebar.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .tool-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .latency-circle {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: #0d1117;
+            border: 4px solid #374151;
+            margin: 3rem auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            cursor: pointer;
+            transition: 0.1s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .latency-circle.active {
+            border-color: var(--primary);
+            background: #1f2937;
+        }
+
+        .latency-circle.flash {
+            background: #fff !important;
+            transition: 0s;
+        }
+
+        .stat-val {
+            font-size: 3rem;
+            font-weight: 900;
+            color: white;
+            line-height: 1;
+        }
+
+        .stat-label {
+            color: var(--text-muted);
+            font-weight: 600;
+            margin-top: 5px;
+        }
+
+        .results-box {
+            display: none;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 2rem;
+            border-radius: 1.5rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-content">
+        <div class="tool-container">
+            <h1 style="font-size: 2.5rem; font-weight:900; margin-bottom: 1rem;">Audio Latency Estimator <span
+                    style="color:#fbbf24; font-size:1rem; vertical-align:middle; margin-left:10px">PRO</span></h1>
+            <p style="color:var(--text-muted); margin-bottom: 3rem;">Estimate the round-trip delay from Key Press ->
+                Logic -> Audio Output.</p>
+
+            <div class="latency-circle" id="circle" onclick="startTest()">
+                <div class="stat-val" id="mainText">START</div>
+                <div class="stat-label">Click to initialize</div>
+            </div>
+
+            <div class="results-box" id="resultBox">
+                <div style="font-size:0.9rem; color:var(--text-muted); text-transform:uppercase; margin-bottom:1rem">
+                    ESTIMATED SYSTEM LATENCY</div>
+                <div class="stat-val" style="color:var(--primary); font-size:4rem" id="latencyVal">0 ms</div>
+                <p style="margin-top:1rem; color:#9ca3af; line-height:1.6">This is the Browser's reported Output Latency
+                    + an estimated hardware buffer. Actual "perceived" latency involves your monitor and human reaction.
+                </p>
+            </div>
+
+            <div
+                style="margin-top:3rem; text-align:left; background:rgba(255,255,255,0.03); padding:2rem; border-radius:1.5rem">
+                <h3>Interactive Rhythm Test</h3>
+                <p style="color:var(--text-muted); margin-bottom:1rem">Press <b>SPACE</b> exactly when you hear the
+                    beep. We'll measure the offset.</p>
+                <button class="join-pro-btn" style="width: auto; padding: 0.8rem 2rem;" onclick="startRhythm()">START
+                    RHYTHM TEST</button>
+                <div id="rhythmResult" style="margin-top:1rem; font-weight:700; color:white"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="layout.js"></script>
+    <script>
+        const ac = new (window.AudioContext || window.webkitAudioContext)();
+        const circle = document.getElementById('circle');
+        const mainText = document.getElementById('mainText');
+        const resultBox = document.getElementById('resultBox');
+        const latencyVal = document.getElementById('latencyVal');
+        const rhythmResult = document.getElementById('rhythmResult');
+
+        function startTest() {
+            if (ac.state === 'suspended') ac.resume();
+
+            // Get base latency from API
+            const baseLatency = (ac.baseLatency || 0) * 1000;
+            const outputLatency = (ac.outputLatency || 0) * 1000;
+            const total = baseLatency + outputLatency + 10; // +10ms assumed hardware overhead
+
+            mainText.innerText = Math.round(total);
+            document.querySelector('.stat-label').innerText = "ms Detected";
+
+            resultBox.style.display = 'block';
+            latencyVal.innerText = Math.round(total) + " ms";
+
+            playSound();
+        }
+
+        function playSound() {
+            const osc = ac.createOscillator();
+            const gain = ac.createGain();
+            osc.connect(gain);
+            gain.connect(ac.destination);
+
+            osc.frequency.value = 800; // Beep
+            gain.gain.setValueAtTime(0.1, ac.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.001, ac.currentTime + 0.1);
+
+            osc.start();
+            osc.stop(ac.currentTime + 0.1);
+
+            // Visual flash
+            circle.classList.add('flash');
+            setTimeout(() => circle.classList.remove('flash'), 50);
+        }
+
+        // Rhythm Test Logic
+        let rhythmInterval;
+        let nextNoteTime = 0;
+        let isRhythmRunning = false;
+
+        function startRhythm() {
+            if (isRhythmRunning) {
+                stopRhythm();
+                return;
+            }
+
+            isRhythmRunning = true;
+            document.querySelector('button[onclick="startRhythm()"]').innerText = "STOP TEST";
+            nextNoteTime = ac.currentTime + 0.5;
+            rhythmResult.innerText = "Listen to the beat... Press SPACE on the beat!";
+
+            scheduleNext();
+        }
+
+        function stopRhythm() {
+            isRhythmRunning = false;
+            clearTimeout(rhythmInterval);
+            document.querySelector('button[onclick="startRhythm()"]').innerText = "START RHYTHM TEST";
+            rhythmResult.innerText = "";
+        }
+
+        function scheduleNext() {
+            if (!isRhythmRunning) return;
+
+            const now = ac.currentTime;
+            if (nextNoteTime < now + 0.1) {
+                playClick(nextNoteTime);
+                nextNoteTime += 1.0; // 60 BPM
+            }
+            rhythmInterval = setTimeout(scheduleNext, 20);
+        }
+
+        function playClick(time) {
+            const osc = ac.createOscillator();
+            const gain = ac.createGain();
+            osc.connect(gain);
+            gain.connect(ac.destination);
+            osc.frequency.setValueAtTime(1200, time);
+            gain.gain.setValueAtTime(0.1, time);
+            gain.gain.exponentialRampToValueAtTime(0.001, time + 0.05);
+            osc.start(time);
+            osc.stop(time + 0.05);
+        }
+
+        window.addEventListener('keydown', (e) => {
+            if (e.code === 'Space' && isRhythmRunning) {
+                e.preventDefault();
+                // Compare click time vs closest beat
+                const now = ac.currentTime;
+                // Beat happens every 1.0s starting from... wait need reference
+                // Simplified: compare to nextNoteTime - 1.0
+                const target = nextNoteTime - 1.0;
+                const diff = (now - target) * 1000;
+
+                let msg = "";
+                if (Math.abs(diff) < 50) msg = "PERFECT";
+                else if (diff < 0) msg = "EARLY";
+                else msg = "LATE";
+
+                rhythmResult.innerHTML = `<span style="color:${Math.abs(diff) < 50 ? '#10b981' : '#ef4444'}">${msg} (${Math.round(diff)}ms)</span>`;
+            }
+        });
+    </script>
+</body>
+
+</html>

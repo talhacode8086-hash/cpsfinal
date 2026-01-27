@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sensor Jitter Test - AssetsToolsHub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sidebar.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .tool-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .chart-box {
+            width: 100%;
+            height: 400px;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 2rem;
+            margin: 2rem 0;
+            padding: 1.5rem;
+        }
+
+        .swipe-zone {
+            width: 100%;
+            height: 150px;
+            background: rgba(99, 102, 241, 0.05);
+            border: 2px dashed var(--primary);
+            border-radius: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: crosshair;
+            margin-bottom: 2rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 1.5rem;
+            border-radius: 1.5rem;
+        }
+
+        .stat-val {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-content">
+        <div class="tool-container">
+            <h1 style="font-size: 2.5rem; font-weight:900; margin-bottom: 1rem;">Sensor Jitter / Skip Test <span
+                    style="color:#fbbf24; font-size:1rem; vertical-align:middle; margin-left:10px">PRO</span></h1>
+            <p style="color:var(--text-muted); margin-bottom: 3rem;">Detect sensor malfunctions or surface
+                incompatibility by analyzing count consistency.</p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-val" id="jitter">0.0%</div>
+                    <div class="stat-label">Jitter Score</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-val" id="skips">0</div>
+                    <div class="stat-label">Skips Detected</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-val" id="status">Good</div>
+                    <div class="stat-label">Sensor Health</div>
+                </div>
+            </div>
+
+            <div class="chart-box">
+                <canvas id="jitterChart"></canvas>
+            </div>
+
+            <div class="swipe-zone" id="zone">
+                <h3 style="color:var(--primary); font-weight: 800;">SWIPE FAST HORIZONTALLY</h3>
+            </div>
+
+            <div style="text-align: left; background: rgba(0,0,0,0.2); padding: 2rem; border-radius: 1.5rem;">
+                <h3 style="margin-bottom: 1rem">What is Sensor Jitter?</h3>
+                <p style="color:var(--text-muted); line-height: 1.6;">Jitter happens when a sensor cannot accurately
+                    track the surface, leading to "noisy" coordinates. Skipping happens when the sensor misses counts
+                    entirely during high-speed moves. High-quality sensors (PixArt 3360/3389/3395) should show a
+                    <b>perfectly smooth line</b> in the graph above.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="layout.js"></script>
+    <script>
+        const ctx = document.getElementById('jitterChart').getContext('2d');
+        const jitterEl = document.getElementById('jitter');
+        const skipsEl = document.getElementById('skips');
+        const statusEl = document.getElementById('status');
+
+        let dataPoints = new Array(50).fill(0);
+        let chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: new Array(50).fill(''),
+                datasets: [{
+                    label: 'Momentum (px/event)',
+                    data: dataPoints,
+                    borderColor: '#6366f1',
+                    borderWidth: 2,
+                    tension: 0.4,
+                    pointRadius: 0,
+                    fill: true,
+                    backgroundColor: 'rgba(99, 102, 241, 0.1)'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: { min: 0, max: 200, grid: { display: false } },
+                    x: { display: false }
+                },
+                animation: false,
+                plugins: { legend: { display: false } }
+            }
+        });
+
+        const zone = document.getElementById('zone');
+        let totalSkips = 0;
+        let lastVel = 0;
+
+        zone.onmousemove = (e) => {
+            const vel = Math.abs(e.movementX);
+            if (vel === 0) return;
+
+            dataPoints.push(vel);
+            dataPoints.shift();
+            chart.update();
+
+            // Detect skipping (sudden 0 or extremely high jump compared to last)
+            if (vel > 100 && lastVel < 10 && lastVel !== 0) {
+                totalSkips++;
+                skipsEl.innerText = totalSkips;
+            }
+
+            // Calculate Jitter (Variation in velocity)
+            const avg = dataPoints.reduce((a, b) => a + b) / 50;
+            const jitter = dataPoints.reduce((a, b) => a + Math.abs(b - avg), 0) / 50;
+            const jitterPct = (jitter / (avg || 1)) * 100;
+
+            jitterEl.innerText = jitterPct.toFixed(1) + '%';
+
+            if (jitterPct < 15) {
+                statusEl.innerText = "Excellent";
+                statusEl.style.color = "#10b981";
+            } else if (jitterPct < 30) {
+                statusEl.innerText = "Average";
+                statusEl.style.color = "#fbbf24";
+            } else {
+                statusEl.innerText = "Poor / Dirty";
+                statusEl.style.color = "#ef4444";
+            }
+
+            lastVel = vel;
+        };
+    </script>
+</body>
+
+</html>

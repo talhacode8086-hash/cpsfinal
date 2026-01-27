@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Glide Test - AssetsToolsHub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sidebar.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .tool-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .glide-surface {
+            width: 100%;
+            height: 400px;
+            background: #000;
+            border: 1px solid var(--card-border);
+            border-radius: 2rem;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+            cursor: none;
+        }
+
+        .velocity-meter {
+            width: 100%;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .meter-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #10b981, #fbbf24, #ef4444);
+            width: 0%;
+            transition: width 0.1s;
+        }
+
+        .puck {
+            width: 30px;
+            height: 30px;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+            pointer-events: none;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 1.5rem;
+            border-radius: 1.5rem;
+        }
+
+        .stat-val {
+            font-size: 2.22rem;
+            font-weight: 800;
+            color: #10b981;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-content">
+        <div class="tool-container">
+            <h1 style="font-size: 2.5rem; font-weight:900; margin-bottom: 1rem;">Mouse Glide Test <span
+                    style="color:#fbbf24; font-size:1rem; vertical-align:middle; margin-left:10px">PRO</span></h1>
+            <p style="color:var(--text-muted); margin-bottom: 3rem;">Evaluate your mouse feet and mousepad friction.
+                Smoother move = better glide rating.</p>
+
+            <div class="velocity-meter">
+                <div class="meter-fill" id="meterFill"></div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-val" id="smoothness">0%</div>
+                    <div class="stat-label">Smoothness Rating</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-val" id="peakVel">0</div>
+                    <div class="stat-label">Peak Velocity</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-val" id="friction">Low</div>
+                    <div class="stat-label">Estimated Friction</div>
+                </div>
+            </div>
+
+            <div class="glide-surface" id="surface">
+                <div class="puck" id="puck"></div>
+                <div style="position: absolute; bottom: 20px; width: 100%; color: var(--text-muted); font-weight: 600;">
+                    MOVE MOUSE IN CIRCLES SLOWLY & STEADILY</div>
+            </div>
+
+            <div style="text-align: left; background: rgba(0,0,0,0.2); padding: 2rem; border-radius: 1.5rem;">
+                <h3 style="margin-bottom: 1rem">Glide Theory</h3>
+                <p style="color:var(--text-muted); line-height:1.6">Smoothness is calculated by analyzing the
+                    micro-fluctuations in velocity. If your mouse "stutters" or "catches" on the pad, the velocity will
+                    jump inconsistently. Glass pads and PTFE feet typically score >95%.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="layout.js"></script>
+    <script>
+        const surface = document.getElementById('surface');
+        const puck = document.getElementById('puck');
+        const fill = document.getElementById('meterFill');
+        const smoothEl = document.getElementById('smoothness');
+        const peakEl = document.getElementById('peakVel');
+        const frictionEl = document.getElementById('friction');
+
+        let lastX = 0, lastY = 0, lastTime = 0;
+        let velocities = [];
+        let peakVal = 0;
+
+        surface.addEventListener('mousemove', (e) => {
+            const now = performance.now();
+            const rect = surface.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            puck.style.left = x + 'px';
+            puck.style.top = y + 'px';
+
+            if (lastTime > 0) {
+                const dt = (now - lastTime) / 1000;
+                const dist = Math.sqrt(Math.pow(x - lastX, 2) + Math.pow(y - lastY, 2));
+                const vel = dist / dt;
+
+                if (vel > 50) { // Ignore micro-jitters when still
+                    velocities.push(vel);
+                    if (velocities.length > 50) velocities.shift();
+
+                    if (vel > peakVal) {
+                        peakVal = vel;
+                        peakEl.innerText = Math.round(peakVal);
+                    }
+
+                    updateStats();
+                }
+
+                fill.style.width = Math.min(100, (vel / 3000) * 100) + '%';
+            }
+
+            lastX = x; lastY = y; lastTime = now;
+        });
+
+        function updateStats() {
+            if (velocities.length < 20) return;
+
+            const avg = velocities.reduce((a, b) => a + b) / velocities.length;
+            const variance = velocities.reduce((a, b) => a + Math.pow(b - avg, 2), 0) / velocities.length;
+            const stdDev = Math.sqrt(variance);
+            const cv = stdDev / avg; // Coefficient of variation
+
+            const smoothness = Math.max(0, 100 - (cv * 200));
+            smoothEl.innerText = Math.round(smoothness) + '%';
+
+            if (smoothness > 90) frictionEl.innerText = "Ultra Low";
+            else if (smoothness > 75) frictionEl.innerText = "Low";
+            else if (smoothness > 50) frictionEl.innerText = "Medium";
+            else frictionEl.innerText = "High / Muddy";
+
+            smoothEl.style.color = smoothness > 80 ? "#10b981" : (smoothness > 50 ? "#fbbf24" : "#ef4444");
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Macro Delay Tester - AssetsToolsHub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sidebar.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .tool-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .sequence-display {
+            background: #0d1117;
+            border: 1px solid var(--card-border);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            margin: 2rem 0;
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            gap: 10px;
+            font-family: monospace;
+        }
+
+        .key-node {
+            background: #1f2937;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            border: 1px solid #374151;
+            color: white;
+            font-weight: 700;
+        }
+
+        .delay-line {
+            height: 2px;
+            background: #4b5563;
+            width: 30px;
+            position: relative;
+        }
+
+        .delay-label {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.8rem;
+            color: var(--primary);
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .controls {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-content">
+        <div class="tool-container">
+            <h1 style="font-size: 2.5rem; font-weight:900; margin-bottom: 1rem;">Macro Delay Tester <span
+                    style="color:#fbbf24; font-size:1rem; vertical-align:middle; margin-left:10px">PRO</span></h1>
+            <p style="color:var(--text-muted); margin-bottom: 3rem;">Measure exact timing between keystrokes to program
+                perfect macros.</p>
+
+            <div class="sequence-display" id="display">
+                <span style="color:#4b5563">Type your macro sequence here...</span>
+            </div>
+
+            <div class="controls">
+                <button class="join-pro-btn" style="width:auto; padding:0.8rem 2rem" onclick="reset()">CLEAR
+                    SEQUENCE</button>
+            </div>
+
+            <div
+                style="text-align:left; margin-top:2rem; background:rgba(255,255,255,0.03); padding:2rem; border-radius:1rem;">
+                <h3>Usage Tip</h3>
+                <p style="color:var(--text-muted)">Type the combo you want to automate (e.g., Crouch Jump, or Spell
+                    Combo). Note the millisecond delays between each key. Input these values into your mouse/keyboard
+                    software for accurate reproduction.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="layout.js"></script>
+    <script>
+        const display = document.getElementById('display');
+        let lastTime = 0;
+        let events = [];
+
+        window.addEventListener('keydown', (e) => {
+            if (e.target.tagName === 'BUTTON') return;
+            e.preventDefault();
+            if (e.repeat) return; // Ignore repeats for macro timing usually
+
+            const now = performance.now();
+            let delay = 0;
+
+            if (events.length > 0) {
+                delay = now - lastTime;
+            } else {
+                display.innerHTML = ''; // Clear placeholder
+            }
+
+            events.push({ code: e.code, delay: delay });
+            lastTime = now;
+
+            addVisual(e.code, delay);
+        });
+
+        function addVisual(code, delay) {
+            // Clean Label
+            let label = code.replace('Key', '').replace('Digit', '');
+            if (code === 'Space') label = '␣';
+            else if (code === 'ControlLeft') label = 'CTRL';
+            else if (code === 'ShiftLeft') label = 'SHIFT';
+
+            if (delay > 0) {
+                const line = document.createElement('div');
+                line.className = 'delay-line';
+                line.innerHTML = `<span class="delay-label">${Math.round(delay)}ms</span>`;
+                display.appendChild(line);
+            }
+
+            const node = document.createElement('div');
+            node.className = 'key-node';
+            node.innerText = label;
+            display.appendChild(node);
+        }
+
+        function reset() {
+            events = [];
+            lastTime = 0;
+            display.innerHTML = '<span style="color:#4b5563">Type your macro sequence here...</span>';
+        }
+    </script>
+</body>
+
+</html>

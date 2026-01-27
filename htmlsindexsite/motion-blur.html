@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motion Blur Test - AssetsToolsHub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sidebar.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .tool-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 2rem;
+            padding: 1rem;
+            overflow: hidden;
+        }
+
+        .test-view {
+            height: 500px;
+            background: #000;
+            border-radius: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ufo-row {
+            height: 100px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .ufo {
+            width: 80px;
+            height: 40px;
+            background: #00ff00;
+            border-radius: 50% / 100% 100% 0 0;
+            position: absolute;
+            left: 0;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+        }
+
+        .ufo::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 10%;
+            width: 80%;
+            height: 10px;
+            background: #00ff00;
+            border-radius: 5px;
+        }
+
+        .controls-bar {
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-top: 1px solid var(--card-border);
+        }
+
+        .speed-label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .hz-counter {
+            text-align: center;
+            padding: 1rem;
+            background: var(--primary);
+            color: white;
+            border-radius: 12px;
+            font-weight: 800;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-content">
+        <div class="tool-container">
+            <div class="test-view" id="test-view">
+                <div class="ufo-row">
+                    <div class="ufo" id="ufo-1"></div>
+                </div>
+                <div class="ufo-row" style="background:#111">
+                    <div class="ufo" id="ufo-2" style="background:#00ffff; box-shadow:0 0 20px rgba(0,255,255,0.5)">
+                    </div>
+                </div>
+                <div class="ufo-row">
+                    <div class="ufo" id="ufo-3" style="background:#ff00ff; box-shadow:0 0 20px rgba(255,0,255,0.5)">
+                    </div>
+                </div>
+                <div class="ufo-row" style="background:#111">
+                    <div class="ufo" id="ufo-4" style="background:#ffffff; box-shadow:0 0 20px rgba(255,255,255,0.5)">
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls-bar">
+                <div>
+                    <span class="speed-label">Speed (Pixels per sec)</span>
+                    <input type="range" id="speed" style="width:100%" min="100" max="3000" value="960">
+                    <div id="speed-val" style="margin-top:0.5rem; font-weight:700">960 px/s</div>
+                </div>
+                <div class="hz-counter">
+                    <div style="font-size:0.7rem; opacity:0.8; text-transform:uppercase">Detection</div>
+                    <div id="hz-display">... Hz</div>
+                </div>
+                <div style="color:var(--text-muted); font-size:0.8rem; line-height:1.4">
+                    Look at the moving objects. If you see ghosting, trails, or blurring, your monitor's response
+                    time/overdrive may need adjustment.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="layout.js"></script>
+    <script>
+        const ufos = [
+            document.getElementById('ufo-1'),
+            document.getElementById('ufo-2'),
+            document.getElementById('ufo-3'),
+            document.getElementById('ufo-4')
+        ];
+        const speedInput = document.getElementById('speed');
+        const speedVal = document.getElementById('speed-val');
+        const hzDisplay = document.getElementById('hz-display');
+
+        let posX = [0, 0, 0, 0];
+        let lastTime = 0;
+        let frameCount = 0;
+        let lastHzUpdate = 0;
+
+        function animate(time) {
+            const dt = (time - lastTime) / 1000;
+            lastTime = time;
+
+            const speed = parseInt(speedInput.value);
+            speedVal.innerText = speed + ' px/s';
+
+            // Calculate Hz
+            frameCount++;
+            if (time - lastHzUpdate > 1000) {
+                hzDisplay.innerText = frameCount + ' Hz';
+                frameCount = 0;
+                lastHzUpdate = time;
+            }
+
+            const viewWidth = document.getElementById('test-view').clientWidth;
+
+            ufos.forEach((ufo, i) => {
+                posX[i] += speed * dt;
+                if (posX[i] > viewWidth) posX[i] = -80;
+                ufo.style.transform = `translateX(${posX[i]}px)`;
+            });
+
+            requestAnimationFrame(animate);
+        }
+
+        requestAnimationFrame(animate);
+    </script>
+</body>
+
+</html>

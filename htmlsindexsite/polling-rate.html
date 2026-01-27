@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polling Rate Test - AssetsToolsHub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sidebar.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .tool-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 2.5rem;
+            padding: 3rem;
+            text-align: center;
+        }
+
+        .track-area {
+            width: 100%;
+            height: 350px;
+            background: rgba(0, 0, 0, 0.2);
+            border: 2px dashed var(--primary);
+            border-radius: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 2.5rem 0;
+            cursor: crosshair;
+            position: relative;
+            overflow: hidden;
+            transition: border-color 0.2s;
+        }
+
+        .track-area:hover {
+            border-color: white;
+        }
+
+        .hz-main {
+            font-size: 6rem;
+            font-weight: 900;
+            color: var(--primary);
+            text-shadow: 0 0 40px var(--primary-glow);
+        }
+
+        .stats-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .stat-item {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--card-border);
+            border-radius: 1.5rem;
+            padding: 2rem;
+        }
+
+        .stat-val {
+            font-size: 2.5rem;
+            font-weight: 800;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-content">
+        <div class="tool-container">
+            <h1 style="font-size: 2.5rem; font-weight:800">Mouse Polling Rate</h1>
+            <p style="color:var(--text-muted); margin-top:1rem;">Move your mouse rapidly inside the box to measure the
+                transmission frequency.</p>
+
+            <div class="track-area" id="area">
+                <div class="hz-main" id="hz">0<span style="font-size:2rem; opacity:0.5; margin-left:10px">Hz</span>
+                </div>
+                <div style="position:absolute; bottom:20px; color:var(--text-muted); font-size:0.8rem; font-weight:600">
+                    MOVE MOUSE CONTINUOUSLY</div>
+            </div>
+
+            <div class="stats-row">
+                <div class="stat-item">
+                    <div class="stat-val" id="avg-hz">0</div>
+                    <div class="stat-label">Average Rate</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-val" id="max-hz">0</div>
+                    <div class="stat-label">Peak Rate</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="layout.js"></script>
+    <script>
+        const area = document.getElementById('area');
+        const hzEl = document.getElementById('hz');
+        const avgEl = document.getElementById('avg-hz');
+        const maxEl = document.getElementById('max-hz');
+
+        let lastTime = 0;
+        let samples = [];
+        let peak = 0;
+        let totalSum = 0;
+        let totalCount = 0;
+
+        area.addEventListener('mousemove', (e) => {
+            const now = performance.now();
+            if (lastTime > 0) {
+                const diff = now - lastTime;
+                if (diff > 0) {
+                    const hz = 1000 / diff;
+
+                    samples.push(hz);
+                    if (samples.length > 30) samples.shift();
+
+                    const avg = samples.reduce((a, b) => a + b) / samples.length;
+
+                    hzEl.innerHTML = Math.round(avg) + '<span style="font-size:2rem; opacity:0.5; margin-left:10px">Hz</span>';
+
+                    if (avg > peak) {
+                        peak = avg;
+                        maxEl.innerText = Math.round(peak);
+                    }
+
+                    totalSum += hz;
+                    totalCount++;
+                    avgEl.innerText = Math.round(totalSum / totalCount);
+                }
+            }
+            lastTime = now;
+        });
+
+        area.addEventListener('mouseleave', () => {
+            lastTime = 0;
+            samples = [];
+        });
+    </script>
+</body>
+
+</html>

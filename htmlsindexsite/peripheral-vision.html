@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peripheral Vision Trainer - AssetsToolsHub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sidebar.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .tool-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .vision-area {
+            height: 500px;
+            background: #000;
+            border: 1px solid #333;
+            border-radius: 1rem;
+            position: relative;
+            margin: 2rem 0;
+            overflow: hidden;
+            cursor: crosshair;
+        }
+
+        .fixation-point {
+            width: 10px;
+            height: 10px;
+            background: #ef4444;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 10px red;
+            z-index: 10;
+        }
+
+        .target {
+            width: 30px;
+            height: 30px;
+            background: #3b82f6;
+            border-radius: 50%;
+            position: absolute;
+            cursor: pointer;
+            box-shadow: 0 0 10px #3b82f6;
+        }
+
+        .flash {
+            animation: flash 0.5s;
+        }
+
+        @keyframes flash {
+            0% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .stats {
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-content">
+        <div class="tool-container">
+            <h1 style="font-size: 2.5rem; font-weight:900; margin-bottom: 1rem;">Peripheral Vision Trainer</h1>
+            <p style="color:var(--text-muted); margin-bottom: 3rem;">Keep your eyes on the RED DOT. Click blue targets
+                that appear without looking directly at them.</p>
+
+            <div class="stats">Score: <span id="score" style="color:white; font-weight:bold; font-size:1.5rem">0</span>
+            </div>
+
+            <div class="vision-area" id="area">
+                <div class="fixation-point"></div>
+                <div id="overlay"
+                    style="position:absolute; inset:0; background:rgba(0,0,0,0.8); display:flex; justify-content:center; align-items:center; z-index:20">
+                    <button class="join-pro-btn" style="width:auto" onclick="start()">START</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="layout.js"></script>
+    <script>
+        const area = document.getElementById('area');
+        const scoreEl = document.getElementById('score');
+        const overlay = document.getElementById('overlay');
+
+        let score = 0;
+        let isRunning = false;
+        let currentTarget = null;
+        let spawnTime = 0;
+
+        function start() {
+            score = 0;
+            scoreEl.innerText = 0;
+            isRunning = true;
+            overlay.style.display = 'none';
+            cleanup();
+            loop();
+        }
+
+        function loop() {
+            if (!isRunning) return;
+            const delay = 1000 + Math.random() * 2000;
+            setTimeout(spawn, delay);
+        }
+
+        function spawn() {
+            if (!isRunning) return;
+            cleanup();
+
+            const t = document.createElement('div');
+            t.className = 'target flash'; // Auto fade out logic via CSS? Or JS.
+            // Let's use JS for disappear logic
+            t.className = 'target';
+
+            // Random edge pos
+            const angle = Math.random() * Math.PI * 2;
+            const dist = 100 + Math.random() * 150; // 100-250px radius
+            const cx = area.clientWidth / 2;
+            const cy = area.clientHeight / 2;
+
+            const x = cx + Math.cos(angle) * dist - 15;
+            const y = cy + Math.sin(angle) * dist - 15;
+
+            t.style.left = x + 'px';
+            t.style.top = y + 'px';
+
+            t.onmousedown = (e) => {
+                hit();
+                e.stopPropagation();
+            }
+
+            area.appendChild(t);
+            currentTarget = t;
+
+            // Disappear after 1s
+            setTimeout(() => {
+                if (t.parentElement) {
+                    t.remove();
+                    if (isRunning) loop(); // Next spawn if missed
+                }
+            }, 800);
+        }
+
+        function cleanup() {
+            if (currentTarget) currentTarget.remove();
+        }
+
+        function hit() {
+            score++;
+            scoreEl.innerText = score;
+            cleanup();
+            loop();
+        }
+    </script>
+</body>
+
+</html>

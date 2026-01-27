@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTTP Status Lookup - AssetsToolsHub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sidebar.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .tool-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 1.5rem;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--card-border);
+            color: white;
+            border-radius: 1rem;
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .result {
+            background: rgba(99, 102, 241, 0.1);
+            border: 2px solid var(--primary);
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            display: none;
+        }
+
+        .code {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+        }
+
+        .desc {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+        }
+
+        .status-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+
+        .status-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            border: 1px solid var(--card-border);
+            transition: 0.2s;
+        }
+
+        .status-card:hover {
+            background: var(--primary);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-content">
+        <div class="tool-container">
+            <h1 style="font-size: 2.5rem; font-weight:900; margin-bottom: 1rem;">HTTP Status Lookup</h1>
+            <p style="color:var(--text-muted); margin-bottom: 2rem;">Instant reference for all HTTP response status
+                codes.</p>
+
+            <input type="text" id="code" placeholder="Enter status code (e.g., 404)" oninput="lookup()">
+
+            <div id="result" class="result">
+                <div class="code" id="status-code"></div>
+                <div class="desc" id="status-desc"></div>
+            </div>
+
+            <h3 style="margin-top:3rem; margin-bottom:1rem">Common Status Codes</h3>
+            <div class="status-grid" id="grid"></div>
+        </div>
+    </div>
+
+    <script src="layout.js"></script>
+    <script>
+        const statuses = {
+            200: "OK - Request succeeded",
+            201: "Created - Resource created",
+            204: "No Content - Success with no body",
+            301: "Moved Permanently - Resource moved",
+            302: "Found - Temporary redirect",
+            304: "Not Modified - Cached version",
+            400: "Bad Request - Invalid syntax",
+            401: "Unauthorized - Authentication required",
+            403: "Forbidden - Access denied",
+            404: "Not Found - Resource doesn't exist",
+            500: "Internal Server Error - Server error",
+            502: "Bad Gateway - Invalid response",
+            503: "Service Unavailable - Server down"
+        };
+
+        function lookup() {
+            const code = document.getElementById('code').value.trim();
+            if (!code) {
+                document.getElementById('result').style.display = 'none';
+                return;
+            }
+
+            if (statuses[code]) {
+                document.getElementById('status-code').innerText = code;
+                document.getElementById('status-desc').innerText = statuses[code];
+                document.getElementById('result').style.display = 'block';
+            } else {
+                document.getElementById('status-code').innerText = code;
+                document.getElementById('status-desc').innerText = "Unknown status code";
+                document.getElementById('result').style.display = 'block';
+            }
+        }
+
+        // Populate grid
+        const grid = document.getElementById('grid');
+        for (const [code, desc] of Object.entries(statuses)) {
+            const card = document.createElement('div');
+            card.className = 'status-card';
+            card.innerHTML = `<div style="font-size:1.5rem; font-weight:bold">${code}</div><div style="font-size:0.8rem; color:var(--text-muted)">${desc.split(' - ')[0]}</div>`;
+            card.onclick = () => {
+                document.getElementById('code').value = code;
+                lookup();
+            };
+            grid.appendChild(card);
+        }
+    </script>
+</body>
+
+</html>

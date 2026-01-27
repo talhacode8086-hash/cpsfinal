@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NKRO Visualizer - AssetsToolsHub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sidebar.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .tool-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* 3D Keyboard Transform */
+        .keyboard-stage {
+            perspective: 1000px;
+            margin: 4rem 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .keyboard {
+            background: #0f172a;
+            padding: 2rem;
+            border-radius: 20px;
+            transform: rotateX(20deg);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            border-bottom: 10px solid #1e293b;
+            display: grid;
+            gap: 8px;
+            width: fit-content;
+        }
+
+        .row {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .key {
+            width: 50px;
+            height: 50px;
+            background: #1e293b;
+            border-radius: 8px;
+            color: #64748b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.8rem;
+            box-shadow: 0 4px 0 #0f172a;
+            transition: 0.05s;
+            position: relative;
+            user-select: none;
+        }
+
+        .key:active,
+        .key.active {
+            transform: translateY(4px);
+            box-shadow: 0 0 0 #0f172a;
+            color: white;
+            background: var(--primary);
+        }
+
+        .key.active::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 8px;
+            box-shadow: 0 0 20px var(--primary);
+            z-index: -1;
+        }
+
+        /* Key Widths */
+        .w-1-5 {
+            width: 75px;
+        }
+
+        .w-2 {
+            width: 100px;
+        }
+
+        .w-2-25 {
+            width: 112px;
+        }
+
+        .w-2-75 {
+            width: 137px;
+        }
+
+        .w-6-25 {
+            width: 312px;
+        }
+
+        .hud {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 1rem 2rem;
+            border-radius: 1rem;
+            text-align: right;
+            border: 1px solid #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-content">
+        <div class="tool-container">
+            <h1 style="font-size: 2.5rem; font-weight:900; margin-bottom: 1rem;">NKRO Visualizer <span
+                    style="color:#fbbf24; font-size:1rem; vertical-align:middle; margin-left:10px">PRO</span></h1>
+            <p style="color:var(--text-muted); margin-bottom: 3rem;">A 3D visualization of unlimited simultaneous key
+                presses.</p>
+
+            <div class="keyboard-stage">
+                <div class="keyboard">
+                    <!-- Row 1 -->
+                    <div class="row">
+                        <div class="key" data-code="Escape">ESC</div>
+                        <div class="key" data-code="F1">F1</div>
+                        <div class="key" data-code="F2">F2</div>
+                        <div class="key" data-code="F3">F3</div>
+                        <div class="key" data-code="F4">F4</div>
+                        <div class="key" data-code="F5">F5</div>
+                        <div class="key" data-code="F6">F6</div>
+                        <div class="key" data-code="F7">F7</div>
+                        <div class="key" data-code="F8">F8</div>
+                        <div class="key" data-code="F9">F9</div>
+                        <div class="key" data-code="F10">F10</div>
+                        <div class="key" data-code="F11">F11</div>
+                        <div class="key" data-code="F12">F12</div>
+                    </div>
+                    <!-- Row 2 -->
+                    <div class="row">
+                        <div class="key" data-code="Backquote">`</div>
+                        <div class="key" data-code="Digit1">1</div>
+                        <div class="key" data-code="Digit2">2</div>
+                        <div class="key" data-code="Digit3">3</div>
+                        <div class="key" data-code="Digit4">4</div>
+                        <div class="key" data-code="Digit5">5</div>
+                        <div class="key" data-code="Digit6">6</div>
+                        <div class="key" data-code="Digit7">7</div>
+                        <div class="key" data-code="Digit8">8</div>
+                        <div class="key" data-code="Digit9">9</div>
+                        <div class="key" data-code="Digit0">0</div>
+                        <div class="key" data-code="Minus">-</div>
+                        <div class="key" data-code="Equal">=</div>
+                        <div class="key w-2" data-code="Backspace">←</div>
+                    </div>
+                    <!-- Row 3 -->
+                    <div class="row">
+                        <div class="key w-1-5" data-code="Tab">TAB</div>
+                        <div class="key" data-code="KeyQ">Q</div>
+                        <div class="key" data-code="KeyW">W</div>
+                        <div class="key" data-code="KeyE">E</div>
+                        <div class="key" data-code="KeyR">R</div>
+                        <div class="key" data-code="KeyT">T</div>
+                        <div class="key" data-code="KeyY">Y</div>
+                        <div class="key" data-code="KeyU">U</div>
+                        <div class="key" data-code="KeyI">I</div>
+                        <div class="key" data-code="KeyO">O</div>
+                        <div class="key" data-code="KeyP">P</div>
+                        <div class="key" data-code="BracketLeft">[</div>
+                        <div class="key" data-code="BracketRight">]</div>
+                        <div class="key w-1-5" data-code="Backslash">\</div>
+                    </div>
+                    <!-- Row 4 -->
+                    <div class="row">
+                        <div class="key w-1-5" data-code="CapsLock">CAPS</div>
+                        <div class="key" data-code="KeyA">A</div>
+                        <div class="key" data-code="KeyS">S</div>
+                        <div class="key" data-code="KeyD">D</div>
+                        <div class="key" data-code="KeyF">F</div>
+                        <div class="key" data-code="KeyG">G</div>
+                        <div class="key" data-code="KeyH">H</div>
+                        <div class="key" data-code="KeyJ">J</div>
+                        <div class="key" data-code="KeyK">K</div>
+                        <div class="key" data-code="KeyL">L</div>
+                        <div class="key" data-code="Semicolon">;</div>
+                        <div class="key" data-code="Quote">'</div>
+                        <div class="key w-2-25" data-code="Enter">ENTER</div>
+                    </div>
+                    <!-- Row 5 -->
+                    <div class="row">
+                        <div class="key w-2-25" data-code="ShiftLeft">SHIFT</div>
+                        <div class="key" data-code="KeyZ">Z</div>
+                        <div class="key" data-code="KeyX">X</div>
+                        <div class="key" data-code="KeyC">C</div>
+                        <div class="key" data-code="KeyV">V</div>
+                        <div class="key" data-code="KeyB">B</div>
+                        <div class="key" data-code="KeyN">N</div>
+                        <div class="key" data-code="KeyM">M</div>
+                        <div class="key" data-code="Comma">,</div>
+                        <div class="key" data-code="Period">.</div>
+                        <div class="key" data-code="Slash">/</div>
+                        <div class="key w-2-75" data-code="ShiftRight">SHIFT</div>
+                    </div>
+                    <!-- Row 6 -->
+                    <div class="row">
+                        <div class="key w-1-5" data-code="ControlLeft">CTRL</div>
+                        <div class="key w-1-5" data-code="MetaLeft">WIN</div>
+                        <div class="key w-1-5" data-code="AltLeft">ALT</div>
+                        <div class="key w-6-25" data-code="Space">SPACE</div>
+                        <div class="key w-1-5" data-code="AltRight">ALT</div>
+                        <div class="key w-1-5" data-code="MetaRight">FN</div>
+                        <div class="key w-1-5" data-code="ControlRight">CTRL</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hud">
+                <div style="font-size:0.8rem; color:#9ca3af">ACTIVE KEYS</div>
+                <div style="font-size:2.5rem; font-weight:900; color:var(--primary)" id="count">0</div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="layout.js"></script>
+    <script>
+        const countEl = document.getElementById('count');
+        let pressedCount = 0;
+
+        window.addEventListener('keydown', (e) => {
+            e.preventDefault();
+            if (e.repeat) return;
+
+            const key = document.querySelector(`.key[data-code="${e.code}"]`);
+            if (key) {
+                if (!key.classList.contains('active')) {
+                    key.classList.add('active');
+                    pressedCount++;
+                }
+            }
+            updateCount();
+        });
+
+        window.addEventListener('keyup', (e) => {
+            const key = document.querySelector(`.key[data-code="${e.code}"]`);
+            if (key) {
+                if (key.classList.contains('active')) {
+                    key.classList.remove('active');
+                    pressedCount--;
+                }
+            }
+            updateCount();
+        });
+
+        function updateCount() {
+            // Recalculate based on active classes to stay sync
+            pressedCount = document.querySelectorAll('.key.active').length;
+            countEl.innerText = pressedCount;
+        }
+
+        window.addEventListener('blur', () => {
+            document.querySelectorAll('.key.active').forEach(k => k.classList.remove('active'));
+            pressedCount = 0;
+            updateCount();
+        });
+    </script>
+</body>
+
+</html>

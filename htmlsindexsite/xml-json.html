@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XML to JSON Converter - AssetsToolsHub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sidebar.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .tool-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        textarea {
+            width: 100%;
+            height: 300px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--card-border);
+            border-radius: 1rem;
+            padding: 1rem;
+            color: white;
+            margin-bottom: 1rem;
+            font-family: monospace;
+            resize: vertical;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-content">
+        <div class="tool-container">
+            <h1 style="font-size: 2.5rem; font-weight:900; margin-bottom: 1rem;">XML to JSON Converter</h1>
+            <p style="color:var(--text-muted); margin-bottom: 2rem;">Convert XML data to JSON format.</p>
+
+            <div class="grid">
+                <div>
+                    <h3>Input XML</h3>
+                    <textarea id="xml" placeholder="<root><item>value</item></root>"></textarea>
+                </div>
+                <div>
+                    <h3>Output JSON</h3>
+                    <textarea id="json" readonly></textarea>
+                </div>
+            </div>
+
+            <button class="join-pro-btn" style="width:100%" onclick="convert()">Convert XML to JSON</button>
+        </div>
+    </div>
+
+    <script src="layout.js"></script>
+    <script>
+        function convert() {
+            try {
+                const xmlText = document.getElementById('xml').value;
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(xmlText, "text/xml");
+
+                // Basic XML to JSON conversion
+                function xmlToJson(xml) {
+                    let obj = {};
+                    if (xml.nodeType == 1) {
+                        if (xml.attributes.length > 0) {
+                            obj["@attributes"] = {};
+                            for (let j = 0; j < xml.attributes.length; j++) {
+                                const attribute = xml.attributes.item(j);
+                                obj["@attributes"][attribute.nodeName] = attribute.nodeValue;
+                            }
+                        }
+                    } else if (xml.nodeType == 3) {
+                        obj = xml.nodeValue;
+                    }
+                    if (xml.hasChildNodes()) {
+                        for (let i = 0; i < xml.childNodes.length; i++) {
+                            const item = xml.childNodes.item(i);
+                            const nodeName = item.nodeName;
+                            if (typeof (obj[nodeName]) == "undefined") {
+                                obj[nodeName] = xmlToJson(item);
+                            } else {
+                                if (typeof (obj[nodeName].push) == "undefined") {
+                                    const old = obj[nodeName];
+                                    obj[nodeName] = [];
+                                    obj[nodeName].push(old);
+                                }
+                                obj[nodeName].push(xmlToJson(item));
+                            }
+                        }
+                    }
+                    return obj;
+                }
+
+                const result = xmlToJson(xmlDoc);
+                document.getElementById('json').value = JSON.stringify(result, null, 2);
+            } catch (e) {
+                alert("Error parsing XML: " + e.message);
+            }
+        }
+    </script>
+</body>
+
+</html>

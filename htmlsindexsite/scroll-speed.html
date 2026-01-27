@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Speed Tester - AssetsToolsHub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sidebar.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .tool-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .scroll-pit {
+            width: 100%;
+            height: 400px;
+            background: #000;
+            border: 2px solid var(--card-border);
+            border-radius: 2rem;
+            margin: 2rem 0;
+            overflow-y: scroll;
+            position: relative;
+        }
+
+        .scroll-content {
+            height: 100000px;
+            background: linear-gradient(to bottom, #000 0%, #111 50%, #000 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 2rem;
+        }
+
+        .scroll-marker {
+            width: 50%;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.05);
+            margin: 100px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 1.5rem;
+            border-radius: 1.5rem;
+        }
+
+        .stat-val {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #10b981;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-content">
+        <div class="tool-container">
+            <h1 style="font-size: 2.5rem; font-weight:900; margin-bottom: 1rem;">Scroll Speed Tester <span
+                    style="color:#fbbf24; font-size:1rem; vertical-align:middle; margin-left:10px">PRO</span></h1>
+            <p style="color:var(--text-muted); margin-bottom: 3rem;">Measure how fast your scroll wheel (or mechanical
+                infinite scroll) can travel.</p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-val" id="pixels">0</div>
+                    <div class="stat-label">Pixels / Sec</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-val" id="peak">0</div>
+                    <div class="stat-label">Peak Speed</div>
+                </div>
+            </div>
+
+            <div class="scroll-pit" id="pit">
+                <div class="scroll-content">
+                    <div style="font-size: 2rem; font-weight: 800; color: var(--text-muted)">SCROLL DOWN FAST</div>
+                    <div class="scroll-marker"></div>
+                    <div class="scroll-marker"></div>
+                    <div class="scroll-marker"></div>
+                    <div class="scroll-marker"></div>
+                    <div class="scroll-marker"></div>
+                    <!-- many more elements for visual sense of movement -->
+                </div>
+            </div>
+
+            <div
+                style="background: rgba(0,0,0,0.2); padding: 2rem; border-radius: 1.5rem; margin-top: 3rem; text-align: left;">
+                <h3 style="margin-bottom: 1rem">Scroll Metrics</h3>
+                <p style="color:var(--text-muted); line-height: 1.6;">Typical mouse wheels travel ~300-800 pixels per
+                    heavy flick. "Infinite scroll" wheels (like Logitech G502) can reach speeds over <b>20,000 pixels
+                        per second</b>.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="layout.js"></script>
+    <script>
+        const pit = document.getElementById('pit');
+        const pxEl = document.getElementById('pixels');
+        const peakEl = document.getElementById('peak');
+
+        let lastPos = 0;
+        let lastTime = 0;
+        let peakSpeed = 0;
+
+        pit.onscroll = () => {
+            const now = performance.now();
+            const pos = pit.scrollTop;
+
+            if (lastTime > 0) {
+                const dt = (now - lastTime) / 1000;
+                const dist = Math.abs(pos - lastPos);
+                const speed = dist / dt;
+
+                if (speed > 10) { // filter noise
+                    pxEl.innerText = Math.round(speed);
+                    if (speed > peakSpeed) {
+                        peakSpeed = speed;
+                        peakEl.innerText = Math.round(peakSpeed);
+                    }
+                }
+            }
+
+            lastPos = pos;
+            lastTime = now;
+
+            // Loop scroll content if it reaches near end
+            if (pos > 80000) pit.scrollTop = 10000;
+        };
+
+        // Reset display after stopping
+        let stopTimer;
+        pit.addEventListener('scroll', () => {
+            clearTimeout(stopTimer);
+            stopTimer = setTimeout(() => {
+                pxEl.innerText = "0";
+                lastTime = 0;
+            }, 500);
+        });
+    </script>
+</body>
+
+</html>

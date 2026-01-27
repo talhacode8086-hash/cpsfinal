@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Frequency Counter - AssetsToolsHub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sidebar.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .tool-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        textarea {
+            width: 100%;
+            height: 200px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--card-border);
+            border-radius: 1rem;
+            padding: 1rem;
+            color: white;
+            margin-bottom: 2rem;
+        }
+
+        .freq-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .freq-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+            border: 1px solid var(--card-border);
+        }
+
+        .word {
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .count {
+            background: #333;
+            padding: 0.2rem 0.5rem;
+            border-radius: 1rem;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-content">
+        <div class="tool-container">
+            <h1 style="font-size: 2.5rem; font-weight:900; margin-bottom: 1rem;">Word Frequency Counter</h1>
+            <p style="color:var(--text-muted); margin-bottom: 2rem;">Analyze text to find the most used words.</p>
+
+            <textarea id="input" placeholder="Paste your text here..." oninput="analyze()"></textarea>
+
+            <h3 style="margin-bottom:1rem">Top Words</h3>
+            <div id="output" class="freq-list"></div>
+        </div>
+    </div>
+
+    <script src="layout.js"></script>
+    <script>
+        function analyze() {
+            const txt = document.getElementById('input').value;
+            const words = txt.toLowerCase().match(/\b\w+\b/g);
+            if (!words) {
+                document.getElementById('output').innerHTML = '';
+                return;
+            }
+
+            const map = {};
+            words.forEach(w => map[w] = (map[w] || 0) + 1);
+
+            const sorted = Object.entries(map).sort((a, b) => b[1] - a[1]);
+
+            // Top 50
+            const html = sorted.slice(0, 50).map(([w, c]) => `
+                <div class="freq-item">
+                    <span class="word">${w}</span>
+                    <span class="count">${c}</span>
+                </div>
+            `).join('');
+
+            document.getElementById('output').innerHTML = html;
+        }
+    </script>
+</body>
+
+</html>

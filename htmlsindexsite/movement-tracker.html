@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movement Tracker - AssetsToolsHub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sidebar.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .tool-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .canvas-wrapper {
+            width: 100%;
+            height: 600px;
+            background: #000;
+            border-radius: 2rem;
+            position: relative;
+            border: 1px solid var(--card-border);
+            overflow: hidden;
+            margin: 2rem 0;
+            cursor: crosshair;
+        }
+
+        canvas {
+            width: 100%;
+            height: 100%;
+        }
+
+        .stats-overlay {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            display: flex;
+            gap: 1rem;
+            pointer-events: none;
+        }
+
+        .mini-stat {
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .mini-val {
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+
+        .mini-lbl {
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-top: 3px;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-content">
+        <div class="tool-container">
+            <h1 style="font-size: 2.5rem; font-weight:900; text-align:center">Mouse Movement Tracker</h1>
+            <p style="color:var(--text-muted); text-align:center; margin-bottom:2rem">Visualize your movement efficiency
+                and track total travel distance.</p>
+
+            <div class="controls">
+                <button class="join-pro-btn" onclick="clearCanvas()"><i data-lucide="trash-2"></i> CLEAR PATH</button>
+                <button class="join-pro-btn" style="background:rgba(255,255,255,0.05); color:white"
+                    onclick="undoPath()"><i data-lucide="undo"></i> UNDO LAST</button>
+            </div>
+
+            <div class="canvas-wrapper">
+                <canvas id="trackCanvas"></canvas>
+                <div class="stats-overlay">
+                    <div class="mini-stat">
+                        <div class="mini-val" id="pixels">0 px</div>
+                        <div class="mini-lbl">Total Traveled</div>
+                    </div>
+                    <div class="mini-stat">
+                        <div class="mini-val" id="vel">0 px/s</div>
+                        <div class="mini-lbl">Current Speed</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="layout.js"></script>
+    <script>
+        const canvas = document.getElementById('trackCanvas');
+        const ctx = canvas.getContext('2d');
+        const pxEl = document.getElementById('pixels');
+        const velEl = document.getElementById('vel');
+
+        let totalDist = 0;
+        let lastX = null, lastY = null, lastTime = 0;
+
+        function resize() {
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+            clearCanvas();
+        }
+
+        window.addEventListener('resize', resize);
+        resize();
+
+        window.addEventListener('mousemove', (e) => {
+            const rect = canvas.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const now = performance.now();
+
+            // Only track if inside canvas bounds
+            if (x >= 0 && x <= canvas.width && y >= 0 && y <= canvas.height) {
+                if (lastX !== null) {
+                    const d = Math.sqrt(Math.pow(x - lastX, 2) + Math.pow(y - lastY, 2));
+                    totalDist += d;
+                    pxEl.innerText = Math.round(totalDist) + " px";
+
+                    const dt = (now - lastTime) / 1000;
+                    const vel = d / dt;
+                    velEl.innerText = Math.round(vel) + " px/s";
+
+                    // Draw path
+                    ctx.beginPath();
+                    ctx.moveTo(lastX, lastY);
+                    ctx.lineTo(x, y);
+                    ctx.strokeStyle = `hsla(${Math.min(360, vel / 10)}, 80%, 60%, 0.6)`;
+                    ctx.lineWidth = 2;
+                    ctx.lineCap = 'round';
+                    ctx.stroke();
+
+                    // Optional: fade out
+                    // ctx.fillStyle = 'rgba(0,0,0,0.01)';
+                    // ctx.fillRect(0,0,canvas.width, canvas.height);
+                }
+                lastX = x; lastY = y; lastTime = now;
+            } else {
+                lastX = null;
+            }
+        });
+
+        function clearCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            totalDist = 0;
+            pxEl.innerText = "0 px";
+        }
+    </script>
+</body>
+
+</html>

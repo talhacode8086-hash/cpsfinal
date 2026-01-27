@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List to CSV Converter - AssetsToolsHub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sidebar.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .tool-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        textarea {
+            width: 100%;
+            height: 200px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--card-border);
+            border-radius: 1rem;
+            padding: 1rem;
+            color: white;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-content">
+        <div class="tool-container">
+            <h1 style="font-size: 2.5rem; font-weight:900; margin-bottom: 1rem;">List to CSV Converter</h1>
+            <p style="color:var(--text-muted); margin-bottom: 2rem;">Convert lines into a Comma Separated list.</p>
+
+            <textarea id="input" placeholder="Item 1&#10;Item 2&#10;Item 3" oninput="convert()"></textarea>
+
+            <div style="margin-bottom:1rem">
+                <label>Separator:</label>
+                <input type="text" id="sep" value="," oninput="convert()"
+                    style="padding:0.5rem; width:50px; border-radius:0.5rem; border:1px solid #333; background:#000; color:white">
+                <label style="margin-left:1rem"><input type="checkbox" id="quote" onchange="convert()"> Quote
+                    items</label>
+            </div>
+
+            <h3>Result:</h3>
+            <textarea id="output" readonly></textarea>
+            <button class="join-pro-btn" style="width:100%" onclick="copy()">Copy CSV</button>
+        </div>
+    </div>
+
+    <script src="layout.js"></script>
+    <script>
+        function convert() {
+            const txt = document.getElementById('input').value;
+            const sep = document.getElementById('sep').value || ',';
+            const quote = document.getElementById('quote').checked;
+
+            const lines = txt.split('\n').filter(l => l.trim() !== '');
+            const res = lines.map(l => quote ? `"${l.replace(/"/g, '""')}"` : l).join(sep + ' '); // add space? usually csv implies sep without space, but often user wants space. Let's strict impl sep.
+
+            // CSV strictly: sep.
+            document.getElementById('output').value = lines.map(l => quote ? `"${l.replace(/"/g, '""')}"` : l).join(sep);
+        }
+
+        function copy() {
+            document.getElementById('output').select();
+            document.execCommand('copy');
+            alert('Copied!');
+        }
+    </script>
+</body>
+
+</html>

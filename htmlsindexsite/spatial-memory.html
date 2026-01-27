@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spatial Memory Bench - AssetsToolsHub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sidebar.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .tool-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            width: 400px;
+            margin: 2rem auto;
+        }
+
+        .cell {
+            height: 120px;
+            background: #1f2937;
+            border-radius: 1rem;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .cell.highlight {
+            background: white;
+            box-shadow: 0 0 20px white;
+        }
+
+        .cell.correct {
+            background: #10b981;
+        }
+
+        .cell.wrong {
+            background: #ef4444;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-content">
+        <div class="tool-container">
+            <h1 style="font-size: 2.5rem; font-weight:900; margin-bottom: 1rem;">Spatial Memory Bench</h1>
+            <p style="color:var(--text-muted); margin-bottom: 3rem;">Repeat the pattern. It gets longer each round.</p>
+
+            <div style="font-size:1.5rem; margin-bottom:1rem">Level: <span id="lvl">1</span></div>
+            <button class="join-pro-btn" style="width:auto" onclick="start()" id="startBtn">START</button>
+
+            <div class="grid" id="grid">
+                <div class="cell" id="c0"></div>
+                <div class="cell" id="c1"></div>
+                <div class="cell" id="c2"></div>
+                <div class="cell" id="c3"></div>
+                <div class="cell" id="c4"></div>
+                <div class="cell" id="c5"></div>
+                <div class="cell" id="c6"></div>
+                <div class="cell" id="c7"></div>
+                <div class="cell" id="c8"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="layout.js"></script>
+    <script>
+        const cells = Array.from(document.querySelectorAll('.cell'));
+        const lvlEl = document.getElementById('lvl');
+        const startBtn = document.getElementById('startBtn');
+
+        let sequence = [];
+        let playerSeq = [];
+        let level = 1;
+        let isShowing = false;
+
+        cells.forEach((c, i) => c.onclick = () => clickCell(i));
+
+        function start() {
+            startBtn.style.display = 'none';
+            level = 1;
+            sequence = [];
+            nextRound();
+        }
+
+        function nextRound() {
+            lvlEl.innerText = level;
+            playerSeq = [];
+            // Add one new step
+            sequence.push(Math.floor(Math.random() * 9));
+            playSequence();
+        }
+
+        async function playSequence() {
+            isShowing = true;
+            await new Promise(r => setTimeout(r, 500));
+
+            for (let idx of sequence) {
+                cells[idx].classList.add('highlight');
+                playTone(idx);
+                await new Promise(r => setTimeout(r, 400));
+                cells[idx].classList.remove('highlight');
+                await new Promise(r => setTimeout(r, 100));
+            }
+            isShowing = false;
+        }
+
+        function clickCell(idx) {
+            if (isShowing) return;
+
+            cells[idx].classList.add('highlight'); // visual feedback
+            setTimeout(() => cells[idx].classList.remove('highlight'), 100);
+            playTone(idx);
+
+            playerSeq.push(idx);
+
+            // Validate latest input
+            const currentStep = playerSeq.length - 1;
+            if (playerSeq[currentStep] !== sequence[currentStep]) {
+                gameOver();
+                return;
+            }
+
+            if (playerSeq.length === sequence.length) {
+                level++;
+                setTimeout(nextRound, 800);
+            }
+        }
+
+        function gameOver() {
+            document.body.style.background = '#3f1111'; // Flash red
+            setTimeout(() => document.body.style.background = '', 200);
+            alert('Game Over! Level: ' + level);
+            startBtn.style.display = 'inline-block';
+        }
+
+        function playTone(idx) {
+            const ac = new (window.AudioContext || window.webkitAudioContext)();
+            const osc = ac.createOscillator();
+            osc.connect(ac.destination);
+            // Pentatonic scale-ish mapping
+            const freqs = [261.6, 293.7, 329.6, 392.0, 440.0, 523.3, 587.3, 659.3, 784.0];
+            osc.frequency.value = freqs[idx];
+            osc.start();
+            osc.stop(ac.currentTime + 0.1);
+        }
+    </script>
+</body>
+
+</html>

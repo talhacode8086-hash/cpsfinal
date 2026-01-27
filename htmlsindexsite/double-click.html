@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Double Click Test - AssetsToolsHub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sidebar.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .tool-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .test-box {
+            width: 100%;
+            height: 400px;
+            background: var(--card-bg);
+            border: 2px solid var(--card-border);
+            border-radius: 2rem;
+            margin: 2rem 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .test-box.faulty {
+            border-color: #ef4444;
+            background: rgba(239, 68, 68, 0.05);
+        }
+
+        .test-box.healthy {
+            border-color: #10b981;
+            background: rgba(16, 185, 129, 0.05);
+        }
+
+        .stat-circle {
+            width: 150px;
+            height: 150px;
+            border: 4px solid var(--card-border);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .count-val {
+            font-size: 3rem;
+            font-weight: 900;
+            color: white;
+        }
+
+        .count-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        .log-container {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            text-align: left;
+            max-height: 200px;
+            overflow-y: auto;
+            border: 1px solid var(--card-border);
+        }
+
+        .log-entry {
+            font-family: monospace;
+            font-size: 0.85rem;
+            padding: 5px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .log-error {
+            color: #ef4444;
+            font-weight: 800;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-content">
+        <div class="tool-container">
+            <h1 style="font-size: 2.5rem; font-weight:900; margin-bottom: 1rem;">Mouse Double Click Test</h1>
+            <p style="color:var(--text-muted); margin-bottom: 3rem;">Detect failing switches. If you click once and the
+                counter goes up twice, your switch is bouncing.</p>
+
+            <div class="test-box" id="testBox">
+                <div class="stat-circle">
+                    <div class="count-val" id="clickCount">0</div>
+                    <div class="count-label">Clicks</div>
+                </div>
+                <h2 id="statusText">START CLICKING</h2>
+                <p style="color:var(--text-muted); margin-top:10px">Both Left & Right buttons are tracked</p>
+            </div>
+
+            <div class="log-container" id="log">
+                <div class="log-entry">Waiting for interaction...</div>
+            </div>
+
+            <div style="margin-top: 2rem;">
+                <button class="join-pro-btn" onclick="location.reload()">CLEAR LOG</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="layout.js"></script>
+    <script>
+        const box = document.getElementById('testBox');
+        const countEl = document.getElementById('clickCount');
+        const statusEl = document.getElementById('statusText');
+        const log = document.getElementById('log');
+
+        let clickCount = 0;
+        let lastLeft = 0;
+        let lastRight = 0;
+        const THRESHOLD = 80; // ms
+
+        box.onmousedown = (e) => {
+            const now = performance.now();
+            clickCount++;
+            countEl.innerText = clickCount;
+
+            let diff = 0;
+            let button = e.button === 0 ? "LEFT" : (e.button === 2 ? "RIGHT" : "OTHER");
+
+            if (e.button === 0) {
+                diff = now - lastLeft;
+                lastLeft = now;
+            } else if (e.button === 2) {
+                diff = now - lastRight;
+                lastRight = now;
+            }
+
+            const isDouble = (diff < THRESHOLD && diff > 0);
+
+            const entry = document.createElement('div');
+            entry.className = 'log-entry' + (isDouble ? ' log-error' : '');
+            entry.innerText = `[${new Date().toLocaleTimeString()}] ${button} CLICK - Interval: ${Math.round(diff)}ms ${isDouble ? '!!! DOUBLE CLICK DETECTED !!!' : ''}`;
+            log.prepend(entry);
+
+            if (isDouble) {
+                box.className = 'test-box faulty';
+                statusEl.innerText = "DOUBLE CLICK DETECTED!";
+                setTimeout(() => {
+                    box.className = 'test-box';
+                    statusEl.innerText = "CONTINUE TESTING";
+                }, 1000);
+            } else {
+                box.className = 'test-box healthy';
+                statusEl.innerText = "SINGLE CLICK REGISTERED";
+            }
+        };
+
+        box.oncontextmenu = (e) => e.preventDefault();
+    </script>
+</body>
+
+</html>

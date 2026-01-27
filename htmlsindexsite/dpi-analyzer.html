@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DPI Analyzer - AssetsToolsHub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sidebar.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .tool-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--card-border);
+            border-radius: 2rem;
+            padding: 3rem;
+            text-align: center;
+        }
+
+        .ruler-guide {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px dashed var(--primary);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            margin: 2rem 0;
+            cursor: pointer;
+            position: relative;
+            user-select: none;
+            overflow: hidden;
+        }
+
+        .track-area {
+            height: 100px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            padding: 0 1rem;
+            position: relative;
+        }
+
+        .mouse-marker {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            left: 10px;
+            transition: left 0.05s linear;
+            box-shadow: 0 0 20px var(--primary-glow);
+        }
+
+        .distance-marker {
+            position: absolute;
+            bottom: -30px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 700;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--card-border);
+            border-radius: 1rem;
+            padding: 1.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-val {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .btn-start {
+            background: white;
+            color: black;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            font-weight: 800;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 1rem;
+            transition: transform 0.2s;
+        }
+
+        .btn-start:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-content">
+        <div class="tool-container">
+            <div class="tool-header">
+                <h1>DPI Analyzer</h1>
+                <p style="color:var(--text-muted); margin-top:1rem;">Measure your mouse's actual hardware DPI.</p>
+            </div>
+
+            <div
+                style="text-align: left; margin-top: 2rem; background:rgba(255,255,255,0.02); padding:1.5rem; border-radius:1rem;">
+                <h3 style="margin-bottom:0.5rem">Instructions:</h3>
+                <ol style="margin-left: 1.25rem; color:var(--text-muted); font-size:0.9rem; line-height:1.6">
+                    <li>Set the distance you will move your mouse (e.g., 2 inches).</li>
+                    <li>Click "START TRACKING".</li>
+                    <li>Slowly move your mouse exactly that distance horizontally.</li>
+                    <li>Click "STOP" or wait for results.</li>
+                </ol>
+            </div>
+
+            <div class="input-group" style="margin-top: 2rem; text-align:left">
+                <label class="input-label">Distance to move (Inches)</label>
+                <input type="number" id="target-dist" class="input-field" value="2" step="0.5">
+            </div>
+
+            <div class="ruler-guide" id="track-surface">
+                <div class="track-area">
+                    <div class="mouse-marker" id="marker">
+                        <i data-lucide="mouse-pointer-2" style="width:20px; color:white"></i>
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn-start" id="track-btn">START TRACKING</button>
+
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-label">Measured DPI</div>
+                    <div class="stat-val" id="result-dpi">0</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Pixels Counted</div>
+                    <div class="stat-val" id="result-pixels">0 px</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="layout.js"></script>
+    <script>
+        let tracking = false;
+        let startX = 0;
+        let totalPixels = 0;
+
+        const trackBtn = document.getElementById('track-btn');
+        const marker = document.getElementById('marker');
+        const pixelsEl = document.getElementById('result-pixels');
+        const dpiEl = document.getElementById('result-dpi');
+        const targetDistInput = document.getElementById('target-dist');
+
+        trackBtn.addEventListener('click', () => {
+            if (!tracking) {
+                tracking = true;
+                totalPixels = 0;
+                startX = null;
+                trackBtn.innerText = 'STOP TRACKING';
+                trackBtn.style.background = '#ef4444';
+                trackBtn.style.color = 'white';
+                pixelsEl.innerText = '0 px';
+                dpiEl.innerText = '0';
+                marker.style.left = '10px';
+            } else {
+                tracking = false;
+                trackBtn.innerText = 'START TRACKING';
+                trackBtn.style.background = 'white';
+                trackBtn.style.color = 'black';
+                calculateDPI();
+            }
+        });
+
+        window.addEventListener('mousemove', (e) => {
+            if (!tracking) return;
+
+            if (startX === null) {
+                startX = e.clientX;
+                return;
+            }
+
+            const diff = Math.abs(e.clientX - startX);
+            totalPixels = diff;
+            pixelsEl.innerText = totalPixels + ' px';
+
+            // Move marker (visual effect)
+            const trackWidth = document.querySelector('.track-area').clientWidth - 60;
+            const visualLeft = 10 + (totalPixels % trackWidth);
+            marker.style.left = visualLeft + 'px';
+        });
+
+        function calculateDPI() {
+            const distance = parseFloat(targetDistInput.value);
+            if (distance > 0 && totalPixels > 0) {
+                const dpi = totalPixels / distance;
+                dpiEl.innerText = Math.round(dpi);
+            }
+        }
+    </script>
+</body>
+
+</html>

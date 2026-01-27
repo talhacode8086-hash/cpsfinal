@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Ghosting Test - AssetsToolsHub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sidebar.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .tool-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .input-display {
+            background: #0d1117;
+            border: 2px solid var(--card-border);
+            border-radius: 2rem;
+            min-height: 200px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            gap: 1rem;
+            margin: 2rem 0;
+            transition: 0.2s;
+        }
+
+        .input-display.warning {
+            border-color: #ef4444;
+            box-shadow: 0 0 30px rgba(239, 68, 68, 0.2);
+        }
+
+        .input-display.good {
+            border-color: #10b981;
+            box-shadow: 0 0 30px rgba(16, 185, 129, 0.1);
+        }
+
+        .key-badge {
+            background: #1f2937;
+            border: 1px solid #374151;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #fff;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 1.5rem;
+            border-radius: 1.5rem;
+        }
+
+        .stat-val {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--primary);
+        }
+
+        .instruction {
+            margin-top: 2rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            text-align: left;
+        }
+
+        .combo-btn {
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-right: 10px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-content">
+        <div class="tool-container">
+            <h1 style="font-size: 2.5rem; font-weight:900; margin-bottom: 1rem;">Key Ghosting Test <span
+                    style="color:#fbbf24; font-size:1rem; vertical-align:middle; margin-left:10px">PRO</span></h1>
+            <p style="color:var(--text-muted); margin-bottom: 3rem;">Check for "Ghosting" or "Jamming" by pressing
+                multiple keys simultaneously.</p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-val" id="count">0</div>
+                    <div class="stat-label">Keys Pressed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-val" id="maxHit">0</div>
+                    <div class="stat-label">Max Simultaneous</div>
+                </div>
+            </div>
+
+            <div class="input-display" id="display">
+                <div style="color:var(--text-muted); font-weight:600">PRESS MULTIPLE KEYS AT ONCE</div>
+            </div>
+
+            <div class="instruction">
+                <h3 style="margin-bottom:1rem">Common Ghosting Combos</h3>
+                <p style="color:var(--text-muted); margin-bottom:1rem">Try pressing these combinations. If one key
+                    doesn't register while others are held, you have ghosting.</p>
+                <div style="margin-bottom:1rem">
+                    <button class="combo-btn">W + A + S</button>
+                    <button class="combo-btn">Space + Up + Left</button>
+                    <button class="combo-btn">A + S + D</button>
+                    <button class="combo-btn">Shift + W + R</button>
+                </div>
+                <p style="color:var(--text-muted); font-size:0.9rem">Note: Most modern mechanical keyboards have "N-Key
+                    Rollover" (NKRO) and won't ghost. Cheap membrane keyboards often fail at 3+ simultaneous keys.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="layout.js"></script>
+    <script>
+        const display = document.getElementById('display');
+        const countEl = document.getElementById('count');
+        const maxEl = document.getElementById('maxHit');
+
+        let pressedKeys = new Set();
+        let maxSimul = 0;
+
+        window.addEventListener('keydown', (e) => {
+            e.preventDefault();
+            if (e.repeat) return; // Ignore repeats
+
+            pressedKeys.add(e.code);
+            updateDisplay();
+        });
+
+        window.addEventListener('keyup', (e) => {
+            pressedKeys.delete(e.code);
+            updateDisplay();
+        });
+
+        window.addEventListener('blur', () => {
+            pressedKeys.clear();
+            updateDisplay();
+        });
+
+        function updateDisplay() {
+            display.innerHTML = '';
+            countEl.innerText = pressedKeys.size;
+
+            if (pressedKeys.size > maxSimul) {
+                maxSimul = pressedKeys.size;
+                maxEl.innerText = maxSimul;
+            }
+
+            if (pressedKeys.size === 0) {
+                display.innerHTML = '<div style="color:var(--text-muted); font-weight:600">PRESS MULTIPLE KEYS AT ONCE</div>';
+                display.className = 'input-display';
+                return;
+            }
+
+            // Visual feedback
+            if (pressedKeys.size >= 6) {
+                display.className = 'input-display good';
+            } else {
+                display.className = 'input-display';
+            }
+
+            // Improve layout for held keys
+            Array.from(pressedKeys).sort().forEach(code => {
+                const badge = document.createElement('div');
+                badge.className = 'key-badge';
+                // Clean up code name (e.g., KeyA -> A, Digit1 -> 1)
+                let label = code.replace('Key', '').replace('Digit', '');
+                if (label === 'Space') label = '␣';
+                badge.innerText = label;
+                display.appendChild(badge);
+            });
+        }
+    </script>
+</body>
+
+</html>

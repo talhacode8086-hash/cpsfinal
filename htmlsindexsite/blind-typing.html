@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blind Typing Challenge - AssetsToolsHub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sidebar.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .tool-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .blind-box {
+            background: #000;
+            border: 2px solid var(--card-border);
+            border-radius: 2rem;
+            padding: 4rem;
+            margin: 2rem 0;
+            position: relative;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+        }
+
+        .blind-box.focused {
+            border-color: var(--primary);
+            box-shadow: 0 0 30px rgba(99, 102, 241, 0.1);
+        }
+
+        .target-text {
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 2rem;
+            border-radius: 1.5rem;
+            text-align: left;
+        }
+
+        .hidden-input {
+            position: absolute;
+            opacity: 0;
+            cursor: default;
+        }
+
+        .overlay-msg {
+            font-weight: 800;
+            font-size: 2rem;
+            color: var(--primary);
+            pointer-events: none;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 1.5rem;
+            border-radius: 1.5rem;
+        }
+
+        .stat-val {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .result-text {
+            display: none;
+            margin-top: 2rem;
+            text-align: left;
+            padding: 2rem;
+            background: rgba(16, 185, 129, 0.05);
+            border: 1px solid #10b981;
+            border-radius: 1.5rem;
+            line-height: 1.6;
+            font-size: 1.2rem;
+        }
+
+        .correct {
+            color: #10b981;
+        }
+
+        .incorrect {
+            color: #ef4444;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-content">
+        <div class="tool-container">
+            <h1 style="font-size: 2.5rem; font-weight:900; margin-bottom: 1rem;">Blind Typing Challenge <span
+                    style="color:#fbbf24; font-size:1rem; vertical-align:middle; margin-left:10px">PRO</span></h1>
+            <p style="color:var(--text-muted); margin-bottom: 3rem;">Can you type without seeing your progress? Pure
+                muscle memory test.</p>
+
+            <div class="target-text" id="target">
+                The quick brown fox jumps over the lazy dog. A journey of a thousand miles begins with a single step.
+                Success is not final, failure is not fatal: it is the courage to continue that counts.
+            </div>
+
+            <div class="blind-box" id="box" onclick="focusInput()">
+                <div class="overlay-msg" id="msg">CLICK TO START BLIND TEST</div>
+                <input type="text" id="input" class="hidden-input" autocomplete="off" onpaste="return false">
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-val" id="wpm">0</div>
+                    <div class="stat-label">WPM</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-val" id="acc">0%</div>
+                    <div class="stat-label">Accuracy</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-val" id="timer">0s</div>
+                    <div class="stat-label">Time</div>
+                </div>
+            </div>
+
+            <div class="result-text" id="results"></div>
+
+            <button class="join-pro-btn" style="width:100%; margin-top:2rem; padding:1.2rem" onclick="reset()">RETRY
+                CHALLENGE</button>
+        </div>
+    </div>
+
+    <script src="layout.js"></script>
+    <script>
+        const input = document.getElementById('input');
+        const box = document.getElementById('box');
+        const msg = document.getElementById('msg');
+        const target = document.getElementById('target');
+        const results = document.getElementById('results');
+        const wpmEl = document.getElementById('wpm');
+        const accEl = document.getElementById('acc');
+        const timeEl = document.getElementById('timer');
+
+        let isRunning = false;
+        let startTime = 0;
+        let interval = null;
+
+        function focusInput() {
+            input.focus();
+            box.classList.add('focused');
+            if (!isRunning) {
+                msg.innerText = "TYPE NOW... EVERYTHING IS HIDDEN";
+            }
+        }
+
+        input.addEventListener('input', (e) => {
+            if (!isRunning && input.value.length > 0) {
+                startTest();
+            }
+
+            // End test if length matches or user presses enter
+            if (input.value.length >= target.innerText.trim().length) {
+                finishTest();
+            }
+        });
+
+        input.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') finishTest();
+        });
+
+        function startTest() {
+            isRunning = true;
+            startTime = performance.now();
+            interval = setInterval(() => {
+                const elapsed = (performance.now() - startTime) / 1000;
+                timeEl.innerText = Math.floor(elapsed) + "s";
+
+                const words = input.value.trim().split(/\s+/).length;
+                const wpm = (words / elapsed) * 60;
+                wpmEl.innerText = Math.round(wpm);
+            }, 500);
+        }
+
+        function finishTest() {
+            clearInterval(interval);
+            isRunning = false;
+            msg.innerText = "TEST COMPLETE! SEE RESULTS BELOW";
+            results.style.display = "block";
+
+            const typed = input.value;
+            const original = target.innerText.trim();
+            let html = "";
+            let correctCount = 0;
+
+            for (let i = 0; i < typed.length; i++) {
+                if (typed[i] === original[i]) {
+                    html += `<span class="correct">${typed[i]}</span>`;
+                    correctCount++;
+                } else {
+                    html += `<span class="incorrect">${typed[i] || '_'}</span>`;
+                }
+            }
+
+            results.innerHTML = `<h3 style="margin-bottom:10px">Your Transcribed Text:</h3>` + html;
+            accEl.innerText = Math.round((correctCount / typed.length) * 100) + "%";
+            input.blur();
+        }
+
+        function reset() {
+            location.reload();
+        }
+    </script>
+</body>
+
+</html>

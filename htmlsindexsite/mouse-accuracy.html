@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Accuracy Trainer - AssetsToolsHub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sidebar.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .tool-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .arena {
+            height: 450px;
+            background: #0d1117;
+            border: 1px solid var(--card-border);
+            border-radius: 1.5rem;
+            position: relative;
+            margin: 2rem 0;
+            overflow: hidden;
+            cursor: crosshair;
+        }
+
+        .baloon {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, #a855f7, #6b21a8);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            transition: transform 0.1s;
+        }
+
+        .baloon:active {
+            transform: scale(0.9);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-content">
+        <div class="tool-container">
+            <h1 style="font-size: 2.5rem; font-weight:900; margin-bottom: 1rem;">Mouse Accuracy Trainer</h1>
+            <p style="color:var(--text-muted); margin-bottom: 3rem;">Click smaller targets for higher points. Don't
+                miss!</p>
+
+            <div style="font-size:2rem; font-weight:900; color:white; margin-bottom:1rem" id="ui">Score: 0 | Lives: 3
+            </div>
+
+            <div class="arena" id="arena" onclick="miss(event)">
+                <div id="start"
+                    style="position:absolute; inset:0; background:rgba(0,0,0,0.8); display:flex; align-items:center; justify-content:center; z-index:10">
+                    <button class="join-pro-btn" style="width:auto" onclick="gameStart()">START</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="layout.js"></script>
+    <script>
+        const arena = document.getElementById('arena');
+        const ui = document.getElementById('ui');
+        const startDiv = document.getElementById('start');
+
+        let score = 0;
+        let lives = 3;
+        let isPlaying = false;
+        let spawnTimer;
+        let difficulty = 2000;
+
+        function gameStart() {
+            score = 0;
+            lives = 3;
+            isPlaying = true;
+            difficulty = 1500;
+            updateUI();
+            startDiv.style.display = 'none';
+            arena.innerHTML = '';
+            spawnLoop();
+        }
+
+        function spawnLoop() {
+            if (!isPlaying) return;
+            spawn();
+            difficulty = Math.max(400, difficulty * 0.98); // Speed up
+            spawnTimer = setTimeout(spawnLoop, difficulty);
+        }
+
+        function spawn() {
+            const size = 20 + Math.random() * 40; // 20-60px
+            const b = document.createElement('div');
+            b.className = 'baloon';
+            b.style.width = size + 'px';
+            b.style.height = size + 'px';
+            b.style.left = Math.random() * (arena.clientWidth - size) + 'px';
+            b.style.top = Math.random() * (arena.clientHeight - size) + 'px';
+
+            // Random color
+            const hue = Math.floor(Math.random() * 360);
+            b.style.background = `radial-gradient(circle at 30% 30%, hsl(${hue}, 70%, 60%), hsl(${hue}, 70%, 40%))`;
+
+            b.onmousedown = (e) => {
+                e.stopPropagation();
+                hit(b, size);
+            }
+
+            // Auto shrink/disappear
+            setTimeout(() => {
+                if (b.parentElement) {
+                    b.style.transition = 'transform 0.5s, opacity 0.5s';
+                    b.style.transform = 'scale(0)';
+                    b.style.opacity = '0';
+                    setTimeout(() => {
+                        if (b.parentElement && isPlaying) {
+                            b.remove();
+                            lives--;
+                            updateUI();
+                            if (lives <= 0) gameOver();
+                        }
+                    }, 500);
+                }
+            }, difficulty * 1.5);
+
+            arena.appendChild(b);
+        }
+
+        function hit(el, size) {
+            if (!isPlaying) return;
+            el.remove();
+            // Smaller = more points
+            const pts = Math.round(100 - size);
+            score += pts;
+            updateUI();
+
+            // Sound
+            const ac = new (window.AudioContext || window.webkitAudioContext)();
+            const osc = ac.createOscillator();
+            osc.connect(ac.destination);
+            osc.frequency.setValueAtTime(400 + pts * 5, ac.currentTime);
+            osc.start(); osc.stop(ac.currentTime + 0.05);
+        }
+
+        function miss(e) {
+            if (e.target === arena && isPlaying) {
+                lives--;
+                updateUI();
+                if (lives <= 0) gameOver();
+            }
+        }
+
+        function updateUI() {
+            ui.innerText = `Score: ${score} | Lives: ${lives}`;
+        }
+
+        function gameOver() {
+            isPlaying = false;
+            clearTimeout(spawnTimer);
+            startDiv.style.display = 'flex';
+            startDiv.innerHTML = `
+                <div style='text-align:center'>
+                    <h1>GAME OVER</h1>
+                    <p>Score: ${score}</p>
+                    <button class="join-pro-btn" style="width:auto; margin-top:1rem" onclick="gameStart()">RETRY</button>
+                </div>
+            `;
+        }
+    </script>
+</body>
+
+</html>

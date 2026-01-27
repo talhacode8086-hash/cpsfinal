@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sound Reaction Test - AssetsToolsHub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sidebar.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .tool-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .trigger-area {
+            height: 400px;
+            background: #1f2937;
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 2rem;
+            font-weight: 800;
+            flex-direction: column;
+            gap: 1rem;
+            margin: 2rem 0;
+            user-select: none;
+            transition: 0.1s;
+        }
+
+        .trigger-area.waiting {
+            background: #ef4444;
+        }
+
+        .trigger-area.go {
+            background: #10b981;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-content">
+        <div class="tool-container">
+            <h1 style="font-size: 2.5rem; font-weight:900; margin-bottom: 1rem;">Sound Reaction Test</h1>
+            <p style="color:var(--text-muted); margin-bottom: 3rem;">Click as soon as you HEAR the beep.</p>
+
+            <div class="trigger-area" id="area" onmousedown="handleClick()">
+                <div id="icon"><i data-lucide="volume-2" size="48"></i></div>
+                <div id="txt">Click to Start</div>
+            </div>
+
+            <div id="result" style="font-size:2rem; font-weight:900; color:white"></div>
+        </div>
+    </div>
+
+    <script src="layout.js"></script>
+    <script>
+        const area = document.getElementById('area');
+        const txt = document.getElementById('txt');
+        const res = document.getElementById('result');
+        const ac = new (window.AudioContext || window.webkitAudioContext)();
+
+        let state = 'idle'; // idle, waiting, go
+        let startTime = 0;
+        let timer;
+
+        function handleClick() {
+            if (state === 'idle') {
+                start();
+            } else if (state === 'waiting') {
+                // Too early
+                clearTimeout(timer);
+                area.className = 'trigger-area';
+                area.style.background = '#ef4444';
+                txt.innerText = "Too Early!";
+                state = 'idle';
+                setTimeout(() => {
+                    area.style.background = '#1f2937';
+                    txt.innerText = "Click to Restart";
+                }, 1000);
+            } else if (state === 'go') {
+                const diff = performance.now() - startTime;
+                res.innerText = Math.round(diff) + ' ms';
+                area.className = 'trigger-area';
+                txt.innerText = "Click to Restart";
+                state = 'idle';
+            }
+        }
+
+        function start() {
+            if (ac.state === 'suspended') ac.resume();
+
+            state = 'waiting';
+            area.className = 'trigger-area waiting';
+            txt.innerText = "Wait for sound...";
+            res.innerText = '';
+
+            const delay = 1000 + Math.random() * 3000;
+            timer = setTimeout(() => {
+                playSound();
+                state = 'go';
+                area.className = 'trigger-area go';
+                txt.innerText = "CLICK!";
+                startTime = performance.now();
+            }, delay);
+        }
+
+        function playSound() {
+            const osc = ac.createOscillator();
+            const g = ac.createGain();
+            osc.connect(g);
+            g.connect(ac.destination);
+            osc.frequency.value = 600;
+            osc.type = 'square';
+            g.gain.value = 0.1;
+            osc.start();
+            osc.stop(ac.currentTime + 0.1);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kohi Click Test - AssetsToolsHub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sidebar.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .tool-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .click-area {
+            width: 100%;
+            height: 400px;
+            background: var(--card-bg);
+            border: 2px solid #10b981;
+            border-radius: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            user-select: none;
+            transition: all 0.2s;
+            position: relative;
+            overflow: hidden;
+            margin: 2rem 0;
+            box-shadow: 0 0 30px rgba(16, 185, 129, 0.1);
+        }
+
+        .click-area:active {
+            transform: scale(0.98);
+            background: rgba(16, 185, 129, 0.05);
+        }
+
+        .click-area h2 {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            pointer-events: none;
+            color: #10b981;
+        }
+
+        .rank-badge {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            background: #10b981;
+            color: black;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 1.5rem;
+            border-radius: 1.5rem;
+        }
+
+        .stat-val {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #10b981;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-content">
+        <div class="tool-container">
+            <h1 style="font-size: 3.5rem; font-weight:900; margin-bottom: 1rem;">Kohi Click Test <span
+                    style="color:#fbbf24; font-size:1rem; vertical-align:middle; margin-left:10px">PRO</span></h1>
+            <p style="color:var(--text-muted); margin-bottom: 3rem;">The original Minecraft PvP standard. 10 Seconds of
+                pure intensity.</p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-val" id="cps">0.0</div>
+                    <div class="stat-label">Clicks Per Second</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-val" id="timer">10.0</div>
+                    <div class="stat-label">Time Remaining</div>
+                </div>
+            </div>
+
+            <div class="click-area" id="clickArea">
+                <div class="rank-badge" id="rank">RANK: NONE</div>
+                <h2 id="areaText">CLICK!</h2>
+                <div style="color:var(--text-muted); font-weight:600">KOHI COMPETITIVE MODE</div>
+            </div>
+
+            <button class="join-pro-btn" style="width: 100%; padding: 1.5rem; background:#10b981; color:white"
+                onclick="resetTask()">RESTART TEST</button>
+        </div>
+    </div>
+
+    <script src="layout.js"></script>
+    <script>
+        let clicks = 0;
+        let timeLeft = 10;
+        let active = false;
+        let timerId = null;
+
+        const area = document.getElementById('clickArea');
+        const areaText = document.getElementById('areaText');
+        const cpsEl = document.getElementById('cps');
+        const timerEl = document.getElementById('timer');
+        const rankEl = document.getElementById('rank');
+
+        function resetTask() {
+            clearInterval(timerId);
+            active = false;
+            clicks = 0;
+            timeLeft = 10;
+            cpsEl.innerText = '0.0';
+            timerEl.innerText = '10.0';
+            rankEl.innerText = "RANK: NONE";
+            areaText.innerText = "CLICK!";
+        }
+
+        area.addEventListener('mousedown', () => {
+            if (timeLeft <= 0) return;
+
+            if (!active) {
+                active = true;
+                timerId = setInterval(() => {
+                    timeLeft -= 0.1;
+                    if (timeLeft <= 0) {
+                        timeLeft = 0;
+                        clearInterval(timerId);
+                        active = false;
+                        areaText.innerText = "FINAL";
+                    }
+                    timerEl.innerText = timeLeft.toFixed(1);
+                    update();
+                }, 100);
+            }
+
+            clicks++;
+            update();
+        });
+
+        function update() {
+            const timePassed = 10 - timeLeft;
+            if (timePassed > 0) {
+                const cps = clicks / timePassed;
+                cpsEl.innerText = cps.toFixed(1);
+
+                if (cps < 5) rankEl.innerText = "RANK: TURTLE";
+                else if (cps < 8) rankEl.innerText = "RANK: RABBIT";
+                else if (cps < 12) rankEl.innerText = "RANK: CHEETAH";
+                else rankEl.innerText = "RANK: GOD";
+            }
+        }
+    </script>
+</body>
+
+</html>

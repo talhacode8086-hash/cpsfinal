@@ -116,7 +116,7 @@ export default function InputLagEstimator() {
                 <AnimatePresence mode="wait">
                     {estimate && (
                         <motion.div
-                            key={hz + polling + vSync + gpuType}
+                            key={`${hz}-${polling}-${vSync}-${gpuType}`}
                             initial={{ opacity: 0, scale: 0.98 }}
                             animate={{ opacity: 1, scale: 1 }}
                         >

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FPS & Refresh Rate Calculator - AssetsToolsHub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sidebar.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .tool-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--card-border);
+            border-radius: 2rem;
+            padding: 3rem;
+        }
+
+        .tool-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .tool-header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #fff, var(--text-muted));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .calc-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .input-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .input-label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+        }
+
+        .input-field {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 1rem;
+            color: white;
+            font-size: 1.1rem;
+            outline: none;
+        }
+
+        .result-box {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--card-border);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .res-title {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+        }
+
+        .res-val {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--primary);
+        }
+
+        .res-unit {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-left: 0.25rem;
+        }
+
+        .viz-container {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 1.5rem;
+        }
+
+        .bar-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .bar-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .bar-outer {
+            height: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .bar-inner {
+            height: 100%;
+            background: var(--primary);
+            width: 50%;
+            transition: width 0.3s ease;
+        }
+
+        .bar-inner.alt {
+            background: #a855f7;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-content">
+        <div class="tool-container">
+            <div class="tool-header">
+                <h1>FPS & Refresh Rate</h1>
+                <p style="color:var(--text-muted)">Calculate frame times and analyze system responsiveness.</p>
+            </div>
+
+            <div class="calc-grid">
+                <div>
+                    <div class="input-group">
+                        <label class="input-label">In-Game FPS (Frames Per Second)</label>
+                        <input type="number" id="fps-input" class="input-field" value="144">
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label">Monitor Refresh Rate (Hz)</label>
+                        <input type="number" id="hz-input" class="input-field" value="144">
+                    </div>
+                </div>
+
+                <div class="result-box">
+                    <div class="res-title">Frame Time</div>
+                    <div class="res-val" id="frame-time">6.94<span class="res-unit">ms</span></div>
+                    <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--card-border)">
+                        <div class="res-title">Refresh Interval</div>
+                        <div class="res-val" id="hz-time" style="color:#a855f7">6.94<span class="res-unit">ms</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="viz-container">
+                <h3 style="margin-bottom: 1.5rem;">Visual Analysis</h3>
+
+                <div class="bar-group">
+                    <div class="bar-label">
+                        <span>Frame Delay (Lower is better)</span>
+                        <span id="label-fps">6.94 ms</span>
+                    </div>
+                    <div class="bar-outer">
+                        <div class="bar-inner" id="bar-fps"></div>
+                    </div>
+                </div>
+
+                <div class="bar-group">
+                    <div class="bar-label">
+                        <span>Refresh Delay</span>
+                        <span id="label-hz">6.94 ms</span>
+                    </div>
+                    <div class="bar-outer">
+                        <div class="bar-inner alt" id="bar-hz"></div>
+                    </div>
+                </div>
+
+                <p style="color:var(--text-muted); font-size:0.85rem; line-height:1.6; margin-top:1.5rem">
+                    <i data-lucide="info" style="width:14px; vertical-align:middle; margin-right:4px"></i>
+                    When your FPS is higher than your Hz, you get lower input lag but may experience screen tearing.
+                    When FPS equals Hz with Sync, you get smoothness at the cost of some latency.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="layout.js"></script>
+    <script>
+        const fpsInput = document.getElementById('fps-input');
+        const hzInput = document.getElementById('hz-input');
+        const frameTimeEl = document.getElementById('frame-time');
+        const hzTimeEl = document.getElementById('hz-time');
+
+        const barFps = document.getElementById('bar-fps');
+        const barHz = document.getElementById('bar-hz');
+        const labelFps = document.getElementById('label-fps');
+        const labelHz = document.getElementById('label-hz');
+
+        function update() {
+            const fps = parseFloat(fpsInput.value) || 1;
+            const hz = parseFloat(hzInput.value) || 1;
+
+            const ft = 1000 / fps;
+            const ht = 1000 / hz;
+
+            frameTimeEl.innerHTML = ft.toFixed(2) + '<span class="res-unit">ms</span>';
+            hzTimeEl.innerHTML = ht.toFixed(2) + '<span class="res-unit">ms</span>';
+
+            labelFps.innerText = ft.toFixed(2) + ' ms';
+            labelHz.innerText = ht.toFixed(2) + ' ms';
+
+            // Scale bars (max 33.3ms for 30fps)
+            const maxMs = 33.3;
+            barFps.style.width = Math.min((ft / maxMs) * 100, 100) + '%';
+            barHz.style.width = Math.min((ht / maxMs) * 100, 100) + '%';
+        }
+
+        fpsInput.addEventListener('input', update);
+        hzInput.addEventListener('input', update);
+        update();
+    </script>
+</body>
+
+</html>

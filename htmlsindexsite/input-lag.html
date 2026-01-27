@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Lag Estimator - AssetsToolsHub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sidebar.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .tool-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--card-border);
+            border-radius: 2rem;
+            padding: 3rem;
+        }
+
+        .tool-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .tool-header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #fff, var(--text-muted));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .input-group {
+            margin-bottom: 2rem;
+        }
+
+        .input-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+        }
+
+        .select-field {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 1rem;
+            color: white;
+            font-size: 1.1rem;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .result-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--card-border);
+            border-radius: 2rem;
+            padding: 2.5rem;
+            margin-top: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .lag-meter {
+            height: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            margin-top: 2rem;
+            overflow: hidden;
+        }
+
+        .lag-fill {
+            height: 100%;
+            background: linear-gradient(to right, #10b981, #f59e0b, #ef4444);
+            width: 30%;
+            transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .score-val {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--primary);
+            text-align: center;
+        }
+
+        .score-label {
+            font-size: 1rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            text-align: center;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+        }
+
+        .breakdown-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-content">
+        <div class="tool-container">
+            <div class="tool-header">
+                <h1>System Input Lag Estimator</h1>
+                <p style="color:var(--text-muted)">Estimate your end-to-end system latency based on hardware specs.</p>
+            </div>
+
+            <div class="input-group">
+                <label class="input-label">Monitor Refresh Rate</label>
+                <select id="monitor-hz" class="select-field">
+                    <option value="16.67">60 Hz (16.7ms)</option>
+                    <option value="6.94" selected>144 Hz (6.9ms)</option>
+                    <option value="4.17">240 Hz (4.2ms)</option>
+                    <option value="2.78">360 Hz (2.8ms)</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label class="input-label">Mouse Polling Rate</label>
+                <select id="mouse-rate" class="select-field">
+                    <option value="8.0">125 Hz (8ms)</option>
+                    <option value="2.0">500 Hz (2ms)</option>
+                    <option value="1.0" selected>1000 Hz (1ms)</option>
+                    <option value="0.125">8000 Hz (0.1ms)</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label class="input-label">Sync Type (V-Sync/G-Sync)</label>
+                <select id="sync-type" class="select-field">
+                    <option value="1">No Sync / Reflex On (Lowest)</option>
+                    <option value="10">G-Sync / FreeSync (Moderate)</option>
+                    <option value="50">V-Sync (High)</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label class="input-label">Average Game FPS</label>
+                <select id="avg-fps" class="select-field">
+                    <option value="33.3">30 FPS (33ms Delay)</option>
+                    <option value="16.7">60 FPS (17ms Delay)</option>
+                    <option value="6.9" selected>144 FPS (7ms Delay)</option>
+                    <option value="3.3">300+ FPS (3ms Delay)</option>
+                </select>
+            </div>
+
+            <div class="result-card">
+                <div class="score-label" id="rating-text">COMPETITIVE</div>
+                <div class="score-val" id="total-lag">12.5<span
+                        style="font-size:1rem; opacity:0.6; margin-left:4px">ms</span></div>
+
+                <div class="lag-meter">
+                    <div class="lag-fill" id="meter-fill"></div>
+                </div>
+
+                <div style="margin-top: 2rem;">
+                    <div class="breakdown-item">
+                        <span style="color:var(--text-muted)">Peripheral Latency</span>
+                        <span id="label-peripheral">1.0ms</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span style="color:var(--text-muted)">Processing & Render</span>
+                        <span id="label-render">7.0ms</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span style="color:var(--text-muted)">Display Latency</span>
+                        <span id="label-display">6.9ms</span>
+                    </div>
+                </div>
+            </div>
+
+            <p style="margin-top: 2rem; color:var(--text-muted); font-size:0.85rem; line-height:1.6">
+                *Note: This is an estimation based on typical hardware performance. Real-world latency may vary based on
+                CPU/GPU load, driver settings, and specific engine optimizations (like NVIDIA Reflex or AMD Anti-Lag).
+            </p>
+        </div>
+    </div>
+
+    <script src="layout.js"></script>
+    <script>
+        const inputs = ['monitor-hz', 'mouse-rate', 'sync-type', 'avg-fps'];
+
+        function update() {
+            const hz = parseFloat(document.getElementById('monitor-hz').value);
+            const mouse = parseFloat(document.getElementById('mouse-rate').value);
+            const sync = parseFloat(document.getElementById('sync-type').value);
+            const fps = parseFloat(document.getElementById('avg-fps').value);
+
+            // Calculation Logic
+            const peripheral = mouse + 4; // Avg mouse sensor delay
+            const render = fps + sync + 2; // Frame time + sync buffer + engine base
+            const display = hz; // Avg scanout
+
+            const total = peripheral + render + display;
+
+            document.getElementById('total-lag').innerHTML = total.toFixed(1) + '<span style="font-size:1rem; opacity:0.6; margin-left:4px">ms</span>';
+
+            // Labels
+            document.getElementById('label-peripheral').innerText = peripheral.toFixed(1) + 'ms';
+            document.getElementById('label-render').innerText = render.toFixed(1) + 'ms';
+            document.getElementById('label-display').innerText = display.toFixed(1) + 'ms';
+
+            // Meter & Rating
+            const fill = document.getElementById('meter-fill');
+            const rating = document.getElementById('rating-text');
+
+            const percent = Math.min((total / 100) * 100, 100);
+            fill.style.width = percent + '%';
+
+            if (total < 15) {
+                rating.innerText = "PRO / ELITE";
+                rating.style.color = "#10b981";
+            } else if (total < 35) {
+                rating.innerText = "COMPETITIVE";
+                rating.style.color = "#3b82f6";
+            } else if (total < 60) {
+                rating.innerText = "PLAYABLE";
+                rating.style.color = "#f59e0b";
+            } else {
+                rating.innerText = "CASUAL / LAGGY";
+                rating.style.color = "#ef4444";
+            }
+        }
+
+        inputs.forEach(id => document.getElementById(id).addEventListener('change', update));
+        update();
+    </script>
+</body>
+
+</html>

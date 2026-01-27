@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DPI to eDPI Calculator - AssetsToolsHub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sidebar.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .tool-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--card-border);
+            border-radius: 2rem;
+            padding: 3rem;
+        }
+
+        .tool-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .tool-header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #fff, var(--text-muted));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .input-group {
+            margin-bottom: 2rem;
+        }
+
+        .input-label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+        }
+
+        .input-field {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 1rem;
+            color: white;
+            font-size: 1.1rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .input-field:focus {
+            border-color: var(--primary);
+        }
+
+        .result-card {
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 1.5rem;
+            padding: 3rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .result-val {
+            font-size: 4rem;
+            font-weight: 900;
+            color: var(--primary);
+            line-height: 1;
+            text-shadow: 0 0 30px var(--primary-glow);
+        }
+
+        .result-label {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-top: 1rem;
+        }
+
+        .comparison-table {
+            width: 100%;
+            margin-top: 3rem;
+            border-collapse: collapse;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .comparison-table th {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-content">
+        <div class="tool-container">
+            <div class="tool-header">
+                <h1>DPI to eDPI Calculator</h1>
+                <p style="color:var(--text-muted)">Calculate your effective Sensitivity to compare with pro players.</p>
+            </div>
+
+            <div class="input-group">
+                <label class="input-label">Mouse DPI (CPI)</label>
+                <input type="number" id="dpi" class="input-field" value="800" placeholder="e.g. 800">
+            </div>
+
+            <div class="input-group">
+                <label class="input-label">In-Game Sensitivity</label>
+                <input type="number" id="sens" class="input-field" value="1.0" step="0.01" placeholder="e.g. 1.25">
+            </div>
+
+            <div class="result-card">
+                <div class="result-val" id="result-edpi">800</div>
+                <div class="result-label">Effective DPI (eDPI)</div>
+            </div>
+
+            <div style="margin-top: 3rem;">
+                <h3 style="margin-bottom: 1rem;">Why eDPI Matters?</h3>
+                <p style="color:var(--text-muted); line-height:1.6; font-size:0.95rem;">
+                    Different combinations of DPI and In-Game Sensitivity can lead to the same result. For example, 400
+                    DPI with 2.0 Sensitivity is exactly the same as 800 DPI with 1.0 Sensitivity. eDPI allows you to
+                    compare your "true" sensitivity with other players regardless of their hardware settings.
+                </p>
+            </div>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Game Type</th>
+                        <th>Avg. Pro eDPI Range</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Tactical Shooters (CS/VAL)</td>
+                        <td>200 - 450</td>
+                    </tr>
+                    <tr>
+                        <td>Fast-Paced (Apex/OW)</td>
+                        <td>3200 - 6400</td>
+                    </tr>
+                    <tr>
+                        <td>Battle Royale (Warzone/FN)</td>
+                        <td>4000 - 8000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="layout.js"></script>
+    <script>
+        const dpiInput = document.getElementById('dpi');
+        const sensInput = document.getElementById('sens');
+        const resultEdpi = document.getElementById('result-edpi');
+
+        function calculate() {
+            const dpi = parseFloat(dpiInput.value) || 0;
+            const sens = parseFloat(sensInput.value) || 0;
+            const edpi = Math.round(dpi * sens);
+            resultEdpi.innerText = edpi || 0;
+        }
+
+        dpiInput.addEventListener('input', calculate);
+        sensInput.addEventListener('input', calculate);
+        calculate();
+    </script>
+</body>
+
+</html>

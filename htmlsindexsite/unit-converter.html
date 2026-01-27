@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Converter - AssetsToolsHub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sidebar.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --primary: #6366f1;
+            --bg: #030712;
+            --card-bg: rgba(17, 24, 39, 0.7);
+            --card-border: rgba(255, 255, 255, 0.1);
+            --text-main: #f9fafb;
+            --text-muted: #9ca3af;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            min-height: 100vh;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 3rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--card-border);
+            border-radius: 2rem;
+            padding: 3rem;
+            align-self: flex-start;
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            display: inline-block;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .converter-wrap {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        input,
+        select {
+            flex: 1;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--card-border);
+            border-radius: 1rem;
+            color: white;
+            font-size: 1.1rem;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .equal-sign {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-content">
+        <div class="container">
+            <a href="index.html" class="back-link">← Back</a>
+            <h1>Length Converter</h1>
+
+            <div class="converter-wrap">
+                <div class="row">
+                    <input type="number" id="val1" value="1" oninput="convert(1)">
+                    <select id="unit1" onchange="convert(1)">
+                        <option value="1">Meter (m)</option>
+                        <option value="1000">Kilometer (km)</option>
+                        <option value="0.01">Centimeter (cm)</option>
+                        <option value="0.0254">Inch (in)</option>
+                        <option value="0.3048">Foot (ft)</option>
+                        <option value="1609.34">Mile (mi)</option>
+                    </select>
+                </div>
+
+                <div class="equal-sign" style="text-align:center;">=</div>
+
+                <div class="row">
+                    <input type="number" id="val2" oninput="convert(2)">
+                    <select id="unit2" onchange="convert(1)">
+                        <option value="1">Meter (m)</option>
+                        <option value="1000">Kilometer (km)</option>
+                        <option value="0.01" selected>Centimeter (cm)</option>
+                        <option value="0.0254">Inch (in)</option>
+                        <option value="0.3048">Foot (ft)</option>
+                        <option value="1609.34">Mile (mi)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="layout.js"></script>
+    <script>
+        function convert(source) {
+            const v1 = document.getElementById('val1');
+            const v2 = document.getElementById('val2');
+            const u1 = document.getElementById('unit1').value;
+            const u2 = document.getElementById('unit2').value;
+
+            if (source === 1) {
+                const meters = v1.value * u1;
+                v2.value = (meters / u2).toFixed(4);
+            } else {
+                const meters = v2.value * u2;
+                v1.value = (meters / u1).toFixed(4);
+            }
+        }
+
+        // Initial calc
+        convert(1);
+    </script>
+</body>
+
+</html>

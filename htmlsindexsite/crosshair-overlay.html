@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crosshair Overlay - AssetsToolsHub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sidebar.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .tool-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 2rem;
+        }
+
+        .preview-pane {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 2rem;
+            position: relative;
+            aspect-ratio: 16/9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background-image: url('https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .preview-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .crosshair {
+            position: relative;
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        .ch-line {
+            position: absolute;
+            background: #00ff00;
+        }
+
+        .ch-center {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #00ff00;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .controls-pane {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 2rem;
+            padding: 2rem;
+            max-height: calc(100vh - 150px);
+            overflow-y: auto;
+        }
+
+        .control-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .control-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+
+        .control-input {
+            width: 100%;
+            accent-color: var(--primary);
+        }
+
+        .color-presets {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .color-btn {
+            width: 24px;
+            height: 24px;
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+        }
+
+        .export-box {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 1rem;
+            border-radius: 12px;
+            font-family: monospace;
+            font-size: 0.8rem;
+            word-break: break-all;
+            margin-top: 1rem;
+            border: 1px solid var(--card-border);
+        }
+
+        @media (max-width: 992px) {
+            .tool-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-content">
+        <div class="tool-container">
+            <div class="preview-pane" id="preview-box">
+                <div class="preview-overlay"></div>
+                <div id="crosshair" class="crosshair">
+                    <!-- Lines added by JS -->
+                </div>
+            </div>
+
+            <div class="controls-pane">
+                <h2 style="margin-bottom: 1.5rem; font-size: 1.25rem;">Crosshair Settings</h2>
+
+                <div class="control-group">
+                    <div class="control-label">Color <span id="val-color">#00ff00</span></div>
+                    <input type="color" id="ch-color" class="control-input" value="#00ff00"
+                        style="height:40px; padding:2px; border:none; border-radius:8px; background:transparent;">
+                </div>
+
+                <div class="control-group">
+                    <div class="control-label">Length <span id="val-length">10</span></div>
+                    <input type="range" id="ch-length" class="control-input" min="0" max="50" value="10">
+                </div>
+
+                <div class="control-group">
+                    <div class="control-label">Thickness <span id="val-thick">2</span></div>
+                    <input type="range" id="ch-thick" class="control-input" min="1" max="10" value="2">
+                </div>
+
+                <div class="control-group">
+                    <div class="control-label">Gap <span id="val-gap">4</span></div>
+                    <input type="range" id="ch-gap" class="control-input" min="0" max="50" value="4">
+                </div>
+
+                <div class="control-group">
+                    <div class="control-label">Outline <span id="val-outline">0</span></div>
+                    <input type="range" id="ch-outline" class="control-input" min="0" max="5" value="0">
+                </div>
+
+                <div class="control-group">
+                    <div class="control-label">Opacity <span id="val-opacity">1.0</span></div>
+                    <input type="range" id="ch-opacity" class="control-input" min="0" max="100" value="100">
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" style="display:block">Background Image</label>
+                    <select id="bg-select" class="nav-item"
+                        style="width:100%; background:rgba(255,255,255,0.05); border:1px solid var(--card-border); color:white; padding:0.5rem; margin-top:0.5rem;">
+                        <option
+                            value="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1200&q=80">
+                            Modern Warfare</option>
+                        <option
+                            value="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&w=1200&q=80">
+                            Cyberpunk</option>
+                        <option value="none">Solid Black</option>
+                    </select>
+                </div>
+
+                <button class="join-pro-btn" style="width:100%; justify-content:center; margin-top:1rem;"
+                    onclick="copyCode()">
+                    COPY EXPORT CODE
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="layout.js"></script>
+    <script>
+        const ch = document.getElementById('crosshair');
+        const controls = [
+            'ch-color', 'ch-length', 'ch-thick', 'ch-gap', 'ch-outline', 'ch-opacity'
+        ];
+
+        function update() {
+            const config = {
+                color: document.getElementById('ch-color').value,
+                length: parseInt(document.getElementById('ch-length').value),
+                thick: parseInt(document.getElementById('ch-thick').value),
+                gap: parseInt(document.getElementById('ch-gap').value),
+                outline: parseInt(document.getElementById('ch-outline').value),
+                opacity: parseInt(document.getElementById('ch-opacity').value) / 100
+            };
+
+            // Update labels
+            Object.keys(config).forEach(key => {
+                const el = document.getElementById('val-' + key);
+                if (el) el.innerText = config[key];
+            });
+
+            // Draw Crosshair
+            ch.innerHTML = '';
+            ch.style.opacity = config.opacity;
+
+            // Center Dot
+            const dot = document.createElement('div');
+            dot.className = 'ch-center';
+            dot.style.background = config.color;
+            if (config.outline > 0) dot.style.boxShadow = `0 0 0 ${config.outline}px #000`;
+            ch.appendChild(dot);
+
+            // Lines: Top, Bottom, Left, Right
+            const positions = [
+                { top: `-${config.gap + config.length}px`, left: `-${config.thick / 2}px`, width: `${config.thick}px`, height: `${config.length}px` },
+                { top: `${config.gap}px`, left: `-${config.thick / 2}px`, width: `${config.thick}px`, height: `${config.length}px` },
+                { top: `-${config.thick / 2}px`, left: `-${config.gap + config.length}px`, width: `${config.length}px`, height: `${config.thick}px` },
+                { top: `-${config.thick / 2}px`, left: `${config.gap}px`, width: `${config.length}px`, height: `${config.thick}px` }
+            ];
+
+            positions.forEach(pos => {
+                const line = document.createElement('div');
+                line.className = 'ch-line';
+                line.style.backgroundColor = config.color;
+                line.style.top = pos.top;
+                line.style.left = pos.left;
+                line.style.width = pos.width;
+                line.style.height = pos.height;
+                if (config.outline > 0) line.style.boxShadow = `0 0 0 ${config.outline}px #000`;
+                ch.appendChild(line);
+            });
+        }
+
+        controls.forEach(id => document.getElementById(id).addEventListener('input', update));
+
+        document.getElementById('bg-select').addEventListener('change', (e) => {
+            const preview = document.getElementById('preview-box');
+            if (e.target.value === 'none') {
+                preview.style.backgroundImage = 'none';
+                preview.style.backgroundColor = '#000';
+            } else {
+                preview.style.backgroundImage = `url(${e.target.value})`;
+            }
+        });
+
+        update();
+
+        function copyCode() {
+            const config = controls.reduce((acc, id) => {
+                acc[id.replace('ch-', '')] = document.getElementById(id).value;
+                return acc;
+            }, {});
+            navigator.clipboard.writeText(JSON.stringify(config));
+            alert('Config copied to clipboard!');
+        }
+    </script>
+</body>
+
+</html>

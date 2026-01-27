@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-sports Warmup - AssetsToolsHub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sidebar.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .tool-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 2.5rem;
+            padding: 3rem;
+            text-align: center;
+        }
+
+        .timer-circle {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 3rem;
+            border: 8px solid rgba(255, 255, 255, 0.05);
+            border-top-color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: white;
+            transition: transform 0.5s;
+        }
+
+        .timer-circle.active {
+            animation: pulse-timer 1s infinite alternate;
+        }
+
+        @keyframes pulse-timer {
+            from {
+                transform: scale(1);
+                box-shadow: 0 0 20px transparent;
+            }
+
+            to {
+                transform: scale(1.05);
+                box-shadow: 0 0 30px var(--primary-glow);
+            }
+        }
+
+        .step-list {
+            text-align: left;
+            margin-top: 3rem;
+        }
+
+        .step-item {
+            display: flex;
+            gap: 1.5rem;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--card-border);
+            padding: 1.5rem;
+            border-radius: 1.5rem;
+            margin-bottom: 1rem;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            opacity: 0.5;
+        }
+
+        .step-item.active {
+            opacity: 1;
+            transform: translateX(10px);
+            border-color: var(--primary);
+            background: rgba(99, 102, 241, 0.05);
+        }
+
+        .step-num {
+            width: 32px;
+            height: 32px;
+            background: var(--bg);
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        .btn-start {
+            width: 100%;
+            background: white;
+            color: black;
+            border: none;
+            padding: 1.25rem;
+            border-radius: 15px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            cursor: pointer;
+            margin-top: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-content">
+        <div class="tool-container">
+            <h1 style="font-size: 2.5rem; font-weight:800">E-sports Warmup</h1>
+            <p style="color:var(--text-muted); margin-top:1rem; margin-bottom:3rem">Optimize your wrist health and aim
+                consistency.</p>
+
+            <div class="timer-circle" id="timer">01:00</div>
+
+            <div class="step-list">
+                <div class="step-item active" id="step-1">
+                    <div class="step-num">1</div>
+                    <div>
+                        <div style="font-weight:800; font-size:1.1rem">Wrist Rotations</div>
+                        <p style="color:var(--text-muted); font-size:0.9rem">Slow circular motions to lubricate joints.
+                        </p>
+                    </div>
+                </div>
+                <div class="step-item" id="step-2">
+                    <div class="step-num">2</div>
+                    <div>
+                        <div style="font-weight:800; font-size:1.1rem">Forearm Stretch</div>
+                        <p style="color:var(--text-muted); font-size:0.9rem">Gently pull hand back for 30s each side.
+                        </p>
+                    </div>
+                </div>
+                <div class="step-item" id="step-3">
+                    <div class="step-num">3</div>
+                    <div>
+                        <div style="font-weight:800; font-size:1.1rem">Finger Spreading</div>
+                        <p style="color:var(--text-muted); font-size:0.9rem">Spread fingers wide and hold for tension
+                            release.</p>
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn-start" id="start-btn">
+                <i data-lucide="play-circle"></i> START ROUTINE
+            </button>
+        </div>
+    </div>
+
+    <script src="layout.js"></script>
+    <script>
+        let timeLeft = 60;
+        let currentStep = 1;
+        let timer = null;
+        let isRunning = false;
+
+        const timerEl = document.getElementById('timer');
+        const startBtn = document.getElementById('start-btn');
+
+        function updateDisplay() {
+            const m = Math.floor(timeLeft / 60);
+            const s = timeLeft % 60;
+            timerEl.innerText = `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+        }
+
+        function nextStep() {
+            document.getElementById(`step-${currentStep}`).classList.remove('active');
+            currentStep++;
+            if (currentStep > 3) {
+                clearInterval(timer);
+                timerEl.innerText = "DONE!";
+                timerEl.classList.remove('active');
+                startBtn.innerHTML = '<i data-lucide="refresh-cw"></i> RESTART';
+                isRunning = false;
+                return;
+            }
+            document.getElementById(`step-${currentStep}`).classList.add('active');
+            timeLeft = 60;
+            updateDisplay();
+        }
+
+        startBtn.addEventListener('click', () => {
+            if (isRunning) {
+                clearInterval(timer);
+                isRunning = false;
+                startBtn.innerHTML = '<i data-lucide="play-circle"></i> RESUME';
+                timerEl.classList.remove('active');
+            } else {
+                isRunning = true;
+                timerEl.classList.add('active');
+                startBtn.innerHTML = '<i data-lucide="pause-circle"></i> PAUSE';
+                if (timerEl.innerText === "DONE!") {
+                    currentStep = 1;
+                    timeLeft = 60;
+                    document.querySelectorAll('.step-item').forEach(i => i.classList.remove('active'));
+                    document.getElementById('step-1').classList.add('active');
+                }
+                timer = setInterval(() => {
+                    timeLeft--;
+                    updateDisplay();
+                    if (timeLeft <= 0) nextStep();
+                }, 1000);
+            }
+        });
+    </script>
+</body>
+
+</html>

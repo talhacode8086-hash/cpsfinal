@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Desk Height Calculator - AssetsToolsHub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sidebar.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .tool-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--card-border);
+            border-radius: 2rem;
+            padding: 3rem;
+        }
+
+        .tool-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .tool-header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #fff, var(--text-muted));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .setup-viz {
+            height: 300px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 1.5rem;
+            margin-bottom: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .human-svg {
+            height: 80%;
+            fill: var(--primary);
+            opacity: 0.8;
+        }
+
+        .measure-line {
+            position: absolute;
+            border-left: 2px dashed rgba(255, 255, 255, 0.2);
+            padding-left: 10px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 700;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .res-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--card-border);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .res-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .res-val {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        @media (max-width: 600px) {
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-content">
+        <div class="tool-container">
+            <div class="tool-header">
+                <h1>Gaming Setup Calculator</h1>
+                <p style="color:var(--text-muted)">Find your perfect ergonomic desk and chair height.</p>
+            </div>
+
+            <div class="setup-viz">
+                <i data-lucide="user" style="width:120px; height:120px; color:var(--primary); opacity:0.5"></i>
+                <!-- We can add SVG lines for a more technical look -->
+                <div class="measure-line" style="left:20%; height:40%; bottom:10%">Chair: <span
+                        id="viz-chair">45cm</span></div>
+                <div class="measure-line" style="right:20%; height:60%; bottom:10%">Desk: <span
+                        id="viz-desk">72cm</span></div>
+            </div>
+
+            <div class="input-group">
+                <label class="input-label">Your Height (cm)</label>
+                <input type="number" id="user-height" class="input-field" value="180">
+            </div>
+
+            <div class="results-grid">
+                <div class="res-item">
+                    <div class="res-label">Desk Height</div>
+                    <div class="res-val" id="res-desk">72 cm</div>
+                </div>
+                <div class="res-item">
+                    <div class="res-label">Chair Height</div>
+                    <div class="res-val" id="res-chair">48 cm</div>
+                </div>
+                <div class="res-item">
+                    <div class="res-label">Monitor Height</div>
+                    <div class="res-val" id="res-mon">124 cm</div>
+                </div>
+            </div>
+
+            <div
+                style="margin-top: 3rem; background:rgba(99,102,241,0.05); padding:2rem; border-radius:1.5rem; border:1px solid rgba(99,102,241,0.1)">
+                <h3 style="margin-bottom: 1rem">Ergonomic Tips</h3>
+                <ul style="color:var(--text-muted); font-size:0.9rem; line-height:1.6; padding-left:1.5rem">
+                    <li>Elbows should be at a 90-degree angle when typing.</li>
+                    <li>Feet should be flat on the floor or on a footrest.</li>
+                    <li>Top 1/3 of the monitor should be at eye level.</li>
+                    <li>Maintain a distance of about 20-30 inches from the screen.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="layout.js"></script>
+    <script>
+        const heightInput = document.getElementById('user-height');
+
+        function update() {
+            const h = parseFloat(heightInput.value) || 170;
+
+            // Basic Ergo Formulas
+            const desk = Math.round(h * 0.4);
+            const chair = Math.round(h * 0.26);
+            const monitor = Math.round(h * 0.69); // Eye level
+
+            document.getElementById('res-desk').innerText = desk + ' cm';
+            document.getElementById('res-chair').innerText = chair + ' cm';
+            document.getElementById('res-mon').innerText = monitor + ' cm';
+
+            document.getElementById('viz-desk').innerText = desk + ' cm';
+            document.getElementById('viz-chair').innerText = chair + ' cm';
+        }
+
+        heightInput.addEventListener('input', update);
+        update();
+    </script>
+</body>
+
+</html>

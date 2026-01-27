@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aim Consistency Tracker - AssetsToolsHub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sidebar.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .tool-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .game-area {
+            background: #0d1117;
+            border: 2px solid var(--card-border);
+            border-radius: 1.5rem;
+            height: 400px;
+            position: relative;
+            cursor: crosshair;
+            overflow: hidden;
+            margin: 2rem 0;
+            user-select: none;
+        }
+
+        .target {
+            width: 30px;
+            height: 30px;
+            background: var(--primary);
+            border-radius: 50%;
+            position: absolute;
+            transition: transform 0.1s;
+            box-shadow: 0 0 15px var(--primary);
+        }
+
+        .target:active {
+            transform: scale(0.9);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 1.5rem;
+            border-radius: 1rem;
+        }
+
+        .stat-val {
+            font-size: 2rem;
+            font-weight: 800;
+            color: white;
+        }
+
+        .stat-lbl {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        .chart-box {
+            height: 250px;
+            background: #111;
+            padding: 1rem;
+            border-radius: 1rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-content">
+        <div class="tool-container">
+            <h1 style="font-size: 2.5rem; font-weight:900; margin-bottom: 1rem;">Aim Consistency Tracker</h1>
+            <p style="color:var(--text-muted); margin-bottom: 3rem;">Track your precision over time. Targets appear
+                indefinitely.</p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-val" id="hits">0</div>
+                    <div class="stat-lbl">Hits</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-val" id="misses">0</div>
+                    <div class="stat-lbl">Misses</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-val" id="acc" style="color:var(--primary)">100%</div>
+                    <div class="stat-lbl">Accuracy</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-val" id="avgTime">0ms</div>
+                    <div class="stat-lbl">Avg Time to Kill</div>
+                </div>
+            </div>
+
+            <div class="game-area" id="area" onclick="handleMiss(event)">
+                <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); text-align:center"
+                    id="start-msg">
+                    <button class="join-pro-btn" style="width:auto; padding:1rem 3rem" onclick="start()">START
+                        TRACKING</button>
+                </div>
+            </div>
+
+            <div class="chart-box">
+                <canvas id="chart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="layout.js"></script>
+    <script>
+        const area = document.getElementById('area');
+        const hitsEl = document.getElementById('hits');
+        const missesEl = document.getElementById('misses');
+        const accEl = document.getElementById('acc');
+        const avgEl = document.getElementById('avgTime');
+        const startMsg = document.getElementById('start-msg');
+
+        let isRunning = false;
+        let hits = 0;
+        let misses = 0;
+        let appearingTime = 0;
+        let timeToClicks = [];
+        let chart;
+
+        function initChart() {
+            const ctx = document.getElementById('chart').getContext('2d');
+            chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: [],
+                    datasets: [{
+                        label: 'Accuracy (%)',
+                        data: [],
+                        borderColor: '#6366f1',
+                        tension: 0.3
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true, max: 100 },
+                        x: { display: false }
+                    },
+                    plugins: { legend: { display: false } }
+                }
+            });
+        }
+
+        function start() {
+            startMsg.style.display = 'none';
+            isRunning = true;
+            hits = 0;
+            misses = 0;
+            timeToClicks = [];
+            hitsEl.innerText = 0;
+            missesEl.innerText = 0;
+            accEl.innerText = '100%';
+            avgEl.innerText = '0ms';
+
+            // Reset Chart
+            chart.data.labels = [];
+            chart.data.datasets[0].data = [];
+            chart.update();
+
+            spawnTarget();
+        }
+
+        function spawnTarget() {
+            if (!isRunning) return;
+            const t = document.createElement('div');
+            t.className = 'target';
+
+            const x = Math.random() * (area.clientWidth - 40);
+            const y = Math.random() * (area.clientHeight - 40);
+
+            t.style.left = x + 'px';
+            t.style.top = y + 'px';
+
+            appearingTime = performance.now();
+
+            t.onmousedown = (e) => {
+                e.stopPropagation();
+                handleHit();
+                t.remove();
+            };
+
+            area.appendChild(t);
+        }
+
+        function handleHit() {
+            hits++;
+            const diff = performance.now() - appearingTime;
+            timeToClicks.push(diff);
+            updateStats();
+            spawnTarget();
+        }
+
+        function handleMiss(e) {
+            if (!isRunning) return;
+            if (e.target !== area) return; // Clicked on target
+            misses++;
+            updateStats();
+        }
+
+        function updateStats() {
+            hitsEl.innerText = hits;
+            missesEl.innerText = misses;
+
+            const total = hits + misses;
+            const acc = total === 0 ? 100 : (hits / total) * 100;
+            accEl.innerText = Math.round(acc) + '%';
+
+            const avg = timeToClicks.length > 0 ? timeToClicks.reduce((a, b) => a + b, 0) / timeToClicks.length : 0;
+            avgEl.innerText = Math.round(avg) + 'ms';
+
+            // Update Chart
+            if (total % 5 === 0) {
+                chart.data.labels.push(total);
+                chart.data.datasets[0].data.push(acc);
+                if (chart.data.labels.length > 20) {
+                    chart.data.labels.shift();
+                    chart.data.datasets[0].data.shift();
+                }
+                chart.update();
+            }
+        }
+
+        initChart();
+    </script>
+</body>
+
+</html>
