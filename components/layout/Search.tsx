@@ -44,11 +44,11 @@ export default function Search() {
         <div className="relative">
             <button
                 onClick={() => setIsOpen(true)}
-                className="flex items-center gap-2 px-4 py-2 text-sm text-muted-foreground bg-muted/50 hover:bg-muted rounded-full transition-all border border-transparent hover:border-primary/20 group w-48 md:w-64"
+                className="flex items-center justify-center md:justify-start gap-2 h-9 w-9 md:h-10 md:w-64 px-0 md:px-4 py-2 text-sm text-muted-foreground bg-muted/50 hover:bg-muted rounded-xl md:rounded-full transition-all border border-transparent hover:border-primary/20 group"
             >
-                <SearchIcon className="h-4 w-4 group-hover:text-primary transition-colors" />
-                <span>Search tools...</span>
-                <kbd className="ml-auto pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
+                <SearchIcon className="h-4 w-4 sm:h-5 sm:w-5 md:h-4 md:w-4 group-hover:text-primary transition-colors" />
+                <span className="hidden md:inline">Search tools...</span>
+                <kbd className="hidden md:flex ml-auto pointer-events-none select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
                     <span className="text-xs">⌘</span>K
                 </kbd>
             </button>

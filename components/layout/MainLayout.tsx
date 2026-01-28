@@ -19,7 +19,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
                     "flex-1 transition-all duration-300 ease-in-out",
                     isCollapsed ? "lg:pl-0" : "lg:pl-64"
                 )}>
-                    <div className="container py-6 min-h-[calc(100vh-4rem)]">
+                    <div className="w-full px-4 sm:px-6 lg:px-8 py-6 min-h-[calc(100vh-4rem)]">
                         <PageWrapper>
                             {children}
                         </PageWrapper>

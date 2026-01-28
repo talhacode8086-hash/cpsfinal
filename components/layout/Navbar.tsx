@@ -5,7 +5,6 @@ import { useTheme } from 'next-themes';
 import { Moon, Sun, Sparkles, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Search from './Search';
-import { NavDropdown } from '@/components/layout/NavDropdown';
 import { Input } from '@/components/ui/input';
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
@@ -20,9 +19,9 @@ export function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
 
     const navLinks = [
-        { name: 'Gaming', href: '/category/gaming' },
-        { name: 'Productivity', href: '/category/productivity' },
-        { name: 'Dev', href: '/category/dev' },
+        { name: 'Gaming', href: '/category/gaming-utilities' },
+        { name: 'Productivity', href: '/category/text-tools' },
+        { name: 'Dev', href: '/category/development-tools' },
         { name: 'Blog', href: '/blog' },
     ];
 
@@ -53,23 +52,23 @@ export function Navbar() {
                         <Button
                             variant="ghost"
                             size="icon"
-                            className="hidden lg:flex rounded-xl hover:bg-primary/10 text-muted-foreground hover:text-primary transition-all"
+                            className="flex rounded-xl hover:bg-primary/10 text-muted-foreground hover:text-primary transition-all"
                             onClick={toggleSidebar}
                         >
                             <Menu className="h-5 w-5" />
                         </Button>
                     </motion.div>
 
-                    <Link href="/" className="flex items-center space-x-3 group">
+                    <Link href="/" className="flex items-center space-x-2 sm:space-x-3 group shrink-0">
                         <motion.div
                             whileHover={{ rotate: 10, scale: 1.1 }}
                             transition={{ type: 'spring', stiffness: 200, damping: 10 }}
                         >
-                            <Logo className="h-10 w-10" />
+                            <Logo className="h-8 w-8 sm:h-10 sm:w-10" />
                         </motion.div>
                         <div className="flex flex-col">
-                            <span className="font-black text-xl tracking-tighter leading-none">Assets Tools Hub</span>
-                            <span className="text-[10px] font-black text-primary uppercase tracking-[0.3em] leading-none mt-1">Premium</span>
+                            <span className="font-black text-lg sm:text-xl tracking-tighter leading-none">Assets Tools</span>
+                            <span className="text-[8px] sm:text-[10px] font-black text-primary uppercase tracking-[0.3em] leading-none mt-1">Premium</span>
                         </div>
                     </Link>
 
@@ -96,21 +95,21 @@ export function Navbar() {
                     </nav>
                 </div>
 
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-2 sm:gap-3">
                     <Search />
 
                     <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
                         <Button
                             variant="ghost"
                             size="icon"
-                            className="rounded-2xl bg-muted/30 hover:bg-muted"
+                            className="rounded-xl sm:rounded-2xl bg-muted/30 hover:bg-muted h-9 w-9 sm:h-10 sm:w-10"
                             aria-label="Toggle Theme"
                             onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
                         >
                             {mounted && theme === 'dark' ? (
-                                <Sun className="h-5 w-5 text-yellow-500" />
+                                <Sun className="h-4 w-4 sm:h-5 sm:w-5 text-yellow-500" />
                             ) : (
-                                <Moon className="h-5 w-5 text-indigo-500" />
+                                <Moon className="h-4 w-4 sm:h-5 sm:w-5 text-indigo-500" />
                             )}
                         </Button>
                     </motion.div>
@@ -120,9 +119,10 @@ export function Navbar() {
                             whileHover={{ scale: 1.05, y: -2 }}
                             whileTap={{ scale: 0.95 }}
                         >
-                            <Button size="sm" className="hidden sm:flex rounded-2xl px-6 bg-primary font-black uppercase tracking-widest text-[10px] h-11 shadow-xl shadow-primary/20 hover:shadow-primary/40 border-t border-white/20">
-                                <Sparkles className="mr-2 h-4 w-4" />
-                                Join Pro
+                            <Button size="sm" className="rounded-xl sm:rounded-2xl px-3 sm:px-6 bg-primary font-black uppercase tracking-widest text-[9px] sm:text-[10px] h-9 sm:h-11 shadow-xl shadow-primary/20 hover:shadow-primary/40 border-t border-white/20">
+                                <Sparkles className="mr-1 sm:mr-2 h-3.5 w-3.5 sm:h-4 sm:w-4" />
+                                <span className="hidden sm:inline">Join Pro</span>
+                                <span className="sm:hidden">Pro</span>
                             </Button>
                         </motion.div>
                     </Link>

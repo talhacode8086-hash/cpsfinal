@@ -36,10 +36,11 @@ export function NavDropdown({ title }: NavDropdownProps) {
     return (
         <div
             className="relative"
-            onMouseEnter={() => setIsOpen(true)}
-            onMouseLeave={() => setIsOpen(false)}
+            onMouseEnter={() => window.innerWidth >= 1024 && setIsOpen(true)}
+            onMouseLeave={() => window.innerWidth >= 1024 && setIsOpen(false)}
         >
             <button
+                onClick={() => window.innerWidth < 1024 && setIsOpen(!isOpen)}
                 className={cn(
                     "flex items-center gap-1.5 px-4 py-2 text-sm font-medium rounded-full transition-all duration-200",
                     isOpen
@@ -58,8 +59,12 @@ export function NavDropdown({ title }: NavDropdownProps) {
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 10, scale: 0.95 }}
                         transition={{ duration: 0.2, ease: "easeOut" }}
-                        className="absolute top-full left-0 mt-2 w-[600px] -left-1/2 p-4 bg-background/95 backdrop-blur-xl border rounded-2xl shadow-2xl z-50 grid grid-cols-3 gap-4"
-                        style={{ marginLeft: "-200px" }} // Center alignment adjustment
+                        className="absolute top-full left-0 mt-2 w-[calc(100vw-2rem)] sm:w-[500px] lg:w-[600px] -left-[100px] sm:-left-1/2 p-4 bg-background/95 backdrop-blur-xl border rounded-2xl shadow-2xl z-50 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
+                        style={{
+                            left: window.innerWidth < 640 ? "50%" : undefined,
+                            transform: window.innerWidth < 640 ? "translateX(-50%)" : undefined,
+                            marginLeft: window.innerWidth >= 1024 ? "-200px" : undefined
+                        }}
                     >
                         {/* PDF Section */}
                         <div className="space-y-3 p-3 rounded-xl hover:bg-muted/50 transition-colors">
@@ -74,6 +79,7 @@ export function NavDropdown({ title }: NavDropdownProps) {
                                     <Link
                                         key={item.href}
                                         href={item.href}
+                                        onClick={() => setIsOpen(false)}
                                         className="group flex items-center justify-between text-xs font-medium text-muted-foreground hover:text-foreground hover:pl-1 transition-all"
                                     >
                                         {item.name}
@@ -96,6 +102,7 @@ export function NavDropdown({ title }: NavDropdownProps) {
                                     <Link
                                         key={item.href}
                                         href={item.href}
+                                        onClick={() => setIsOpen(false)}
                                         className="group flex items-center justify-between text-xs font-medium text-muted-foreground hover:text-foreground hover:pl-1 transition-all"
                                     >
                                         {item.name}

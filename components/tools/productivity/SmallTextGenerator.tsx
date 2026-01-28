@@ -38,45 +38,45 @@ export default function SmallTextGenerator() {
     };
 
     return (
-        <Card className="max-w-4xl mx-auto border-primary/10 shadow-xl bg-card/50 backdrop-blur-sm">
-            <CardHeader className="text-center border-b border-primary/5 pb-8">
-                <div className="mx-auto w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-4">
-                    <Type className="h-8 w-8 text-primary" />
+        <Card className="max-w-4xl mx-auto border-primary/10 shadow-xl bg-card/50 backdrop-blur-sm overflow-hidden">
+            <CardHeader className="text-center border-b border-primary/5 pb-6 sm:pb-8 p-4 sm:p-6 md:p-8">
+                <div className="mx-auto w-12 h-12 sm:w-16 sm:h-16 bg-primary/10 rounded-xl sm:rounded-2xl flex items-center justify-center mb-3 sm:mb-4">
+                    <Type className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
                 </div>
-                <CardTitle className="text-3xl font-bold">Small Text Generator</CardTitle>
-                <p className="text-muted-foreground mt-2">Make your text tiny or scientific with Unicode.</p>
+                <CardTitle className="text-2xl sm:text-3xl font-bold">Small Text Generator</CardTitle>
+                <p className="text-xs sm:text-sm md:text-base text-muted-foreground mt-1 sm:mt-2">Make your text tiny or scientific with Unicode.</p>
             </CardHeader>
-            <CardContent className="p-8 space-y-8">
+            <CardContent className="p-4 sm:p-6 md:p-8 space-y-6 sm:space-y-8">
                 <Textarea
                     placeholder="Enter normal text here..."
-                    className="min-h-[120px] text-lg p-6 rounded-2xl border-primary/20 focus:border-primary transition-all resize-none bg-background/50"
+                    className="min-h-[100px] sm:min-h-[120px] text-base sm:text-lg p-4 sm:p-6 rounded-xl sm:rounded-2xl border-primary/20 focus:border-primary transition-all resize-none bg-background/50"
                     value={text}
                     onChange={(e) => setText(e.target.value)}
                 />
 
-                <div className="grid gap-6">
-                    <div className="p-6 rounded-2xl bg-muted/30 border border-primary/5 space-y-4">
-                        <div className="flex justify-between items-center pr-2">
-                            <Label className="text-xs font-black uppercase tracking-widest text-primary">Tiny Caps</Label>
-                            <Button variant="ghost" size="sm" onClick={() => copy(tinyCaps)}>Copy</Button>
+                <div className="grid gap-4 sm:gap-6">
+                    <div className="p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-muted/30 border border-primary/5 space-y-3 sm:space-y-4">
+                        <div className="flex justify-between items-center pr-1 sm:pr-2">
+                            <Label className="text-[10px] sm:text-xs font-black uppercase tracking-widest text-primary">Tiny Caps</Label>
+                            <Button variant="ghost" size="sm" className="h-8 text-xs" onClick={() => copy(tinyCaps)}>Copy</Button>
                         </div>
-                        <p className="text-2xl font-bold break-all">{tinyCaps || 'á´›ÉªÉ´Ê á´„á´€á´˜á´ '}</p>
+                        <p className="text-lg sm:text-2xl font-bold break-all leading-tight">{tinyCaps || 'á´›ÉªÉ´Ê  á´„á´€á´˜á´ '}</p>
                     </div>
 
-                    <div className="p-6 rounded-2xl bg-muted/30 border border-primary/5 space-y-4">
-                        <div className="flex justify-between items-center pr-2">
-                            <Label className="text-xs font-black uppercase tracking-widest text-primary">Superscript</Label>
-                            <Button variant="ghost" size="sm" onClick={() => copy(superScript)}>Copy</Button>
+                    <div className="p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-muted/30 border border-primary/5 space-y-3 sm:space-y-4">
+                        <div className="flex justify-between items-center pr-1 sm:pr-2">
+                            <Label className="text-[10px] sm:text-xs font-black uppercase tracking-widest text-primary">Superscript</Label>
+                            <Button variant="ghost" size="sm" className="h-8 text-xs" onClick={() => copy(superScript)}>Copy</Button>
                         </div>
-                        <p className="text-2xl font-bold break-all">{superScript || 'Ë¢áµ˜áµ–áµ‰Ê³Ë¢áµ–Ë³áµ¦áµ‰Ê¸áµ—'}</p>
+                        <p className="text-lg sm:text-2xl font-bold break-all leading-tight">{superScript || 'Ë¢áµ˜áµ–áµ‰Ê³Ë¢áµ–Ë³áµ¦áµ‰Ê¸áµ—'}</p>
                     </div>
 
-                    <div className="p-6 rounded-2xl bg-muted/30 border border-primary/5 space-y-4">
-                        <div className="flex justify-between items-center pr-2">
-                            <Label className="text-xs font-black uppercase tracking-widest text-primary">Subscript</Label>
-                            <Button variant="ghost" size="sm" onClick={() => copy(subScript)}>Copy</Button>
+                    <div className="p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-muted/30 border border-primary/5 space-y-3 sm:space-y-4">
+                        <div className="flex justify-between items-center pr-1 sm:pr-2">
+                            <Label className="text-[10px] sm:text-xs font-black uppercase tracking-widest text-primary">Subscript</Label>
+                            <Button variant="ghost" size="sm" className="h-8 text-xs" onClick={() => copy(subScript)}>Copy</Button>
                         </div>
-                        <p className="text-2xl font-bold break-all">{subScript || 'â‚›â‚¦â‚•â‚›â‚‘â‚™â‚²â‚—'}</p>
+                        <p className="text-lg sm:text-2xl font-bold break-all leading-tight">{subScript || 'â‚›â‚¦â‚•â‚›â‚‘â‚™â‚²â‚—'}</p>
                     </div>
                 </div>
             </CardContent>

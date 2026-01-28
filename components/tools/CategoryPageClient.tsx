@@ -38,7 +38,7 @@ interface CategoryPageClientProps {
 
 export default function CategoryPageClient({ categoryTools, categoryName }: CategoryPageClientProps) {
     return (
-        <div className="mx-auto max-w-7xl space-y-12 py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        <div className="mx-auto max-w-7xl space-y-8 sm:space-y-12 py-6 sm:py-8 md:py-12 px-3 sm:px-4 md:px-6 lg:px-8 relative overflow-hidden">
             {/* Background Decorative Element */}
             <motion.div
                 animate={{
@@ -60,18 +60,18 @@ export default function CategoryPageClient({ categoryTools, categoryName }: Cate
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.4 }}
-                    className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.3em] text-muted-foreground/60 mb-6 bg-muted/30 w-fit px-4 py-1.5 rounded-full"
+                    className="flex items-center gap-1.5 sm:gap-2 text-[9px] sm:text-[10px] font-black uppercase tracking-[0.2em] sm:tracking-[0.3em] text-muted-foreground/60 mb-4 sm:mb-6 bg-muted/30 w-fit px-3 py-1 sm:px-4 sm:py-1.5 rounded-full"
                 >
                     <Link href="/" className="hover:text-primary transition-colors">Home</Link>
                     <ChevronRight className="h-3 w-3" />
                     <span className="text-primary">{categoryName}</span>
                 </motion.div>
 
-                <div className="space-y-4">
-                    <h1 className="text-5xl md:text-7xl font-black tracking-tighter text-foreground leading-none">
+                <div className="space-y-3 sm:space-y-4">
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-black tracking-tighter text-foreground leading-none">
                         {categoryName} <span className="text-primary italic">Tools</span>
                     </h1>
-                    <p className="text-xl text-muted-foreground max-w-2xl leading-relaxed font-medium">
+                    <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-2xl leading-relaxed font-medium">
                         Professional, high-performance {categoryName.toLowerCase()} designed to boost your efficiency.
                         Free to use, privacy-focused, and incredibly fast.
                     </p>
@@ -82,7 +82,7 @@ export default function CategoryPageClient({ categoryTools, categoryName }: Cate
                 variants={containerVariants}
                 initial="hidden"
                 animate="visible"
-                className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 relative z-10"
+                className="grid gap-4 sm:gap-6 md:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 relative z-10"
             >
                 {categoryTools.map((tool, idx) => (
                     <ToolCard

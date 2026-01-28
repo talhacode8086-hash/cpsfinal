@@ -36,12 +36,32 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
     const categoryName = categoryTools.length > 0 ? categoryTools[0].category : 'All Tools';
 
+    // Enhanced category-specific descriptions
+    const categoryDescriptions: Record<string, string> = {
+        'gaming': 'Professional gaming tools including mouse sensitivity converters, CPS tests, aim trainers, reaction time tests, and keyboard testing utilities. Improve your FPS performance.',
+        'gaming-utilities': 'Essential gaming utilities: DPI calculators, FOV calculators, sensitivity converters, input lag testers, and crosshair generators for competitive gaming.',
+        'productivity': 'Boost your productivity with time management tools, calculators, text processors, and automation utilities. Free and easy to use.',
+        'dev': 'Developer tools including JSON formatters, regex testers, code minifiers, API testing utilities, and syntax validators. Essential for web development.',
+        'all': 'Browse all 170+ free online tools across gaming, development, productivity, design, finance, education, and more categories.'
+    };
+
+    const description = categoryDescriptions[lowerSlug] ||
+        `Explore our collection of free online ${categoryName.toLowerCase()} tools. Professional utilities for gamers, developers, and creators. ${categoryTools.length} tools available.`;
+
     return {
-        title: `${categoryName} - Assets Tools Hub`,
-        description: `Explore our collection of free online ${categoryName.toLowerCase()}. Professional tools for gamers, developers, and designers.`,
+        title: `${categoryName} - Free Online Tools | Assets Tools Hub`,
+        description,
+        keywords: categoryTools.flatMap(t => t.keywords || []).slice(0, 20),
         openGraph: {
-            title: `${categoryName} Portfolio`,
-            description: `Best ${categoryName.toLowerCase()} available for free.`,
+            title: `${categoryName} - Professional Free Tools`,
+            description,
+            type: 'website',
+            url: `https://assetstoolshub.com/category/${slug}`,
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: `${categoryName} Tools`,
+            description,
         }
     };
 }

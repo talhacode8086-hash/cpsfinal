@@ -16,30 +16,30 @@ interface ToolPageClientProps {
 
 export default function ToolPageClient({ tool, children }: ToolPageClientProps) {
     return (
-        <div className="mx-auto max-w-5xl space-y-8 py-8 px-4 sm:px-0">
+        <div className="mx-auto max-w-5xl space-y-6 sm:space-y-8 py-4 sm:py-6 md:py-8 px-3 sm:px-4 md:px-0">
             {/* Breadcrumbs */}
-            <nav className="flex items-center space-x-2 text-sm text-muted-foreground mb-6">
+            <nav className="flex items-center space-x-1.5 sm:space-x-2 text-xs sm:text-sm text-muted-foreground mb-4 sm:mb-6">
                 <Link href="/" className="hover:text-primary transition-colors flex items-center">
-                    <Home className="h-4 w-4" />
+                    <Home className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                 </Link>
-                <ChevronRight className="h-4 w-4" />
-                <Link href={`/category/${slugifyCategory(tool.category)}`} className="hover:text-primary transition-colors">
+                <ChevronRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+                <Link href={`/category/${slugifyCategory(tool.category)}`} className="hover:text-primary transition-colors truncate">
                     {tool.category}
                 </Link>
-                <ChevronRight className="h-4 w-4" />
-                <span className="text-foreground font-medium">{tool.title}</span>
+                <ChevronRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+                <span className="text-foreground font-medium truncate">{tool.title}</span>
             </nav>
 
             <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4 }}
-                className="space-y-4"
+                className="space-y-3 sm:space-y-4"
             >
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                    <div className="space-y-2">
-                        <h1 className="text-3xl font-extrabold tracking-tight md:text-4xl lg:text-5xl">{tool.title}</h1>
-                        <p className="text-lg text-muted-foreground max-w-[700px]">{tool.description}</p>
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
+                    <div className="space-y-1.5 sm:space-y-2">
+                        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight">{tool.title}</h1>
+                        <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-[700px]">{tool.description}</p>
                     </div>
                     <Link href={`/category/${slugifyCategory(tool.category)}`}>
                         <motion.div whileHover={{ x: -4 }} className="hidden sm:flex items-center text-sm font-medium text-primary cursor-pointer">
@@ -54,7 +54,7 @@ export default function ToolPageClient({ tool, children }: ToolPageClientProps) 
             <AdUnit
                 publisherId="ca-pub-0000000000000000"
                 slotId="0000000000"
-                className="my-8 min-h-[100px] bg-muted/10 rounded-xl flex items-center justify-center border border-dashed border-muted-foreground/20"
+                className="my-6 sm:my-8 min-h-[80px] sm:min-h-[100px] bg-muted/10 rounded-xl flex items-center justify-center border border-dashed border-muted-foreground/20"
             />
 
             {/* Compatibility Overlay for Touch Devices */}
@@ -64,7 +64,7 @@ export default function ToolPageClient({ tool, children }: ToolPageClientProps) 
                 initial={{ opacity: 0, scale: 0.98 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="mt-8 bg-card rounded-2xl border shadow-sm p-1 sm:p-4 overflow-hidden relative"
+                className="mt-6 sm:mt-8 bg-card rounded-xl sm:rounded-2xl border shadow-sm p-3 sm:p-4 md:p-6 overflow-hidden relative"
             >
                 {children ? (
                     <div className={tool.requires ? "hidden md:block" : ""}>

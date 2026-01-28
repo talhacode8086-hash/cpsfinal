@@ -92,14 +92,14 @@ export default function XMLJSONConverter() {
     };
 
     return (
-        <div className="max-w-5xl mx-auto space-y-10 p-4 font-sans">
-            <div className="grid lg:grid-cols-2 gap-10">
+        <div className="max-w-5xl mx-auto space-y-6 sm:space-y-10 p-2 sm:p-4 font-sans">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-10">
                 {/* XML Input */}
-                <div className="space-y-4">
+                <div className="space-y-3 sm:space-y-4">
                     <div className="flex items-center justify-between px-2">
-                        <label className="text-[10px] font-black uppercase tracking-[0.2em] text-muted-foreground/60 flex items-center gap-3">
-                            <span className="h-8 w-8 rounded-xl bg-orange-500/10 flex items-center justify-center text-orange-600">
-                                <Code2 className="h-4 w-4" />
+                        <label className="text-[10px] font-black uppercase tracking-[0.2em] text-muted-foreground/60 flex items-center gap-2 sm:gap-3">
+                            <span className="h-6 w-6 sm:h-8 sm:w-8 rounded-lg sm:rounded-xl bg-orange-500/10 flex items-center justify-center text-orange-600">
+                                <Code2 className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                             </span>
                             XML SOURCE
                         </label>
@@ -107,27 +107,27 @@ export default function XMLJSONConverter() {
                             variant="ghost"
                             size="sm"
                             onClick={() => { setInput(''); setOutput(''); setError(null); }}
-                            className="rounded-xl h-8 text-[10px] font-bold hover:bg-destructive/10 hover:text-destructive"
+                            className="rounded-xl h-7 sm:h-8 text-[9px] sm:text-[10px] font-bold hover:bg-destructive/10 hover:text-destructive"
                         >
                             <Trash2 className="h-3 w-3 mr-1" /> RESET
                         </Button>
                     </div>
-                    <Card className="rounded-[2.5rem] border-primary/5 bg-muted/20 overflow-hidden group hover:border-primary/20 transition-all duration-500 shadow-inner">
+                    <Card className="rounded-[2rem] sm:rounded-[2.5rem] border-primary/5 bg-muted/20 overflow-hidden group hover:border-primary/20 transition-all duration-500 shadow-inner">
                         <Textarea
                             value={input}
                             onChange={(e) => setInput(e.target.value)}
                             placeholder='<user id="1">\n  <name>John Doe</name>\n  <email>john@example.com</email>\n</user>'
-                            className="min-h-[450px] border-none focus-visible:ring-0 bg-transparent p-10 font-mono text-xs sm:text-sm leading-relaxed resize-none"
+                            className="min-h-[300px] sm:min-h-[450px] border-none focus-visible:ring-0 bg-transparent p-4 sm:p-6 md:p-10 font-mono text-[10px] sm:text-xs md:text-sm leading-relaxed resize-none"
                         />
                     </Card>
                 </div>
 
                 {/* JSON Output */}
-                <div className="space-y-4">
+                <div className="space-y-3 sm:space-y-4">
                     <div className="flex items-center justify-between px-2">
-                        <label className="text-[10px] font-black uppercase tracking-[0.2em] text-primary flex items-center gap-3">
-                            <span className="h-8 w-8 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
-                                <Braces className="h-4 w-4" />
+                        <label className="text-[10px] font-black uppercase tracking-[0.2em] text-primary flex items-center gap-2 sm:gap-3">
+                            <span className="h-6 w-6 sm:h-8 sm:w-8 rounded-lg sm:rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+                                <Braces className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                             </span>
                             JSON RESULT
                         </label>
@@ -136,48 +136,48 @@ export default function XMLJSONConverter() {
                                 variant="outline"
                                 size="sm"
                                 onClick={copyToClipboard}
-                                className="rounded-xl h-8 text-[10px] font-bold border-primary/20 hover:bg-primary/5"
+                                className="rounded-xl h-7 sm:h-8 text-[9px] sm:text-[10px] font-bold border-primary/20 hover:bg-primary/5"
                             >
-                                {copied ? <Check className="h-3 w-3 mr-2" /> : <Copy className="h-3 w-3 mr-2" />}
+                                {copied ? <Check className="h-3 w-3 mr-1 sm:mr-2" /> : <Copy className="h-3 w-3 mr-1 sm:mr-2" />}
                                 {copied ? 'COPIED' : 'COPY'}
                             </Button>
                         )}
                     </div>
-                    <Card className="rounded-[2.5rem] border-primary/10 bg-background shadow-2xl min-h-[450px] flex flex-col overflow-hidden relative group">
+                    <Card className="rounded-[2rem] sm:rounded-[2.5rem] border-primary/10 bg-background shadow-2xl min-h-[300px] sm:min-h-[450px] flex flex-col overflow-hidden relative group">
                         <div className="absolute top-4 right-4 z-10 opacity-20 group-hover:opacity-100 transition-opacity">
                             <Terminal className="h-5 w-5 text-muted-foreground" />
                         </div>
                         {error ? (
-                            <div className="flex-1 flex flex-col items-center justify-center p-12 text-center">
-                                <div className="h-16 w-16 rounded-full bg-destructive/5 flex items-center justify-center mb-6">
-                                    <AlertCircle className="h-8 w-8 text-destructive" />
+                            <div className="flex-1 flex flex-col items-center justify-center p-6 sm:p-12 text-center">
+                                <div className="h-12 w-12 sm:h-16 sm:w-16 rounded-full bg-destructive/5 flex items-center justify-center mb-4 sm:mb-6">
+                                    <AlertCircle className="h-6 w-6 sm:h-8 sm:w-8 text-destructive" />
                                 </div>
-                                <h4 className="font-black text-destructive uppercase tracking-widest text-xs mb-2">Parsing Error</h4>
-                                <p className="text-sm text-balance leading-relaxed text-muted-foreground max-w-xs">{error}</p>
+                                <h4 className="font-black text-destructive uppercase tracking-widest text-[10px] sm:text-xs mb-2">Parsing Error</h4>
+                                <p className="text-xs sm:text-sm text-balance leading-relaxed text-muted-foreground max-w-xs">{error}</p>
                             </div>
                         ) : output ? (
-                            <pre className="flex-1 p-10 font-mono text-xs sm:text-sm overflow-auto text-primary custom-scrollbar selection:bg-primary/20">
+                            <pre className="flex-1 p-4 sm:p-6 md:p-10 font-mono text-[10px] sm:text-xs md:text-sm overflow-auto text-primary custom-scrollbar selection:bg-primary/20">
                                 {output}
                             </pre>
                         ) : (
-                            <div className="flex-1 flex flex-col items-center justify-center p-12 text-center opacity-30 grayscale group-hover:grayscale-0 transition-all">
-                                <RefreshCw className="h-12 w-12 mb-6 animate-spin-slow text-primary" />
-                                <p className="text-xs font-black uppercase tracking-widest leading-loose">Waiting for XML conversion...</p>
-                                <p className="text-[10px] font-medium text-muted-foreground mt-2">Paste your code on the left</p>
+                            <div className="flex-1 flex flex-col items-center justify-center p-8 sm:p-12 text-center opacity-30 grayscale group-hover:grayscale-0 transition-all">
+                                <RefreshCw className="h-8 w-8 sm:h-12 sm:w-12 mb-4 sm:mb-6 animate-spin-slow text-primary" />
+                                <p className="text-[10px] font-black uppercase tracking-widest leading-loose">Waiting for XML conversion...</p>
+                                <p className="text-[8px] sm:text-[10px] font-medium text-muted-foreground mt-2">Paste your code on the left</p>
                             </div>
                         )}
                     </Card>
                 </div>
             </div>
 
-            <div className="flex justify-center pt-6">
+            <div className="flex justify-center pt-4 sm:pt-6">
                 <Button
                     size="lg"
                     onClick={convertAction}
-                    className="h-20 rounded-[2rem] px-16 text-2xl font-black shadow-2xl shadow-primary/30 group btn-glow transition-all active:scale-95"
+                    className="h-14 sm:h-20 rounded-2xl sm:rounded-[2rem] px-8 sm:px-16 text-lg sm:text-2xl font-black shadow-2xl shadow-primary/30 group btn-glow transition-all active:scale-95 w-full sm:w-auto"
                 >
-                    <span className="relative flex items-center gap-4">
-                        PROCESS XML <ArrowRightLeft className="h-7 w-7 group-hover:rotate-180 transition-transform duration-700" />
+                    <span className="relative flex items-center justify-center gap-3 sm:gap-4">
+                        PROCESS XML <ArrowRightLeft className="h-5 w-5 sm:h-7 sm:w-7 group-hover:rotate-180 transition-transform duration-700" />
                     </span>
                 </Button>
             </div>

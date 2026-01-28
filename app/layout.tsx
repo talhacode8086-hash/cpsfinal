@@ -16,11 +16,11 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   metadataBase: new URL('https://assetstoolshub.com'),
   title: {
-    default: 'Assets Tools Hub - Free Online Tools for Gaming, Dev & Productivity',
+    default: 'Assets Tools Hub - 170+ Free Online Tools for Gaming, Development & Productivity',
     template: '%s | Assets Tools Hub'
   },
-  description: 'Free online tools including CPS test, mouse accuracy trainer, JSON formatter, color converters, and 100+ productivity tools. No registration required.',
-  keywords: ['online tools', 'free tools', 'cps test', 'gaming tools', 'developer tools', 'productivity tools', 'text tools', 'unit converters'],
+  description: 'Discover 170+ professional free online tools: gaming performance enhancers (CPS test, sensitivity converter, aim trainer), developer utilities (JSON formatter, regex tester), SEO tools, unit converters, and more. No signup required.',
+  keywords: ['online tools', 'free tools', 'cps test', 'gaming tools', 'developer tools', 'productivity tools', 'mouse sensitivity converter', 'json formatter', 'regex tester', 'aim trainer', 'reaction time test', 'text tools', 'unit converters', 'seo tools', 'image tools', 'finance calculators'],
   authors: [{ name: 'Assets Tools Hub' }],
   creator: 'Assets Tools Hub',
   publisher: 'Assets Tools Hub',
@@ -28,14 +28,21 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://assetstoolshub.com',
-    title: 'Assets Tools Hub - Free Online Tools',
-    description: 'Free online tools for gaming, development, and productivity',
+    title: 'Assets Tools Hub - 170+ Free Professional Online Tools',
+    description: 'Professional tools for gaming performance, web development, productivity, and creativity. Free forever, no registration required.',
+    images: [{
+      url: '/og-image.png',
+      width: 1200,
+      height: 630,
+      alt: 'Assets Tools Hub - Free Online Tools',
+    }],
     siteName: 'Assets Tools Hub',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Assets Tools Hub - Free Online Tools',
-    description: 'Free online tools for gaming, development, and productivity',
+    title: 'Assets Tools Hub - 170+ Free Online Tools',
+    description: 'Professional tools for gamers, developers, and creators. Free forever.',
+    images: ['/og-image.png'],
   },
   robots: {
     index: true,
