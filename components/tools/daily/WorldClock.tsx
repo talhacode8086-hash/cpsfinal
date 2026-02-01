@@ -72,13 +72,13 @@ export default function WorldClock() {
                     ))}
                 </div>
 
-                <div className="mt-12 p-8 rounded-[3rem] bg-primary text-white flex flex-col md:flex-row gap-6 items-center">
+                <div className="mt-12 p-8 rounded-[3rem] bg-primary text-primary-foreground flex flex-col md:flex-row gap-6 items-center">
                     <div className="space-y-1 flex-1">
                         <h5 className="text-xl font-bold">Add New City</h5>
-                        <p className="text-white/60 text-xs">Stay synchronized with your global team.</p>
+                        <p className="text-primary-foreground/60 text-xs">Stay synchronized with your global team.</p>
                     </div>
                     <div className="flex gap-4 w-full md:w-auto">
-                        <Input placeholder="City Name" className="bg-white/10 border-white/20 text-white placeholder:text-white/40 h-12 w-full md:w-64 rounded-xl" />
+                        <Input placeholder="City Name" className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/40 h-12 w-full md:w-64 rounded-xl" />
                         <Button variant="secondary" className="h-12 px-8 rounded-xl font-bold">
                             <Plus className="mr-2 h-4 w-4" /> Add
                         </Button>

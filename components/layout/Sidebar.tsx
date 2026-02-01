@@ -60,10 +60,38 @@ import {
     FileImage,
     Info,
     Lock,
+    Mail,
+    ShieldCheck,
+    FlaskConical,
     FileText,
     AlertTriangle,
-    Mail,
-    ShieldCheck
+    GitMerge,
+    Repeat,
+    Wind,
+    Droplets,
+    TestTube2,
+    Pipette,
+    ArrowUpRight,
+    Microscope,
+    BatteryCharging,
+    Radiation,
+    Shapes,
+    ArrowLeftRight,
+    PieChart,
+    Sun,
+    ArrowUp,
+    ArrowDown,
+    Table,
+    Snowflake,
+    Boxes,
+    ThermometerSun,
+    Waves,
+    BookOpen,
+    Sigma,
+    GraduationCap,
+    Lightbulb,
+    Grid,
+    Smartphone
 } from 'lucide-react';
 import { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -92,7 +120,11 @@ const IconMap: Record<string, any> = {
     Globe, Scale, Ruler, FileCode, Share2, Palette, Layers, Code2, TrendingUp,
     CircleDollarSign, Box, Minimize2, Calculator, Monitor, Shuffle, LineChart,
     Flame, UnfoldHorizontal, Code, Bot, Tag, Percent, Timer, Calendar, Layout,
-    QrCode, Link: LinkIcon, Eye, Maximize, Crop, RefreshCw, FileImage
+    QrCode, Link: LinkIcon, Eye, Maximize, Crop, RefreshCw, FileImage,
+    GitMerge, Repeat, Wind, FlaskConical, Droplets, TestTube2, Pipette,
+    ArrowUpRight, Microscope, BatteryCharging, Radiation, Shapes,
+    ArrowLeftRight, PieChart, Sun, ArrowUp, ArrowDown, Table,
+    Snowflake, Boxes, ThermometerSun, Waves, ShieldCheck, Grid, Smartphone
 };
 
 // Category Icon Mapping
@@ -108,7 +140,12 @@ const CategoryIcons: Record<string, any> = {
     'Design & UI': Palette,
     'Finance': CircleDollarSign,
     'Daily Tools': Clock,
-    'Image Tools': ImageIcon
+    'Image Tools': ImageIcon,
+    'Chemistry': FlaskConical,
+    'Education': GraduationCap,
+    'Mathematics Tools': Sigma,
+    'Advanced Scholar Tools': BookOpen,
+    'Productivity': Lightbulb
 };
 
 interface DropdownMenuProps {
@@ -149,6 +186,7 @@ function DropdownMenu({ title, icon: Icon, items, pathname, isMobile, onItemClic
                     <span>{title}</span>
                 </Link>
                 <button
+                    suppressHydrationWarning
                     onClick={() => setIsExpanded(!isExpanded)}
                     className="p-2 rounded-xl hover:bg-muted text-muted-foreground transition-all duration-200"
                 >

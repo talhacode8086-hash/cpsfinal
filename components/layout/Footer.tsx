@@ -10,7 +10,7 @@ export function Footer() {
                     <div className="space-y-4">
                         <Link href="/" className="flex items-center space-x-2">
                             <Logo className="h-6 w-6" />
-                            <span className="font-bold text-xl">ToolsHub</span>
+                            <span className="font-bold text-xl">Assets Tools Hub</span>
                         </Link>
                         <p className="text-sm text-muted-foreground leading-relaxed">
                             The ultimate ecosystem for gamers, developers, and professionals.
@@ -21,7 +21,7 @@ export function Footer() {
                     <div>
                         <h4 className="font-bold mb-4">Platform</h4>
                         <ul className="space-y-2 text-sm text-muted-foreground">
-                            <li><Link href="/" className="hover:text-primary transition-colors">Explore Tools</Link></li>
+                            <li><Link href="/explore" className="hover:text-primary transition-colors">Explore Tools</Link></li>
                             <li><Link href="/demo" className="hover:text-primary transition-colors">Watch Demo</Link></li>
                             <li><Link href="/pro" className="hover:text-primary transition-colors">Pro Access</Link></li>
                             <li><Link href="/roadmap" className="hover:text-primary transition-colors">Roadmap</Link></li>

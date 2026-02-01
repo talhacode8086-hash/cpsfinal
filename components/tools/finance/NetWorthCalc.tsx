@@ -50,14 +50,14 @@ export default function NetWorthCalc() {
                     </div>
 
                     <div className="flex flex-col justify-center">
-                        <div className="p-12 rounded-[4rem] bg-primary text-white shadow-3xl shadow-primary/30 text-center relative overflow-hidden">
+                        <div className="p-12 rounded-[4rem] bg-primary text-primary-foreground shadow-3xl shadow-primary/30 text-center relative overflow-hidden">
                             <div className="absolute top-0 right-0 p-6 opacity-10">
                                 <Wallet className="h-32 w-32" />
                             </div>
-                            <p className="text-[10px] font-black uppercase tracking-[0.4em] opacity-60 mb-2">My True Net Worth</p>
+                            <p className="text-[10px] font-black uppercase tracking-[0.4em] opacity-80 mb-2">My True Net Worth</p>
                             <h3 className="text-6xl font-black">${(assets - debts).toLocaleString()}</h3>
                             <div className="mt-8 flex justify-center gap-4">
-                                <span className="px-4 py-2 bg-white/10 rounded-full text-xs font-bold">
+                                <span className="px-4 py-2 bg-primary-foreground/10 rounded-full text-xs font-bold">
                                     Ratio: {debts === 0 ? 'Infinite' : (assets / debts).toFixed(2)}:1
                                 </span>
                             </div>

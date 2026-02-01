@@ -112,10 +112,11 @@ export default function WheelOfFortune() {
                 </div>
 
                 {winner && (
-                    <div className="p-12 rounded-[4rem] bg-primary text-white animate-in zoom-in duration-500 shadow-3xl shadow-primary/40">
-                        <Trophy className="h-12 w-12 mx-auto mb-4" />
-                        <p className="text-[10px] font-black uppercase tracking-[0.5em] opacity-60 mb-2">The Winner Is</p>
-                        <h2 className="text-6xl font-black uppercase">{winner}</h2>
+                    <div className="p-12 rounded-[4rem] bg-gradient-to-br from-primary to-primary/80 text-primary-foreground animate-in zoom-in duration-500 shadow-3xl shadow-primary/40 relative overflow-hidden group">
+                        <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+                        <Trophy className="h-12 w-12 mx-auto mb-4 relative z-10" />
+                        <p className="text-[10px] font-black uppercase tracking-[0.5em] opacity-80 mb-2 relative z-10">The Winner Is</p>
+                        <h2 className="text-6xl font-black uppercase relative z-10 drop-shadow-sm">{winner}</h2>
                     </div>
                 )}
             </CardContent>

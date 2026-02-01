@@ -36,13 +36,13 @@ export default function MortgageCalculator() {
                     </div>
 
                     <div className="flex flex-col justify-center gap-6">
-                        <div className="p-10 rounded-[3rem] bg-primary text-white shadow-2xl shadow-primary/40 text-center relative overflow-hidden">
+                        <div className="p-10 rounded-[3rem] bg-primary text-primary-foreground shadow-2xl shadow-primary/40 text-center relative overflow-hidden">
                             <div className="absolute top-0 right-0 p-4 opacity-10">
                                 <DollarSign className="h-24 w-24" />
                             </div>
-                            <p className="text-[10px] font-black uppercase tracking-[0.3em] opacity-70 mb-2">Estimated Monthly Payment</p>
+                            <p className="text-[10px] font-black uppercase tracking-[0.3em] opacity-80 mb-2">Estimated Monthly Payment</p>
                             <h3 className="text-6xl font-black">${Math.round(monthlyPayment).toLocaleString()}</h3>
-                            <p className="text-[10px] font-bold mt-2 opacity-50 uppercase">Principal & Interest Only</p>
+                            <p className="text-[10px] font-bold mt-2 opacity-60 uppercase">Principal & Interest Only</p>
                         </div>
 
                         <div className="grid grid-cols-2 gap-4">

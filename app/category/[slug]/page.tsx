@@ -56,7 +56,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
             title: `${categoryName} - Professional Free Tools`,
             description,
             type: 'website',
-            url: `https://assetstoolshub.com/category/${slug}`,
+            url: `https://www.assetstoolshub.com/category/${slug}`,
         },
         twitter: {
             card: 'summary_large_image',
@@ -86,5 +86,64 @@ export default async function CategoryPage({ params }: PageProps) {
     const categoryName = categoryTools.length > 0 ? categoryTools[0].category : 'All Tools';
     const displayedTools = slug === 'all' ? tools : categoryTools;
 
-    return <CategoryPageClient slug={slug} categoryTools={displayedTools} categoryName={categoryName} />;
+    const categoryDescriptions: Record<string, string> = {
+        'gaming': 'Professional gaming tools including mouse sensitivity converters, CPS tests, aim trainers, reaction time tests, and keyboard testing utilities. Improve your FPS performance.',
+        'gaming-utilities': 'Essential gaming utilities: DPI calculators, FOV calculators, sensitivity converters, input lag testers, and crosshair generators for competitive gaming.',
+        'productivity': 'Boost your productivity with time management tools, calculators, text processors, and automation utilities. Free and easy to use.',
+        'dev': 'Developer tools including JSON formatters, regex testers, code minifiers, API testing utilities, and syntax validators. Essential for web development.',
+        'all': 'Browse all 170+ free online tools across gaming, development, productivity, design, finance, education, and more categories.'
+    };
+
+    const description = categoryDescriptions[lowerSlug] ||
+        `Explore our collection of free online ${categoryName.toLowerCase()} tools. Professional utilities for gamers, developers, and creators. ${categoryTools.length} tools available.`;
+
+    return (
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "BreadcrumbList",
+                        "itemListElement": [
+                            {
+                                "@type": "ListItem",
+                                "position": 1,
+                                "name": "All Tools",
+                                "item": "https://www.assetstoolshub.com/explore"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 2,
+                                "name": categoryName,
+                                "item": `https://www.assetstoolshub.com/category/${slug}`
+                            }
+                        ]
+                    })
+                }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "CollectionPage",
+                        "name": `${categoryName} Tools - Assets Tools Hub`,
+                        "description": description,
+                        "url": `https://www.assetstoolshub.com/category/${slug}`,
+                        "mainEntity": {
+                            "@type": "ItemList",
+                            "itemListElement": displayedTools.slice(0, 10).map((tool: any, index: number) => ({
+                                "@type": "ListItem",
+                                "position": index + 1,
+                                "url": `https://www.assetstoolshub.com/tools/${tool.slug}`,
+                                "name": tool.title
+                            }))
+                        }
+                    })
+                }}
+            />
+            <CategoryPageClient slug={slug} categoryTools={displayedTools} categoryName={categoryName} />
+        </>
+    );
 }

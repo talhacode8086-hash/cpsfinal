@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, FileText, Image as ImageIcon, Video, ArrowRight } from 'lucide-react';
@@ -32,15 +32,36 @@ const converters = {
 
 export function NavDropdown({ title }: NavDropdownProps) {
     const [isOpen, setIsOpen] = useState(false);
+    const [mounted, setMounted] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+        const checkMobile = () => setIsMobile(window.innerWidth < 1024);
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
+    if (!mounted) {
+        return (
+            <div className="relative">
+                <button className="flex items-center gap-1.5 px-4 py-2 text-sm font-medium rounded-full text-foreground/70">
+                    {title}
+                    <ChevronDown className="h-4 w-4" />
+                </button>
+            </div>
+        );
+    }
 
     return (
         <div
             className="relative"
-            onMouseEnter={() => window.innerWidth >= 1024 && setIsOpen(true)}
-            onMouseLeave={() => window.innerWidth >= 1024 && setIsOpen(false)}
+            onMouseEnter={() => !isMobile && setIsOpen(true)}
+            onMouseLeave={() => !isMobile && setIsOpen(false)}
         >
             <button
-                onClick={() => window.innerWidth < 1024 && setIsOpen(!isOpen)}
+                onClick={() => isMobile && setIsOpen(!isOpen)}
                 className={cn(
                     "flex items-center gap-1.5 px-4 py-2 text-sm font-medium rounded-full transition-all duration-200",
                     isOpen
@@ -61,9 +82,9 @@ export function NavDropdown({ title }: NavDropdownProps) {
                         transition={{ duration: 0.2, ease: "easeOut" }}
                         className="absolute top-full left-0 mt-2 w-[calc(100vw-2rem)] sm:w-[500px] lg:w-[600px] -left-[100px] sm:-left-1/2 p-4 bg-background/95 backdrop-blur-xl border rounded-2xl shadow-2xl z-50 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
                         style={{
-                            left: window.innerWidth < 640 ? "50%" : undefined,
-                            transform: window.innerWidth < 640 ? "translateX(-50%)" : undefined,
-                            marginLeft: window.innerWidth >= 1024 ? "-200px" : undefined
+                            left: isMobile ? "50%" : undefined,
+                            transform: isMobile ? "translateX(-50%)" : undefined,
+                            marginLeft: !isMobile ? "-200px" : undefined
                         }}
                     >
                         {/* PDF Section */}

@@ -101,7 +101,7 @@ export default function FileSizeConverter() {
                                 </Button>
                             </div>
                             {isActive && (
-                                <div className="absolute -top-2 -right-2 h-6 w-6 rounded-full bg-primary flex items-center justify-center text-white shadow-lg">
+                                <div className="absolute -top-2 -right-2 h-6 w-6 rounded-full bg-primary flex items-center justify-center text-primary-foreground shadow-lg">
                                     <Zap className="h-3 w-3 fill-current" />
                                 </div>
                             )}

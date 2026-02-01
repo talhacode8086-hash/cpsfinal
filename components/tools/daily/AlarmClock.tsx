@@ -54,7 +54,7 @@ export default function OnlineAlarmClock() {
                             onChange={(e) => setAlarmTime(e.target.value)}
                             className="h-20 w-48 text-4xl font-black rounded-3xl bg-muted/20 border-primary/10 text-center"
                         />
-                        <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white text-[10px] font-black px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+                        <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-[10px] font-black px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
                             SET TIME
                         </div>
                     </div>
@@ -72,10 +72,10 @@ export default function OnlineAlarmClock() {
 
                 {isRinging && (
                     <div className="fixed inset-0 bg-primary/95 flex flex-col items-center justify-center z-50 animate-in fade-in zoom-in duration-500">
-                        <div className="w-32 h-32 bg-white rounded-full flex items-center justify-center animate-bounce mb-8">
+                        <div className="w-32 h-32 bg-primary-foreground rounded-full flex items-center justify-center animate-bounce mb-8">
                             <Volume2 className="h-16 w-16 text-primary" />
                         </div>
-                        <h2 className="text-6xl font-black text-white mb-8">ALARM RINGING!</h2>
+                        <h2 className="text-6xl font-black text-primary-foreground mb-8">ALARM RINGING!</h2>
                         <Button
                             size="lg"
                             variant="secondary"

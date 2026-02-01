@@ -1,15 +1,17 @@
 import { MetadataRoute } from 'next';
 export const dynamic = 'force-static';
-import { tools, Tool } from '@/lib/tools-config';
+import { tools, Tool, slugifyCategory } from '@/lib/tools-config';
+import { blogPosts } from '@/lib/blog-config';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://assetstoolshub.com';
+    const baseUrl = 'https://www.assetstoolshub.com';
 
     // Static pages
     const routes = [
         '',
         '/explore',
         '/blog',
+        '/pro',  // Premium Page
         '/about',
         '/contact',
         '/privacy-policy',
@@ -30,10 +32,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.7,
     }));
 
+    // Blog pages
+    const blogPageUrls = blogPosts.map((post) => ({
+        url: `${baseUrl}/blog/${post.slug}`,
+        lastModified: new Date().toISOString(), // In a real app, use post.updatedAt
+        changeFrequency: 'weekly' as const,
+        priority: 0.7,
+    }));
+
     // Category pages
     const categories = Array.from(new Set(tools.map(t => t.category)));
     const categoryPages = categories.map((category) => {
-        const categorySlug = category.toLowerCase().replace(/ & /g, '-').replace(/\s+/g, '-');
+        const categorySlug = slugifyCategory(category);
         return {
             url: `${baseUrl}/category/${categorySlug}`,
             lastModified: new Date().toISOString(),
@@ -50,5 +60,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.8,
     });
 
-    return [...routes, ...toolPages, ...categoryPages];
+    return [...routes, ...toolPages, ...blogPageUrls, ...categoryPages];
 }

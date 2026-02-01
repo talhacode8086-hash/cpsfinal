@@ -9,7 +9,11 @@ import {
     Globe, Scale, Ruler, FileCode, Share2, Palette, Layers, Code2, TrendingUp,
     CircleDollarSign, Box, Minimize2, Calculator, Monitor, Shuffle, LineChart,
     Flame, UnfoldHorizontal, Code, Bot, Tag, Percent, Timer, Calendar, Layout,
-    QrCode, Eye, ChevronRight
+    QrCode, Eye, ChevronRight, FlaskConical,
+    GitMerge, Repeat, Wind, Droplets, TestTube2, Pipette,
+    ArrowUpRight, Microscope, BatteryCharging, Radiation, Shapes,
+    ArrowLeftRight, PieChart, Sun, ArrowUp, ArrowDown, Table,
+    Snowflake, Boxes, ThermometerSun, Waves
 } from 'lucide-react';
 import { motion, Variants } from 'framer-motion';
 import { ToolCard } from '@/components/ui/ToolCard';
@@ -20,7 +24,11 @@ const IconMap: Record<string, any> = {
     Globe, Scale, Ruler, FileCode, Share2, Palette, Layers, Code2, TrendingUp,
     CircleDollarSign, Box, Minimize2, Calculator, Monitor, Shuffle, LineChart,
     Flame, UnfoldHorizontal, Code, Bot, Tag, Percent, Timer, Calendar, Layout,
-    QrCode, Link: Globe, Eye
+    QrCode, Link: Globe, Eye,
+    FlaskConical, GitMerge, Repeat, Wind, Droplets, TestTube2, Pipette,
+    ArrowUpRight, Microscope, BatteryCharging, Radiation, Shapes,
+    ArrowLeftRight, PieChart, Sun, ArrowUp, ArrowDown, Table,
+    Snowflake, Boxes, ThermometerSun, Waves
 };
 
 const containerVariants: Variants = {

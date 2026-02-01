@@ -2,7 +2,7 @@ export interface Tool {
     slug: string;
     title: string;
     description: string;
-    category: 'Mouse Skills' | 'Keyboard Skills' | 'Aim & Reflex' | 'Gaming Utilities' | 'Text Tools' | 'Unit Converters' | 'Development Tools' | 'SEO & Web' | 'Design & UI' | 'Finance' | 'Daily Tools' | 'Image Tools' | 'Education';
+    category: 'Mouse Skills' | 'Keyboard Skills' | 'Aim & Reflex' | 'Gaming Utilities' | 'Text Tools' | 'Unit Converters' | 'Development Tools' | 'SEO & Web' | 'Design & UI' | 'Finance' | 'Daily Tools' | 'Image Tools' | 'Education' | 'Mathematics Tools' | 'Advanced Scholar Tools' | 'Chemistry';
     iconName: string; // key for Lucide icons
     keywords?: string[];
     longDescription?: string;
@@ -2917,6 +2917,186 @@ Use this before scheduling international meetings to avoid waking someone up at 
         keywords: ['glassmorphism pro', 'frosted glass css', 'noise texture generator', 'modern ui backgrounds'],
         longDescription: 'Take the glass effect to the next level. includes advanced options for adding noise textures, secondary highlights, and complex backdrop filters for a truly premium feel.'
     },
+    {
+        slug: 'color-shades-generator',
+        title: 'Color Shades Generator',
+        description: 'Generate monochrome tints and shades for any base color.',
+        category: 'Design & UI',
+        iconName: 'Palette',
+        keywords: ['color shades', 'color tints', 'monochrome palette', 'css colors'],
+        longDescription: 'Create perfect color scales. Generate 10 lighter and 10 darker variations of any hex color, perfect for building cohesive UI themes and states.'
+    },
+    {
+        slug: 'color-harmony-tool',
+        title: 'Color Harmony Tool',
+        description: 'Explore classical color relationships based on the color wheel.',
+        category: 'Design & UI',
+        iconName: 'Sparkles',
+        keywords: ['color harmony', 'complementary colors', 'triadic colors', 'analogous colors', 'palette generator'],
+        longDescription: 'Master color theory. Generate complementary, analogous, triadic, and tetradic color schemes instantly from a single base color.'
+    },
+    {
+        slug: 'contrast-checker-pro',
+        title: 'Contrast Checker Pro',
+        description: 'Verify WCAG 2.1 accessibility standards for color combinations.',
+        category: 'Design & UI',
+        iconName: 'ShieldCheck',
+        keywords: ['wcag contrast', 'accessibility checker', 'color contrast', 'a11y tool'],
+        longDescription: 'Ensure your designs are accessible. Check contrast ratios against WCAG 2.1 AA and AAA standards for both normal and large text.'
+    },
+    {
+        slug: 'material-design-palette',
+        title: 'Material Design Palette',
+        description: 'Official Google Material Design color system reference.',
+        category: 'Design & UI',
+        iconName: 'Palette',
+        keywords: ['material design colors', 'google color palette', 'android design colors', 'ui color reference'],
+        longDescription: 'Access the complete Material Design color system. Browse official shades and weights from 50 to 900 for every primary Material color.'
+    },
+    {
+        slug: 'flat-ui-colors',
+        title: 'Flat UI Colors',
+        description: 'Handpicked color palettes for flat design interfaces.',
+        category: 'Design & UI',
+        iconName: 'Palette',
+        keywords: ['flat design colors', 'ui palettes', 'spanish palette', 'american palette', 'german palette'],
+        longDescription: 'Curated collection of beautiful flat UI colors. Includes popular palettes like Spanish, American, and German for modern, clean interface designs.'
+    },
+    {
+        slug: 'css-filter-generator',
+        title: 'CSS Filter Generator',
+        description: 'Visually adjust CSS filters and generate optimized code.',
+        category: 'Design & UI',
+        iconName: 'Sliders',
+        keywords: ['css filters', 'image effects', 'css brightness', 'css contrast', 'hue-rotate'],
+        longDescription: 'Create stunning image effects with pure CSS. Adjust brightness, contrast, saturation, blur, and more with a live preview and instant code generation.'
+    },
+    {
+        slug: 'css-text-shadow-generator',
+        title: 'CSS Text Shadow Generator',
+        description: 'Layer multiple shadows for realistic and aesthetic text effects.',
+        category: 'Design & UI',
+        iconName: 'Type',
+        keywords: ['text shadow', 'css text effects', 'layered shadows', 'text styling'],
+        longDescription: 'Add depth to your typography. Create complex, multi-layered text shadows with individual control over blur, spread, and color.'
+    },
+    {
+        slug: 'css-clip-path-generator',
+        title: 'CSS Clip Path Generator',
+        description: 'Drag the handles to create custom polygon shapes with clip-path.',
+        category: 'Design & UI',
+        iconName: 'Scissors',
+        keywords: ['clip path', 'css shapes', 'polygon generator', 'masking css'],
+        longDescription: 'Break out of the box. Use our interactive editor to create custom polygon clip-paths with drag-and-drop point manipulation and presets.'
+    },
+    {
+        slug: 'css-animation-keyframes',
+        title: 'CSS Animation Keyframes',
+        description: 'Generate keyframes and utility classes for common UI animations.',
+        category: 'Design & UI',
+        iconName: 'Zap',
+        keywords: ['css animation', 'keyframes generator', 'ui motion', 'bounce animation', 'pulse effect'],
+        longDescription: 'Bring your UI to life. Generate ready-to-use CSS keyframes for animations like bounce, shake, fade, and spin with customizable timing and duration.'
+    },
+    {
+        slug: 'css-scrollbar-customizer',
+        title: 'CSS Scrollbar Customizer',
+        description: 'Design custom scrollbars for Webkit browsers (Chrome, Edge, Safari).',
+        category: 'Design & UI',
+        iconName: 'MousePointer',
+        keywords: ['scrollbar styling', 'webkit scrollbar', 'custom scrollbar', 'css ui'],
+        longDescription: 'Style your scrollbars to match your brand. Customize thumb and track colors, rounded corners, and borders for a cohesive browsing experience.'
+    },
+    {
+        slug: 'css-loader-generator',
+        title: 'CSS Loader Generator',
+        description: 'Create lightweight, CSS-only loading indicators.',
+        category: 'Design & UI',
+        iconName: 'Loader2',
+        keywords: ['css loader', 'loading spinner', 'css activity indicator', 'wait animation'],
+        longDescription: 'Zero-dependency loading animations. Design spinners, bouncing dots, and progress bars using pure CSS for maximum performance.'
+    },
+    {
+        slug: 'css-tooltip-generator',
+        title: 'CSS Tooltip Generator',
+        description: 'Generate clean, arrow-tip css tooltips with easy customization.',
+        category: 'Design & UI',
+        iconName: 'MessageSquareAction',
+        keywords: ['css tooltip', 'hover label', 'ui tooltips', 'pure css components'],
+        longDescription: 'Professional tooltips without JavaScript. Generate accessible tooltips for any element with customizable positions (top, bottom, left, right).'
+    },
+    {
+        slug: 'css-ribbon-generator',
+        title: 'CSS Ribbon Generator',
+        description: 'Create decorative corner ribbons for cards and product listing.',
+        category: 'Design & UI',
+        iconName: 'Bookmark',
+        keywords: ['css ribbon', 'badge generator', 'corner ribbon', 'ecommerce ui'],
+        longDescription: 'Add "New" or "Sale" ribbons to your components. Customize size, offset, and rotate positions for perfect corner badges.'
+    },
+    {
+        slug: 'css-input-field-stylizer',
+        title: 'CSS Input Field Stylizer',
+        description: 'Custom style generator for text inputs with focus states.',
+        category: 'Design & UI',
+        iconName: 'Type',
+        keywords: ['input styling', 'css text input', 'form design', 'focus states'],
+        longDescription: 'Design beautiful, interactive form fields. Customize padding, borders, and focus rings with smooth transitions and modern aesthetics.'
+    },
+    {
+        slug: 'css-checkbox-stylizer',
+        title: 'CSS Checkbox Stylizer',
+        description: 'Design custom checkboxes without external image dependencies.',
+        category: 'Design & UI',
+        iconName: 'ToggleLeft',
+        keywords: ['custom checkbox', 'css radio button', 'form components', 'checkbox style'],
+        longDescription: 'Replace native checkboxes with custom designs. Lightweight CSS-only checkboxes that work across all modern browsers.'
+    },
+    {
+        slug: 'svg-pattern-generator',
+        title: 'SVG Pattern Generator',
+        description: 'Generate lightweight CSS backgrounds using repeatable SVG patterns.',
+        category: 'Design & UI',
+        iconName: 'Grid3X3',
+        keywords: ['svg patterns', 'css backgrounds', 'noise patterns', 'geometric backgrounds'],
+        longDescription: 'Create infinite backgrounds with tiny file sizes. Generate polka dots, stripes, and squares using Base64-encoded SVG patterns directly in your CSS.'
+    },
+    {
+        slug: 'component-mockup-generator',
+        title: 'Component Mockup Generator',
+        description: 'Present your web components in realistic CSS-based device frames.',
+        category: 'Design & UI',
+        iconName: 'Laptop',
+        keywords: ['device mockup', 'ui presentation', 'laptop mockup', 'phone mockup', 'marketing assets'],
+        longDescription: 'Showcase your work in context. Generate CSS-only laptop, phone, and desktop frames to present your UI snippets professionally.'
+    },
+    {
+        slug: 'neumorphism-advanced',
+        title: 'Neumorphism Advanced',
+        description: 'Generate Soft UI effects with realistic inner and outer shadows.',
+        category: 'Design & UI',
+        iconName: 'Sparkles',
+        keywords: ['neumorphism generator', 'soft ui pro', 'extruded ui', 'modern css effects'],
+        longDescription: 'Master the art of soft shadows. Create complex convex, concave, and pressed neumorphic elements with precise control over light source and intensity.'
+    },
+    {
+        slug: 'card-layout-visualizer',
+        title: 'Card Layout Visualizer',
+        description: 'Test and compare different card component styles and grid layouts.',
+        category: 'Design & UI',
+        iconName: 'Layout',
+        keywords: ['card designs', 'grid layouts', 'ui patterns', 'layout testing'],
+        longDescription: 'Prototype your card layouts instantly. Compare glassmorphism, minimal, and elevated designs across different grid configurations.'
+    },
+    {
+        slug: 'css-buttons-pack',
+        title: 'CSS Buttons Pack',
+        description: 'A collection of premium web button styles with copy-paste code.',
+        category: 'Design & UI',
+        iconName: 'MousePointerClick',
+        keywords: ['premium buttons', 'css button pack', 'cta design', 'button styles'],
+        longDescription: 'Jumpstart your UI with professional buttons. Includes Glow, Glass, Neumorphic, and Retro button styles with optimized CSS.'
+    },
 
     // Image Tools Expansion
     {
@@ -3064,6 +3244,78 @@ Use this before scheduling international meetings to avoid waking someone up at 
         longDescription: 'Fix tilted photos or change orientations. Rotate your images by 90-degree steps or use the fine-tuning slider to straighten horizons with precision.'
     },
     {
+        slug: 'image-masking-shapes',
+        title: 'Image Masking & Shapes',
+        description: 'Apply circular, star, or custom geometric masks to your images.',
+        category: 'Image Tools',
+        iconName: 'Shapes',
+        keywords: ['image masking', 'circular crop', 'shape crop', 'geometric image', 'avatar maker'],
+        longDescription: 'Beyond square grids. Apply creative masks to your photos, turning them into circles, triangles, stars, or hexagons. Perfect for creating unique profile pictures or design assets.'
+    },
+    {
+        slug: 'image-canvas-padding',
+        title: 'Image Canvas Adder',
+        description: 'Add specific padding or a colored background canvas around your images.',
+        category: 'Image Tools',
+        iconName: 'Maximize',
+        keywords: ['image padding', 'add border', 'canvas resize', 'social media crop', 'image background'],
+        longDescription: 'Prepare your images for framing or social media. Add whitespace or custom-colored padding around your image to fit specific aspect ratios without stretching.'
+    },
+    {
+        slug: 'image-metadata-cleaner',
+        title: 'Metadata Cleaner',
+        description: 'Remove all hidden EXIF and location data from images for privacy.',
+        category: 'Image Tools',
+        iconName: 'ShieldCheck',
+        keywords: ['remove exif', 'clean image', 'privacy photo', 'metadata remover', 'scrub location'],
+        longDescription: 'Protect your privacy. Scrub all hidden metadata from your JPEG and PNG files, including GPS coordinates, camera models, and timestamps, before sharing them online.'
+    },
+    {
+        slug: 'image-overlay-pro',
+        title: 'Image Overlay Pro',
+        description: 'Overlay logos, watermarks, or text onto your images with transparency.',
+        category: 'Image Tools',
+        iconName: 'Layers',
+        keywords: ['watermark adder', 'image overlay', 'add logo to photo', 'branding tool', 'batch watermark'],
+        longDescription: 'Protect your creative work. Overlay custom logos or watermarks onto your images with full control over opacity, positioning, and scale for professional branding.'
+    },
+    {
+        slug: 'cyberpunk-glitcher',
+        title: 'Cyberpunk Glitcher',
+        description: 'Add stylistic digital artifacts and glitch effects to your photos.',
+        category: 'Image Tools',
+        iconName: 'Zap',
+        keywords: ['image glitch', 'digital art', 'cyberpunk effect', 'photo artifacts'],
+        longDescription: 'Embrace the aesthetic of digital error. Add RGB shifts, scanlines, and block distortions to your images to create a unique cyberpunk or retro-electronic look.'
+    },
+    {
+        slug: 'pixel-art-generator',
+        title: 'Pixel Art Generator',
+        description: 'Convert any photo into high-quality retro pixel art.',
+        category: 'Image Tools',
+        iconName: 'Grid',
+        keywords: ['pixelate image', '8bit converter', 'pixel art tool', 'retro photo'],
+        longDescription: 'Go retro. Reduce your image resolution to a specific grid size while preserving color data to create authentic 8-bit or 16-bit style pixel art.'
+    },
+    {
+        slug: 'photo-text-art',
+        title: 'Photo Text Art',
+        description: 'Quickly add stylized text captions or quotes onto your images.',
+        category: 'Image Tools',
+        iconName: 'Type',
+        keywords: ['add text to image', 'photo caption', 'text overlay', 'meme maker'],
+        longDescription: 'Make your images speak. Add beautiful, customizable text overlays to your photos with control over fonts, colors, shadow effects, and positioning.'
+    },
+    {
+        slug: 'social-aspect-studio',
+        title: 'Social Aspect Studio',
+        description: 'Instantly crop or pad images for Instagram, TikTok, and YouTube.',
+        category: 'Image Tools',
+        iconName: 'Smartphone',
+        keywords: ['aspect ratio', 'social media crop', 'instagram size', 'tiktok aspect', 'image resize'],
+        longDescription: 'Prepare for the feed. Instantly adjust your image aspect ratio with professional presets for all major social platforms, ensuring your content looks perfect in every post.'
+    },
+    {
         slug: 'gpa-calculator',
         title: 'GPA Calculator Pro',
         description: 'Calculate your semester or cumulative GPA across multiple scales (4.0, 5.0, 10.0).',
@@ -3076,7 +3328,7 @@ Use this before scheduling international meetings to avoid waking someone up at 
         slug: 'scientific-calculator-pro',
         title: 'Adv. Scientific Calculator',
         description: 'Perform complex mathematical functions including trig, logs, and exponents.',
-        category: 'Education',
+        category: 'Advanced Scholar Tools',
         iconName: 'Calculator',
         keywords: ['scientific calculator', 'online math tool', 'trigonometry calculator', 'logarithm tool', 'engineering calculator'],
         longDescription: 'A fully-featured scientific calculator in your browser. Handles everything from basic arithmetic to advanced trigonometry, logarithms, power functions, and constant values for physics and chemistry.'
@@ -3103,7 +3355,7 @@ Use this before scheduling international meetings to avoid waking someone up at 
         slug: 'math-step-solver',
         title: 'Visual Math Step-Solver',
         description: 'Visualize the logic behind solving algebra and basic math problems.',
-        category: 'Education',
+        category: 'Advanced Scholar Tools',
         iconName: 'Braces',
         keywords: ['math solver', 'step by step math', 'algebra calculator', 'math logic solver', 'equation solver'],
         longDescription: 'Dont just get the answer—understand the process. Our visual step-solver breaks down complex algebra problems into logical parts, helping students master the underlying concepts of mathematics.'
@@ -3283,7 +3535,7 @@ Use this before scheduling international meetings to avoid waking someone up at 
         slug: 'molar-mass-pro',
         title: 'Molar Mass Pro',
         description: 'Advanced chemical formula parser for calculating molar mass of complex compounds.',
-        category: 'Education',
+        category: 'Advanced Scholar Tools',
         iconName: 'Droplet',
         keywords: ['molar mass calculator', 'chemical formula parser', 'atomic weight', 'molecular mass', 'chemistry solver'],
         longDescription: 'A professional-grade chemical formula parser. Handles complex notation including parentheses, hydrates, and nested groups (e.g., (NH4)2SO4 or CuSO4*5H2O) with high-precision atomic weight data.'
@@ -3292,7 +3544,7 @@ Use this before scheduling international meetings to avoid waking someone up at 
         slug: 'projectile-simulator',
         title: 'Projectile Simulator',
         description: 'Interactive physics simulator to visualize 2D trajectories with air resistance.',
-        category: 'Education',
+        category: 'Advanced Scholar Tools',
         iconName: 'Zap',
         keywords: ['projectile motion', 'physics simulator', 'trajectory visualizer', 'kinematics tool', 'motion physics'],
         longDescription: 'Master kinematics with visual intuition. Adjust initial velocity, launch angle, and atmospheric drag to see real-time trajectory plotting and kinematic data breakdowns.'
@@ -3301,7 +3553,7 @@ Use this before scheduling international meetings to avoid waking someone up at 
         slug: 'circuit-solver-pro',
         title: 'Circuit Solver Pro',
         description: 'Analyze series and parallel circuits with visual resistance and voltage mapping.',
-        category: 'Education',
+        category: 'Advanced Scholar Tools',
         iconName: 'Zap',
         keywords: ['circuit calculator', 'ohms law', 'series parallel', 'electronics solver', 'dc circuit analyzer'],
         longDescription: 'A premium tool for DC circuit analysis. Build series and parallel resistor networks to calculate equivalent resistance, total current, and voltage drops across specific components.'
@@ -3310,7 +3562,7 @@ Use this before scheduling international meetings to avoid waking someone up at 
         slug: 'complex-number-pro',
         title: 'Complex Number Pro',
         description: 'Perform arithmetic and polar conversions on complex numbers (a + bi).',
-        category: 'Education',
+        category: 'Advanced Scholar Tools',
         iconName: 'Hash',
         keywords: ['complex numbers', 'imaginary numbers', 'polar coordinates', 'phasor calculator', 'advanced math'],
         longDescription: 'A dedicated calculator for imaginary and complex numbers. Supports basic arithmetic, modulus/argument calculation, and seamless switching between rectangular and polar forms.'
@@ -3319,7 +3571,7 @@ Use this before scheduling international meetings to avoid waking someone up at 
         slug: 'probability-pro',
         title: 'Probability Pro',
         description: 'Analyze Normal and Binomial distributions with interactive visualizations.',
-        category: 'Education',
+        category: 'Advanced Scholar Tools',
         iconName: 'BarChart3',
         keywords: ['probability distribution', 'normal distribution', 'binomial calculator', 'statistics tool', 'z-score solver'],
         longDescription: 'Deep statistical analysis in your browser. Visualize probability density functions, calculate cumulative probabilities, and find critical values for standard distributions.'
@@ -3328,7 +3580,7 @@ Use this before scheduling international meetings to avoid waking someone up at 
         slug: 'ph-calculator-pro',
         title: 'pH Calculator Pro',
         description: 'Calculate pH, pOH, and concentration for strong and weak acid-base systems.',
-        category: 'Education',
+        category: 'Advanced Scholar Tools',
         iconName: 'Droplet',
         keywords: ['ph calculator', 'acid base solver', 'titration math', 'poh calculator', 'chemistry tools'],
         longDescription: 'Master aqueous chemistry. Calculate the pH of various solutions, including weak acids and bases using equilibrium constants (Ka/Kb), with detailed molar concentration readouts.'
@@ -3337,7 +3589,7 @@ Use this before scheduling international meetings to avoid waking someone up at 
         slug: 'gas-law-advanced',
         title: 'Gas Law Advanced',
         description: 'Solve Ideal, Boyles, and Charles gas laws with integrated unit conversions.',
-        category: 'Education',
+        category: 'Advanced Scholar Tools',
         iconName: 'Wind',
         keywords: ['gas law calculator', 'ideal gas law', 'pv=nrt solver', 'chemistry thermodynamics', 'physics of gases'],
         longDescription: 'A comprehensive solver for gas thermodynamics. Handle variables for pressure, volume, temperature, and moles across multiple unit systems (atm, kPa, Celsius, Kelvin) flawlessly.'
@@ -3346,7 +3598,7 @@ Use this before scheduling international meetings to avoid waking someone up at 
         slug: 'differential-equation-pro',
         title: 'Differential Eq. Pro',
         description: 'Heuristic solver for first-order linear and separable differential equations.',
-        category: 'Education',
+        category: 'Advanced Scholar Tools',
         iconName: 'Braces',
         keywords: ['differential equation solver', 'calculus tool', 'separable equations', 'first order linear', 'math solver'],
         longDescription: 'Advance your calculus skills. Our heuristic solver identifies and breaks down standard first-order differential equations, providing step-by-step logic and integration constants.'
@@ -3355,7 +3607,7 @@ Use this before scheduling international meetings to avoid waking someone up at 
         slug: 'relativity-dilation',
         title: 'Relativity Time Dilation',
         description: 'Visualize Einsteins Special Relativity and calculate Lorentz time dilation.',
-        category: 'Education',
+        category: 'Advanced Scholar Tools',
         iconName: 'Clock',
         keywords: ['relativity', 'time dilation', 'lorentz factor', 'physics', 'special relativity', 'einstein'],
         longDescription: 'Experience the physics of the very fast. Calculate the time dilation between a moving observer and a stationary one using the Lorentz factor ($ \gamma $), with visual context for speeds approaching $c$.'
@@ -3364,7 +3616,7 @@ Use this before scheduling international meetings to avoid waking someone up at 
         slug: 'reaction-kinetics',
         title: 'Reaction Kinetics Pro',
         description: 'Advanced tool for calculating rate laws, half-life, and activation energy.',
-        category: 'Education',
+        category: 'Advanced Scholar Tools',
         iconName: 'Activity',
         keywords: ['reaction kinetics', 'rate law', 'half life', 'chemistry solver', 'arrhenius equation'],
         longDescription: 'A professional physical chemistry solver. Determine reaction order, calculate rate constants across temperatures using the Arrhenius equation, and track half-life decay patterns.'
@@ -3373,7 +3625,7 @@ Use this before scheduling international meetings to avoid waking someone up at 
         slug: 'laplace-solver-pro',
         title: 'Laplace Solver Pro',
         description: 'Reference and solver for Laplace and Inverse Laplace transforms.',
-        category: 'Education',
+        category: 'Advanced Scholar Tools',
         iconName: 'Calculator',
         keywords: ['laplace transform', 'inverse laplace', 'engineering math', 'signals and systems', 'math tool'],
         longDescription: 'The ultimate tool for engineering mathematics. Access a comprehensive library of s-domain transforms and apply them to standard time-domain functions with clear step-by-step logic.'
@@ -3382,7 +3634,7 @@ Use this before scheduling international meetings to avoid waking someone up at 
         slug: 'vector-calc-pro',
         title: 'Vector Calc Pro',
         description: 'Perform advanced vector operations including Cross Product and Dot Product.',
-        category: 'Education',
+        category: 'Advanced Scholar Tools',
         iconName: 'MoveUpRight',
         keywords: ['vector algebra', 'cross product', 'dot product', 'magnitude', 'linear algebra', 'math'],
         longDescription: 'High-precision vector algebra. Calculate cross products, dot products, vector magnitudes, and the angles between vectors in 3D space with visual coordinate readouts.'
@@ -3391,10 +3643,632 @@ Use this before scheduling international meetings to avoid waking someone up at 
         slug: 'titration-curve-sim',
         title: 'Titration Curve Sim',
         description: 'Interactive visual simulator for acid-base titration and equivalence points.',
-        category: 'Education',
+        category: 'Advanced Scholar Tools',
         iconName: 'Beaker',
         keywords: ['titration curve', 'chemistry simulator', 'equivalence point', 'buffer region', 'acid base'],
         longDescription: 'Visualize aqueous chemistry in motion. Simulate the titration of strong/weak acids and bases to see real-time pH curve plotting and identify fundamental equivalence points.'
+    },
+    // Mathematics Tools
+    {
+        slug: 'algebra-solver',
+        title: 'Algebra Solver',
+        description: 'Solve linear, quadratic, and polynomial equations instantly.',
+        category: 'Mathematics Tools',
+        iconName: 'Calculator',
+        keywords: ['algebra solver', 'quadratic equation solver', 'polynomial calculator', 'factorization tool', 'math solver'],
+        longDescription: `
+The Algebra Solver is your all-in-one tool for mastering algebraic equations. Whether you're a high school student or a college engineering major, this tool handles the core problems you face daily.
+
+### Features
+*   **Linear Equations**: Solve simple equations like 2x + 5 = 15.
+*   **Quadratic Equations**: Get roots for ax² + bx + c = 0 using the quadratic formula.
+*   **Polynomials**: Find roots for higher-degree polynomials.
+*   **Factorization**: Decompose algebraic expressions into factors.
+*   **Inequalities**: Solve and graph linear and quadratic inequalities.
+
+### How to Use
+1.  **Select Mode**: Choose the type of problem (e.g., Quadratic).
+2.  **Input Equation**: Enter your coefficients or the full equation.
+3.  **Calculate**: Get step-by-step solutions (where applicable) and the final answer.
+        `
+    },
+    {
+        slug: 'calculus-solver',
+        title: 'Calculus Solver',
+        description: 'Compute limits, derivatives, and integrals.',
+        category: 'Mathematics Tools',
+        iconName: 'Sigma',
+        keywords: ['calculus solver', 'derivative calculator', 'integral calculator', 'limit solver', 'differentiation'],
+        longDescription: `
+Focus on the solution, not the tedious arithmetic. Our Basic Calculus Solver helps you check your homework and understand the behavior of functions.
+
+### Capabilities
+*   **Limits**: Evaluate limits as x approaches a specific value or infinity.
+*   **Differentiation**: Find the first, second, or higher-order derivatives of a function.
+*   **Integration**: Calculate indefinite and definite integrals using standard formulas.
+*   **Maxima & Minima**: Find the local peaks and valleys of a function.
+
+### Note
+This tool is designed for standard high-school and college-level problems.
+        `
+    },
+    {
+        slug: 'trigonometry-solver',
+        title: 'Trigonometry Solver',
+        description: 'Solve triangles, verify identities, and calculate trig values.',
+        category: 'Mathematics Tools',
+        iconName: 'Triangle',
+        keywords: ['trigonometry solver', 'triangle calculator', 'trig identities', 'heights and distances'],
+        longDescription: `
+Master the relationships between side lengths and angles of triangles. The Trigonometry Solver is perfect for board exams and entry tests.
+
+### Features
+*   **Trig Identities**: Verify standard identities.
+*   **Trig Equations**: Solve for theta in equations like sin(x) = 0.5.
+*   **Heights & Distances**: Calculate unknown heights using angle of elevation/depression.
+*   **Graphs**: Visualize sine, cosine, and tangent waves.
+        `
+    },
+    {
+        slug: 'coordinate-geometry',
+        title: 'Coordinate Geometry',
+        description: 'Analyze lines, circles, and parabolas on a 2D plane.',
+        category: 'Mathematics Tools',
+        iconName: 'Axis3d',
+        keywords: ['coordinate geometry', 'circle equation', 'parabola calculator', 'distance formula', 'midpoint calculator'],
+        longDescription: `
+Visualize and solve problems in the Cartesian plane.
+
+### Tools
+*   **Straight Line**: Find the equation of a line given two points or slope and intercept.
+*   **Circle**: Find the center and radius from the general equation.
+*   **Parabola**: Analyze dimensions of basic parabolas.
+*   **Distance & Midpoint**: Calculate the distance between two points and find their center.
+        `
+    },
+    {
+        slug: 'matrix-determinant',
+        title: 'Matrix & Determinants',
+        description: 'Perform matrix operations and solve linear systems.',
+        category: 'Mathematics Tools',
+        iconName: 'Grid',
+        keywords: ['matrix calculator', 'determinant solver', 'matrix multiplication', 'inverse matrix', 'system of equations'],
+        longDescription: `
+A lightweight tool for handling matrix algebra without the headache of manual calculations.
+
+### Operations
+*   **Basic Math**: Add, subtract, and multiply matrices.
+*   **Determinant**: Calculate the determinant of 2x2 and 3x3 matrices.
+*   **Linear Systems**: Solve systems of linear equations (Cramer's Rule / Inverse method).
+        `
+    },
+    {
+        slug: 'cramers-rule-solver',
+        title: 'Cramer\'s Rule Solver',
+        description: 'Solve systems of linear equations using Cramer\'s Rule with step-by-step details.',
+        category: 'Mathematics Tools',
+        iconName: 'Grid',
+        keywords: ['cramers rule', 'system of equations', 'linear algebra solver', 'matrix solver', 'determinant method'],
+        longDescription: `
+Solve systems of linear equations (2x2, 3x3, 4x4) using the famous Cramer's Rule. This tool calculates the main determinant (D) and the determinants for each variable (Dx, Dy, Dz) to find the unique solution.
+
+### How to Use
+1.  **Enter Coefficients**: Input your matrix A (coefficients).
+2.  **Enter Constants**: Input your vector B (constants).
+3.  **Solve**: The calculator will show each determinant calculation and the final values for x, y, z.
+        `
+    },
+    {
+        slug: 'probability-statistics',
+        title: 'Probability & Stats',
+        description: 'Calculate mean, median, mode, and probability.',
+        category: 'Mathematics Tools',
+        iconName: 'BarChart3',
+        keywords: ['statistics calculator', 'mean median mode', 'probability calculator', 'permutations combinations'],
+        longDescription: `
+Essential tools for data analysis and probability theory.
+
+### Features
+*   **Descriptive Stats**: Calculate Mean, Median, and Mode for a data set.
+*   **Simple Probability**: Calculate odds for simple events.
+*   **Counting**: Permutations (nPr) and Combinations (nCr) calculator.
+        `
+    },
+    {
+        slug: 'partial-fraction-decomposer',
+        title: 'Partial Fraction Decomposer',
+        description: 'Decompose rational functions into simpler partial fractions.',
+        category: 'Mathematics Tools',
+        iconName: 'Divide',
+        keywords: ['partial fraction', 'rational function', 'math decomposition', 'algebra solver', 'calculus helper'],
+        longDescription: 'Simplify complex rational expressions. Decompose algebraic fractions into sums of simpler distinct or repeated linear and quadratic factors, essential for integration and inverse Laplace transforms.'
+    },
+    {
+        slug: 'binomial-expansion-tool',
+        title: 'Binomial Expansion Tool',
+        description: 'Expand binomial expressions (a+b)^n using Pascal\'s Triangle.',
+        category: 'Mathematics Tools',
+        iconName: 'Sigma',
+        keywords: ['binomial theorem', 'polynomial expansion', 'pascals triangle', 'algebra expansion', 'math series'],
+        longDescription: 'Expand powers of binomials instantly. Get the full expansion of (a + b)^n for any integer power n, showing coefficients derived from the Binomial Theorem.'
+    },
+    {
+        slug: 'synthetic-division-calculator',
+        title: 'Synthetic Division',
+        description: 'Perform synthetic division of polynomials by linear divisors.',
+        category: 'Mathematics Tools',
+        iconName: 'Divide',
+        keywords: ['synthetic division', 'polynomial division', 'remainder theorem', 'algebra tool', 'math division'],
+        longDescription: 'Divide polynomials efficiently. Use synthetic division to divide a polynomial P(x) by a linear binomial (x - c), providing the quotient and remainder with a clear tabular step-by-step format.'
+    },
+    {
+        slug: 'complex-roots-finder',
+        title: 'Complex Roots Finder',
+        description: 'Find all roots (real and complex) of polynomial equations.',
+        category: 'Mathematics Tools',
+        iconName: 'Hash',
+        keywords: ['complex roots', 'polynomial solver', 'imaginary numbers', 'fundamental theorem of algebra', 'root finder'],
+        longDescription: 'Solve for every solution. Find all n roots of an n-th degree polynomial, including complex conjugate pairs, ensuring no solution is missed.'
+    },
+    {
+        slug: 'logarithm-solver',
+        title: 'Logarithm Solver',
+        description: 'Solve logarithmic equations and simplify log expressions.',
+        category: 'Mathematics Tools',
+        iconName: 'Calculator',
+        keywords: ['logarithm calculator', 'log solver', 'natural log', 'log rules', 'exponential equations'],
+        longDescription: 'Master logarithmic properties. Solve for x in logarithmic equations via exponentiation, change bases, and simplify expanded log expressions into single terms.'
+    },
+    {
+        slug: 'sequence-series-solver',
+        title: 'Sequence & Series (AP/GP)',
+        description: 'Calculate nth term and sum of Arithmetic and Geometric progressions.',
+        category: 'Mathematics Tools',
+        iconName: 'ListOrdered',
+        keywords: ['arithmetic progression', 'geometric progression', 'series sum', 'nth term', 'math sequences'],
+        longDescription: 'Analyze mathematical patterns. Calculate the nth term, sum to n terms, and infinite sums (for GP) for Arithmetic and Geometric progressions effortlessly.'
+    },
+    {
+        slug: 'conic-section-analyzer',
+        title: 'Conic Section Analyzer',
+        description: 'Analyze properties of Parabolas, Ellipses, and Hyperbolas.',
+        category: 'Mathematics Tools',
+        iconName: 'Circle',
+        keywords: ['conics', 'parabola', 'ellipse', 'hyperbola', 'focus directrix'],
+        longDescription: 'Explore the geometry of curves. Input standard equations to find vertices, foci, directrices, lattice rectum length, and eccentricity of any conic section.'
+    },
+    {
+        slug: 'plane-geometry-3d',
+        title: '3D Plane Geometry',
+        description: 'Calculate plane equations and distances in 3D space.',
+        category: 'Mathematics Tools',
+        iconName: 'Box',
+        keywords: ['3d geometry', 'plane equation', 'normal vector', 'distance to plane', 'math 3d'],
+        longDescription: 'Navigate three-dimensional space. Find the equation of a plane from three points, calculate the distance from a point to a plane, and find the angle between two planes.'
+    },
+    {
+        slug: 'limits-evaluator',
+        title: 'Limits Evaluator',
+        description: 'Evaluate limits of functions as they approach a value or infinity.',
+        category: 'Mathematics Tools',
+        iconName: 'ArrowRight',
+        keywords: ['limit calculator', 'calculus limits', 'continuity', 'math analysis', 'infinity limits'],
+        longDescription: 'Approach the answer. Evaluate one-sided and two-sided limits of functions, handling indeterminate forms and discontinuities with heuristic analysis.'
+    },
+    {
+        slug: 'tangent-normal-calculator',
+        title: 'Tangent & Normal',
+        description: 'Find the equation of the tangent and normal lines at a point.',
+        category: 'Mathematics Tools',
+        iconName: 'TrendingUp',
+        keywords: ['tangent line', 'normal line', 'derivative application', 'calculus tool', 'slope calculator'],
+        longDescription: 'Visualize rates of change. Calculate the slope of the curve at a specific point to derive the exact linear equations for the tangent and normal lines.'
+    },
+    {
+        slug: 'area-under-curve',
+        title: 'Area Under Curve',
+        description: 'Calculate the area under a function curve using definite integration.',
+        category: 'Mathematics Tools',
+        iconName: 'AreaChart',
+        keywords: ['definite integral', 'area calculator', 'calculus area', 'integration tool', 'riemann sum'],
+        longDescription: 'Measure accumulation. numeric integration to finding the exact area bounded by a function, the x-axis, and specified limits.'
+    },
+    {
+        slug: 'improper-integral-solver',
+        title: 'Improper Integrals',
+        description: 'Evaluate integrals with infinite limits or discontinuities.',
+        category: 'Mathematics Tools',
+        iconName: 'Infinity',
+        keywords: ['improper integral', 'infinite limits', 'calculus convergence', 'math integration', 'analysis'],
+        longDescription: 'Go beyond finite bounds. Evaluate Type I and Type II improper integrals to determine convergence or divergence and calculate the finite value if it exists.'
+    },
+    {
+        slug: 'arc-length-calculator',
+        title: 'Arc Length Calculator',
+        description: 'Calculate the length of a curve segment over an interval.',
+        category: 'Mathematics Tools',
+        iconName: 'Activity',
+        keywords: ['arc length', 'curve length', 'calculus path', 'integration application', 'math geometry'],
+        longDescription: 'Measure the path. Compute the exact length of a smooth curve segment f(x) between two points using the standard arc length integral formula.'
+    },
+    {
+        slug: 'surface-area-revolution',
+        title: 'Surface Area of Revolution',
+        description: 'Calculate surface area generated by rotating a curve around an axis.',
+        category: 'Mathematics Tools',
+        iconName: 'Orbit',
+        keywords: ['surface area', 'solid of revolution', 'calculus rotation', 'integration tool', 'math 3d'],
+        longDescription: 'Spin into 3D. Determine the surface area formed when a 2D curve is rotated about the x-axis or y-axis using integral calculus.'
+    },
+    {
+        slug: 'truth-table-generator',
+        title: 'Truth Table Generator',
+        description: 'Generate logic truth tables for boolean expressions.',
+        category: 'Mathematics Tools',
+        iconName: 'Binary',
+        keywords: ['truth table', 'boolean logic', 'logic gates', 'discrete math', 'propositional logic'],
+        longDescription: 'Verify logical arguments. Input complex boolean expressions using AND, OR, NOT, implies, and XOR to generate a complete truth table verifying all possible truth values.'
+    },
+    {
+        slug: 'set-theory-visualizer',
+        title: 'Set Theory Visualizer',
+        description: 'Perform Union, Intersection, and Difference operations on sets.',
+        category: 'Mathematics Tools',
+        iconName: 'Combine',
+        keywords: ['set theory', 'union intersection', 'venn diagram', 'discrete math', 'math sets'],
+        longDescription: 'Manage collections. Input data sets to calculate their Union, Intersection, Difference, and Symmetric Difference, helpful for probability and logic problems.'
+    },
+    {
+        slug: 'number-base-operations',
+        title: 'Number Base Operations',
+        description: 'Perform arithmetic (Add, Sub, Mul, Div) in any base system.',
+        category: 'Mathematics Tools',
+        iconName: 'Hash',
+        keywords: ['base calculator', 'binary math', 'hexadecimal arithmetic', 'number systems', 'base converter'],
+        longDescription: 'Calculate beyond base-10. Perform addition, subtraction, multiplication, and division directly in Binary, Octal, Hexadecimal, or any custom base up to 36.'
+    },
+    {
+        slug: 'modulo-arithmetic-tool',
+        title: 'Modulo Arithmetic',
+        description: 'Calculate modular exponentiation, inverses, and congruences.',
+        category: 'Mathematics Tools',
+        iconName: 'Percent',
+        keywords: ['modulo calculator', 'modular arithmetic', 'number theory', 'cryptography math', 'remainder tool'],
+        longDescription: 'Explore the math of cycles. Compute (a^b) mod n, find modular inverses, and solve linear congruences, essential for understanding cryptography and number theory.'
+    },
+    {
+        slug: 'prime-factorization-tree',
+        title: 'Prime Factorization Tree',
+        description: 'Visualize the prime factors of a number as a tree diagram.',
+        category: 'Mathematics Tools',
+        iconName: 'Network',
+        keywords: ['prime factors', 'factor tree', 'divisibility', 'number theory', 'math visualizer'],
+        longDescription: 'Break it down completely. Input any composite number to generate a visual hierarchical tree showing its breakdown into prime number building blocks.'
+    },
+    {
+        slug: 'regression-analysis-tool',
+        title: 'Regression Analysis',
+        description: 'Find best-fit lines and curves (Linear, Quadratic, Exponential) for data.',
+        category: 'Mathematics Tools',
+        iconName: 'ScatterChart',
+        keywords: ['regression calculator', 'best fit line', 'statistics modeling', 'linear regression', 'data analysis'],
+        longDescription: 'Model your data. Input xy-data points to calculate the Equation of Best Fit (Linear, Quadratic, or Exponential) along with the R-squared correlation coefficient.'
+    },
+    {
+        slug: 'quantum-level-solver',
+        title: 'Quantum Level Solver',
+        description: 'Calculate and visualize energy levels for a particle in a 1D infinite well.',
+        category: 'Advanced Scholar Tools',
+        iconName: 'Atom',
+        keywords: ['quantum mechanics', 'schrodinger equation', 'energy levels', 'wave function', 'physics solver'],
+        longDescription: 'Master the basics of quantum mechanics. This tool calculates the energy levels and wavefunctions for the classic "particle in a box" problem, showing both the math and the physical probability densities.'
+    },
+    {
+        slug: 'thermo-cycle-analyzer',
+        title: 'Thermodynamic Cycle Analyzer',
+        description: 'Analyze Carnot and Rankine heat engine cycles for efficiency.',
+        category: 'Advanced Scholar Tools',
+        iconName: 'Thermometer',
+        keywords: ['thermodynamics', 'carnot cycle', 'rankine cycle', 'thermal efficiency', 'entropy', 'physics'],
+        longDescription: 'Explore the limits of heat engines. Compare the theoretical maximum efficiency of the Carnot cycle with real-world Rankine cycle estimations based on reservoir temperatures.'
+    },
+    {
+        slug: 'orbit-simulator-pro',
+        title: 'Astrophysics Orbit Simulator',
+        description: 'Simulate orbital mechanics, escape velocity, and Keplerian paths.',
+        category: 'Advanced Scholar Tools',
+        iconName: 'Orbit',
+        keywords: ['orbital mechanics', 'escape velocity', 'astrophysics', 'kepler laws', 'satellite physics'],
+        longDescription: 'Calculate the physics of space travel. Determine orbital speeds, periods, and escape velocities for any planet or custom celestial body using gravitational field equations.'
+    },
+    {
+        slug: 'em-wave-calculator',
+        title: 'EM Wave Calculator',
+        description: 'Explore the electromagnetic spectrum and calculate photon energy.',
+        category: 'Advanced Scholar Tools',
+        iconName: 'Waves',
+        keywords: ['em spectrum', 'wavelength frequency', 'photon energy', 'light physics', 'planck constant'],
+        longDescription: 'Navigate the electromagnetic spectrum. Convert between frequency and wavelength, calculate energy per photon (hf), and identify the spectrum range from radio to gamma rays.'
+    },
+    {
+        slug: 'nuclear-decay-sim',
+        title: 'Nuclear Decay Simulator',
+        description: 'Simulate radioactive decay law and half-life calculations.',
+        category: 'Advanced Scholar Tools',
+        iconName: 'ShieldAlert',
+        keywords: ['nuclear physics', 'radioactive decay', 'half life', 'carbon dating', 'activity rate'],
+        longDescription: 'Visualize the exponential nature of time. Simulate radioactive decay for various isotopes, calculate remaining masses over time, and determine the decay constant (λ) and current activity.'
+    },
+    // Chemistry Category
+    {
+        slug: 'molar-mass-pro',
+        title: 'Molar Mass Pro',
+        description: 'Advanced molecular weight calculator with complex formula parsing.',
+        category: 'Chemistry',
+        iconName: 'Scale',
+        keywords: ['molar mass', 'molecular weight', 'chemistry calculator', 'atomic mass', 'stoichiometry'],
+        longDescription: 'Precision matters in the lab. Input complex chemical formulas (supporting brackets like Mg(OH)2 or hydrates like CuSO4·5H2O) to calculate precise molar masses based on the latest IUPAC atomic weights.'
+    },
+    {
+        slug: 'equation-balancer',
+        title: 'Auto Balancer Pro',
+        description: 'Balance complex chemical equations and identify reaction types.',
+        category: 'Chemistry',
+        iconName: 'GitMerge',
+        keywords: ['balance equation', 'chemical reaction', 'stoichiometry balancer', 'redox balancer'],
+        longDescription: 'Stop guessing coefficients. This tool uses matrix algebra to balance any valid chemical equation instantly, including polyatomic ion groups and redox reactions.'
+    },
+    {
+        slug: 'stoichiometry-solver',
+        title: 'Stoichiometry Solver',
+        description: 'Convert between grams, moles, and particles for any chemical reaction.',
+        category: 'Chemistry',
+        iconName: 'Repeat',
+        keywords: ['stoichiometry', 'mole conversion', 'theoretical yield', 'mass mass conversion'],
+        longDescription: 'The heart of chemistry. Enter a balanced equation and any known quantity to solve for all other reactants and products in grams, moles, or molecules.'
+    },
+    {
+        slug: 'ideal-gas-law',
+        title: 'Ideal Gas Pro',
+        description: 'Solve for P, V, n, or T using the Ideal Gas Law (PV=nRT).',
+        category: 'Chemistry',
+        iconName: 'Wind',
+        keywords: ['ideal gas law', 'boyles law', 'charles law', 'gas constant', 'chemistry physics'],
+        longDescription: 'Simulate gas behavior. Toggle between units (atm, kPa, mmHg, Celsius, Kelvin) and solve for any unknown variable in the ideal gas equation.'
+    },
+    {
+        slug: 'molarity-calculator',
+        title: 'Molarity Plus',
+        description: 'Calculate concentration, volume, and solute mass for solutions.',
+        category: 'Chemistry',
+        iconName: 'FlaskConical',
+        keywords: ['molarity', 'concentration', 'solubility', 'chemistry solution', 'molality'],
+        longDescription: 'Prepare your solutions accurately. Calculate molarity (M), molality (m), or mass percent by inputting solute and solvent details.'
+    },
+    {
+        slug: 'dilution-calculator',
+        title: 'Dilution Master',
+        description: 'Quickly calculate final concentrations using M1V1 = M2V2.',
+        category: 'Chemistry',
+        iconName: 'Droplets',
+        keywords: ['dilution', 'serial dilution', 'stock solution', 'chemistry lab'],
+        longDescription: 'Master of the bench. Determine exact amounts of stock solution and solvent needed to reach your target concentration.'
+    },
+    {
+        slug: 'ph-poh-calculator',
+        title: 'pH/pOH Master',
+        description: 'Calculate pH, pOH, and ion concentrations for acids and bases.',
+        category: 'Chemistry',
+        iconName: 'TestTube2',
+        keywords: ['ph calculator', 'poh', 'acid base', 'h3o concentration', 'oh concentration'],
+        longDescription: 'Navigate the logarithmic scale. Convert between pH, pOH, [H+], and [OH-] instantly for any aqueous solution.'
+    },
+    {
+        slug: 'buffer-calculator',
+        title: 'Henderson-Hasselbalch Pro',
+        description: 'Calculate the pH of buffer solutions with specific pKa values.',
+        category: 'Chemistry',
+        iconName: 'Pipette',
+        keywords: ['buffer solution', 'pKa', 'henderson hasselbalch', 'acid base equilibrium'],
+        longDescription: 'Predict buffer behavior. Input the concentrations of a weak acid and its conjugate base to find the resulting pH, or determine the required ratio for a target pH.'
+    },
+    {
+        slug: 'enthalpy-calculator',
+        title: 'Enthalpy Solver',
+        description: 'Calculate ΔH using bond energies or heats of formation.',
+        category: 'Chemistry',
+        iconName: 'Flame',
+        keywords: ['enthalpy', 'delta H', 'heat of reaction', 'thermochemistry', 'hess law'],
+        longDescription: 'Measure the heat. Calculate the enthalpy change of a reaction using standard heats of formation (Hess Law) or by analyzing bond dissociation energies.'
+    },
+    {
+        slug: 'gibbs-free-energy',
+        title: 'Gibbs & Spontaneity',
+        description: 'Predict reaction spontaneity using ΔG = ΔH - TΔS.',
+        category: 'Chemistry',
+        iconName: 'Zap',
+        keywords: ['gibbs free energy', 'spontaneity', 'entropy', 'thermodynamics', 'delta G'],
+        longDescription: 'Will it react? Determine if a process is spontaneous by analyzing the balance between enthalpy, entropy, and temperature.'
+    },
+    {
+        slug: 'specific-heat-calc',
+        title: 'Specific Heat (q=mcΔT)',
+        description: 'Calculate heat transfer, mass, or temperature changes.',
+        category: 'Chemistry',
+        iconName: 'Thermometer',
+        keywords: ['specific heat', 'calorimetry', 'heat flow', 'thermodynamics'],
+        longDescription: 'Understand energy transfer. Solve for any variable in the specific heat equation, including final temperatures in calorimetry problems.'
+    },
+    {
+        slug: 'rate-law-calculator',
+        title: 'Kinetics Rate Law',
+        description: 'Determine reaction orders and rate constants from data.',
+        category: 'Chemistry',
+        iconName: 'Timer',
+        keywords: ['rate law', 'kinetics', 'reaction order', 'rate constant', 'chemistry'],
+        longDescription: 'Crack the code of speed. Input concentration and rate data to determine the mathematical rate law and the overall order of a reaction.'
+    },
+    {
+        slug: 'arrhenius-equation',
+        title: 'Arrhenius Pro',
+        description: 'Calculate activation energy (Ea) and temperature effects.',
+        category: 'Chemistry',
+        iconName: 'ArrowUpRight',
+        keywords: ['arrhenius equation', 'activation energy', 'reaction rate', 'temperature effect'],
+        longDescription: 'Speed up your chemistry. Use the Arrhenius equation to solve for activation energy or predict how warming a reaction will increase the rate constant.'
+    },
+    {
+        slug: 'equilibrium-constant',
+        title: 'Equilibrium (Kc/Kp)',
+        description: 'Solve for equilibrium concentrations or constants.',
+        category: 'Chemistry',
+        iconName: 'RefreshCw',
+        keywords: ['equilibrium constant', 'Kc', 'Kp', 'ICE table', 'le chatelier'],
+        longDescription: 'The balance of nature. Calculate equilibrium constants from concentrations, or use Kc values to predict the final composition of a reaction mixture.'
+    },
+    {
+        slug: 'solubility-product',
+        title: 'Ksp & Solubility',
+        description: 'Calculate molar solubility and precipitate formation.',
+        category: 'Chemistry',
+        iconName: 'Microscope',
+        keywords: ['Ksp', 'solubility product', 'molar solubility', 'precipitation', 'common ion effect'],
+        longDescription: 'Will it dissolve? Calculate the solubility product constant (Ksp) or determine if a precipitate will form when two solutions are mixed.'
+    },
+    {
+        slug: 'nernst-equation',
+        title: 'Nernst Pro',
+        description: 'Calculate cell potential under non-standard conditions.',
+        category: 'Chemistry',
+        iconName: 'BatteryCharging',
+        keywords: ['nernst equation', 'cell potential', 'electrochemistry', 'voltage', 'redox'],
+        longDescription: 'Power your calculations. Adjust standard reduction potentials for temperature and concentration to find the real-world voltage of an electrochemical cell.'
+    },
+    {
+        slug: 'faradays-law',
+        title: 'Faraday’s Electrolysis',
+        description: 'Calculate mass deposited during electrolysis.',
+        category: 'Chemistry',
+        iconName: 'Zap',
+        keywords: ['faraday law', 'electrolysis', 'plating', 'charge', 'coulombs'],
+        longDescription: 'Electroplating precision. Calculate the mass of a metal deposited or the time required for a specific current to plate a surface.'
+    },
+    {
+        slug: 'half-life-calculator',
+        title: 'Nuclear Half-Life',
+        description: 'Track radioactive decay and remaining isotope mass.',
+        category: 'Chemistry',
+        iconName: 'Radiation',
+        keywords: ['half life', 'radioactive decay', 'isotope', 'nuclear chemistry', 'decay constant'],
+        longDescription: 'Time and transition. Use isotopes half-lives to calculate remaining quantities, total time elapsed, or the decay constant.'
+    },
+    {
+        slug: 'vsepr-predictor',
+        title: 'VSEPR Shape Master',
+        description: 'Predict molecular geometry based on steric numbers.',
+        category: 'Chemistry',
+        iconName: 'Shapes',
+        keywords: ['vsepr theory', 'molecular geometry', 'lone pairs', 'chemical bonding', 'hybridization'],
+        longDescription: 'Visualize the 3D world. Input the number of bonding atoms and lone pairs on a central atom to determine the molecular and electron geometry.'
+    },
+    {
+        slug: 'formal-charge-calc',
+        title: 'Formal Charge Solver',
+        description: 'Calculate formal charges to find the best Lewis structure.',
+        category: 'Chemistry',
+        iconName: 'PlusMinus',
+        keywords: ['formal charge', 'lewis structure', 'valence electrons', 'chemistry bonding'],
+        longDescription: 'Perfect your Lewis structures. Calculate formal charges for every atom in a molecule to identify the most stable resonance structures.'
+    },
+    {
+        slug: 'electronegativity-diff',
+        title: 'Bond Polarity Pro',
+        description: 'Predict bond types based on Pauling electronegativity.',
+        category: 'Chemistry',
+        iconName: 'ArrowLeftRight',
+        keywords: ['electronegativity', 'bond polarity', 'ionic vs covalent', 'pauling scale'],
+        longDescription: 'Ionic or Covalent? Calculate the ΔEN between atoms to classify bonds and predict dipole moments.'
+    },
+    {
+        slug: 'empirical-formula',
+        title: 'Empirical Finder',
+        description: 'Convert percentage composition to empirical formulas.',
+        category: 'Chemistry',
+        iconName: 'Search',
+        keywords: ['empirical formula', 'molecular formula', 'percent composition', 'chemistry analysis'],
+        longDescription: 'Solve the chemical puzzle. Input mass percentages of elements to derive the simplest whole-number ratio of atoms in a compound.'
+    },
+    {
+        slug: 'percentage-composition',
+        title: 'Percent Composition',
+        description: 'Calculate the percent by mass of each element in a formula.',
+        category: 'Chemistry',
+        iconName: 'PieChart',
+        keywords: ['percent composition', 'mass percent', 'formula mass', 'chemical analysis'],
+        longDescription: 'Anatomize your molecules. Determine exactly what percentage of a compound’s mass comes from each constituent element.'
+    },
+    {
+        slug: 'limiting-reagent',
+        title: 'Yield & Limiting Reagent',
+        description: 'Identify the limiting reactant and calculate percent yield.',
+        category: 'Chemistry',
+        iconName: 'Activity',
+        keywords: ['limiting reagent', 'theoretical yield', 'percent yield', 'stoichiometry'],
+        longDescription: 'Efficiency in the lab. Identify which reactant will run out first and calculate the theoretical maximum vs actual yield of your reaction.'
+    },
+    {
+        slug: 'beer-lambert-law',
+        title: 'Beer-Lambert Solver',
+        description: 'Calculate absorbance, molar absorptivity, or concentration.',
+        category: 'Chemistry',
+        iconName: 'Sun',
+        keywords: ['beer lambert law', 'absorbance', 'spectrophotometry', 'molar absorptivity'],
+        longDescription: 'The chemistry of light. Use spectroscopy data to determine solute concentration or identify standard coefficients for specific substances.'
+    },
+    {
+        slug: 'boiling-point-elevation',
+        title: 'Boiling Point Pro',
+        description: 'Calculate boiling point changes for non-volatile solutes.',
+        category: 'Chemistry',
+        iconName: 'ArrowUp',
+        keywords: ['boiling point elevation', 'colligative properties', 'molality', 'van t hoff'],
+        longDescription: 'Turning up the heat. Predict how adding a solute changes the boiling point of a solvent using the ebullioscopic constant and van \'t Hoff factor.'
+    },
+    {
+        slug: 'freezing-point-depression',
+        title: 'Freezing Point Pro',
+        description: 'Calculate freezing point changes for solutions.',
+        category: 'Chemistry',
+        iconName: 'ArrowDown',
+        keywords: ['freezing point depression', 'colligative properties', 'cryoscopic constant', 'chemistry'],
+        longDescription: 'Cooling calculations. Determine the new freezing point of a solution, essential for understanding antifreeze and biological cryoprotectants.'
+    },
+    {
+        slug: 'density-calculator',
+        title: 'Precision Density',
+        description: 'Solve for Density, Mass, or Volume with precision units.',
+        category: 'Chemistry',
+        iconName: 'Table',
+        keywords: ['density calculator', 'mass volume', 'specific gravity', 'chemistry basics'],
+        longDescription: 'Fundamental measurements. Convert between various units and solve the density equation with high numerical precision.'
+    },
+    {
+        slug: 'celsius-kelvin-conv',
+        title: 'Advanced Temp Lab',
+        description: 'Professional kelvin, celsius, and rankine conversions.',
+        category: 'Chemistry',
+        iconName: 'Thermometer',
+        keywords: ['kelvin converter', 'celsius to kelvin', 'rankine', 'absolute zero', 'temperature'],
+        longDescription: 'Absolute precision. Convert between scientific temperature scales, keeping track of absolute zero and standard laboratory conditions.'
+    },
+    {
+        slug: 'molecular-weight-calc',
+        title: 'Molecular Weight Pro',
+        description: 'Fast weight lookup for thousand of chemical names.',
+        category: 'Chemistry',
+        iconName: 'Scale',
+        keywords: ['molecular weight', 'chemical database', 'molar mass lookup', 'biochemistry'],
+        longDescription: 'Beyond formulas. Look up or calculate molecular weights for complex reagents and biological molecules with ease.'
     },
 ];
 

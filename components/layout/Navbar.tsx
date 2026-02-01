@@ -18,21 +18,27 @@ export function Navbar() {
     const [mounted, setMounted] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
 
-    const navLinks = [
-        { name: 'Gaming', href: '/category/gaming-utilities' },
-        { name: 'Productivity', href: '/category/text-tools' },
-        { name: 'Dev', href: '/category/development-tools' },
-        { name: 'Blog', href: '/blog' },
-    ];
-
     useEffect(() => {
         setMounted(true);
+
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 10);
         };
+
         window.addEventListener('scroll', handleScroll, { passive: true });
-        return () => window.removeEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
     }, []);
+
+
+    const navLinks = [
+        { name: 'Tools', href: '/explore' },
+        { name: 'About Us', href: '/about' },
+        { name: 'Contact Us', href: '/contact' },
+        { name: 'Blog', href: '/blog' },
+    ];
 
     return (
         <motion.header
@@ -40,14 +46,14 @@ export function Navbar() {
             animate={{ y: 0 }}
             transition={{ type: 'spring', stiffness: 300, damping: 30 }}
             className={cn(
-                "sticky top-0 z-50 w-full transition-all duration-500",
+                "fixed top-0 z-50 w-full transition-all duration-500",
                 isScrolled
-                    ? "border-b bg-background/60 backdrop-blur-2xl shadow-lg py-2"
+                    ? "border-b bg-background/80 backdrop-blur-2xl shadow-lg py-2"
                     : "bg-transparent py-4"
             )}
         >
-            <div className="container flex h-14 items-center justify-between">
-                <div className="flex items-center gap-4">
+            <div className="px-4 flex h-14 items-center justify-between gap-4">
+                <div className="flex items-center gap-4 shrink-0">
                     <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
                         <Button
                             variant="ghost"
@@ -58,7 +64,6 @@ export function Navbar() {
                             <Menu className="h-5 w-5" />
                         </Button>
                     </motion.div>
-
                     <Link href="/" className="flex items-center space-x-2 sm:space-x-3 group shrink-0">
                         <motion.div
                             whileHover={{ rotate: 10, scale: 1.1 }}
@@ -67,35 +72,36 @@ export function Navbar() {
                             <Logo className="h-8 w-8 sm:h-10 sm:w-10" />
                         </motion.div>
                         <div className="flex flex-col">
-                            <span className="font-black text-lg sm:text-xl tracking-tighter leading-none">Assets Tools</span>
+                            <span className="font-black text-lg sm:text-xl tracking-tighter leading-none">Assets Tools Hub</span>
                             <span className="text-[8px] sm:text-[10px] font-black text-primary uppercase tracking-[0.3em] leading-none mt-1">Premium</span>
                         </div>
                     </Link>
-
-                    <nav className="hidden lg:flex items-center space-x-1 ml-4">
-                        {navLinks.map((link, i) => (
-                            <motion.div
-                                key={link.name}
-                                initial={{ opacity: 0, y: -10 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.2 + i * 0.1 }}
-                            >
-                                <Link
-                                    href={link.href}
-                                    className="relative px-4 py-2 text-sm font-black uppercase tracking-widest text-foreground/60 hover:text-primary transition-colors group/link"
-                                >
-                                    {link.name}
-                                    <motion.span
-                                        className="absolute bottom-0 left-0 w-full h-0.5 bg-primary scale-x-0 group-hover/link:scale-x-100 transition-transform origin-left"
-                                        transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                                    />
-                                </Link>
-                            </motion.div>
-                        ))}
-                    </nav>
                 </div>
 
-                <div className="flex items-center gap-2 sm:gap-3">
+                <nav className="hidden lg:flex absolute left-1/2 -translate-x-[70%] items-center space-x-1">
+                    {navLinks.map((link, i) => (
+                        <motion.div
+                            key={link.name}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: 0.2 + i * 0.1 }}
+                            className="flex items-center"
+                        >
+                            <Link
+                                href={link.href}
+                                className="relative px-4 py-2 text-sm font-black uppercase tracking-widest text-foreground/60 hover:text-primary transition-colors group/link"
+                            >
+                                {link.name}
+                                <motion.span
+                                    className="absolute bottom-0 left-0 w-full h-0.5 bg-primary scale-x-0 group-hover/link:scale-x-100 transition-transform origin-left"
+                                    transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                                />
+                            </Link>
+                        </motion.div>
+                    ))}
+                </nav>
+
+                <div className="flex items-center gap-1.5 sm:gap-4 shrink-0">
                     <Search />
 
                     <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
@@ -113,6 +119,7 @@ export function Navbar() {
                             )}
                         </Button>
                     </motion.div>
+
 
                     <Link href="/pro">
                         <motion.div

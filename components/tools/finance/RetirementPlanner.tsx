@@ -65,17 +65,17 @@ export default function RetirementPlanner() {
                     </div>
 
                     <div className="flex flex-col justify-center gap-6">
-                        <div className="p-12 rounded-[3.5rem] bg-primary text-white shadow-2xl shadow-primary/40 text-center relative overflow-hidden">
+                        <div className="p-12 rounded-[3.5rem] bg-primary text-primary-foreground shadow-2xl shadow-primary/40 text-center relative overflow-hidden">
                             <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent pointer-events-none" />
-                            <p className="text-[10px] font-black uppercase tracking-widest opacity-70 mb-2">Projected Pot at {retireAge}</p>
+                            <p className="text-[10px] font-black uppercase tracking-widest opacity-80 mb-2">Projected Pot at {retireAge}</p>
                             <h3 className="text-5xl font-black">${Math.round(futureValue).toLocaleString()}</h3>
                             <div className="mt-8 flex justify-center gap-8">
                                 <div className="text-center">
-                                    <p className="text-[8px] font-black uppercase opacity-50">Years to Go</p>
+                                    <p className="text-[8px] font-black uppercase opacity-60">Years to Go</p>
                                     <p className="text-lg font-bold">{years}</p>
                                 </div>
                                 <div className="text-center">
-                                    <p className="text-[8px] font-black uppercase opacity-50">Total Invested</p>
+                                    <p className="text-[8px] font-black uppercase opacity-60">Total Invested</p>
                                     <p className="text-lg font-bold">${(savings + (monthly * months)).toLocaleString()}</p>
                                 </div>
                             </div>

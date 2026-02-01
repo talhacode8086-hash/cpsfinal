@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: '/',
             disallow: ['/api/', '/_next/'],
         },
-        sitemap: 'https://assetstoolshub.com/sitemap.xml',
+        sitemap: 'https://www.assetstoolshub.com/sitemap.xml',
     };
 }

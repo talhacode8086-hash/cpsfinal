@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import { getToolBySlug, tools } from '@/lib/tools-config';
+import { getToolBySlug, tools, slugifyCategory } from '@/lib/tools-config';
 import { Metadata } from 'next';
 import ToolPageClient from '@/components/tools/ToolPageClient';
 
@@ -246,6 +246,26 @@ import SVGPathEditor from '@/components/tools/design/SVGPathEditor';
 import CustomButtonGenerator from '@/components/tools/design/CustomButtonGenerator';
 import GlassmorphismPro from '@/components/tools/design/GlassmorphismPro';
 import ColorPaletteGenerator from '@/components/tools/design/ColorPaletteGenerator';
+import ColorShadesGenerator from '@/components/tools/design/ColorShadesGenerator';
+import ColorHarmonyTool from '@/components/tools/design/ColorHarmonyTool';
+import ContrastCheckerPro from '@/components/tools/design/ContrastCheckerPro';
+import MaterialDesignPalette from '@/components/tools/design/MaterialDesignPalette';
+import FlatUIColors from '@/components/tools/design/FlatUIColors';
+import CSSFilterGenerator from '@/components/tools/design/CSSFilterGenerator';
+import CSSTextShadowGen from '@/components/tools/design/CSSTextShadowGen';
+import CSSClipPathGen from '@/components/tools/design/CSSClipPathGen';
+import CSSAnimationGen from '@/components/tools/design/CSSAnimationGen';
+import CSSScrollbarCustomizer from '@/components/tools/design/CSSScrollbarCustomizer';
+import CSSLoaderGenerator from '@/components/tools/design/CSSLoaderGenerator';
+import CSSTooltipGenerator from '@/components/tools/design/CSSTooltipGenerator';
+import CSSRibbonGenerator from '@/components/tools/design/CSSRibbonGenerator';
+import CSSInputStylizer from '@/components/tools/design/CSSInputStylizer';
+import CSSCheckboxStylizer from '@/components/tools/design/CSSCheckboxStylizer';
+import SVGPatternGenerator from '@/components/tools/design/SVGPatternGenerator';
+import ComponentMockupGen from '@/components/tools/design/ComponentMockupGen';
+import NeumorphismGen from '@/components/tools/design/NeumorphismGen';
+import CardLayoutVisualizer from '@/components/tools/design/CardLayoutVisualizer';
+import CSSButtonsPack from '@/components/tools/design/CSSButtonsPack';
 
 import ImageFilters from '@/components/tools/image/ImageFilters';
 import EXIFViewer from '@/components/tools/image/EXIFViewer';
@@ -277,7 +297,6 @@ import SATACTConverter from '@/components/tools/education/SATACTConverter';
 import MindMapLite from '@/components/tools/education/MindMapLite';
 
 // Advanced Scholar Suite
-import MolarMassPro from '@/components/tools/education/MolarMassPro';
 import ProjectileSimulator from '@/components/tools/education/ProjectileSimulator';
 import CircuitSolverPro from '@/components/tools/education/CircuitSolverPro';
 import ComplexNumberPro from '@/components/tools/education/ComplexNumberPro';
@@ -303,9 +322,83 @@ import BarcodeGenerator from '@/components/tools/image/BarcodeGenerator';
 import ImageUpscalerUI from '@/components/tools/image/ImageUpscalerUI';
 import ImageMirror from '@/components/tools/image/ImageMirror';
 import ImageRotate from '@/components/tools/image/ImageRotationExpert';
+import ImageMasking from '@/components/tools/image/ImageMasking';
+import ImageCanvas from '@/components/tools/image/ImageCanvas';
+import MetadataCleaner from '@/components/tools/image/MetadataCleaner';
+import ImageOverlay from '@/components/tools/image/ImageOverlay';
+import ImageGlitcher from '@/components/tools/image/ImageGlitcher';
+import ImagePixelator from '@/components/tools/image/ImagePixelator';
+import ImageTextAdder from '@/components/tools/image/ImageTextAdder';
+import ImageAspectRatio from '@/components/tools/image/ImageAspectRatio';
+
+// Chemistry Tools
+import MolarMassProChem from '@/components/tools/chemistry/MolarMassPro';
+import AutoBalancer from '@/components/tools/chemistry/AutoBalancer';
+import StoichiometrySolver from '@/components/tools/chemistry/StoichiometrySolver';
+import IdealGasLaw from '@/components/tools/chemistry/IdealGasLaw';
+import MolarityPlus from '@/components/tools/chemistry/MolarityPlus';
+import DilutionMaster from '@/components/tools/chemistry/DilutionMaster';
+import PHMaster from '@/components/tools/chemistry/PHMaster';
+import BufferLogic from '@/components/tools/chemistry/BufferLogic';
+import EnthalpySolver from '@/components/tools/chemistry/EnthalpySolver';
+import GibbsEnergy from '@/components/tools/chemistry/GibbsEnergy';
+import SpecificHeatCalc from '@/components/tools/chemistry/SpecificHeatCalc';
+import RateLawCalculator from '@/components/tools/chemistry/RateLawCalculator';
+import ArrheniusEquation from '@/components/tools/chemistry/ArrheniusEquation';
+import EquilibriumConstant from '@/components/tools/chemistry/EquilibriumConstant';
+import SolubilityProduct from '@/components/tools/chemistry/SolubilityProduct';
+import NernstPro from '@/components/tools/chemistry/NernstPro';
+import FaradaysLaw from '@/components/tools/chemistry/FaradaysLaw';
+import HalfLifePro from '@/components/tools/chemistry/HalfLifePro';
+import VSEPRPredictor from '@/components/tools/chemistry/VSEPRPredictor';
+import FormalChargeSolver from '@/components/tools/chemistry/FormalChargeSolver';
+import BondPolarityPro from '@/components/tools/chemistry/BondPolarityPro';
+import EmpiricalFinder from '@/components/tools/chemistry/EmpiricalFinder';
+import PercentComposition from '@/components/tools/chemistry/PercentComposition';
+import LimitingReagent from '@/components/tools/chemistry/LimitingReagent';
+import BeerLambertSolver from '@/components/tools/chemistry/BeerLambertSolver';
+import BoilingPointPro from '@/components/tools/chemistry/BoilingPointPro';
+import FreezingPointPro from '@/components/tools/chemistry/FreezingPointPro';
+import DensityMaster from '@/components/tools/chemistry/DensityMaster';
+import TempLabPro from '@/components/tools/chemistry/TempLabPro';
+import MolecularWeightPro from '@/components/tools/chemistry/MolecularWeightPro';
+import OsmoticPressure from '@/components/tools/chemistry/OsmoticPressure';
+import GasViscosity from '@/components/tools/chemistry/GasViscosity';
 
 import FileSizeConverter from '@/components/tools/productivity/FileSizeConverter';
 import MimeTypeLookup from '@/components/tools/developer/MimeTypeLookup';
+
+import AlgebraSolver from '@/components/tools/mathematics/AlgebraSolver';
+import CalculusSolver from '@/components/tools/mathematics/CalculusSolver';
+import TrigonometrySolver from '@/components/tools/mathematics/TrigonometrySolver';
+import GeometryCalculator from '@/components/tools/mathematics/GeometryCalculator';
+import MatrixCalculatorMath from '@/components/tools/mathematics/MatrixCalculator';
+import StatsCalculator from '@/components/tools/mathematics/StatsCalculator';
+import PartialFractionDecomposer from '@/components/tools/mathematics/PartialFractionDecomposer';
+import BinomialExpansionTool from '@/components/tools/mathematics/BinomialExpansionTool';
+import SyntheticDivisionCalculator from '@/components/tools/mathematics/SyntheticDivisionCalculator';
+import ComplexRootsFinder from '@/components/tools/mathematics/ComplexRootsFinder';
+import LogarithmSolver from '@/components/tools/mathematics/LogarithmSolver';
+import SequenceSeriesSolver from '@/components/tools/mathematics/SequenceSeriesSolver';
+import ConicSectionAnalyzer from '@/components/tools/mathematics/ConicSectionAnalyzer';
+import PlaneGeometry3D from '@/components/tools/mathematics/PlaneGeometry3D';
+import LimitsEvaluator from '@/components/tools/mathematics/LimitsEvaluator';
+import TangentNormalCalculator from '@/components/tools/mathematics/TangentNormalCalculator';
+import AreaUnderCurve from '@/components/tools/mathematics/AreaUnderCurve';
+import ImproperIntegralSolver from '@/components/tools/mathematics/ImproperIntegralSolver';
+import ArcLengthCalculator from '@/components/tools/mathematics/ArcLengthCalculator';
+import SurfaceAreaRevolution from '@/components/tools/mathematics/SurfaceAreaRevolution';
+import TruthTableGenerator from '@/components/tools/mathematics/TruthTableGenerator';
+import SetTheoryVisualizer from '@/components/tools/mathematics/SetTheoryVisualizer';
+import NumberBaseOperations from '@/components/tools/mathematics/NumberBaseOperations';
+import ModuloArithmeticTool from '@/components/tools/mathematics/ModuloArithmeticTool';
+import PrimeFactorizationTree from '@/components/tools/mathematics/PrimeFactorizationTree';
+import RegressionAnalysisTool from '@/components/tools/mathematics/RegressionAnalysisTool';
+import QuantumLevelSolver from '@/components/tools/education/QuantumLevelSolver';
+import ThermoCycleAnalyzer from '@/components/tools/education/ThermoCycleAnalyzer';
+import OrbitSimulator from '@/components/tools/education/OrbitSimulator';
+import EMWaveCalculator from '@/components/tools/education/EMWaveCalculator';
+import NuclearDecaySim from '@/components/tools/education/NuclearDecaySim';
 
 const ToolComponents: Record<string, any> = {
     'mouse-sensitivity-converter': SensitivityConverter,
@@ -553,6 +646,26 @@ const ToolComponents: Record<string, any> = {
     'custom-button-generator': CustomButtonGenerator,
     'glassmorphism-pro': GlassmorphismPro,
     'color-palette-generator': ColorPaletteGenerator,
+    'color-shades-generator': ColorShadesGenerator,
+    'color-harmony-tool': ColorHarmonyTool,
+    'contrast-checker-pro': ContrastCheckerPro,
+    'material-design-palette': MaterialDesignPalette,
+    'flat-ui-colors': FlatUIColors,
+    'css-filter-generator': CSSFilterGenerator,
+    'css-text-shadow-generator': CSSTextShadowGen,
+    'css-clip-path-generator': CSSClipPathGen,
+    'css-animation-keyframes': CSSAnimationGen,
+    'css-scrollbar-customizer': CSSScrollbarCustomizer,
+    'css-loader-generator': CSSLoaderGenerator,
+    'css-tooltip-generator': CSSTooltipGenerator,
+    'css-ribbon-generator': CSSRibbonGenerator,
+    'css-input-field-stylizer': CSSInputStylizer,
+    'css-checkbox-stylizer': CSSCheckboxStylizer,
+    'svg-pattern-generator': SVGPatternGenerator,
+    'component-mockup-generator': ComponentMockupGen,
+    'neumorphism-advanced': NeumorphismGen,
+    'card-layout-visualizer': CardLayoutVisualizer,
+    'css-buttons-pack': CSSButtonsPack,
 
     // Image Tools
     'image-filters-pro': ImageFilters,
@@ -570,6 +683,14 @@ const ToolComponents: Record<string, any> = {
     'image-upscaler-ui': ImageUpscalerUI,
     'image-mirror-tool': ImageMirror,
     'image-rotation-expert': ImageRotate,
+    'image-masking-shapes': ImageMasking,
+    'image-canvas-padding': ImageCanvas,
+    'image-metadata-cleaner': MetadataCleaner,
+    'image-overlay-pro': ImageOverlay,
+    'cyberpunk-glitcher': ImageGlitcher,
+    'pixel-art-generator': ImagePixelator,
+    'photo-text-art': ImageTextAdder,
+    'social-aspect-studio': ImageAspectRatio,
 
     // Education
     'gpa-calculator': GPACalculator,
@@ -598,7 +719,6 @@ const ToolComponents: Record<string, any> = {
     'mind-map-logic': MindMapLite,
 
     // Advanced Scholar Expansion
-    'molar-mass-pro': MolarMassPro,
     'projectile-simulator': ProjectileSimulator,
     'circuit-solver-pro': CircuitSolverPro,
     'complex-number-pro': ComplexNumberPro,
@@ -611,6 +731,74 @@ const ToolComponents: Record<string, any> = {
     'laplace-solver-pro': LaplaceSolverPro,
     'vector-calc-pro': VectorCalcPro,
     'titration-curve-sim': TitrationCurveSim,
+    'quantum-level-solver': QuantumLevelSolver,
+    'thermo-cycle-analyzer': ThermoCycleAnalyzer,
+    'orbit-simulator-pro': OrbitSimulator,
+    'em-wave-calculator': EMWaveCalculator,
+    'nuclear-decay-sim': NuclearDecaySim,
+
+    // Mathematics Tools
+    'algebra-solver': AlgebraSolver,
+    'calculus-solver': CalculusSolver,
+    'trigonometry-solver': TrigonometrySolver,
+    'coordinate-geometry': GeometryCalculator,
+    'matrix-determinant': MatrixCalculatorMath,
+    'cramers-rule-solver': MatrixCalculatorMath,
+    'probability-statistics': StatsCalculator,
+    'partial-fraction-decomposer': PartialFractionDecomposer,
+    'binomial-expansion-tool': BinomialExpansionTool,
+    'synthetic-division-calculator': SyntheticDivisionCalculator,
+    'complex-roots-finder': ComplexRootsFinder,
+    'logarithm-solver': LogarithmSolver,
+    'sequence-series-solver': SequenceSeriesSolver,
+    'conic-section-analyzer': ConicSectionAnalyzer,
+    'plane-geometry-3d': PlaneGeometry3D,
+    'limits-evaluator': LimitsEvaluator,
+    'tangent-normal-calculator': TangentNormalCalculator,
+    'area-under-curve': AreaUnderCurve,
+    'improper-integral-solver': ImproperIntegralSolver,
+    'arc-length-calculator': ArcLengthCalculator,
+    'surface-area-revolution': SurfaceAreaRevolution,
+    'truth-table-generator': TruthTableGenerator,
+    'set-theory-visualizer': SetTheoryVisualizer,
+    'number-base-operations': NumberBaseOperations,
+    'modulo-arithmetic-tool': ModuloArithmeticTool,
+    'prime-factorization-tree': PrimeFactorizationTree,
+    'regression-analysis-tool': RegressionAnalysisTool,
+
+    // Chemistry Tools
+    'molar-mass-pro': MolarMassProChem,
+    'equation-balancer': AutoBalancer,
+    'stoichiometry-solver': StoichiometrySolver,
+    'ideal-gas-law': IdealGasLaw,
+    'molarity-calculator': MolarityPlus,
+    'dilution-calculator': DilutionMaster,
+    'ph-poh-calculator': PHMaster,
+    'buffer-calculator': BufferLogic,
+    'enthalpy-calculator': EnthalpySolver,
+    'gibbs-free-energy': GibbsEnergy,
+    'specific-heat-calc': SpecificHeatCalc,
+    'rate-law-calculator': RateLawCalculator,
+    'arrhenius-equation': ArrheniusEquation,
+    'equilibrium-constant': EquilibriumConstant,
+    'solubility-product': SolubilityProduct,
+    'nernst-equation': NernstPro,
+    'faradays-law': FaradaysLaw,
+    'half-life-calculator': HalfLifePro,
+    'vsepr-predictor': VSEPRPredictor,
+    'formal-charge-calc': FormalChargeSolver,
+    'electronegativity-diff': BondPolarityPro,
+    'empirical-formula': EmpiricalFinder,
+    'percentage-composition': PercentComposition,
+    'limiting-reagent': LimitingReagent,
+    'beer-lambert-law': BeerLambertSolver,
+    'boiling-point-elevation': BoilingPointPro,
+    'freezing-point-depression': FreezingPointPro,
+    'density-calculator': DensityMaster,
+    'celsius-kelvin-conv': TempLabPro,
+    'molecular-weight-calc': MolecularWeightPro,
+    'osmotic-pressure': OsmoticPressure,
+    'gas-viscosity-calc': GasViscosity,
 };
 
 interface PageProps {
@@ -629,19 +817,27 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
     if (!tool) return { title: 'Tool Not Found' };
 
+    const title = `${tool.title} | Free Online ${tool.category} Tool`;
+    const description = `${tool.description} Use our free ${tool.title.toLowerCase()} to improve your ${tool.category.toLowerCase()} workflow. No signup required.`;
+
     return {
-        title: `${tool.title} - Assets Tools Hub`,
-        description: tool.description,
-        keywords: tool.keywords?.join(', '),
+        title,
+        description,
+        keywords: `${tool.title}, ${tool.category}, Assets Tools Hub, ${tool.keywords?.join(', ')}`,
+        alternates: {
+            canonical: `https://www.assetstoolshub.com/tools/${slug}`,
+        },
         openGraph: {
-            title: tool.title,
-            description: tool.description,
+            title,
+            description,
             type: 'website',
+            url: `https://www.assetstoolshub.com/tools/${slug}`,
+            siteName: 'Assets Tools Hub',
         },
         twitter: {
             card: 'summary_large_image',
-            title: tool.title,
-            description: tool.description,
+            title,
+            description,
         }
     };
 }
@@ -675,19 +871,19 @@ export default async function ToolPage({ params }: PageProps) {
                                 "@type": "ListItem",
                                 "position": 1,
                                 "name": "Online Tools",
-                                "item": "https://assetstoolshub.com"
+                                "item": "https://www.assetstoolshub.com"
                             },
                             {
                                 "@type": "ListItem",
                                 "position": 2,
                                 "name": tool.category,
-                                "item": `https://assetstoolshub.com/category/${tool.category.toLowerCase().replace(/ & /g, '-').replace(/\s+/g, '-')}`
+                                "item": `https://www.assetstoolshub.com/category/${slugifyCategory(tool.category)}`
                             },
                             {
                                 "@type": "ListItem",
                                 "position": 3,
                                 "name": tool.title,
-                                "item": `https://assetstoolshub.com/tools/${tool.slug}`
+                                "item": `https://www.assetstoolshub.com/tools/${tool.slug}`
                             }
                         ]
                     })

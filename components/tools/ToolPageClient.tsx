@@ -7,6 +7,7 @@ import { Tool, slugifyCategory } from '@/lib/tools-config';
 import AdUnit from '@/components/ads/AdUnit';
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
+import ToolFeedback from '@/components/tools/ToolFeedback';
 
 interface ToolPageClientProps {
     tool: Tool;
@@ -89,13 +90,18 @@ export default function ToolPageClient({ tool, children }: ToolPageClientProps) 
 
             {/* SEO Content Section */}
             {tool.longDescription && (
-                <article className="mt-16 prose prose-slate dark:prose-invert max-w-none p-8 rounded-[2.5rem] bg-muted/20 border border-primary/5">
-                    <h2 className="text-2xl font-black mb-6">About {tool.title}</h2>
-                    <div className="text-muted-foreground leading-relaxed whitespace-pre-wrap font-medium">
-                        {tool.longDescription}
+                <article className="mt-16 prose prose-slate dark:prose-invert max-w-none p-6 sm:p-10 rounded-[2rem] sm:rounded-[3rem] bg-muted/20 border border-primary/5">
+                    <h2 className="text-2xl sm:text-3xl font-black mb-8">About {tool.title}</h2>
+                    <div className="space-y-6 text-muted-foreground leading-relaxed text-base sm:text-lg font-medium">
+                        {tool.longDescription.split('\n\n').map((paragraph, i) => (
+                            <p key={i}>{paragraph.trim()}</p>
+                        ))}
                     </div>
                 </article>
             )}
+
+            {/* User Feedback Mechanism */}
+            <ToolFeedback toolTitle={tool.title} />
 
             {/* Bottom Ad Unit */}
             <AdUnit
