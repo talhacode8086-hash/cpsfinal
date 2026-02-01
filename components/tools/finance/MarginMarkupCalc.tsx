@@ -39,10 +39,10 @@ export default function MarginMarkupCalc() {
                     </div>
 
                     <div className="grid grid-cols-1 gap-4">
-                        <div className="p-8 rounded-[2.5rem] bg-primary text-white shadow-xl shadow-primary/20 flex flex-col items-center justify-center text-center">
-                            <p className="text-[10px] font-black uppercase tracking-widest opacity-70 mb-1">Gross Margin</p>
+                        <div className="p-8 rounded-[2.5rem] bg-primary text-primary-foreground shadow-xl shadow-primary/20 flex flex-col items-center justify-center text-center">
+                            <p className="text-[10px] font-black uppercase tracking-widest opacity-80 mb-1">Gross Margin</p>
                             <h3 className="text-5xl font-black">{margin.toFixed(1)}%</h3>
-                            <p className="text-xs font-bold opacity-50 mt-1">Profit divided by revenue</p>
+                            <p className="text-xs font-bold opacity-70 mt-1">Profit divided by revenue</p>
                         </div>
                         <div className="p-8 rounded-[2.5rem] bg-background border-2 border-primary/10 flex flex-col items-center justify-center text-center">
                             <p className="text-[10px] font-black uppercase tracking-widest text-primary opacity-50 mb-1">Markup</p>

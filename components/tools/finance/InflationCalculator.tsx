@@ -49,10 +49,10 @@ export default function InflationCalculator() {
                         <p className="text-xs font-bold text-muted-foreground mt-2">To match today s purchasing power</p>
                     </div>
 
-                    <div className="p-10 rounded-[3rem] bg-destructive text-white shadow-2xl shadow-destructive/20 flex flex-col items-center justify-center text-center">
-                        <span className="text-[10px] font-black uppercase mb-2 opacity-70">Purchasing Power Lost</span>
+                    <div className="p-10 rounded-[3rem] bg-destructive text-destructive-foreground shadow-2xl shadow-destructive/20 flex flex-col items-center justify-center text-center">
+                        <span className="text-[10px] font-black uppercase mb-2 opacity-80">Purchasing Power Lost</span>
                         <h3 className="text-5xl font-black">-${lostPower.toLocaleString(undefined, { maximumFractionDigits: 0 })}</h3>
-                        <p className="text-xs font-bold mt-2 opacity-50">Value decrease of your static cash</p>
+                        <p className="text-xs font-bold mt-2 opacity-70">Value decrease of your static cash</p>
                     </div>
                 </div>
 

@@ -45,11 +45,11 @@ export default function InvestmentROICalc() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div className="p-10 rounded-[3rem] bg-primary text-white shadow-2xl shadow-primary/40 flex flex-col items-center justify-center">
-                        <TrendingUp className="h-12 w-12 mb-4 opacity-50" />
-                        <p className="text-[10px] font-black uppercase tracking-widest opacity-70 mb-1">Total ROI</p>
+                    <div className="p-10 rounded-[3rem] bg-primary text-primary-foreground shadow-2xl shadow-primary/40 flex flex-col items-center justify-center">
+                        <TrendingUp className="h-12 w-12 mb-4 opacity-70" />
+                        <p className="text-[10px] font-black uppercase tracking-widest opacity-80 mb-1">Total ROI</p>
                         <h3 className="text-6xl font-black">{totalROI.toFixed(1)}%</h3>
-                        <p className="text-sm font-bold mt-2 opacity-50">${netProfit.toLocaleString()} Net Gain</p>
+                        <p className="text-sm font-bold mt-2 opacity-80">${netProfit.toLocaleString()} Net Gain</p>
                     </div>
 
                     <div className="space-y-4">

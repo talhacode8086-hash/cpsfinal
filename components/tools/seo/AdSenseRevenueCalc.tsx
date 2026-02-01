@@ -60,10 +60,10 @@ export default function AdSenseRevenueCalc() {
                     </div>
 
                     <div className="flex flex-col gap-4">
-                        <div className="p-10 rounded-[3rem] bg-primary text-white shadow-2xl shadow-primary/40 flex flex-col items-center justify-center text-center">
-                            <p className="text-[10px] font-black uppercase tracking-[0.3em] opacity-70 mb-2">Estimated Monthly Revenue</p>
+                        <div className="p-10 rounded-[3rem] bg-primary text-primary-foreground shadow-2xl shadow-primary/40 flex flex-col items-center justify-center text-center">
+                            <p className="text-[10px] font-black uppercase tracking-[0.3em] opacity-80 mb-2">Estimated Monthly Revenue</p>
                             <h3 className="text-6xl font-black">${Math.round(monthlyPotential)}</h3>
-                            <p className="text-[10px] font-bold mt-2 opacity-50 uppercase tracking-tighter">Projected Earnings Potential</p>
+                            <p className="text-[10px] font-bold mt-2 opacity-70 uppercase tracking-tighter">Projected Earnings Potential</p>
                         </div>
                         <div className="p-6 rounded-3xl bg-muted/30 border border-primary/5 flex justify-between items-center">
                             <div className="space-y-1">

@@ -50,7 +50,7 @@ function ItemInput({ label, price, setPrice, qty, setQty, active, unitPrice }: a
             }`}>
             <div className="flex justify-between items-center">
                 <h4 className="text-lg font-black uppercase tracking-tighter">{label}</h4>
-                {active && <span className="text-[10px] font-black bg-primary text-white px-3 py-1 rounded-full">BEST VALUE</span>}
+                {active && <span className="text-[10px] font-black bg-primary text-primary-foreground px-3 py-1 rounded-full">BEST VALUE</span>}
             </div>
             <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-1">

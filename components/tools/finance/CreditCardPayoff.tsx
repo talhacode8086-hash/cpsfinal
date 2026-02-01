@@ -55,10 +55,10 @@ export default function CreditCardPayoff() {
                     </div>
                 ) : (
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div className="p-12 rounded-[3.5rem] bg-primary text-white shadow-2xl shadow-primary/40 text-center">
-                            <p className="text-[10px] font-black uppercase tracking-widest opacity-70 mb-2">Time to Freedom</p>
+                        <div className="p-12 rounded-[3.5rem] bg-primary text-primary-foreground shadow-2xl shadow-primary/40 text-center">
+                            <p className="text-[10px] font-black uppercase tracking-widest opacity-80 mb-2">Time to Freedom</p>
                             <h3 className="text-5xl font-black">{Math.ceil(months)} Months</h3>
-                            <p className="text-sm font-bold mt-2 opacity-50">{(months / 12).toFixed(1)} Years</p>
+                            <p className="text-sm font-bold mt-2 opacity-70">{(months / 12).toFixed(1)} Years</p>
                         </div>
                         <div className="p-12 rounded-[3.5rem] bg-background border-4 border-dashed border-primary/10 flex flex-col items-center justify-center text-center">
                             <p className="text-[10px] font-black uppercase text-primary opacity-50 mb-2">Total Interest Paid</p>

@@ -43,10 +43,10 @@ export default function BreakEvenCalc() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div className="p-12 rounded-[3.5rem] bg-primary text-white shadow-2xl shadow-primary/40 text-center">
-                        <p className="text-[10px] font-black uppercase tracking-widest opacity-70 mb-2">Break-Even Units</p>
+                    <div className="p-12 rounded-[3.5rem] bg-primary text-primary-foreground shadow-2xl shadow-primary/40 text-center">
+                        <p className="text-[10px] font-black uppercase tracking-widest opacity-80 mb-2">Break-Even Units</p>
                         <h3 className="text-6xl font-black">{Math.ceil(breakEvenUnits).toLocaleString()}</h3>
-                        <p className="text-xs font-bold mt-2 opacity-50 uppercase">Item sales to reach $0 profit</p>
+                        <p className="text-xs font-bold mt-2 opacity-70 uppercase">Item sales to reach $0 profit</p>
                     </div>
 
                     <div className="p-12 rounded-[3.5rem] bg-background border-4 border-dashed border-primary/10 flex flex-col items-center justify-center text-center">

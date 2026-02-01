@@ -46,10 +46,10 @@ export default function SavingsGoalCalc() {
                     </div>
 
                     <div className="flex flex-col justify-center gap-6">
-                        <div className="p-10 rounded-[3rem] bg-primary text-white shadow-2xl shadow-primary/40 text-center">
-                            <p className="text-[10px] font-black uppercase tracking-widest opacity-70 mb-2">Required Monthly Contribution</p>
+                        <div className="p-10 rounded-[3rem] bg-primary text-primary-foreground shadow-2xl shadow-primary/40 text-center">
+                            <p className="text-[10px] font-black uppercase tracking-widest opacity-80 mb-2">Required Monthly Contribution</p>
                             <h3 className="text-6xl font-black">${Math.max(0, Math.round(monthlyNeeded)).toLocaleString()}</h3>
-                            <p className="text-[8px] font-black mt-2 opacity-50 uppercase tracking-tighter">Assuming {rate}% High Yield Interest</p>
+                            <p className="text-[8px] font-black mt-2 opacity-70 uppercase tracking-tighter">Assuming {rate}% High Yield Interest</p>
                         </div>
 
                         <div className="p-6 rounded-3xl bg-muted/20 border border-primary/5 flex items-center gap-4">

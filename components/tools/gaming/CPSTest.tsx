@@ -277,11 +277,11 @@ export default function CPSTest() {
                         <CardContent className="pt-8 text-center relative z-10">
                             <p className="text-[10px] font-black uppercase tracking-[0.3em] opacity-80 mb-2">Timer Status</p>
                             <div className="text-7xl font-black tabular-nums tracking-tighter mb-4">
-                                {timeLeft.toFixed(1)}<span className="text-xl opacity-60 ml-1">s</span>
+                                {timeLeft.toFixed(1)}<span className="text-xl opacity-70 ml-1">s</span>
                             </div>
-                            <div className="h-2 w-full bg-white/20 rounded-full overflow-hidden">
+                            <div className="h-2 md:h-2.5 w-full bg-primary-foreground/20 rounded-full overflow-hidden">
                                 <motion.div
-                                    className="h-full bg-white"
+                                    className="h-full bg-primary-foreground"
                                     initial={{ width: '100%' }}
                                     animate={{ width: `${(timeLeft / selectedTime) * 100}%` }}
                                     transition={{ duration: 0.1 }}
