@@ -33,15 +33,15 @@ export default function DensityMaster() {
                 <p className="text-muted-foreground mt-2">The fundamental trio: Mass, Volume, and Density.</p>
             </CardHeader>
 
-            <CardContent className="p-8 space-y-12">
+            <CardContent className="p-4 md:p-8 space-y-8 md:space-y-12">
                 <div className="grid grid-cols-3 gap-4">
                     {['D', 'M', 'V'].map((m) => (
                         <button
                             key={m}
                             onClick={() => setSolvingFor(m as any)}
                             className={`p-6 rounded-3xl border-2 transition-all text-center ${solvingFor === m
-                                    ? 'bg-indigo-600 border-indigo-500 text-white shadow-lg'
-                                    : 'bg-muted/10 border-indigo-500/5 text-muted-foreground hover:border-indigo-500/20'
+                                ? 'bg-indigo-600 border-indigo-500 text-white shadow-lg'
+                                : 'bg-muted/10 border-indigo-500/5 text-muted-foreground hover:border-indigo-500/20'
                                 }`}
                         >
                             <span className="block text-2xl font-black">{m}</span>
@@ -62,11 +62,11 @@ export default function DensityMaster() {
                             key={solvingFor}
                             initial={{ opacity: 0, scale: 0.95 }}
                             animate={{ opacity: 1, scale: 1 }}
-                            className="p-12 rounded-[4rem] bg-indigo-600 text-white shadow-3xl shadow-indigo-600/40 text-center relative overflow-hidden"
+                            className="p-6 md:p-12 rounded-[2rem] md:rounded-[4rem] bg-indigo-600 text-white shadow-3xl shadow-indigo-600/40 text-center relative overflow-hidden"
                         >
                             <Boxes className="absolute top-0 left-0 p-8 opacity-10 h-32 w-32" />
                             <p className="text-[10px] font-black uppercase tracking-[0.5em] text-white/50 mb-2">Calculated {solvingFor === 'D' ? 'Density' : solvingFor === 'M' ? 'Mass' : 'Volume'}</p>
-                            <h3 className="text-7xl font-black">{result.toFixed(3)}</h3>
+                            <h3 className="text-4xl md:text-7xl font-black">{result.toFixed(3)}</h3>
                             <p className="text-xs font-bold mt-4 opacity-70 uppercase tracking-widest">
                                 {solvingFor === 'D' ? 'g / cm³' : solvingFor === 'M' ? 'grams' : 'cm³'}
                             </p>
@@ -83,7 +83,7 @@ function DensityInput({ label, value, onChange, unit }: any) {
         <div className="space-y-2">
             <label className="text-[10px] font-black uppercase text-indigo-400 px-1">{label}</label>
             <div className="relative">
-                <Input type="number" step="0.01" value={value} onChange={(e) => onChange(parseFloat(e.target.value) || 0)} className="h-16 rounded-xl border-indigo-500/10 font-bold pr-16" />
+                <Input type="number" step="0.01" value={value} onChange={(e) => onChange(parseFloat(e.target.value) || 0)} className="h-12 md:h-16 rounded-xl border-indigo-500/10 font-bold pr-16" />
                 <span className="absolute right-4 top-1/2 -translate-y-1/2 text-xs font-black opacity-30">{unit}</span>
             </div>
         </div>

@@ -27,7 +27,7 @@ export default function GasViscosity() {
                 <p className="text-muted-foreground mt-2">Predict gas viscosity at various temperatures using the Sutherland model.</p>
             </CardHeader>
 
-            <CardContent className="p-8 space-y-12">
+            <CardContent className="p-4 md:p-8 space-y-8 md:space-y-12">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                     <ViscInput label="Temp (K)" value={t} onChange={setT} />
                     <ViscInput label="Ref Visc (μ₀)" value={mu0} onChange={setMu0} />
@@ -35,9 +35,9 @@ export default function GasViscosity() {
                     <ViscInput label="Suther (S)" value={s} onChange={setS} />
                 </div>
 
-                <div className="p-16 rounded-[4rem] bg-emerald-600 text-white shadow-3xl shadow-emerald-500/40 text-center relative overflow-hidden">
+                <div className="p-6 md:p-16 rounded-[2rem] md:rounded-[4rem] bg-emerald-600 text-white shadow-3xl shadow-emerald-500/40 text-center relative overflow-hidden">
                     <p className="text-[10px] font-black uppercase tracking-[0.5em] text-white/50 mb-2">Calculated Viscosity (μ)</p>
-                    <h3 className="text-7xl font-black">{viscosity.toExponential(4)}</h3>
+                    <h3 className="text-4xl md:text-7xl font-black">{viscosity.toExponential(4)}</h3>
                     <p className="text-xs font-bold mt-4 opacity-70 uppercase tracking-widest">Pa · s</p>
                 </div>
 

@@ -158,14 +158,14 @@ export default function MolarMassPro() {
                 <p className="text-muted-foreground mt-2">Precision molecular weight calculator for laboratory use.</p>
             </CardHeader>
 
-            <CardContent className="p-8 space-y-12">
+            <CardContent className="p-4 md:p-8 space-y-8 md:space-y-12">
                 <div className="space-y-6">
                     <div className="relative">
                         <Input
                             placeholder="Enter formula (e.g., C6H12O6, Mg(OH)2, CuSO4·5H2O)"
                             value={formula}
                             onChange={(e) => setFormula(e.target.value)}
-                            className="h-16 text-2xl font-mono text-center rounded-2xl bg-muted/20 border-indigo-500/20 focus:border-indigo-500 focus:ring-indigo-500/20"
+                            className="h-12 md:h-16 text-xl md:text-2xl font-mono text-center rounded-2xl bg-muted/20 border-indigo-500/20 focus:border-indigo-500 focus:ring-indigo-500/20"
                         />
                         <div className="absolute top-1/2 right-4 -translate-y-1/2 flex gap-2">
                             <Button variant="ghost" size="icon" onClick={() => setFormula('')}>
@@ -196,12 +196,12 @@ export default function MolarMassPro() {
                             animate={{ opacity: 1, scale: 1 }}
                             className="space-y-8"
                         >
-                            <div className="p-12 rounded-[3.5rem] bg-indigo-500 text-indigo-950 shadow-2xl shadow-indigo-500/20 text-center relative overflow-hidden">
+                            <div className="p-6 md:p-12 rounded-[2rem] md:rounded-[3.5rem] bg-indigo-500 text-indigo-950 shadow-2xl shadow-indigo-500/20 text-center relative overflow-hidden">
                                 <div className="absolute top-0 right-0 p-8 opacity-5">
                                     <Zap className="h-48 w-48" />
                                 </div>
                                 <p className="text-[10px] font-black uppercase tracking-[0.5em] text-white/60 mb-2">Molecular Mass</p>
-                                <h3 className="text-7xl font-black text-white drop-shadow-sm">
+                                <h3 className="text-4xl md:text-7xl font-black text-white drop-shadow-sm">
                                     {result.mass.toFixed(4)}
                                     <span className="text-2xl font-bold ml-2 opacity-60">g/mol</span>
                                 </h3>

@@ -60,11 +60,11 @@ export default function WeightedGradeCalc() {
                 <CardTitle className="text-3xl font-bold">Weighted Grade Calc</CardTitle>
                 <p className="text-muted-foreground mt-2">Find your true average by weighting different assignment categories.</p>
             </CardHeader>
-            <CardContent className="p-12 space-y-12">
-                <div className="flex flex-col md:flex-row gap-8 items-center justify-between bg-primary/5 p-10 rounded-[3rem] border border-primary/10">
+            <CardContent className="p-4 md:p-12 space-y-8 md:space-y-12">
+                <div className="flex flex-col md:flex-row gap-8 items-center justify-between bg-primary/5 p-6 md:p-10 rounded-[2rem] md:rounded-[3rem] border border-primary/10">
                     <div className="text-center md:text-left space-y-2">
                         <p className="text-[10px] font-black uppercase text-primary tracking-widest">Calculated Current Grade</p>
-                        <h2 className="text-7xl font-black text-primary">{results.grade}%</h2>
+                        <h2 className="text-4xl md:text-7xl font-black text-primary">{results.grade}%</h2>
                     </div>
                     <div className={`p-6 rounded-2xl border-2 ${parseFloat(results.totalWeight.toString()) === 100 ? 'bg-green-500/10 border-green-500/20 text-green-600' : 'bg-amber-500/10 border-amber-500/20 text-amber-600'}`}>
                         <p className="text-[10px] font-black uppercase text-center mb-1">Total Weight</p>
@@ -87,7 +87,7 @@ export default function WeightedGradeCalc() {
                                     placeholder="e.g. Midterm Exams"
                                     value={c.label}
                                     onChange={(e) => updateCategory(c.id, 'label', e.target.value)}
-                                    className="h-14 rounded-xl border-transparent bg-transparent focus:bg-background transition-all font-bold"
+                                    className="h-10 md:h-14 rounded-xl border-transparent bg-transparent focus:bg-background transition-all font-bold"
                                 />
                             </div>
                             <div className="col-span-3">
@@ -96,7 +96,7 @@ export default function WeightedGradeCalc() {
                                         type="number"
                                         value={c.weight}
                                         onChange={(e) => updateCategory(c.id, 'weight', e.target.value)}
-                                        className="h-14 rounded-xl border-transparent bg-transparent focus:bg-background text-center font-black text-primary"
+                                        className="h-10 md:h-14 rounded-xl border-transparent bg-transparent focus:bg-background text-center font-black text-primary"
                                     />
                                     <Percent className="absolute right-4 top-1/2 -translate-y-1/2 h-4 w-4 opacity-20" />
                                 </div>
@@ -106,7 +106,7 @@ export default function WeightedGradeCalc() {
                                     type="number"
                                     value={c.score}
                                     onChange={(e) => updateCategory(c.id, 'score', e.target.value)}
-                                    className="h-14 rounded-xl border-transparent bg-transparent focus:bg-background text-center font-black"
+                                    className="h-10 md:h-14 rounded-xl border-transparent bg-transparent focus:bg-background text-center font-black"
                                 />
                             </div>
                             <div className="col-span-1 flex justify-center">

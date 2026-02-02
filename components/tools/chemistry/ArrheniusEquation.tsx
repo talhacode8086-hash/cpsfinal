@@ -26,7 +26,7 @@ export default function ArrheniusEquation() {
                 <p className="text-muted-foreground mt-2">Explore the impact of temperature and activation energy on reaction rates.</p>
             </CardHeader>
 
-            <CardContent className="p-8 space-y-12">
+            <CardContent className="p-4 md:p-8 space-y-8 md:space-y-12">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div className="space-y-4">
                         <label className="text-[10px] font-black uppercase text-orange-500 px-1">Pre-exponential (A)</label>
@@ -42,12 +42,12 @@ export default function ArrheniusEquation() {
                     </div>
                 </div>
 
-                <div className="p-16 rounded-[4.5rem] bg-gradient-to-br from-orange-600 to-red-600 text-white shadow-3xl shadow-orange-600/30 text-center relative overflow-hidden">
+                <div className="p-6 md:p-16 rounded-[2rem] md:rounded-[4.5rem] bg-gradient-to-br from-orange-600 to-red-600 text-white shadow-3xl shadow-orange-600/30 text-center relative overflow-hidden">
                     <div className="absolute top-0 right-0 p-12 opacity-10">
                         <Flame className="h-32 w-32" />
                     </div>
                     <p className="text-[10px] font-black uppercase tracking-[0.5em] text-white/60 mb-2">Rate Constant (k)</p>
-                    <h3 className="text-7xl font-black">{k.toExponential(4)}</h3>
+                    <h3 className="text-4xl md:text-7xl font-black">{k.toExponential(4)}</h3>
                     <p className="text-[10px] font-bold mt-4 opacity-70 uppercase tracking-widest italic">Solution for k = Ae^(-Ea/RT)</p>
 
                     <div className="mt-12 w-full h-1 bg-white/10 rounded-full overflow-hidden">

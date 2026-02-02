@@ -39,7 +39,7 @@ export default function IdealGasLaw() {
                 <p className="text-muted-foreground mt-2">The ultimate PV=nRT solver with universal unit support.</p>
             </CardHeader>
 
-            <CardContent className="p-8 space-y-12">
+            <CardContent className="p-4 md:p-8 space-y-8 md:space-y-12">
                 <div className="flex justify-center gap-2 mb-8">
                     {['P', 'V', 'n', 'T'].map((target) => (
                         <Button
@@ -66,13 +66,13 @@ export default function IdealGasLaw() {
                             key={solvingFor}
                             initial={{ opacity: 0, scale: 0.9 }}
                             animate={{ opacity: 1, scale: 1 }}
-                            className="p-12 rounded-[3.5rem] bg-indigo-600 text-white shadow-3xl shadow-indigo-600/40 text-center relative overflow-hidden"
+                            className="p-6 md:p-12 rounded-[2rem] md:rounded-[3.5rem] bg-indigo-600 text-white shadow-3xl shadow-indigo-600/40 text-center relative overflow-hidden"
                         >
                             <div className="absolute top-0 right-0 p-6 opacity-10">
                                 <Settings2 className="h-24 w-24" />
                             </div>
                             <p className="text-[10px] font-black uppercase tracking-[0.4em] opacity-60 mb-2">Calculated {solvingFor}</p>
-                            <h3 className="text-7xl font-black">{result.toFixed(3)}</h3>
+                            <h3 className="text-4xl md:text-7xl font-black">{result.toFixed(3)}</h3>
                             <p className="text-xs font-bold mt-4 opacity-50 uppercase tracking-widest">
                                 {solvingFor === 'P' ? 'atm' : solvingFor === 'V' ? 'Liters' : solvingFor === 'n' ? 'moles' : 'Kelvin'}
                             </p>

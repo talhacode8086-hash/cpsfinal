@@ -43,7 +43,7 @@ export default function EquilibriumConstant() {
                 <p className="text-muted-foreground mt-2">Solve for Kc or Kp using equilibrium concentrations and stoichiometries.</p>
             </CardHeader>
 
-            <CardContent className="p-8 space-y-12">
+            <CardContent className="p-4 md:p-8 space-y-8 md:space-y-12">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                     <div className="space-y-6">
                         <div className="p-6 rounded-3xl bg-muted/20 border border-indigo-500/5">
@@ -61,10 +61,10 @@ export default function EquilibriumConstant() {
                     </div>
 
                     <div className="flex flex-col justify-center">
-                        <div className="p-12 rounded-[4rem] bg-indigo-600 text-white shadow-3xl shadow-indigo-600/40 text-center relative overflow-hidden">
+                        <div className="p-6 md:p-12 rounded-[2rem] md:rounded-[4rem] bg-indigo-600 text-white shadow-3xl shadow-indigo-600/40 text-center relative overflow-hidden">
                             <Scale className="absolute top-8 left-8 h-10 w-10 opacity-10" />
                             <p className="text-[10px] font-black uppercase tracking-[0.5em] text-white/50 mb-4">Equilibrium Constant (K)</p>
-                            <h3 className="text-7xl font-black">{k.toFixed(4)}</h3>
+                            <h3 className="text-4xl md:text-7xl font-black">{k.toFixed(4)}</h3>
                             <div className="mt-8 px-6 py-2 rounded-full bg-white/10 inline-block text-[10px] font-black uppercase">
                                 Favors: {k > 1 ? 'Products' : k < 1 ? 'Reactants' : 'Equilibrium'}
                             </div>

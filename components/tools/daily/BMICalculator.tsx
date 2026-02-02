@@ -30,7 +30,7 @@ export default function BMICalculator() {
                 <CardTitle className="text-3xl font-bold">BMI Calculator</CardTitle>
                 <p className="text-muted-foreground mt-2">Check your Body Mass Index and understand your weight health.</p>
             </CardHeader>
-            <CardContent className="p-8 space-y-12">
+            <CardContent className="p-4 md:p-8 space-y-8 md:space-y-12">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                     <div className="space-y-10">
                         <div className="space-y-4">
@@ -50,12 +50,12 @@ export default function BMICalculator() {
                     </div>
 
                     <div className="flex flex-col justify-center gap-6">
-                        <div className="p-12 rounded-[3.5rem] bg-primary text-white shadow-2xl shadow-primary/30 text-center relative overflow-hidden">
+                        <div className="p-6 md:p-12 rounded-[2rem] md:rounded-[3.5rem] bg-primary text-white shadow-2xl shadow-primary/30 text-center relative overflow-hidden">
                             <div className="absolute top-0 right-0 p-6 opacity-10">
                                 <Scale className="h-24 w-24" />
                             </div>
                             <p className="text-[10px] font-black uppercase tracking-widest opacity-60 mb-2">Your BMI Score</p>
-                            <h3 className="text-7xl font-black">{bmi.toFixed(1)}</h3>
+                            <h3 className="text-4xl md:text-7xl font-black">{bmi.toFixed(1)}</h3>
                             <div className={`mt-6 inline-flex items-center px-6 py-2 rounded-full bg-white/20 font-black text-sm`}>
                                 {category.label}
                             </div>

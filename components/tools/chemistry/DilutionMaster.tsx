@@ -35,15 +35,15 @@ export default function DilutionMaster() {
                 <p className="text-muted-foreground mt-2">Solve M₁V₁ = M₂V₂ problems instantly with precision.</p>
             </CardHeader>
 
-            <CardContent className="p-8 space-y-12">
+            <CardContent className="p-4 md:p-8 space-y-8 md:space-y-12">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     {['M1', 'V1', 'M2', 'V2'].map((key) => (
                         <button
                             key={key}
                             onClick={() => setSolvingFor(key as any)}
                             className={`p-6 rounded-3xl border-2 transition-all text-center ${solvingFor === key
-                                    ? 'bg-indigo-600 border-indigo-500 text-white shadow-lg'
-                                    : 'bg-muted/10 border-indigo-500/5 text-muted-foreground hover:border-indigo-500/20'
+                                ? 'bg-indigo-600 border-indigo-500 text-white shadow-lg'
+                                : 'bg-muted/10 border-indigo-500/5 text-muted-foreground hover:border-indigo-500/20'
                                 }`}
                         >
                             <span className="block text-2xl font-black">{key}</span>
@@ -65,11 +65,11 @@ export default function DilutionMaster() {
                             key={solvingFor}
                             initial={{ opacity: 0, scale: 0.9 }}
                             animate={{ opacity: 1, scale: 1 }}
-                            className="p-12 rounded-[4rem] bg-indigo-600 text-white shadow-3xl shadow-indigo-600/40 text-center relative overflow-hidden"
+                            className="p-6 md:p-12 rounded-[2rem] md:rounded-[4rem] bg-indigo-600 text-white shadow-3xl shadow-indigo-600/40 text-center relative overflow-hidden"
                         >
                             <RefreshCw className="absolute top-8 right-8 h-8 w-8 opacity-10 animate-spin-slow" />
                             <p className="text-[10px] font-black uppercase tracking-[0.5em] text-white/60 mb-2">Required {solvingFor}</p>
-                            <h3 className="text-7xl font-black">{result.toFixed(3)}</h3>
+                            <h3 className="text-4xl md:text-7xl font-black">{result.toFixed(3)}</h3>
                             <p className="text-xs font-bold mt-4 opacity-100 bg-white/10 py-2 rounded-full mx-auto w-32 uppercase tracking-widest">
                                 {solvingFor.startsWith('M') ? 'Molar' : 'mL'}
                             </p>
@@ -97,7 +97,7 @@ function DilutionInput({ label, value, onChange, unit = 'M' }: any) {
                     type="number"
                     value={value}
                     onChange={(e) => onChange(parseFloat(e.target.value) || 0)}
-                    className="h-14 rounded-2xl bg-muted/20 border-indigo-500/10 text-lg font-bold pr-12"
+                    className="h-12 md:h-14 rounded-2xl bg-muted/20 border-indigo-500/10 text-lg font-bold pr-12"
                 />
                 <span className="absolute right-4 top-1/2 -translate-y-1/2 text-xs font-black text-indigo-400 opacity-60">{unit}</span>
             </div>

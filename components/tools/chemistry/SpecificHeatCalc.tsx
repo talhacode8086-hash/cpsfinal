@@ -35,15 +35,15 @@ export default function SpecificHeatCalc() {
                 <p className="text-muted-foreground mt-2">Solve q = mcΔT problems for calorimetry and thermodynamics.</p>
             </CardHeader>
 
-            <CardContent className="p-8 space-y-12">
+            <CardContent className="p-4 md:p-8 space-y-8 md:space-y-12">
                 <div className="flex flex-wrap justify-center gap-2">
                     {['q', 'm', 'c', 'dt'].map((target) => (
                         <button
                             key={target}
                             onClick={() => setSolvingFor(target as any)}
                             className={`w-20 h-20 rounded-3xl border-2 font-black text-xl transition-all ${solvingFor === target
-                                    ? 'bg-blue-600 border-blue-500 text-white shadow-lg'
-                                    : 'bg-muted/10 border-blue-500/5 text-muted-foreground hover:border-blue-500/20'
+                                ? 'bg-blue-600 border-blue-500 text-white shadow-lg'
+                                : 'bg-muted/10 border-blue-500/5 text-muted-foreground hover:border-blue-500/20'
                                 }`}
                         >
                             {target === 'dt' ? 'ΔT' : target}
@@ -64,13 +64,13 @@ export default function SpecificHeatCalc() {
                             key={solvingFor}
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            className="p-12 rounded-[4rem] bg-blue-600 text-white shadow-3xl shadow-blue-600/40 text-center relative overflow-hidden"
+                            className="p-6 md:p-12 rounded-[2rem] md:rounded-[4rem] bg-blue-600 text-white shadow-3xl shadow-blue-600/40 text-center relative overflow-hidden"
                         >
                             <div className="absolute top-0 right-0 p-8 opacity-10">
                                 <Zap className="h-32 w-32" />
                             </div>
                             <p className="text-[10px] font-black uppercase tracking-[0.5em] text-white/60 mb-2">Calculated {solvingFor === 'dt' ? 'ΔT' : solvingFor}</p>
-                            <h3 className="text-7xl font-black">{result.toFixed(3)}</h3>
+                            <h3 className="text-4xl md:text-7xl font-black">{result.toFixed(3)}</h3>
                             <p className="text-xs font-bold mt-4 opacity-50 uppercase tracking-widest">
                                 {solvingFor === 'q' ? 'Joules' : solvingFor === 'm' ? 'grams' : solvingFor === 'c' ? 'J/g·°C' : 'Celsius'}
                             </p>
@@ -98,7 +98,7 @@ function HeatInput({ label, value, onChange, unit }: any) {
                     type="number"
                     value={value}
                     onChange={(e) => onChange(parseFloat(e.target.value) || 0)}
-                    className="h-16 rounded-2xl bg-muted/20 border-blue-500/10 text-xl font-bold pr-16"
+                    className="h-12 md:h-16 rounded-2xl bg-muted/20 border-blue-500/10 text-xl font-bold pr-16"
                 />
                 <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[10px] font-black text-blue-400 opacity-60">{unit}</span>
             </div>

@@ -89,7 +89,7 @@ export default function ColorContrast() {
                 <div className="space-y-6">
                     <div className="flex flex-col items-center justify-center p-8 bg-muted/20 rounded-3xl border-2 border-dashed">
                         <p className="text-sm font-bold text-muted-foreground uppercase tracking-widest mb-2">Contrast Ratio</p>
-                        <p className="text-7xl font-black tracking-tighter text-primary">{contrast.toFixed(2)}:1</p>
+                        <p className="text-4xl md:text-7xl font-black tracking-tighter text-primary">{contrast.toFixed(2)}:1</p>
                     </div>
 
                     <div className="grid gap-4">

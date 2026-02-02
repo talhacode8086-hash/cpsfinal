@@ -36,7 +36,7 @@ export default function PhysicsFormulaSolver() {
                 <CardTitle className="text-3xl font-bold">Physics Formula Solver</CardTitle>
                 <p className="text-muted-foreground mt-2">Solve fundamental physics equations with real-time unit calculation.</p>
             </CardHeader>
-            <CardContent className="p-12 space-y-12">
+            <CardContent className="p-4 md:p-12 space-y-8 md:space-y-12">
                 <div className="flex flex-col md:flex-row gap-8">
                     {/* Controls */}
                     <div className="w-full md:w-80 space-y-6">
@@ -79,10 +79,10 @@ export default function PhysicsFormulaSolver() {
                     </div>
 
                     {/* Result */}
-                    <div className="flex-1 flex flex-col items-center justify-center gap-8 bg-muted/20 rounded-[3rem] border border-primary/5 p-12">
+                    <div className="flex-1 flex flex-col items-center justify-center gap-8 bg-muted/20 rounded-[2rem] md:rounded-[3rem] border border-primary/5 p-6 md:p-12">
                         <div className="text-center space-y-2">
                             <p className="text-[10px] font-black uppercase text-primary/40 tracking-[0.4em]">CALCULATED RESULT</p>
-                            <h2 className="text-8xl font-black text-primary animate-in fade-in duration-500">{result.res}<span className="text-4xl ml-2 opacity-50">{result.unit}</span></h2>
+                            <h2 className="text-5xl md:text-8xl font-black text-primary animate-in fade-in duration-500">{result.res}<span className="text-2xl md:text-4xl ml-2 opacity-50">{result.unit}</span></h2>
                         </div>
 
                         <div className="px-10 py-4 rounded-2xl bg-primary/10 border border-primary/20 flex flex-col items-center">

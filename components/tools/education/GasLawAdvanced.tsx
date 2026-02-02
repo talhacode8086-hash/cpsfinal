@@ -51,7 +51,7 @@ export default function GasLawAdvanced() {
                 <CardTitle className="text-3xl font-bold">Gas Law Advanced</CardTitle>
                 <p className="text-muted-foreground mt-2">Thermodynamic solver for PV=nRT and other fundamental gas laws.</p>
             </CardHeader>
-            <CardContent className="p-12 space-y-12">
+            <CardContent className="p-4 md:p-12 space-y-8 md:space-y-12">
                 <div className="flex justify-center mb-8">
                     <div className="bg-muted/10 p-2 rounded-2xl border border-primary/5 flex gap-2">
                         {['Ideal', 'Boyle', 'Charles'].map(m => (
@@ -73,10 +73,10 @@ export default function GasLawAdvanced() {
                     </div>
 
                     <div className="flex flex-col justify-center gap-6">
-                        <div className="p-16 rounded-[4rem] bg-background border-4 border-primary/20 shadow-2xl flex flex-col items-center justify-center gap-4 text-primary relative group">
+                        <div className="p-6 md:p-16 rounded-[2rem] md:rounded-[4rem] bg-background border-4 border-primary/20 shadow-2xl flex flex-col items-center justify-center gap-4 text-primary relative group">
                             <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-[3.8rem]" />
                             <p className="text-[10px] font-black uppercase text-primary/40 tracking-[0.4em]">SOLVING FOR {solveFor}</p>
-                            <h2 className="text-7xl font-black">{res.val}<span className="text-xl ml-2 opacity-40">{res.unit}</span></h2>
+                            <h2 className="text-4xl md:text-7xl font-black">{res.val}<span className="text-xl ml-2 opacity-40">{res.unit}</span></h2>
                             <div className="px-6 py-2 rounded-2xl bg-primary text-white text-xs font-black shadow-lg shadow-primary/20">
                                 PV = nRT
                             </div>
@@ -84,7 +84,7 @@ export default function GasLawAdvanced() {
                     </div>
                 </div>
 
-                <div className="p-10 rounded-[4rem] bg-primary/5 border border-primary/10 space-y-4">
+                <div className="p-6 md:p-10 rounded-[2rem] md:rounded-[4rem] bg-primary/5 border border-primary/10 space-y-4">
                     <div className="flex items-center gap-3">
                         <Zap className="h-5 w-5 text-primary" />
                         <h4 className="text-lg font-black text-primary">Thermodynamic Insights</h4>

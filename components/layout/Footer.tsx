@@ -14,7 +14,7 @@ export function Footer() {
                         </Link>
                         <p className="text-sm text-muted-foreground leading-relaxed">
                             The ultimate ecosystem for gamers, developers, and professionals.
-                            50+ tools in one place, 100% free and secure.
+                            170+ tools in one place, 100% free and secure.
                         </p>
                     </div>
 

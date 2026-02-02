@@ -33,15 +33,15 @@ export default function TempLabPro() {
                 <p className="text-muted-foreground mt-2">Switch between Celsius, Kelvin, and Fahrenheit with precision.</p>
             </CardHeader>
 
-            <CardContent className="p-8 space-y-12">
+            <CardContent className="p-4 md:p-8 space-y-8 md:space-y-12">
                 <div className="flex flex-wrap justify-center gap-2">
                     {['CtoK', 'KtoC', 'CtoF', 'FtoC'].map((m) => (
                         <button
                             key={m}
                             onClick={() => setMode(m as any)}
                             className={`px-6 py-3 rounded-2xl font-black text-[10px] transition-all border ${mode === m
-                                    ? 'bg-orange-600 border-orange-500 text-white shadow-lg'
-                                    : 'bg-muted/10 border-orange-500/10 text-muted-foreground hover:border-orange-500/30'
+                                ? 'bg-orange-600 border-orange-500 text-white shadow-lg'
+                                : 'bg-muted/10 border-orange-500/10 text-muted-foreground hover:border-orange-500/30'
                                 }`}
                         >
                             {m.replace('to', ' → ')}
@@ -54,14 +54,14 @@ export default function TempLabPro() {
                         <Input
                             value={val}
                             onChange={(e) => setVal(e.target.value)}
-                            className="h-24 text-5xl font-black text-center rounded-[2.5rem] bg-muted/20 border-orange-500/20"
+                            className="h-16 md:h-24 text-3xl md:text-5xl font-black text-center rounded-[2.5rem] bg-muted/20 border-orange-500/20"
                         />
                         <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-orange-500 text-white text-[8px] font-black px-4 py-1 rounded-full uppercase">Input Value</div>
                     </div>
 
-                    <div className="p-12 rounded-[3.5rem] bg-orange-600 text-white shadow-3xl shadow-orange-600/30 text-center relative overflow-hidden">
+                    <div className="p-6 md:p-12 rounded-[2rem] md:rounded-[3.5rem] bg-orange-600 text-white shadow-3xl shadow-orange-600/30 text-center relative overflow-hidden">
                         <p className="text-[10px] font-black uppercase tracking-[0.5em] text-white/50 mb-2">Converted Result</p>
-                        <h4 className="text-7xl font-black italic">{result.toFixed(2)}</h4>
+                        <h4 className="text-4xl md:text-7xl font-black italic">{result.toFixed(2)}</h4>
                         <p className="text-xs font-bold mt-4 opacity-70 uppercase tracking-widest">
                             {mode.split('to')[1]} Units
                         </p>
