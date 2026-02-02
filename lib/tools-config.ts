@@ -2009,19 +2009,19 @@ Long before the internet, there was Morse Code. Developed in the 1830s by Samuel
 *   **Auditory Training**: Use the visual output to practice tapping out rhythms on your desk.
 
 ### Common Codes
-*   **SOS**: `... --- ...` (Save Our Souls)
-*   **HELLO**: `.... . .-.. .-.. -- - `
-*   **I LOVE YOU**: `.. / .-.. -- - ...- . / -.-- -- - ..- `
+*   **SOS**: \`... --- ...\` (Save Our Souls)
+*   **HELLO**: \`.... . .-.. .-.. -- - \`
+*   **I LOVE YOU**: \`.. / .-.. -- - ...- . / -.-- -- - ..- \`
         `,
     },
-{
-    slug: 'zalgo-text-generator',
+    {
+        slug: 'zalgo-text-generator',
         title: 'Zalgo Text Generator',
-            description: 'Generate "glitchy" or "corrupted" text for creative effects.',
-                category: 'Text Tools',
-                    iconName: 'Zap',
-                        keywords: ['zalgo text', 'glitch text generator', 'corrupted text maker', 'distorted text generator'],
-                            longDescription: `
+        description: 'Generate "glitchy" or "corrupted" text for creative effects.',
+        category: 'Text Tools',
+        iconName: 'Zap',
+        keywords: ['zalgo text', 'glitch text generator', 'corrupted text maker', 'distorted text generator'],
+        longDescription: `
 ### Unwrap the Chaos
 Zalgo text (or "glitch text") looks like your screen is melting. It’s a popular internet aesthetic used in memes, horror fiction (Creepypasta), and edgy social media bios. It works by abusing a feature of Unicode called "Combining Diacritical Marks."
 
@@ -2040,14 +2040,14 @@ Our tool allows you to control the "Chaos Level":
 Since this relies on standard Unicode, it works on Twitter, Discord, WhatsApp, and most browsers. However, very heavy Zalgo text might lag older phones or get truncated by platforms with strict vertical spacing.
         `,
     },
-{
-    slug: 'upside-down-text',
+    {
+        slug: 'upside-down-text',
         title: 'Upside Down Text',
-            description: 'Flip your text 180 degrees for a funny upside-down look.',
-                category: 'Text Tools',
-                    iconName: 'RefreshCw',
-                        keywords: ['upside down text', 'flip text generator', 'backwards text maker', 'inverted text tool'],
-                            longDescription: `
+        description: 'Flip your text 180 degrees for a funny upside-down look.',
+        category: 'Text Tools',
+        iconName: 'RefreshCw',
+        keywords: ['upside down text', 'flip text generator', 'backwards text maker', 'inverted text tool'],
+        longDescription: `
 ### ¿noclip uɐɔ noʎ ɟI
 Want to confuse your friends? The Upside Down Text Generator flips your text 180 degrees using special characters from the International Phonetic Alphabet (IPA) and other Unicode blocks. It matches each standard letter with a lookalike character that is inverted.
 
@@ -2067,14 +2067,14 @@ Computers can't actually "rotate" text. Instead, we swap characters:
 While most letters have a perfect upside-down match, some (like 'j' or 'q') rely on approximations. The result is readable but stylized.
         `,
     },
-{
-    slug: 'small-text-generator',
+    {
+        slug: 'small-text-generator',
         title: 'Small Text Generator',
-            description: 'Convert text into tiny caps, superscript, or subscript formats.',
-                category: 'Text Tools',
-                    iconName: 'Type',
-                        keywords: ['small text generator', 'tiny caps maker', 'superscript generator', 'subscript text tool'],
-                            longDescription: `
+        description: 'Convert text into tiny caps, superscript, or subscript formats.',
+        category: 'Text Tools',
+        iconName: 'Type',
+        keywords: ['small text generator', 'tiny caps maker', 'superscript generator', 'subscript text tool'],
+        longDescription: `
 ### ³Ë¡áµ—áµ—áµ¡áµ‰ Ë¡áµ‰áµ—áµ—áµ‰Ê³Ë¢, Bá´„Ë¢ á´€áµ‰Ë¢áµ—Ê°áµ‰áµ—á´„Ë¢
 Sometimes you just need to whisper. The Small Text Generator (or Tiny Text Maker) converts your standard alphabet into three distinct "small" font styles using Unicode. These aren't just smaller font sizes; they are entirely different characters that work anywhere—Twitter, TikTok, Discord, and Instagram bios.
 
@@ -2092,14 +2092,14 @@ Sometimes you just need to whisper. The Small Text Generator (or Tiny Text Maker
 Screen readers (for the blind) may have trouble pronouncing these characters. It is best to use them for decoration (usernames, aesthetic phrases) rather than critical information.
         `,
     },
-{
-    slug: 'html-entity-encoder',
+    {
+        slug: 'html-entity-encoder',
         title: 'HTML Entity Encoder/Decoder',
-            description: 'Encode special characters to HTML entities or decode them back.',
-                category: 'Text Tools',
-                    iconName: 'Code',
-                        keywords: ['html entity encoder', 'html character codes', 'encode special characters', 'decode html entities'],
-                            longDescription: `
+        description: 'Encode special characters to HTML entities or decode them back.',
+        category: 'Text Tools',
+        iconName: 'Code',
+        keywords: ['html entity encoder', 'html character codes', 'encode special characters', 'decode html entities'],
+        longDescription: `
 ### Speak the Browser's Language
 HTML reserved characters are the bane of every web developer's existence. If you try to write "<div>" on a website, the browser thinks you are starting a code block. To display it as text, you *must* encode it as \`&lt;div&gt;\`.
 
@@ -2118,14 +2118,14 @@ Encoding is the first line of defense against Cross-Site Scripting (XSS) attacks
 *   **Live Preview**: See how the browser will render your output strings.
         `,
     },
-{
-    slug: 'text-to-hex-converter',
+    {
+        slug: 'text-to-hex-converter',
         title: 'Text to Hex Converter',
-            description: 'Convert plain text into its Hexadecimal (Hex) representation.',
-                category: 'Text Tools',
-                    iconName: 'Braces',
-                        keywords: ['text to hex', 'hexadecimal converter', 'string to hex online', 'hex to string decoder'],
-                            longDescription: `
+        description: 'Convert plain text into its Hexadecimal (Hex) representation.',
+        category: 'Text Tools',
+        iconName: 'Braces',
+        keywords: ['text to hex', 'hexadecimal converter', 'string to hex online', 'hex to string decoder'],
+        longDescription: `
 ### See the Raw Data
 Every digital letter is just a number in disguise. Hexadecimal (Base-16) is the preferred notation for developers to view binary data because it is compact and aligns perfectly with 8-bit bytes. Our Text to Hex Converter reveals the underlying byte structure of your text.
 
@@ -2141,2129 +2141,2129 @@ It takes the UTF-8 numeric value of each character and converts it to Base-16.
 *   **Encoding**: Sending data in URLs or JSON where special characters might break the format.
         `,
     },
-{
-    slug: 'strip-html-tags',
+    {
+        slug: 'strip-html-tags',
         title: 'Strip HTML Tags',
-            description: 'Remove all HTML tags from your code to get clean, plain text.',
-                category: 'Text Tools',
-                    iconName: 'Eraser',
-                        keywords: ['strip html tags', 'remove html from text', 'clean plain text converter', 'html to text stripper'],
-                            longDescription: 'Extract pure content from your HTML code. This tool instantly identifies and removes all tags, attributes, and script blocks, leaving you with the original readable text. Perfect for cleaning up web scrapes or email content.'
-},
-{
-    slug: 'markdown-to-text',
+        description: 'Remove all HTML tags from your code to get clean, plain text.',
+        category: 'Text Tools',
+        iconName: 'Eraser',
+        keywords: ['strip html tags', 'remove html from text', 'clean plain text converter', 'html to text stripper'],
+        longDescription: 'Extract pure content from your HTML code. This tool instantly identifies and removes all tags, attributes, and script blocks, leaving you with the original readable text. Perfect for cleaning up web scrapes or email content.'
+    },
+    {
+        slug: 'markdown-to-text',
         title: 'Markdown to Text',
-            description: 'Convert Markdown formatting into clean, plain text.',
-                category: 'Text Tools',
-                    iconName: 'AlignLeft',
-                        keywords: ['markdown to plain text', 'remove markdown formatting', 'md to txt converter', 'markdown stripper'],
-                            longDescription: 'Convert your formatted Markdown into simple plain text. This tool removes bolding, italics, headers, links, and code block syntax while preserving your original content, making it easy to repurpose documentation for other platforms.'
-},
-{
-    slug: 'line-alphabetizer',
+        description: 'Convert Markdown formatting into clean, plain text.',
+        category: 'Text Tools',
+        iconName: 'AlignLeft',
+        keywords: ['markdown to plain text', 'remove markdown formatting', 'md to txt converter', 'markdown stripper'],
+        longDescription: 'Convert your formatted Markdown into simple plain text. This tool removes bolding, italics, headers, links, and code block syntax while preserving your original content, making it easy to repurpose documentation for other platforms.'
+    },
+    {
+        slug: 'line-alphabetizer',
         title: 'Line Alphabetizer',
-            description: 'Sort your list of lines in alphabetical or reverse order.',
-                category: 'Text Tools',
-                    iconName: 'SortAsc',
-                        keywords: ['line alphabetizer', 'sort list a-z', 'alphabetical sorter', 'line sorter tool'],
-                            longDescription: 'Organize your lists instantly. Whether you have a list of names, products, or keywords, this tool sorts every line into perfect alphabetical order (A-Z) or descending order (Z-A) with a single click.'
-},
-{
-    slug: 'word-frequency-counter',
+        description: 'Sort your list of lines in alphabetical or reverse order.',
+        category: 'Text Tools',
+        iconName: 'SortAsc',
+        keywords: ['line alphabetizer', 'sort list a-z', 'alphabetical sorter', 'line sorter tool'],
+        longDescription: 'Organize your lists instantly. Whether you have a list of names, products, or keywords, this tool sorts every line into perfect alphabetical order (A-Z) or descending order (Z-A) with a single click.'
+    },
+    {
+        slug: 'word-frequency-counter',
         title: 'Word Frequency Counter',
-            description: 'Analyze your text to see which words appear most frequently.',
-                category: 'Text Tools',
-                    iconName: 'BarChart3',
-                        keywords: ['word frequency counter', 'keyword density tool', 'word count statistics', 'analyze text frequency'],
-                            longDescription: 'Get deep insights into your writing or SEO content. Our frequency counter lists every unique word used in your text and calculates exactly how many times it appears, helping you identify overused words or optimize keyword density.'
-},
-{
-    slug: 'prefix-suffix-adder',
+        description: 'Analyze your text to see which words appear most frequently.',
+        category: 'Text Tools',
+        iconName: 'BarChart3',
+        keywords: ['word frequency counter', 'keyword density tool', 'word count statistics', 'analyze text frequency'],
+        longDescription: 'Get deep insights into your writing or SEO content. Our frequency counter lists every unique word used in your text and calculates exactly how many times it appears, helping you identify overused words or optimize keyword density.'
+    },
+    {
+        slug: 'prefix-suffix-adder',
         title: 'Prefix and Suffix Adder',
-            description: 'Add a specific prefix or suffix to every line in your text.',
-                category: 'Text Tools',
-                    iconName: 'PlusSquare',
-                        keywords: ['add prefix to lines', 'add suffix to text', 'batch text adder', 'line modifier tool'],
-                            longDescription: 'Automate repetitive text tasks. This tool allows you to specify a string to be added to the beginning (prefix) or the end (suffix) of every single line in your block of text. Ideal for formatting CSV data, sql queries, or code lists.'
-},
-{
-    slug: 'line-numberer',
+        description: 'Add a specific prefix or suffix to every line in your text.',
+        category: 'Text Tools',
+        iconName: 'PlusSquare',
+        keywords: ['add prefix to lines', 'add suffix to text', 'batch text adder', 'line modifier tool'],
+        longDescription: 'Automate repetitive text tasks. This tool allows you to specify a string to be added to the beginning (prefix) or the end (suffix) of every single line in your block of text. Ideal for formatting CSV data, sql queries, or code lists.'
+    },
+    {
+        slug: 'line-numberer',
         title: 'Line Numberer',
-            description: 'Add sequential numbers to every line of your text.',
-                category: 'Text Tools',
-                    iconName: 'Hash',
-                        keywords: ['add line numbers', 'number sentences', 'list numberer', 'batch line numbering'],
-                            longDescription: 'Turn any block of text into a numbered list. You can customize the starting number and formatting (e.g., "1. ", "1)", or "#1: "). Perfect for creating checklists, numbering document sections, or following step-by-step guides.'
-},
-{
-    slug: 'duplicate-line-finder',
+        description: 'Add sequential numbers to every line of your text.',
+        category: 'Text Tools',
+        iconName: 'Hash',
+        keywords: ['add line numbers', 'number sentences', 'list numberer', 'batch line numbering'],
+        longDescription: 'Turn any block of text into a numbered list. You can customize the starting number and formatting (e.g., "1. ", "1)", or "#1: "). Perfect for creating checklists, numbering document sections, or following step-by-step guides.'
+    },
+    {
+        slug: 'duplicate-line-finder',
         title: 'Duplicate Line Finder',
-            description: 'Identify and highlight repeated lines in your text.',
-                category: 'Text Tools',
-                    iconName: 'Copy',
-                        keywords: ['find duplicate lines', 'highlight duplicates', 'repeated text finder', 'check for duplicates'],
-                            longDescription: 'Find redundancies in your data. This tool scans your input for consecutive or non-consecutive duplicate lines and highlights them, helping you identify accidental repetitions in large datasets, lists, or log files.'
-},
-{
-    slug: 'rot13-cipher',
+        description: 'Identify and highlight repeated lines in your text.',
+        category: 'Text Tools',
+        iconName: 'Copy',
+        keywords: ['find duplicate lines', 'highlight duplicates', 'repeated text finder', 'check for duplicates'],
+        longDescription: 'Find redundancies in your data. This tool scans your input for consecutive or non-consecutive duplicate lines and highlights them, helping you identify accidental repetitions in large datasets, lists, or log files.'
+    },
+    {
+        slug: 'rot13-cipher',
         title: 'ROT13 Cipher',
-            description: 'Encode or decode text using the classic ROT13 rotation cipher.',
-                category: 'Text Tools',
-                    iconName: 'Shield',
-                        keywords: ['rot13 cipher', 'caeser cipher converter', 'simple encryption tool', 'decode rot13 text'],
-                            longDescription: 'Use the classic Caesar cipher variation. ROT13 replaces a letter with the 13th letter after it in the alphabet. Because there are 26 letters, the same algorithm is used to both encrypt and decrypt, providing a fun way to hide spoilers or simple messages.'
-},
-{
-    slug: 'emoji-remover',
+        description: 'Encode or decode text using the classic ROT13 rotation cipher.',
+        category: 'Text Tools',
+        iconName: 'Shield',
+        keywords: ['rot13 cipher', 'caeser cipher converter', 'simple encryption tool', 'decode rot13 text'],
+        longDescription: 'Use the classic Caesar cipher variation. ROT13 replaces a letter with the 13th letter after it in the alphabet. Because there are 26 letters, the same algorithm is used to both encrypt and decrypt, providing a fun way to hide spoilers or simple messages.'
+    },
+    {
+        slug: 'emoji-remover',
         title: 'Emoji Remover',
-            description: 'Clean up your text by removing all emojis and special icons.',
-                category: 'Text Tools',
-                    iconName: 'Smile',
-                        keywords: ['remove emojis from text', 'strip icons', 'clean social media text', 'emoji cleaner tool'],
-                            longDescription: 'Clean up your social media copies or data exports. This tool identifies and removes all Unicode emoji characters, leaving you with purely alphanumeric and standard punctuation text. Great for preparing text for formal reports or data analysis.'
-},
-{
-    slug: 'text-to-handwriting',
+        description: 'Clean up your text by removing all emojis and special icons.',
+        category: 'Text Tools',
+        iconName: 'Smile',
+        keywords: ['remove emojis from text', 'strip icons', 'clean social media text', 'emoji cleaner tool'],
+        longDescription: 'Clean up your social media copies or data exports. This tool identifies and removes all Unicode emoji characters, leaving you with purely alphanumeric and standard punctuation text. Great for preparing text for formal reports or data analysis.'
+    },
+    {
+        slug: 'text-to-handwriting',
         title: 'Text to Handwriting',
-            description: 'Convert your text into a beautiful handwriting-style preview.',
-                category: 'Text Tools',
-                    iconName: 'PenTool',
-                        keywords: ['text to handwriting', 'digital handwriting maker', 'handwritten note generator', 'cursive text preview'],
-                            longDescription: 'Give your digital text a personal touch. This tool renders your input using specialized handwriting fonts, simulating the look of a physical note. Perfect for creating unique creative assets or personalized digital messages.'
-},
-{
-    slug: 'sentence-counter-pro',
+        description: 'Convert your text into a beautiful handwriting-style preview.',
+        category: 'Text Tools',
+        iconName: 'PenTool',
+        keywords: ['text to handwriting', 'digital handwriting maker', 'handwritten note generator', 'cursive text preview'],
+        longDescription: 'Give your digital text a personal touch. This tool renders your input using specialized handwriting fonts, simulating the look of a physical note. Perfect for creating unique creative assets or personalized digital messages.'
+    },
+    {
+        slug: 'sentence-counter-pro',
         title: 'Sentence Counter Pro',
-            description: 'Get a detailed breakdown of sentences, paragraphs, and reading level.',
-                category: 'Text Tools',
-                    iconName: 'Activity',
-                        keywords: ['sentence counter', 'paragraph count', 'text analysis tool', 'reading level checker'],
-                            longDescription: 'Go beyond simple word counting. Our Pro analyzer identifies complex sentence structures, counts paragraphs, and estimates readability scores. A vital tool for students and editors aiming for clear and concise communication.'
-},
-{
-    slug: 'text-mirror-tool',
+        description: 'Get a detailed breakdown of sentences, paragraphs, and reading level.',
+        category: 'Text Tools',
+        iconName: 'Activity',
+        keywords: ['sentence counter', 'paragraph count', 'text analysis tool', 'reading level checker'],
+        longDescription: 'Go beyond simple word counting. Our Pro analyzer identifies complex sentence structures, counts paragraphs, and estimates readability scores. A vital tool for students and editors aiming for clear and concise communication.'
+    },
+    {
+        slug: 'text-mirror-tool',
         title: 'Text Mirror Tool',
-            description: 'Reflect your text as if it were seen in a mirror.',
-                category: 'Text Tools',
-                    iconName: 'ArrowLeftRight',
-                        keywords: ['text mirror', 'mirror writing generator', 'reflected text maker', 'backwards writing tool'],
-                            longDescription: 'Create mirror-image text. This tool doesn\'t just reverse characters; it uses mirrored Unicode symbols where possible to create a reflection effect that looks like real mirror writing. Perfect for creative designs and unique visual messages.'
-},
-{
-    slug: 'list-to-csv-converter',
+        description: 'Reflect your text as if it were seen in a mirror.',
+        category: 'Text Tools',
+        iconName: 'ArrowLeftRight',
+        keywords: ['text mirror', 'mirror writing generator', 'reflected text maker', 'backwards writing tool'],
+        longDescription: 'Create mirror-image text. This tool doesn\'t just reverse characters; it uses mirrored Unicode symbols where possible to create a reflection effect that looks like real mirror writing. Perfect for creative designs and unique visual messages.'
+    },
+    {
+        slug: 'list-to-csv-converter',
         title: 'List to CSV Converter',
-            description: 'Convert a bulleted or line-separated list into a CSV format.',
-                category: 'Text Tools',
-                    iconName: 'FileSpreadsheet',
-                        keywords: ['list to csv', 'line to comma separator', 'text to spreadsheet converter', 'data formatter'],
-                            longDescription: 'Transform your simple lists into structured data. This tool takes every line from your input and joins them with commas (or your custom delimiter), creating a CSV string ready for import into Excel, Google Sheets, or databases.'
-},
-// New Developer Tools
-{
-    slug: 'url-encoder-decoder',
+        description: 'Convert a bulleted or line-separated list into a CSV format.',
+        category: 'Text Tools',
+        iconName: 'FileSpreadsheet',
+        keywords: ['list to csv', 'line to comma separator', 'text to spreadsheet converter', 'data formatter'],
+        longDescription: 'Transform your simple lists into structured data. This tool takes every line from your input and joins them with commas (or your custom delimiter), creating a CSV string ready for import into Excel, Google Sheets, or databases.'
+    },
+    // New Developer Tools
+    {
+        slug: 'url-encoder-decoder',
         title: 'URL Encoder/Decoder',
-            description: 'Safely encode and decode URL components and strings.',
-                category: 'Development Tools',
-                    iconName: 'Link',
-                        keywords: ['url encoder', 'url decoder', 'percent encoding tool', 'encode url string', 'web developer tools'],
-                            longDescription: 'Convert strings into a safe format for URLs. Our Encoder/Decoder handles special characters using percent-encoding, ensuring your parameters are properly formatted for web requests. All operations are done offline in your browser.'
-},
-{
-    slug: 'html-minifier',
+        description: 'Safely encode and decode URL components and strings.',
+        category: 'Development Tools',
+        iconName: 'Link',
+        keywords: ['url encoder', 'url decoder', 'percent encoding tool', 'encode url string', 'web developer tools'],
+        longDescription: 'Convert strings into a safe format for URLs. Our Encoder/Decoder handles special characters using percent-encoding, ensuring your parameters are properly formatted for web requests. All operations are done offline in your browser.'
+    },
+    {
+        slug: 'html-minifier',
         title: 'HTML Minifier',
-            description: 'Compress and optimize your HTML code for faster loading.',
-                category: 'Development Tools',
-                    iconName: 'Minimize2',
-                        keywords: ['html minifier', 'compress html online', 'html optimizer', 'minify html code', 'performance tools'],
-                            longDescription: 'Optimize your website s performance by minifying your HTML code. This tool removes unnecessary whitespace, comments, and line breaks, reducing your file size and improving page load times for your users.'
-},
-{
-    slug: 'regex-tester',
+        description: 'Compress and optimize your HTML code for faster loading.',
+        category: 'Development Tools',
+        iconName: 'Minimize2',
+        keywords: ['html minifier', 'compress html online', 'html optimizer', 'minify html code', 'performance tools'],
+        longDescription: 'Optimize your website s performance by minifying your HTML code. This tool removes unnecessary whitespace, comments, and line breaks, reducing your file size and improving page load times for your users.'
+    },
+    {
+        slug: 'regex-tester',
         title: 'Regex Tester',
-            description: 'Test and debug your Regular Expressions with live match highlighting.',
-                category: 'Development Tools',
-                    iconName: 'Search',
-                        keywords: ['regex tester', 'regular expression debugger', 'online regex check', 'javascript regex tool'],
-                            longDescription: 'Debug your complex regular expressions with ease. Our tester provides real-time highlighting of matches and allows you to test patterns against multiple sample strings. A vital tool for developers writing search, validation, or parsing logic.'
-},
-// New SEO Tools
-{
-    slug: 'xml-sitemap-generator',
+        description: 'Test and debug your Regular Expressions with live match highlighting.',
+        category: 'Development Tools',
+        iconName: 'Search',
+        keywords: ['regex tester', 'regular expression debugger', 'online regex check', 'javascript regex tool'],
+        longDescription: 'Debug your complex regular expressions with ease. Our tester provides real-time highlighting of matches and allows you to test patterns against multiple sample strings. A vital tool for developers writing search, validation, or parsing logic.'
+    },
+    // New SEO Tools
+    {
+        slug: 'xml-sitemap-generator',
         title: 'XML Sitemap Generator',
-            description: 'Generate SEO-friendly XML sitemaps for your website.',
-                category: 'SEO & Web',
-                    iconName: 'FileCode',
-                        keywords: ['xml sitemap generator', 'create sitemap online', 'seo sitemap tool', 'google sitemap maker', 'website indexer'],
-                            longDescription: 'Ensure all your pages are indexed by Google. Our Sitemap Generator scans your specified structure and creates a perfectly formatted XML file that you can submit to Google Search Console and Bing Webmaster Tools for better visibility.'
-},
-{
-    slug: 'schema-markup-generator',
+        description: 'Generate SEO-friendly XML sitemaps for your website.',
+        category: 'SEO & Web',
+        iconName: 'FileCode',
+        keywords: ['xml sitemap generator', 'create sitemap online', 'seo sitemap tool', 'google sitemap maker', 'website indexer'],
+        longDescription: 'Ensure all your pages are indexed by Google. Our Sitemap Generator scans your specified structure and creates a perfectly formatted XML file that you can submit to Google Search Console and Bing Webmaster Tools for better visibility.'
+    },
+    {
+        slug: 'schema-markup-generator',
         title: 'Schema Markup Maker',
-            description: 'Create JSON-LD Schema markup for better search results.',
-                category: 'SEO & Web',
-                    iconName: 'Code',
-                        keywords: ['schema markup generator', 'json-ld creator', 'structured data tool', 'rich snippets generator', 'schema.org maker'],
-                            longDescription: 'Get rich snippets in search results. Our Schema Generator creates JSON-LD code for articles, products, organizations, and events, helping search engines understand your content and display enhanced listings.'
-},
-{
-    slug: 'og-preview-tool',
+        description: 'Create JSON-LD Schema markup for better search results.',
+        category: 'SEO & Web',
+        iconName: 'Code',
+        keywords: ['schema markup generator', 'json-ld creator', 'structured data tool', 'rich snippets generator', 'schema.org maker'],
+        longDescription: 'Get rich snippets in search results. Our Schema Generator creates JSON-LD code for articles, products, organizations, and events, helping search engines understand your content and display enhanced listings.'
+    },
+    {
+        slug: 'og-preview-tool',
         title: 'OG Preview Tool',
-            description: 'See how your website looks when shared on social media.',
-                category: 'SEO & Web',
-                    iconName: 'Share2',
-                        keywords: ['og preview tool', 'open graph checker', 'social share preview', 'twitter card preview', 'website share tester'],
-                            longDescription: 'Preview your presence on social media. Our tool simulates how your URL will look on Facebook, Twitter, and LinkedIn, allowing you to optimize your Open Graph images, titles, and descriptions for maximum engagement.'
-},
-// New Design Tools
-{
-    slug: 'color-contrast-checker',
+        description: 'See how your website looks when shared on social media.',
+        category: 'SEO & Web',
+        iconName: 'Share2',
+        keywords: ['og preview tool', 'open graph checker', 'social share preview', 'twitter card preview', 'website share tester'],
+        longDescription: 'Preview your presence on social media. Our tool simulates how your URL will look on Facebook, Twitter, and LinkedIn, allowing you to optimize your Open Graph images, titles, and descriptions for maximum engagement.'
+    },
+    // New Design Tools
+    {
+        slug: 'color-contrast-checker',
         title: 'Color Contrast Checker',
-            description: 'Check accessibility standards for your color combinations.',
-                category: 'Design & UI',
-                    iconName: 'Palette',
-                        keywords: ['color contrast checker', 'wcag accessibility tool', 'color contrast test', 'ui accessibility check', 'web contrast ratio'],
-                            longDescription: 'Ensure your design is accessible to everyone. Our checker evaluates color pairs against WCAG AA and AAA standards, providing a contrast ratio and pass/fail indicators to help you maintain legibility and inclusivity.'
-},
-{
-    slug: 'glassmorphism-generator',
+        description: 'Check accessibility standards for your color combinations.',
+        category: 'Design & UI',
+        iconName: 'Palette',
+        keywords: ['color contrast checker', 'wcag accessibility tool', 'color contrast test', 'ui accessibility check', 'web contrast ratio'],
+        longDescription: 'Ensure your design is accessible to everyone. Our checker evaluates color pairs against WCAG AA and AAA standards, providing a contrast ratio and pass/fail indicators to help you maintain legibility and inclusivity.'
+    },
+    {
+        slug: 'glassmorphism-generator',
         title: 'Glassmorphism Generator',
-            description: 'Design modern glass-style UI elements with CSS.',
-                category: 'Design & UI',
-                    iconName: 'Layers',
-                        keywords: ['glassmorphism generator', 'frosted glass css', 'ui design generator', 'glass ui creator', 'modern css effects'],
-                            longDescription: 'Create the popular frosted glass effect for your UI. Our generator allows you to adjust blur, transparency, and borders in real-time, providing you with clean, optimized CSS code that brings a modern, premium look to your web applications.'
-},
-{
-    slug: 'svg-to-data-uri',
+        description: 'Design modern glass-style UI elements with CSS.',
+        category: 'Design & UI',
+        iconName: 'Layers',
+        keywords: ['glassmorphism generator', 'frosted glass css', 'ui design generator', 'glass ui creator', 'modern css effects'],
+        longDescription: 'Create the popular frosted glass effect for your UI. Our generator allows you to adjust blur, transparency, and borders in real-time, providing you with clean, optimized CSS code that brings a modern, premium look to your web applications.'
+    },
+    {
+        slug: 'svg-to-data-uri',
         title: 'SVG to Data URI',
-            description: 'Convert SVG code to Base64/Encoded Data URIs for CSS.',
-                category: 'Design & UI',
-                    iconName: 'Code2',
-                        keywords: ['svg to data uri', 'svg to base64', 'inline svg css', 'base64 image converter', 'svg optimizer'],
-                            longDescription: 'Inline your graphics for better performance. Our SVG converter transforms your vector code into a Data URI that you can use directly in your CSS background-image or HTML img tags, reducing the number of HTTP requests and speeding up your site.'
-},
-// New Finance Tools
-{
-    slug: 'compound-interest-calculator',
+        description: 'Convert SVG code to Base64/Encoded Data URIs for CSS.',
+        category: 'Design & UI',
+        iconName: 'Code2',
+        keywords: ['svg to data uri', 'svg to base64', 'inline svg css', 'base64 image converter', 'svg optimizer'],
+        longDescription: 'Inline your graphics for better performance. Our SVG converter transforms your vector code into a Data URI that you can use directly in your CSS background-image or HTML img tags, reducing the number of HTTP requests and speeding up your site.'
+    },
+    // New Finance Tools
+    {
+        slug: 'compound-interest-calculator',
         title: 'Compound Interest Calculator',
-            description: 'Visualize how your investments grow exponentially over time.',
-                category: 'Finance',
-                    iconName: 'TrendingUp',
-                        keywords: ['compound interest calculator', 'investment growth tool', 'calculate savings growth', 'wealth projection calculator', 'finance tools'],
-                            longDescription: 'Witness the power of compounding. Our calculator allows you to project the future value of your investments based on initial principal, monthly contributions, and interest rates. Visualize your wealth growth over decades with interactive charts.'
-},
-{
-    slug: 'salary-tax-calculator',
+        description: 'Visualize how your investments grow exponentially over time.',
+        category: 'Finance',
+        iconName: 'TrendingUp',
+        keywords: ['compound interest calculator', 'investment growth tool', 'calculate savings growth', 'wealth projection calculator', 'finance tools'],
+        longDescription: 'Witness the power of compounding. Our calculator allows you to project the future value of your investments based on initial principal, monthly contributions, and interest rates. Visualize your wealth growth over decades with interactive charts.'
+    },
+    {
+        slug: 'salary-tax-calculator',
         title: 'Salary Tax Calculator',
-            description: 'Estimate your monthly take-home pay after taxes.',
-                category: 'Finance',
-                    iconName: 'CircleDollarSign',
-                        keywords: ['salary tax calculator', 'take home pay calculator', 'income tax estimate', 'monthly salary check', 'payroll calculator'],
-                            longDescription: 'Find out exactly what stays in your pocket. Enter your annual or monthly salary to get a detailed breakdown of tax deductions and your final take-home pay. A simple and effective tool for financial planning and budgeting.'
-},
-// New Image Tools
-{
-    slug: 'image-resizer',
+        description: 'Estimate your monthly take-home pay after taxes.',
+        category: 'Finance',
+        iconName: 'CircleDollarSign',
+        keywords: ['salary tax calculator', 'take home pay calculator', 'income tax estimate', 'monthly salary check', 'payroll calculator'],
+        longDescription: 'Find out exactly what stays in your pocket. Enter your annual or monthly salary to get a detailed breakdown of tax deductions and your final take-home pay. A simple and effective tool for financial planning and budgeting.'
+    },
+    // New Image Tools
+    {
+        slug: 'image-resizer',
         title: 'Image Resizer',
-            description: 'Resize your images to specific dimensions or percentages with high quality.',
-                category: 'Image Tools',
-                    iconName: 'Maximize',
-                        keywords: ['image resizer', 'resize images online', 'bulk image resizer', 'optimize image size', 'photo resizer tool'],
-                            longDescription: 'Change image dimensions without losing quality. Our professional resizer allows you to scale images by pixels or percentage, maintaining aspect ratios for perfect social media or web assets. Process everything locally for maximum privacy.'
-},
-{
-    slug: 'image-cropper',
+        description: 'Resize your images to specific dimensions or percentages with high quality.',
+        category: 'Image Tools',
+        iconName: 'Maximize',
+        keywords: ['image resizer', 'resize images online', 'bulk image resizer', 'optimize image size', 'photo resizer tool'],
+        longDescription: 'Change image dimensions without losing quality. Our professional resizer allows you to scale images by pixels or percentage, maintaining aspect ratios for perfect social media or web assets. Process everything locally for maximum privacy.'
+    },
+    {
+        slug: 'image-cropper',
         title: 'Image Cropper',
-            description: 'Crop your images to any size or aspect ratio with our interactive editor.',
-                category: 'Image Tools',
-                    iconName: 'Crop',
-                        keywords: ['image cropper', 'crop photos online', 'aspect ratio cropper', 'square crop tool', 'photo editor'],
-                            longDescription: 'Focus on what matters in your photos. Use our interactive cropper to precisely select the area you want to keep. Supports preset aspect ratios for Instagram, Facebook, and Twitter to ensure your content looks perfect across all platforms.'
-},
-{
-    slug: 'jpg-to-png',
+        description: 'Crop your images to any size or aspect ratio with our interactive editor.',
+        category: 'Image Tools',
+        iconName: 'Crop',
+        keywords: ['image cropper', 'crop photos online', 'aspect ratio cropper', 'square crop tool', 'photo editor'],
+        longDescription: 'Focus on what matters in your photos. Use our interactive cropper to precisely select the area you want to keep. Supports preset aspect ratios for Instagram, Facebook, and Twitter to ensure your content looks perfect across all platforms.'
+    },
+    {
+        slug: 'jpg-to-png',
         title: 'JPG to PNG Converter',
-            description: 'Instantly convert your JPG/JPEG images to PNG format with transparency support.',
-                category: 'Image Tools',
-                    iconName: 'RefreshCw',
-                        keywords: ['jpg to png converter', 'convert jpeg to png', 'online image converter', 'transparent png maker'],
-                            longDescription: 'Change image formats in an instant. Convert standard JPG images to PNG format, ideal for when you need better compression for graphics or want to prepare assets for further editing with transparency support.'
-},
-{
-    slug: 'png-to-jpg',
+        description: 'Instantly convert your JPG/JPEG images to PNG format with transparency support.',
+        category: 'Image Tools',
+        iconName: 'RefreshCw',
+        keywords: ['jpg to png converter', 'convert jpeg to png', 'online image converter', 'transparent png maker'],
+        longDescription: 'Change image formats in an instant. Convert standard JPG images to PNG format, ideal for when you need better compression for graphics or want to prepare assets for further editing with transparency support.'
+    },
+    {
+        slug: 'png-to-jpg',
         title: 'PNG to JPG Converter',
-            description: 'Convert PNG images to JPG format and reduce file size easily.',
-                category: 'Image Tools',
-                    iconName: 'RefreshCw',
-                        keywords: ['png to jpg converter', 'convert png to jpeg', 'reduce image size', 'online photo converter'],
-                            longDescription: 'Save storage space by converting PNGs to JPG. This tool is perfect for web optimization, transforming large PNG files into web-friendly JPEGs with adjustable quality settings to balance file size and visual clarity.'
-},
-{
-    slug: 'csv-to-json',
+        description: 'Convert PNG images to JPG format and reduce file size easily.',
+        category: 'Image Tools',
+        iconName: 'RefreshCw',
+        keywords: ['png to jpg converter', 'convert png to jpeg', 'reduce image size', 'online photo converter'],
+        longDescription: 'Save storage space by converting PNGs to JPG. This tool is perfect for web optimization, transforming large PNG files into web-friendly JPEGs with adjustable quality settings to balance file size and visual clarity.'
+    },
+    {
+        slug: 'csv-to-json',
         title: 'CSV to JSON Converter',
-            description: 'Convert CSV data to JSON format instantly with auto-detection.',
-                category: 'Development Tools',
-                    iconName: 'BarChart3',
-                        keywords: ['csv to json', 'convert csv to json', 'excel to json converter', 'online csv tool', 'data formatting'],
-                            longDescription: 'Seamlessly transform your spreadsheets into developer-friendly JSON. Our converter automatically detects headers and data types, providing a clean, nested or flat JSON output from any standard CSV file.'
-},
-{
-    slug: 'json-to-csv',
+        description: 'Convert CSV data to JSON format instantly with auto-detection.',
+        category: 'Development Tools',
+        iconName: 'BarChart3',
+        keywords: ['csv to json', 'convert csv to json', 'excel to json converter', 'online csv tool', 'data formatting'],
+        longDescription: 'Seamlessly transform your spreadsheets into developer-friendly JSON. Our converter automatically detects headers and data types, providing a clean, nested or flat JSON output from any standard CSV file.'
+    },
+    {
+        slug: 'json-to-csv',
         title: 'JSON to CSV Converter',
-            description: 'Convert JSON data to JSON format instantly for spreadsheet use.',
-                category: 'Development Tools',
-                    iconName: 'Type',
-                        keywords: ['json to csv', 'convert json to csv', 'json to excel converter', 'online data tool', 'json export'],
-                            longDescription: 'Turn your API responses and JSON data into readable CSV files. Perfect for data analysis, reporting, or importing into Excel and Google Sheets. Our tool handles complex nested structures by flattening them into a clean tabular format.'
-},
-{
-    slug: 'file-size-converter',
+        description: 'Convert JSON data to JSON format instantly for spreadsheet use.',
+        category: 'Development Tools',
+        iconName: 'Type',
+        keywords: ['json to csv', 'convert json to csv', 'json to excel converter', 'online data tool', 'json export'],
+        longDescription: 'Turn your API responses and JSON data into readable CSV files. Perfect for data analysis, reporting, or importing into Excel and Google Sheets. Our tool handles complex nested structures by flattening them into a clean tabular format.'
+    },
+    {
+        slug: 'file-size-converter',
         title: 'File Size Converter',
-            description: 'Convert bytes to KB, MB, GB, and TB with precision.',
-                category: 'Daily Tools',
-                    iconName: 'Scale',
-                        keywords: ['file size converter', 'bytes to mb', 'gb to mb converter', 'data storage calculator', 'bit byte converter'],
-                            longDescription: 'Understand your storage space. Convert between bits, bytes, kilobytes, megabytes, gigabytes, and terabytes with high precision. Essential for managing cloud storage, hardware limits, and web asset optimization.'
-},
-{
-    slug: 'mime-type-lookup',
+        description: 'Convert bytes to KB, MB, GB, and TB with precision.',
+        category: 'Daily Tools',
+        iconName: 'Scale',
+        keywords: ['file size converter', 'bytes to mb', 'gb to mb converter', 'data storage calculator', 'bit byte converter'],
+        longDescription: 'Understand your storage space. Convert between bits, bytes, kilobytes, megabytes, gigabytes, and terabytes with high precision. Essential for managing cloud storage, hardware limits, and web asset optimization.'
+    },
+    {
+        slug: 'mime-type-lookup',
         title: 'MIME Type Lookup',
-            description: 'Find MIME types for file extensions and vice versa.',
-                category: 'Development Tools',
-                    iconName: 'Search',
-                        keywords: ['mime type lookup', 'file extension search', 'content-type check', 'web development lookup', 'mime database'],
-                            longDescription: 'Find the correct Content-Type for any file. Search by extension (e.g., .png) to find the MIME type (e.g., image/png), or search by type to see its common extensions. An invaluable resource for web developers and server administrators.'
-},
-{
-    slug: 'xml-to-json',
+        description: 'Find MIME types for file extensions and vice versa.',
+        category: 'Development Tools',
+        iconName: 'Search',
+        keywords: ['mime type lookup', 'file extension search', 'content-type check', 'web development lookup', 'mime database'],
+        longDescription: 'Find the correct Content-Type for any file. Search by extension (e.g., .png) to find the MIME type (e.g., image/png), or search by type to see its common extensions. An invaluable resource for web developers and server administrators.'
+    },
+    {
+        slug: 'xml-to-json',
         title: 'XML to JSON Converter',
-            description: 'Convert XML data to JSON format for easier integration.',
-                category: 'Development Tools',
-                    iconName: 'Braces',
-                        keywords: ['xml to json', 'convert xml to json', 'xml parser online', 'data conversion tool', 'developer utilities'],
-                            longDescription: 'Modernize your data integration. Our XML to JSON converter parses complex XML trees and transforms them into easy-to-use JSON objects, handling attributes and nested elements with precision for any modern web application.'
-},
-// Gaming Utilities Expansion
-{
-    slug: 'fov-calculator',
+        description: 'Convert XML data to JSON format for easier integration.',
+        category: 'Development Tools',
+        iconName: 'Braces',
+        keywords: ['xml to json', 'convert xml to json', 'xml parser online', 'data conversion tool', 'developer utilities'],
+        longDescription: 'Modernize your data integration. Our XML to JSON converter parses complex XML trees and transforms them into easy-to-use JSON objects, handling attributes and nested elements with precision for any modern web application.'
+    },
+    // Gaming Utilities Expansion
+    {
+        slug: 'fov-calculator',
         title: 'FOV Calculator',
-            description: 'Compare and convert Field of View (FOV) across different games.',
-                category: 'Gaming Utilities',
-                    iconName: 'Maximize',
-                        keywords: ['fov calculator', 'field of view converter', 'vertical to horizontal fov', 'gaming fov tool'],
-                            longDescription: 'Ensure your visual perspective is consistent across all titles. Our FOV Calculator converts between Vertical, Horizontal, and Resolution-based FOVs, helping you match your view in Valorant, CS2, Overwatch, and Apex Legends.'
-},
-{
-    slug: 'resolution-scaler',
+        description: 'Compare and convert Field of View (FOV) across different games.',
+        category: 'Gaming Utilities',
+        iconName: 'Maximize',
+        keywords: ['fov calculator', 'field of view converter', 'vertical to horizontal fov', 'gaming fov tool'],
+        longDescription: 'Ensure your visual perspective is consistent across all titles. Our FOV Calculator converts between Vertical, Horizontal, and Resolution-based FOVs, helping you match your view in Valorant, CS2, Overwatch, and Apex Legends.'
+    },
+    {
+        slug: 'resolution-scaler',
         title: 'Resolution Scaler',
-            description: 'Calculate render resolution and aspect ratio scaling for performance.',
-                category: 'Gaming Utilities',
-                    iconName: 'Monitor',
-                        keywords: ['resolution scaler', 'render scale calculator', 'gaming resolution tool', 'aspect ratio scaler'],
-                            longDescription: 'Optimize your FPS without sacrificing clarity. This tool calculates the exact pixel dimensions for different render scales (e.g., 75%, 90%) and helps you find the best resolution for your monitor aspect ratio.'
-},
-{
-    slug: 'gaming-desk-height',
+        description: 'Calculate render resolution and aspect ratio scaling for performance.',
+        category: 'Gaming Utilities',
+        iconName: 'Monitor',
+        keywords: ['resolution scaler', 'render scale calculator', 'gaming resolution tool', 'aspect ratio scaler'],
+        longDescription: 'Optimize your FPS without sacrificing clarity. This tool calculates the exact pixel dimensions for different render scales (e.g., 75%, 90%) and helps you find the best resolution for your monitor aspect ratio.'
+    },
+    {
+        slug: 'gaming-desk-height',
         title: 'Gaming Desk Height Calculator',
-            description: 'Find the ideal desk and chair height based on your body measurements.',
-                category: 'Gaming Utilities',
-                    iconName: 'Maximize2',
-                        keywords: ['gaming desk height', 'ergonomics calculator', 'posture guide', 'gaming chair setup'],
-                            longDescription: 'Prevent fatigue and RSI with proper ergonomics. Our calculator uses your height to determine the optimal gaming desk and chair positions, ensuring your arms are at the perfect angle for maximum aiming precision and long-term health.'
-},
-{
-    slug: 'ping-jitter-analyzer',
+        description: 'Find the ideal desk and chair height based on your body measurements.',
+        category: 'Gaming Utilities',
+        iconName: 'Maximize2',
+        keywords: ['gaming desk height', 'ergonomics calculator', 'posture guide', 'gaming chair setup'],
+        longDescription: 'Prevent fatigue and RSI with proper ergonomics. Our calculator uses your height to determine the optimal gaming desk and chair positions, ensuring your arms are at the perfect angle for maximum aiming precision and long-term health.'
+    },
+    {
+        slug: 'ping-jitter-analyzer',
         title: 'Network Jitter Analyzer',
-            description: 'Test your connection stability and measure ping variance.',
-                category: 'Gaming Utilities',
-                    iconName: 'Activity',
-                        keywords: ['ping jitter test', 'line stability check', 'network variance test', 'gaming ping analyzer'],
-                            longDescription: 'High ping is bad, but jitter is worse. Our analyzer measures the variance in your connection speed to identify "lag spikes" that can ruin high-stakes competitive matches. Essential for diagnosing WiFi or ISP stability issues.'
-},
-{
-    slug: 'monitor-ppi-calculator',
+        description: 'Test your connection stability and measure ping variance.',
+        category: 'Gaming Utilities',
+        iconName: 'Activity',
+        keywords: ['ping jitter test', 'line stability check', 'network variance test', 'gaming ping analyzer'],
+        longDescription: 'High ping is bad, but jitter is worse. Our analyzer measures the variance in your connection speed to identify "lag spikes" that can ruin high-stakes competitive matches. Essential for diagnosing WiFi or ISP stability issues.'
+    },
+    {
+        slug: 'monitor-ppi-calculator',
         title: 'Monitor PPI Calculator',
-            description: 'Calculate Pixels Per Inch (PPI) for any screen size and resolution.',
-                category: 'Gaming Utilities',
-                    iconName: 'Monitor',
-                        keywords: ['ppi calculator', 'pixels per inch', 'screen density tool', 'monitor clarity checker'],
-                            longDescription: 'Measure your display crystal-clarity. By inputting your resolution and diagonal screen size, this tool calculates the pixel density, helping you compare different monitors and understand the impact on visual sharpness.'
-},
-{
-    slug: 'sensitivity-monitor-match',
+        description: 'Calculate Pixels Per Inch (PPI) for any screen size and resolution.',
+        category: 'Gaming Utilities',
+        iconName: 'Monitor',
+        keywords: ['ppi calculator', 'pixels per inch', 'screen density tool', 'monitor clarity checker'],
+        longDescription: 'Measure your display crystal-clarity. By inputting your resolution and diagonal screen size, this tool calculates the pixel density, helping you compare different monitors and understand the impact on visual sharpness.'
+    },
+    {
+        slug: 'sensitivity-monitor-match',
         title: 'Monitor Distance Matcher',
-            description: 'Match your mouse feeling across different monitor sizes and resolutions.',
-                category: 'Gaming Utilities',
-                    iconName: 'Scale',
-                        keywords: ['monitor distance match', 'coefficient calculator', 'fov sensitivity match', 'consistent aim'],
-                            longDescription: 'Keep your mouse feel identical even if you change monitors. This advanced tool uses Focal Length scaling and Monitor Distance coefficients to ensure your "flicks" feel consistent across different aspect ratios and resolutions.'
-},
-// Aim & Reflex Expansion
-{
-    slug: 'sound-reaction-test',
+        description: 'Match your mouse feeling across different monitor sizes and resolutions.',
+        category: 'Gaming Utilities',
+        iconName: 'Scale',
+        keywords: ['monitor distance match', 'coefficient calculator', 'fov sensitivity match', 'consistent aim'],
+        longDescription: 'Keep your mouse feel identical even if you change monitors. This advanced tool uses Focal Length scaling and Monitor Distance coefficients to ensure your "flicks" feel consistent across different aspect ratios and resolutions.'
+    },
+    // Aim & Reflex Expansion
+    {
+        slug: 'sound-reaction-test',
         title: 'Sound Reaction Test',
-            description: 'Test your auditory reflexes by reacting to audio cues.',
-                category: 'Aim & Reflex',
-                    iconName: 'Volume2',
-                        keywords: ['sound reaction test', 'audio reflex check', 'audio reaction time', 'gaming sounds'],
-                            longDescription: 'Reflexes are not just visual. Many pro players rely on audio cues to react to enemies. Our Sound Reaction Test measures your millisecond response time to auditory triggers, helping you sharpen your overall awareness.'
-},
-{
-    slug: 'peripheral-vision-test',
+        description: 'Test your auditory reflexes by reacting to audio cues.',
+        category: 'Aim & Reflex',
+        iconName: 'Volume2',
+        keywords: ['sound reaction test', 'audio reflex check', 'audio reaction time', 'gaming sounds'],
+        longDescription: 'Reflexes are not just visual. Many pro players rely on audio cues to react to enemies. Our Sound Reaction Test measures your millisecond response time to auditory triggers, helping you sharpen your overall awareness.'
+    },
+    {
+        slug: 'peripheral-vision-test',
         title: 'Peripheral Vision Trainer',
-            description: 'Improve your awareness by clicking targets in your peripheral view.',
-                category: 'Aim & Reflex',
-                    iconName: 'Eye',
-                        keywords: ['peripheral vision test', 'awareness trainer', 'gaming vision test', 'field of view skills'],
-                            longDescription: 'Stop tunnel-visioning! Our trainer flashes targets at the edges of your screen, forcing you to maintain focus on the center while reacting to movement in your side view. Essential for high-chaos games like Apex Legends or Quake.'
-},
-{
-    slug: 'target-tracking-pro',
+        description: 'Improve your awareness by clicking targets in your peripheral view.',
+        category: 'Aim & Reflex',
+        iconName: 'Eye',
+        keywords: ['peripheral vision test', 'awareness trainer', 'gaming vision test', 'field of view skills'],
+        longDescription: 'Stop tunnel-visioning! Our trainer flashes targets at the edges of your screen, forcing you to maintain focus on the center while reacting to movement in your side view. Essential for high-chaos games like Apex Legends or Quake.'
+    },
+    {
+        slug: 'target-tracking-pro',
         title: 'Target Tracking Pro',
-            description: 'Advanced smooth tracking trainer with intelligent movement patterns.',
-                category: 'Aim & Reflex',
-                    iconName: 'Target',
-                        keywords: ['tracking trainer', 'smooth aim practice', 'mouse tracking pro', 'fps tracking drills'],
-                            longDescription: 'Master the hardest skill in aiming. Unlike flicking, tracking requires consistent mouse speed. This tool features targets that change directions and speeds unpredictably, simulating real enemy movement patterns.'
-},
-{
-    slug: 'micro-flick-drills',
+        description: 'Advanced smooth tracking trainer with intelligent movement patterns.',
+        category: 'Aim & Reflex',
+        iconName: 'Target',
+        keywords: ['tracking trainer', 'smooth aim practice', 'mouse tracking pro', 'fps tracking drills'],
+        longDescription: 'Master the hardest skill in aiming. Unlike flicking, tracking requires consistent mouse speed. This tool features targets that change directions and speeds unpredictably, simulating real enemy movement patterns.'
+    },
+    {
+        slug: 'micro-flick-drills',
         title: 'Micro-Flick Drills',
-            description: 'Practice small, precise mouse adjustments for headshot consistency.',
-                category: 'Aim & Reflex',
-                    iconName: 'Zap',
-                        keywords: ['micro flicking', 'precision aim', 'headshot trainer', 'small adjustments test'],
-                            longDescription: 'Level up your crosshair placement. These drills focus on tiny "micro-corrections" within a tight radius, helping you snap onto heads with surgical precision instead of over-aiming.'
-},
-{
-    slug: 'burst-control-trainer',
+        description: 'Practice small, precise mouse adjustments for headshot consistency.',
+        category: 'Aim & Reflex',
+        iconName: 'Zap',
+        keywords: ['micro flicking', 'precision aim', 'headshot trainer', 'small adjustments test'],
+        longDescription: 'Level up your crosshair placement. These drills focus on tiny "micro-corrections" within a tight radius, helping you snap onto heads with surgical precision instead of over-aiming.'
+    },
+    {
+        slug: 'burst-control-trainer',
         title: 'Burst Timing Trainer',
-            description: 'Learn the clicking rhythm for perfect recoil and burst resets.',
-                category: 'Aim & Reflex',
-                    iconName: 'Target',
-                        keywords: ['burst control', 'clicking rhythm', 'fps fire rate test', 'weapon reset timing'],
-                            longDescription: 'Every weapon has a rhythm. Our Burst Trainer flashes cues that match the optimal reset times for competitive rifles, helping you develop a "feel" for when to stop and start your bursts for maximum accuracy.'
-},
-{
-    slug: 'spatial-memory-test',
+        description: 'Learn the clicking rhythm for perfect recoil and burst resets.',
+        category: 'Aim & Reflex',
+        iconName: 'Target',
+        keywords: ['burst control', 'clicking rhythm', 'fps fire rate test', 'weapon reset timing'],
+        longDescription: 'Every weapon has a rhythm. Our Burst Trainer flashes cues that match the optimal reset times for competitive rifles, helping you develop a "feel" for when to stop and start your bursts for maximum accuracy.'
+    },
+    {
+        slug: 'spatial-memory-test',
         title: 'Spatial Memory Bench',
-            description: 'Test and improve your ability to remember target positions in sequence.',
-                category: 'Aim & Reflex',
-                    iconName: 'Brain',
-                        keywords: ['spatial memory', 'gaming memory test', 'target recall', 'positional awareness'],
-                            longDescription: 'Boost your "Gamesense". This tool hide targets after showing them briefly, requiring you to remember their exact positions and order. Excellent for improving your ability to track multiple threats simultaneously.'
-},
-{
-    slug: 'click-timing-trainer',
+        description: 'Test and improve your ability to remember target positions in sequence.',
+        category: 'Aim & Reflex',
+        iconName: 'Brain',
+        keywords: ['spatial memory', 'gaming memory test', 'target recall', 'positional awareness'],
+        longDescription: 'Boost your "Gamesense". This tool hide targets after showing them briefly, requiring you to remember their exact positions and order. Excellent for improving your ability to track multiple threats simultaneously.'
+    },
+    {
+        slug: 'click-timing-trainer',
         title: 'Click Timing Trainer',
-            description: 'Practice clicking perfectly when a target enters your crosshair.',
-                category: 'Aim & Reflex',
-                    iconName: 'Crosshair',
-                        keywords: ['click timing', 'reflex clicking', 'sniper trainer', 'shotgun timing test'],
-                            longDescription: 'Essential for snipers and shotgun users. Instead of moving your mouse, you wait for the target to cross a specific point and click with millisecond precision. Master the "wait and click" technique used by elite players.'
-},
-{
-    slug: 'grid-shot-mini',
+        description: 'Practice clicking perfectly when a target enters your crosshair.',
+        category: 'Aim & Reflex',
+        iconName: 'Crosshair',
+        keywords: ['click timing', 'reflex clicking', 'sniper trainer', 'shotgun timing test'],
+        longDescription: 'Essential for snipers and shotgun users. Instead of moving your mouse, you wait for the target to cross a specific point and click with millisecond precision. Master the "wait and click" technique used by elite players.'
+    },
+    {
+        slug: 'grid-shot-mini',
         title: 'Grid Shot Mini',
-            description: 'High-speed grid clicking exercise for raw speed and efficiency.',
-                category: 'Aim & Reflex',
-                    iconName: 'LayoutGrid',
-                        keywords: ['gridshot', 'speed aim', 'warmup grid', 'aimlab alternative', 'high speed clicking'],
-                            longDescription: 'A compact version of the famous gridwarmup. Targets appear in a tight 3x3 or 5x5 grid, pushing your arm and wrist speed to their absolute limits. Perfect for a quick 30-second intensive warmup before a match.'
-},
-{
-    slug: 'pressure-test-reflex',
+        description: 'High-speed grid clicking exercise for raw speed and efficiency.',
+        category: 'Aim & Reflex',
+        iconName: 'LayoutGrid',
+        keywords: ['gridshot', 'speed aim', 'warmup grid', 'aimlab alternative', 'high speed clicking'],
+        longDescription: 'A compact version of the famous gridwarmup. Targets appear in a tight 3x3 or 5x5 grid, pushing your arm and wrist speed to their absolute limits. Perfect for a quick 30-second intensive warmup before a match.'
+    },
+    {
+        slug: 'pressure-test-reflex',
         title: 'Pressure Reflex Test',
-            description: 'Aiming targets that shrink and disappear under a strict time limit.',
-                category: 'Aim & Reflex',
-                    iconName: 'Timer',
-                        keywords: ['pressure test', 'speed aim trainer', 'aim under pressure', 'vanishing targets'],
-                            longDescription: 'Can you aim under stress? Targets start large and shrink rapidly. You must hit them before they disappear. As you progress, the timer gets shorter, forcing your brain to process visual information faster.'
-},
-{
-    slug: 'reflex-pattern-match',
+        description: 'Aiming targets that shrink and disappear under a strict time limit.',
+        category: 'Aim & Reflex',
+        iconName: 'Timer',
+        keywords: ['pressure test', 'speed aim trainer', 'aim under pressure', 'vanishing targets'],
+        longDescription: 'Can you aim under stress? Targets start large and shrink rapidly. You must hit them before they disappear. As you progress, the timer gets shorter, forcing your brain to process visual information faster.'
+    },
+    {
+        slug: 'reflex-pattern-match',
         title: 'Reflex Pattern Match',
-            description: 'Quickly identify and match a specific target color or shape.',
-                category: 'Aim & Reflex',
-                    iconName: 'Shapes',
-                        keywords: ['pattern match', 'cognitive reflex', 'shape identification', 'fast reaction'],
-                            longDescription: 'A brain-reflex combo. Don\'t just click everything—only click the target that matches the specified pattern or color. This improves your target identification speed, preventing friendly fire or wasted shots in-game.'
-},
-{
-    slug: 'strafe-aiming-sim',
+        description: 'Quickly identify and match a specific target color or shape.',
+        category: 'Aim & Reflex',
+        iconName: 'Shapes',
+        keywords: ['pattern match', 'cognitive reflex', 'shape identification', 'fast reaction'],
+        longDescription: 'A brain-reflex combo. Don\'t just click everything—only click the target that matches the specified pattern or color. This improves your target identification speed, preventing friendly fire or wasted shots in-game.'
+    },
+    {
+        slug: 'strafe-aiming-sim',
         title: 'Strafe Aiming Sim',
-            description: 'Practice tracking targets while your own "character" is moving side-to-side.',
-                category: 'Aim & Reflex',
-                    iconName: 'Move',
-                        keywords: ['strafe aiming', 'moving while shooting', 'fps movement trainer', 'counter strafing practice'],
-                            longDescription: 'Master the strafe. Static aiming is easy, but in a real fight, you are also moving. This tool simulates character strafing (left/right motion), forcing you to compensate for your own movement while staying on target.'
-},
-// Mouse Skills Expansion
-{
-    slug: 'mouse-glide-test',
+        description: 'Practice tracking targets while your own "character" is moving side-to-side.',
+        category: 'Aim & Reflex',
+        iconName: 'Move',
+        keywords: ['strafe aiming', 'moving while shooting', 'fps movement trainer', 'counter strafing practice'],
+        longDescription: 'Master the strafe. Static aiming is easy, but in a real fight, you are also moving. This tool simulates character strafing (left/right motion), forcing you to compensate for your own movement while staying on target.'
+    },
+    // Mouse Skills Expansion
+    {
+        slug: 'mouse-glide-test',
         title: 'Mouse Glide Test',
-            description: 'Measure the friction and smoothness of your mouse and mousepad combo.',
-                category: 'Mouse Skills',
-                    iconName: 'Zap',
-                        keywords: ['mouse glide test', 'mousepad friction', 'ptfe feet check', 'mouse motion smoothness'],
-                            longDescription: 'How smooth is your flick? Our Glide Test measures the consistency of your mouse movement across the pad, helping you identify worn-out PTFE feet or a "muddy" mousepad surface that might be hindering your micro-adjustments.',
-                                requires: ['mouse']
-},
-{
-    slug: 'lod-test-guide',
+        description: 'Measure the friction and smoothness of your mouse and mousepad combo.',
+        category: 'Mouse Skills',
+        iconName: 'Zap',
+        keywords: ['mouse glide test', 'mousepad friction', 'ptfe feet check', 'mouse motion smoothness'],
+        longDescription: 'How smooth is your flick? Our Glide Test measures the consistency of your mouse movement across the pad, helping you identify worn-out PTFE feet or a "muddy" mousepad surface that might be hindering your micro-adjustments.',
+        requires: ['mouse']
+    },
+    {
+        slug: 'lod-test-guide',
         title: 'LOD (Lift-Off Distance) Test',
-            description: 'Check how high you can lift your mouse before the sensor stops tracking.',
-                category: 'Mouse Skills',
-                    iconName: 'ArrowUp',
-                        keywords: ['lift off distance test', 'mouse lod check', 'gaming mouse sensor', 'mouse tracking height'],
-                            longDescription: 'LOD is critical for low-sensitivity players who "reset" their mouse position frequently. This tool provides a visual interface to help you measure if your mouse sensor stops tracking at the ideal 1-2mm height, preventing unwanted cursor "jitter" during resets.',
-                                requires: ['mouse']
-},
-{
-    slug: 'right-click-speed-test',
+        description: 'Check how high you can lift your mouse before the sensor stops tracking.',
+        category: 'Mouse Skills',
+        iconName: 'ArrowUp',
+        keywords: ['lift off distance test', 'mouse lod check', 'gaming mouse sensor', 'mouse tracking height'],
+        longDescription: 'LOD is critical for low-sensitivity players who "reset" their mouse position frequently. This tool provides a visual interface to help you measure if your mouse sensor stops tracking at the ideal 1-2mm height, preventing unwanted cursor "jitter" during resets.',
+        requires: ['mouse']
+    },
+    {
+        slug: 'right-click-speed-test',
         title: 'Right Click Speed Test',
-            description: 'Measure your Clicks Per Second (CPS) specifically for the right mouse button.',
-                category: 'Mouse Skills',
-                    iconName: 'MousePointer2',
-                        keywords: ['right click cps', 'right button speed', 'moba clicking speed', 'right clicker test'],
-                            longDescription: 'Your right click is just as important as your left, especially in MOBAs and RTS games. Test your dexterity and speed with our dedicated right-button CPS tester. Track your performance and see if you have any imbalance between your index and middle finger speed.',
-                                requires: ['mouse']
-},
-{
-    slug: 'scroll-speed-tester',
+        description: 'Measure your Clicks Per Second (CPS) specifically for the right mouse button.',
+        category: 'Mouse Skills',
+        iconName: 'MousePointer2',
+        keywords: ['right click cps', 'right button speed', 'moba clicking speed', 'right clicker test'],
+        longDescription: 'Your right click is just as important as your left, especially in MOBAs and RTS games. Test your dexterity and speed with our dedicated right-button CPS tester. Track your performance and see if you have any imbalance between your index and middle finger speed.',
+        requires: ['mouse']
+    },
+    {
+        slug: 'scroll-speed-tester',
         title: 'Scroll Speed Tester',
-            description: 'Measure how many pixels or lines you can scroll per second.',
-                category: 'Mouse Skills',
-                    iconName: 'Mouse',
-                        keywords: ['scroll speed test', 'mouse wheel speed', 'scrolling performance', 'fast scroll check'],
-                            longDescription: 'Perfect for infinite scroll wheels and competitive browsing! Measure your maximum scrolling velocity in pixels per second. This tool is great for testing the mechanics of your mouse wheel and your finger speed for rapid weapon switching or inventory management.',
-                                requires: ['mouse']
-},
-{
-    slug: 'mouse-sensor-jitter-test',
+        description: 'Measure how many pixels or lines you can scroll per second.',
+        category: 'Mouse Skills',
+        iconName: 'Mouse',
+        keywords: ['scroll speed test', 'mouse wheel speed', 'scrolling performance', 'fast scroll check'],
+        longDescription: 'Perfect for infinite scroll wheels and competitive browsing! Measure your maximum scrolling velocity in pixels per second. This tool is great for testing the mechanics of your mouse wheel and your finger speed for rapid weapon switching or inventory management.',
+        requires: ['mouse']
+    },
+    {
+        slug: 'mouse-sensor-jitter-test',
         title: 'Sensor Jitter & Skip Test',
-            description: 'Detect if your mouse sensor is skipping pixels or jittering at high speeds.',
-                category: 'Mouse Skills',
-                    iconName: 'Activity',
-                        keywords: ['mouse jitter test', 'pixel skipping check', 'sensor malfunction', 'high dpi jitter'],
-                            longDescription: 'Ensure your sensor is flawless. At high DPI or on certain surfaces, sensors can "jitter" or "skip". This tool analyzes your mouse path at high frequency to detect anomalies in movement, ensuring every millimeter of your hand movement is translated to the screen.',
-                                requires: ['mouse']
-},
-{
-    slug: 'mouse-pixel-skipping-check',
+        description: 'Detect if your mouse sensor is skipping pixels or jittering at high speeds.',
+        category: 'Mouse Skills',
+        iconName: 'Activity',
+        keywords: ['mouse jitter test', 'pixel skipping check', 'sensor malfunction', 'high dpi jitter'],
+        longDescription: 'Ensure your sensor is flawless. At high DPI or on certain surfaces, sensors can "jitter" or "skip". This tool analyzes your mouse path at high frequency to detect anomalies in movement, ensuring every millimeter of your hand movement is translated to the screen.',
+        requires: ['mouse']
+    },
+    {
+        slug: 'mouse-pixel-skipping-check',
         title: 'Pixel Skipping Checker',
-            description: 'Identify if your Windows or in-game sensitivity is causing pixel skipping.',
-                category: 'Mouse Skills',
-                    iconName: 'LayoutGrid',
-                        keywords: ['pixel skipping test', 'windows sensitivity check', 'raw input validator', 'aim precision check'],
-                            longDescription: 'Don\'t let software ruin your aim. If your sensitivity is too high in Windows or certain games, your cursor might "skip" pixels. Use our visual checker to ensure your input is pixel-perfect and you aren\'t missing targets due to mathematical rounding errors in your settings.',
-                                requires: ['mouse']
-},
-{
-    slug: 'cursor-precision-bench',
+        description: 'Identify if your Windows or in-game sensitivity is causing pixel skipping.',
+        category: 'Mouse Skills',
+        iconName: 'LayoutGrid',
+        keywords: ['pixel skipping test', 'windows sensitivity check', 'raw input validator', 'aim precision check'],
+        longDescription: 'Don\'t let software ruin your aim. If your sensitivity is too high in Windows or certain games, your cursor might "skip" pixels. Use our visual checker to ensure your input is pixel-perfect and you aren\'t missing targets due to mathematical rounding errors in your settings.',
+        requires: ['mouse']
+    },
+    {
+        slug: 'cursor-precision-bench',
         title: 'Cursor Precision Bench',
-            description: 'Test your ability to stop your cursor exactly in the center of a target.',
-                category: 'Mouse Skills',
-                    iconName: 'Crosshair',
-                        keywords: ['cursor precision test', 'mouse control benchmark', 'stopping power test', 'click accuracy'],
-                            longDescription: 'Speed is nothing without control. This benchmark tests your "stopping power"—the ability to snap to a target and stop exactly in the center without shaky micro-adjustments. A high score here indicates elite level mouse control and muscle memory.',
-                                requires: ['mouse']
-},
-{
-    slug: 'mouse-latency-tester',
+        description: 'Test your ability to stop your cursor exactly in the center of a target.',
+        category: 'Mouse Skills',
+        iconName: 'Crosshair',
+        keywords: ['cursor precision test', 'mouse control benchmark', 'stopping power test', 'click accuracy'],
+        longDescription: 'Speed is nothing without control. This benchmark tests your "stopping power"—the ability to snap to a target and stop exactly in the center without shaky micro-adjustments. A high score here indicates elite level mouse control and muscle memory.',
+        requires: ['mouse']
+    },
+    {
+        slug: 'mouse-latency-tester',
         title: 'Mouse Input Latency Test',
-            description: 'Measure the delay between your mouse click and the screen response.',
-                category: 'Mouse Skills',
-                    iconName: 'Timer',
-                        keywords: ['mouse latency', 'click delay test', 'input lag mouse', 'gaming mouse lag'],
-                            longDescription: 'Measure the raw responsiveness of your gaming setup. This tool calculates the end-to-end latency of your mouse input, helping you identify if your wireless connection, USB port, or monitor is adding unnecessary delay to your actions.',
-                                requires: ['mouse']
-},
-// Keyboard Skills Expansion
-{
-    slug: 'key-repeat-rate-test',
+        description: 'Measure the delay between your mouse click and the screen response.',
+        category: 'Mouse Skills',
+        iconName: 'Timer',
+        keywords: ['mouse latency', 'click delay test', 'input lag mouse', 'gaming mouse lag'],
+        longDescription: 'Measure the raw responsiveness of your gaming setup. This tool calculates the end-to-end latency of your mouse input, helping you identify if your wireless connection, USB port, or monitor is adding unnecessary delay to your actions.',
+        requires: ['mouse']
+    },
+    // Keyboard Skills Expansion
+    {
+        slug: 'key-repeat-rate-test',
         title: 'Key Repeat Rate Test',
-            description: 'Measure the frequency of key repeats when a button is held down.',
-                category: 'Keyboard Skills',
-                    iconName: 'Keyboard',
-                        keywords: ['key repeat test', 'keyboard repeat rate', 'held key speed', 'linux repeat rate'],
-                            longDescription: 'Is your keyboard sluggish? Measure exactly how many characters per second your OS registers when you hold a key. This is vital for programmers and gamers who need high-frequency inputs for rapid actions or scrolling through code.',
-                                requires: ['keyboard']
-},
-{
-    slug: 'keyboard-debounce-tester',
+        description: 'Measure the frequency of key repeats when a button is held down.',
+        category: 'Keyboard Skills',
+        iconName: 'Keyboard',
+        keywords: ['key repeat test', 'keyboard repeat rate', 'held key speed', 'linux repeat rate'],
+        longDescription: 'Is your keyboard sluggish? Measure exactly how many characters per second your OS registers when you hold a key. This is vital for programmers and gamers who need high-frequency inputs for rapid actions or scrolling through code.',
+        requires: ['keyboard']
+    },
+    {
+        slug: 'keyboard-debounce-tester',
         title: 'Keyboard Debounce Test',
-            description: 'Detect unintended multiple keystrokes caused by mechanical switch "chatter".',
-                category: 'Keyboard Skills',
-                    iconName: 'Zap',
-                        keywords: ['keyboard debounce test', 'key chatter check', 'mechanical switch failure', 'double type fix'],
-                            longDescription: 'Mechanical switches can fail as they age, causing "chatter" (registering two presses for one click). Our debounce tester monitors your inputs at millisecond intervals to catch these double-triggers, letting you know if it\'s time for a new switch or a cleaning.',
-                                requires: ['keyboard']
-},
-{
-    slug: 'blind-typing-challenge',
+        description: 'Detect unintended multiple keystrokes caused by mechanical switch "chatter".',
+        category: 'Keyboard Skills',
+        iconName: 'Zap',
+        keywords: ['keyboard debounce test', 'key chatter check', 'mechanical switch failure', 'double type fix'],
+        longDescription: 'Mechanical switches can fail as they age, causing "chatter" (registering two presses for one click). Our debounce tester monitors your inputs at millisecond intervals to catch these double-triggers, letting you know if it\'s time for a new switch or a cleaning.',
+        requires: ['keyboard']
+    },
+    {
+        slug: 'blind-typing-challenge',
         title: 'Blind Typing Challenge',
-            description: 'Test your typing speed and muscle memory with a blank screen.',
-                category: 'Keyboard Skills',
-                    iconName: 'EyeOff',
-                        keywords: ['blind typing test', 'muscle memory typing', 'touch typing challenge', 'keyboard mastery'],
-                            longDescription: 'Are you a true touch-typist? Our challenge hides the text as you type it, forcing you to rely entirely on your muscle memory. Any mistake will be revealed only at the end—the ultimate test for keyboard masters.',
-                                requires: ['keyboard']
-},
-{
-    slug: 'code-typing-speed',
+        description: 'Test your typing speed and muscle memory with a blank screen.',
+        category: 'Keyboard Skills',
+        iconName: 'EyeOff',
+        keywords: ['blind typing test', 'muscle memory typing', 'touch typing challenge', 'keyboard mastery'],
+        longDescription: 'Are you a true touch-typist? Our challenge hides the text as you type it, forcing you to rely entirely on your muscle memory. Any mistake will be revealed only at the end—the ultimate test for keyboard masters.',
+        requires: ['keyboard']
+    },
+    {
+        slug: 'code-typing-speed',
         title: 'Code Snippet Speed Test',
-            description: 'Practice typing code syntax for JS, Python, HTML, and CSS.',
-                category: 'Keyboard Skills',
-                    iconName: 'Code',
-                        keywords: ['code typing test', 'developer speed test', 'programming WPM', 'syntax typing practice'],
-                            longDescription: 'Typing code is different from typing prose. Practice your specialized WPM on actual code snippets. Master brackets, semicolons, and indentation to become a faster, more efficient developer.',
-                                requires: ['keyboard']
-},
-{
-    slug: 'keyboard-polling-rate-check',
+        description: 'Practice typing code syntax for JS, Python, HTML, and CSS.',
+        category: 'Keyboard Skills',
+        iconName: 'Code',
+        keywords: ['code typing test', 'developer speed test', 'programming WPM', 'syntax typing practice'],
+        longDescription: 'Typing code is different from typing prose. Practice your specialized WPM on actual code snippets. Master brackets, semicolons, and indentation to become a faster, more efficient developer.',
+        requires: ['keyboard']
+    },
+    {
+        slug: 'keyboard-polling-rate-check',
         title: 'Keyboard Polling Rate Checker',
-            description: 'Measure the reporting frequency of your keyboard (e.g., 1000Hz).',
-                category: 'Keyboard Skills',
-                    iconName: 'Activity',
-                        keywords: ['keyboard polling rate', 'keyboard hz test', 'input frequency', 'gaming keyboard latency'],
-                            longDescription: 'Verify your keyboard s performance. High-end gaming keyboards advertise 1000Hz or even 8000Hz polling rates. Use our checker to measure the actual frequency of data packets being sent to your computer, ensuring you have the lowest possible technical latency.',
-                                requires: ['keyboard']
-},
-{
-    slug: 'n-key-rollover-pro',
+        description: 'Measure the reporting frequency of your keyboard (e.g., 1000Hz).',
+        category: 'Keyboard Skills',
+        iconName: 'Activity',
+        keywords: ['keyboard polling rate', 'keyboard hz test', 'input frequency', 'gaming keyboard latency'],
+        longDescription: 'Verify your keyboard s performance. High-end gaming keyboards advertise 1000Hz or even 8000Hz polling rates. Use our checker to measure the actual frequency of data packets being sent to your computer, ensuring you have the lowest possible technical latency.',
+        requires: ['keyboard']
+    },
+    {
+        slug: 'n-key-rollover-pro',
         title: 'N-Key Rollover Pro visualizer',
-            description: 'Advanced visualizer for simultaneous multi-key presses (NKRO).',
-                category: 'Keyboard Skills',
-                    iconName: 'Layers',
-                        keywords: ['nkro pro', 'multi key visualizer', 'ghosting test advanced', 'keyboard rollover check'],
-                            longDescription: 'A premium visualizer for your keyboard inputs. Press as many keys as you want and see them light up on a virtual layout. Perfect for testing "chords" in rhythm games or verifying if your keyboard can handle complex simultaneous inputs without ghosting.',
-                                requires: ['keyboard']
-},
-{
-    slug: 'keyboard-audio-latency',
+        description: 'Advanced visualizer for simultaneous multi-key presses (NKRO).',
+        category: 'Keyboard Skills',
+        iconName: 'Layers',
+        keywords: ['nkro pro', 'multi key visualizer', 'ghosting test advanced', 'keyboard rollover check'],
+        longDescription: 'A premium visualizer for your keyboard inputs. Press as many keys as you want and see them light up on a virtual layout. Perfect for testing "chords" in rhythm games or verifying if your keyboard can handle complex simultaneous inputs without ghosting.',
+        requires: ['keyboard']
+    },
+    {
+        slug: 'keyboard-audio-latency',
         title: 'Keyboard Audio Latency Test',
-            description: 'Measure the time between your keypress and the hearing of a sound cue.',
-                category: 'Keyboard Skills',
-                    iconName: 'Volume2',
-                        keywords: ['keyboard audio delay', 'input to sound lag', 'rhythm game latency', 'audio sync test'],
-                            longDescription: 'Critical for rhythm game players! This tool measures the total delay between your physical keypress and the audio feedback through your speakers/headphones. Calibrate your game settings by knowing your exact system audio latency.',
-                                requires: ['keyboard']
-},
-{
-    slug: 'full-keyboard-health-check',
+        description: 'Measure the time between your keypress and the hearing of a sound cue.',
+        category: 'Keyboard Skills',
+        iconName: 'Volume2',
+        keywords: ['keyboard audio delay', 'input to sound lag', 'rhythm game latency', 'audio sync test'],
+        longDescription: 'Critical for rhythm game players! This tool measures the total delay between your physical keypress and the audio feedback through your speakers/headphones. Calibrate your game settings by knowing your exact system audio latency.',
+        requires: ['keyboard']
+    },
+    {
+        slug: 'full-keyboard-health-check',
         title: 'Full Keyboard Health Check',
-            description: 'An interactive full-layout map to test the functionality of every key.',
-                category: 'Keyboard Skills',
-                    iconName: 'CheckCircle',
-                        keywords: ['keyboard tester', 'key health check', 'full layout test', 'broken key finder'],
-                            longDescription: 'Just bought a new keyboard or spilled something on your old one? Use our interactive map to test every single key on a standard 100% layout. Keys turn green as they are registered, helping you quickly identify dead or failing switches.',
-                                requires: ['keyboard']
-},
-{
-    slug: 'numpad-speed-test',
+        description: 'An interactive full-layout map to test the functionality of every key.',
+        category: 'Keyboard Skills',
+        iconName: 'CheckCircle',
+        keywords: ['keyboard tester', 'key health check', 'full layout test', 'broken key finder'],
+        longDescription: 'Just bought a new keyboard or spilled something on your old one? Use our interactive map to test every single key on a standard 100% layout. Keys turn green as they are registered, helping you quickly identify dead or failing switches.',
+        requires: ['keyboard']
+    },
+    {
+        slug: 'numpad-speed-test',
         title: 'Numpad Speed Test',
-            description: 'Dedicated speed test for numerical data entry on your numpad.',
-                category: 'Keyboard Skills',
-                    iconName: 'LayoutGrid',
-                        keywords: ['numpad speed', '10 key speed test', 'data entry test', 'number typing speed'],
-                            longDescription: 'Master the 10-key layout. For accountants, data entry professionals, and gamers using numpad binds, this dedicated speed test measures your numerical accuracy and speed, helping you become a faster data wrangler.',
-                                requires: ['keyboard']
-},
-// Development Tools Expansion
-{
-    slug: 'jwt-decoder-pro',
+        description: 'Dedicated speed test for numerical data entry on your numpad.',
+        category: 'Keyboard Skills',
+        iconName: 'LayoutGrid',
+        keywords: ['numpad speed', '10 key speed test', 'data entry test', 'number typing speed'],
+        longDescription: 'Master the 10-key layout. For accountants, data entry professionals, and gamers using numpad binds, this dedicated speed test measures your numerical accuracy and speed, helping you become a faster data wrangler.',
+        requires: ['keyboard']
+    },
+    // Development Tools Expansion
+    {
+        slug: 'jwt-decoder-pro',
         title: 'JWT Decoder Pro',
-            description: 'Decode and inspect JSON Web Tokens (JWT) safely in your browser.',
-                category: 'Development Tools',
-                    iconName: 'Shield',
-                        keywords: ['jwt decoder', 'decode jwt online', 'json web token', 'auth token inspector'],
-                            longDescription: 'Debug your authentication layer with ease. Our JWT decoder breaks down tokens into Header, Payload, and Signature, providing a clear human-readable format of the encoded data without sending your sensitive tokens to any server.'
-},
-{
-    slug: 'http-status-lookup',
+        description: 'Decode and inspect JSON Web Tokens (JWT) safely in your browser.',
+        category: 'Development Tools',
+        iconName: 'Shield',
+        keywords: ['jwt decoder', 'decode jwt online', 'json web token', 'auth token inspector'],
+        longDescription: 'Debug your authentication layer with ease. Our JWT decoder breaks down tokens into Header, Payload, and Signature, providing a clear human-readable format of the encoded data without sending your sensitive tokens to any server.'
+    },
+    {
+        slug: 'http-status-lookup',
         title: 'HTTP Status Lookup',
-            description: 'Instant reference for all HTTP response status codes and their meanings.',
-                category: 'Development Tools',
-                    iconName: 'Globe',
-                        keywords: ['http status codes', '404 error meaning', '500 internal server error', 'http response tool'],
-                            longDescription: 'Stop searching for error codes. Our instant lookup provides detailed explanations for all standard HTTP status codes, including 1xx, 2xx, 3xx, 4xx, and 5xx series, with common causes and solutions for developers.'
-},
-{
-    slug: 'yaml-json-converter',
+        description: 'Instant reference for all HTTP response status codes and their meanings.',
+        category: 'Development Tools',
+        iconName: 'Globe',
+        keywords: ['http status codes', '404 error meaning', '500 internal server error', 'http response tool'],
+        longDescription: 'Stop searching for error codes. Our instant lookup provides detailed explanations for all standard HTTP status codes, including 1xx, 2xx, 3xx, 4xx, and 5xx series, with common causes and solutions for developers.'
+    },
+    {
+        slug: 'yaml-json-converter',
         title: 'YAML ↔ JSON Converter',
-            description: 'Seamlessly convert data between YAML and JSON formats with validation.',
-                category: 'Development Tools',
-                    iconName: 'FileCode',
-                        keywords: ['yaml to json', 'json to yaml', 'convert yaml', 'configuration tool'],
-                            longDescription: 'Switch between configuration formats in seconds. Whether you are managing Kubernetes manifests (YAML) or web application data (JSON), our converter ensures perfect syntax and provides instant validation of your data structure.'
-},
-{
-    slug: 'cron-expression-gen',
+        description: 'Seamlessly convert data between YAML and JSON formats with validation.',
+        category: 'Development Tools',
+        iconName: 'FileCode',
+        keywords: ['yaml to json', 'json to yaml', 'convert yaml', 'configuration tool'],
+        longDescription: 'Switch between configuration formats in seconds. Whether you are managing Kubernetes manifests (YAML) or web application data (JSON), our converter ensures perfect syntax and provides instant validation of your data structure.'
+    },
+    {
+        slug: 'cron-expression-gen',
         title: 'Cron Expression Generator',
-            description: 'Build complex Crontab schedules using a simple visual interface.',
-                category: 'Development Tools',
-                    iconName: 'Clock',
-                        keywords: ['cron generator', 'crontab builder', 'cron schedule helper', 'visual cron'],
-                            longDescription: 'Master scheduled tasks without the headache. Our visual cron generator lets you select minutes, hours, and days using intuitive dropdowns, generating the exact crontab string you need for your server automation or background jobs.'
-},
-{
-    slug: 'sql-formatter-pro',
+        description: 'Build complex Crontab schedules using a simple visual interface.',
+        category: 'Development Tools',
+        iconName: 'Clock',
+        keywords: ['cron generator', 'crontab builder', 'cron schedule helper', 'visual cron'],
+        longDescription: 'Master scheduled tasks without the headache. Our visual cron generator lets you select minutes, hours, and days using intuitive dropdowns, generating the exact crontab string you need for your server automation or background jobs.'
+    },
+    {
+        slug: 'sql-formatter-pro',
         title: 'SQL Formatter Pro',
-            description: 'Prettify and format SQL queries for multiple database dialects.',
-                category: 'Development Tools',
-                    iconName: 'Database',
-                        keywords: ['sql formatter', 'prettify sql', 'format sql query', 'sql beautifier'],
-                            longDescription: 'Clean up messily written queries in an instant. Our SQL Formatter supports multiple dialects including MySQL, PostgreSQL, and SQLite, adding proper indentation and capitalization to make your complex joins and subqueries readable.'
-},
-{
-    slug: 'js-minifier-tiny',
+        description: 'Prettify and format SQL queries for multiple database dialects.',
+        category: 'Development Tools',
+        iconName: 'Database',
+        keywords: ['sql formatter', 'prettify sql', 'format sql query', 'sql beautifier'],
+        longDescription: 'Clean up messily written queries in an instant. Our SQL Formatter supports multiple dialects including MySQL, PostgreSQL, and SQLite, adding proper indentation and capitalization to make your complex joins and subqueries readable.'
+    },
+    {
+        slug: 'js-minifier-tiny',
         title: 'JavaScript Minifier',
-            description: 'Compress your JS code for faster load times and production deployment.',
-                category: 'Development Tools',
-                    iconName: 'FileJson',
-                        keywords: ['js minifier', 'compress javascript', 'uglify js', 'minify code online'],
-                            longDescription: 'Optimize your web performance. This tool removes unnecessary whitespace, comments, and shortens variable names in your JavaScript files, drastically reducing the payload size for your end-users.'
-},
-{
-    slug: 'bash-script-validator',
+        description: 'Compress your JS code for faster load times and production deployment.',
+        category: 'Development Tools',
+        iconName: 'FileJson',
+        keywords: ['js minifier', 'compress javascript', 'uglify js', 'minify code online'],
+        longDescription: 'Optimize your web performance. This tool removes unnecessary whitespace, comments, and shortens variable names in your JavaScript files, drastically reducing the payload size for your end-users.'
+    },
+    {
+        slug: 'bash-script-validator',
         title: 'Bash Script Validator',
-            description: 'Check your shell scripts for common syntax errors and best practices.',
-                category: 'Development Tools',
-                    iconName: 'Terminal',
-                        keywords: ['bash validator', 'shell script checker', 'shelllint', 'bash syntax test'],
-                            longDescription: 'Prevent production script failures. Our Bash validator scans your shell scripts for common errors like missing brackets, unquoted variables, and syntax mistakes, providing helpful tips to improve script reliability.'
-},
-// SEO & Web Expansion
-{
-    slug: 'keyword-density-checker',
+        description: 'Check your shell scripts for common syntax errors and best practices.',
+        category: 'Development Tools',
+        iconName: 'Terminal',
+        keywords: ['bash validator', 'shell script checker', 'shelllint', 'bash syntax test'],
+        longDescription: 'Prevent production script failures. Our Bash validator scans your shell scripts for common errors like missing brackets, unquoted variables, and syntax mistakes, providing helpful tips to improve script reliability.'
+    },
+    // SEO & Web Expansion
+    {
+        slug: 'keyword-density-checker',
         title: 'Keyword Density Checker',
-            description: 'Analyze article text to find the most frequent keywords and phrases.',
-                category: 'SEO & Web',
-                    iconName: 'Search',
-                        keywords: ['keyword density', 'seo analyzer', 'word frequency search', 'keyword stuffing check', 'lsi keywords tool', 'content optimization', 'semantic seo'],
-                            longDescription: 'Optimize your content for better search rankings with our Keyword Density Checker. This tool analyzes the frequency of words and phrases within your text, helping you strike the perfect balance between strategic optimization and natural reading flow.\n\n### Why Keyword Density Matters:\n- **Avoid Penalties**: Search engines penalize "keyword stuffing." Our tool helps you stay within safe limits (usually 1-3%).\n- **Discover LSI Keywords**: Identify the main topics your content is covering and adjust for better semantic relevance.\n- **Beat Competitors**: Compare your word usage against top-ranking pages in your niche.\n\n### Pro Tip:\nFocus on your primary keyword in the first 100 words and use variations throughout. Let our analyzer show you exactly how frequently your core terms are appearing.'
-},
-{
-    slug: 'heading-hierarchy-analyzer',
+        description: 'Analyze article text to find the most frequent keywords and phrases.',
+        category: 'SEO & Web',
+        iconName: 'Search',
+        keywords: ['keyword density', 'seo analyzer', 'word frequency search', 'keyword stuffing check', 'lsi keywords tool', 'content optimization', 'semantic seo'],
+        longDescription: 'Optimize your content for better search rankings with our Keyword Density Checker. This tool analyzes the frequency of words and phrases within your text, helping you strike the perfect balance between strategic optimization and natural reading flow.\n\n### Why Keyword Density Matters:\n- **Avoid Penalties**: Search engines penalize "keyword stuffing." Our tool helps you stay within safe limits (usually 1-3%).\n- **Discover LSI Keywords**: Identify the main topics your content is covering and adjust for better semantic relevance.\n- **Beat Competitors**: Compare your word usage against top-ranking pages in your niche.\n\n### Pro Tip:\nFocus on your primary keyword in the first 100 words and use variations throughout. Let our analyzer show you exactly how frequently your core terms are appearing.'
+    },
+    {
+        slug: 'heading-hierarchy-analyzer',
         title: 'Heading Hierarchy Scan',
-            description: 'Verify the H1-H6 structure of your page for SEO and accessibility.',
-                category: 'SEO & Web',
-                    iconName: 'Type',
-                        keywords: ['heading analyzer', 'h1 check', 'seo structure', 'heading hierarchy', 'outline checker', 'web accessibility', 'html structure'],
-                            longDescription: 'Ensure your website\'s skeletal structure is optimized for both search engines and accessibility with our Heading Hierarchy Scan. A clear, logical heading structure (H1 through H6) helps Google understand your content\'s intent and allows screen readers to navigate your pages efficiently.\n\n### Features of the Analyzer:\n- **Hierarchy Validation**: Detect missing heading levels (like jumping from H1 to H3).\n- **H1 Check**: Ensure every page has exactly one H1 tag with relevant keywords.\n- **Logical Outline**: See your page content as an outline to check flow and readability.\n- **Accessibility Alerts**: Identify structural issues that might hinder users with disabilities.\n\n### SEO Impact:\nSearch engines use headings to determine the hierarchy of information on a page. A clean structure ensures your main topics are correctly identified and ranked.'
-},
-{
-    slug: 'google-serp-preview',
+        description: 'Verify the H1-H6 structure of your page for SEO and accessibility.',
+        category: 'SEO & Web',
+        iconName: 'Type',
+        keywords: ['heading analyzer', 'h1 check', 'seo structure', 'heading hierarchy', 'outline checker', 'web accessibility', 'html structure'],
+        longDescription: 'Ensure your website\'s skeletal structure is optimized for both search engines and accessibility with our Heading Hierarchy Scan. A clear, logical heading structure (H1 through H6) helps Google understand your content\'s intent and allows screen readers to navigate your pages efficiently.\n\n### Features of the Analyzer:\n- **Hierarchy Validation**: Detect missing heading levels (like jumping from H1 to H3).\n- **H1 Check**: Ensure every page has exactly one H1 tag with relevant keywords.\n- **Logical Outline**: See your page content as an outline to check flow and readability.\n- **Accessibility Alerts**: Identify structural issues that might hinder users with disabilities.\n\n### SEO Impact:\nSearch engines use headings to determine the hierarchy of information on a page. A clean structure ensures your main topics are correctly identified and ranked.'
+    },
+    {
+        slug: 'google-serp-preview',
         title: 'Google SERP Preview',
-            description: 'Visualize exactly how your page will look in Google Search results.',
-                category: 'SEO & Web',
-                    iconName: 'Layout',
-                        keywords: ['serp preview', 'google search simulator', 'meta preview', 'seo snippet tool'],
-                            longDescription: 'Boost your Click-Through Rate (CTR). This simulator generates a pixel-perfect preview of your Google search result, allowing you to optimize your Title and Meta Description to fit within visual limits and attract more visitors.'
-},
-{
-    slug: 'twitter-card-preview',
+        description: 'Visualize exactly how your page will look in Google Search results.',
+        category: 'SEO & Web',
+        iconName: 'Layout',
+        keywords: ['serp preview', 'google search simulator', 'meta preview', 'seo snippet tool'],
+        longDescription: 'Boost your Click-Through Rate (CTR). This simulator generates a pixel-perfect preview of your Google search result, allowing you to optimize your Title and Meta Description to fit within visual limits and attract more visitors.'
+    },
+    {
+        slug: 'twitter-card-preview',
         title: 'Twitter Card Generator',
-            description: 'Preview and generate meta tags for Twitter social sharing.',
-                category: 'SEO & Web',
-                    iconName: 'Twitter',
-                        keywords: ['twitter card preview', 'social meta gen', 'twitter seo', 'card validator'],
-                            longDescription: 'Stand out on the timeline. Our generator helps you build and preview "Large Image" or "Summary" cards, ensuring your content looks professional and clickable when shared on Twitter (X).'
-},
-{
-    slug: 'open-graph-inspector',
+        description: 'Preview and generate meta tags for Twitter social sharing.',
+        category: 'SEO & Web',
+        iconName: 'Twitter',
+        keywords: ['twitter card preview', 'social meta gen', 'twitter seo', 'card validator'],
+        longDescription: 'Stand out on the timeline. Our generator helps you build and preview "Large Image" or "Summary" cards, ensuring your content looks professional and clickable when shared on Twitter (X).'
+    },
+    {
+        slug: 'open-graph-inspector',
         title: 'Open Graph Inspector',
-            description: 'Validate and preview OG tags for Facebook, LinkedIn, and Discord.',
-                category: 'SEO & Web',
-                    iconName: 'Share2',
-                        keywords: ['open graph preview', 'og tag checker', 'facebook share preview', 'social metadata'],
-                            longDescription: 'Master your social presence. This tool inspects your meta tags to provide a live preview of how your URL will appear on major social platforms, highlighting missing "og:image" or "og:title" tags that could hurt your engagement.'
-},
-{
-    slug: 'backlink-anchor-gen',
+        description: 'Validate and preview OG tags for Facebook, LinkedIn, and Discord.',
+        category: 'SEO & Web',
+        iconName: 'Share2',
+        keywords: ['open graph preview', 'og tag checker', 'facebook share preview', 'social metadata'],
+        longDescription: 'Master your social presence. This tool inspects your meta tags to provide a live preview of how your URL will appear on major social platforms, highlighting missing "og:image" or "og:title" tags that could hurt your engagement.'
+    },
+    {
+        slug: 'backlink-anchor-gen',
         title: 'Backlink Anchor Generator',
-            description: 'Create diverse anchor text profiles for safe and effective link building.',
-                category: 'SEO & Web',
-                    iconName: 'Link',
-                        keywords: ['anchor text generator', 'backlink strategy', 'seo link building', 'varied anchors'],
-                            longDescription: 'Avoid SEO penalties with a natural anchor profile. Our generator suggests a mix of Branded, Naked URL, Generic, and Keyword-rich anchor texts to help you build a diverse and safe backlink profile for your domains.'
-},
-{
-    slug: 'canonical-url-checker',
+        description: 'Create diverse anchor text profiles for safe and effective link building.',
+        category: 'SEO & Web',
+        iconName: 'Link',
+        keywords: ['anchor text generator', 'backlink strategy', 'seo link building', 'varied anchors'],
+        longDescription: 'Avoid SEO penalties with a natural anchor profile. Our generator suggests a mix of Branded, Naked URL, Generic, and Keyword-rich anchor texts to help you build a diverse and safe backlink profile for your domains.'
+    },
+    {
+        slug: 'canonical-url-checker',
         title: 'Canonical URL Validator',
-            description: 'Check if your page correctly identifies its primary source to avoid duplicates.',
-                category: 'SEO & Web',
-                    iconName: 'CheckCircle',
-                        keywords: ['canonical check', 'duplicate content fix', 'rel canonical', 'seo url validator'],
-                            longDescription: 'Prevent duplicate content issues. This tool verifies if your "rel=canonical" tag is correctly implemented, ensuring search engines give ranking credit to the correct version of your page if it exists under multiple URLs.'
-},
-{
-    slug: 'alt-text-accessibility',
+        description: 'Check if your page correctly identifies its primary source to avoid duplicates.',
+        category: 'SEO & Web',
+        iconName: 'CheckCircle',
+        keywords: ['canonical check', 'duplicate content fix', 'rel canonical', 'seo url validator'],
+        longDescription: 'Prevent duplicate content issues. This tool verifies if your "rel=canonical" tag is correctly implemented, ensuring search engines give ranking credit to the correct version of your page if it exists under multiple URLs.'
+    },
+    {
+        slug: 'alt-text-accessibility',
         title: 'ALT Text Accessibility Scan',
-            description: 'Check image tags for descriptive ALT text to improve SEO and screen-reading.',
-                category: 'SEO & Web',
-                    iconName: 'Eye',
-                        keywords: ['alt text check', 'image seo', 'web accessibility', 'missing alt tags'],
-                            longDescription: 'Boost your Image SEO. Our scanner identifies images missing ALT descriptions and provides suggestions for descriptive, keyword-rich text that helps search engines understand your visuals and improves accessibility for disabled users.'
-},
-{
-    slug: 'page-load-simulator',
+        description: 'Check image tags for descriptive ALT text to improve SEO and screen-reading.',
+        category: 'SEO & Web',
+        iconName: 'Eye',
+        keywords: ['alt text check', 'image seo', 'web accessibility', 'missing alt tags'],
+        longDescription: 'Boost your Image SEO. Our scanner identifies images missing ALT descriptions and provides suggestions for descriptive, keyword-rich text that helps search engines understand your visuals and improves accessibility for disabled users.'
+    },
+    {
+        slug: 'page-load-simulator',
         title: 'Page Load Time Estimator',
-            description: 'Estimate your page speed score and identify slow-loading bottlenecks.',
-                category: 'SEO & Web',
-                    iconName: 'Zap',
-                        keywords: ['page speed estimator', 'load time test', 'seo performance', 'speed bottleneck'],
-                            longDescription: 'Performance is a ranking factor. Our simulator estimates your page load phases (DNS, TCP, DOM) and provides a "Speed Score", helping you identify if large images or heavy scripts are slowing down your user experience.'
-},
-{
-    slug: 'favicon-generator-pro',
+        description: 'Estimate your page speed score and identify slow-loading bottlenecks.',
+        category: 'SEO & Web',
+        iconName: 'Zap',
+        keywords: ['page speed estimator', 'load time test', 'seo performance', 'speed bottleneck'],
+        longDescription: 'Performance is a ranking factor. Our simulator estimates your page load phases (DNS, TCP, DOM) and provides a "Speed Score", helping you identify if large images or heavy scripts are slowing down your user experience.'
+    },
+    {
+        slug: 'favicon-generator-pro',
         title: 'Favicon Generator Pro',
-            description: 'Create multi-size favicons for browsers, iOS, and Android from a single image.',
-                category: 'SEO & Web',
-                    iconName: 'Image',
-                        keywords: ['favicon generator', 'apple touch icon', 'android favicon', 'manifest.json gen'],
-                            longDescription: 'Ensure your brand looks consistent everywhere. Upload one logo and generate every single icon size needed for modern browsers, bookmarks, iPhones, and Android devices, including the required HTML meta tags.'
-},
-{
-    slug: 'domain-history-lookup',
+        description: 'Create multi-size favicons for browsers, iOS, and Android from a single image.',
+        category: 'SEO & Web',
+        iconName: 'Image',
+        keywords: ['favicon generator', 'apple touch icon', 'android favicon', 'manifest.json gen'],
+        longDescription: 'Ensure your brand looks consistent everywhere. Upload one logo and generate every single icon size needed for modern browsers, bookmarks, iPhones, and Android devices, including the required HTML meta tags.'
+    },
+    {
+        slug: 'domain-history-lookup',
         title: 'Domain History Explorer',
-            description: 'A dedicated UI for researching the age and past versions of any domain.',
-                category: 'SEO & Web',
-                    iconName: 'History',
-                        keywords: ['domain age checker', 'whois history', 'wayback search', 'domain research'],
-                            longDescription: 'Research your competition or a new domain purchase. Our explorer provides quick links and data visualization for domain age, registration history, and historical snapshots to understand a site\'s past SEO performance.'
-},
-{
-    slug: 'niche-keyword-research',
+        description: 'A dedicated UI for researching the age and past versions of any domain.',
+        category: 'SEO & Web',
+        iconName: 'History',
+        keywords: ['domain age checker', 'whois history', 'wayback search', 'domain research'],
+        longDescription: 'Research your competition or a new domain purchase. Our explorer provides quick links and data visualization for domain age, registration history, and historical snapshots to understand a site\'s past SEO performance.'
+    },
+    {
+        slug: 'niche-keyword-research',
         title: 'Basic Niche Research Tool',
-            description: 'Find related long-tail keywords for your primary niche or topic.',
-                category: 'SEO & Web',
-                    iconName: 'Search',
-                        keywords: ['keyword research', 'niche finder', 'long tail keywords', 'seo topic research'],
-                            longDescription: 'Discover untapped ranking opportunities. Enter a seed keyword, and our tool generates a list of related long-tail phrases and questions people are actually searching for, helping you plan a content strategy that covers the entire topic.'
-},
-{
-    slug: 'internal-link-strategist',
+        description: 'Find related long-tail keywords for your primary niche or topic.',
+        category: 'SEO & Web',
+        iconName: 'Search',
+        keywords: ['keyword research', 'niche finder', 'long tail keywords', 'seo topic research'],
+        longDescription: 'Discover untapped ranking opportunities. Enter a seed keyword, and our tool generates a list of related long-tail phrases and questions people are actually searching for, helping you plan a content strategy that covers the entire topic.'
+    },
+    {
+        slug: 'internal-link-strategist',
         title: 'Internal Link Strategist',
-            description: 'Map out your site structure for optimal "link juice" distribution.',
-                category: 'SEO & Web',
-                    iconName: 'Shield',
-                        keywords: ['internal linking', 'site structure', 'seo silo', 'link juice'],
-                            longDescription: 'Master your site architecture. This tool helps you plan SILO structures and internal linking patterns, ensuring your most important "Power Pages" receive the most authority through strategic connecting links.'
-},
-{
-    slug: 'structured-data-bench',
+        description: 'Map out your site structure for optimal "link juice" distribution.',
+        category: 'SEO & Web',
+        iconName: 'Shield',
+        keywords: ['internal linking', 'site structure', 'seo silo', 'link juice'],
+        longDescription: 'Master your site architecture. This tool helps you plan SILO structures and internal linking patterns, ensuring your most important "Power Pages" receive the most authority through strategic connecting links.'
+    },
+    {
+        slug: 'structured-data-bench',
         title: 'Structured Data Benchmark',
-            description: 'Preview Rich Snippets like Reviews, Recipes, and FAQs for search results.',
-                category: 'SEO & Web',
-                    iconName: 'Layout',
-                        keywords: ['schema markup preview', 'rich snippets', 'json-ld test', 'seo faq preview'],
-                            longDescription: 'Take up more space on the SERP. Preview exactly how your FAQ, Review, or Product schema will appear as a "Rich Snippet" in Google search results, ensuring your schema markup is visually optimized for higher clicks.'
-},
-{
-    slug: 'adsense-revenue-calc',
+        description: 'Preview Rich Snippets like Reviews, Recipes, and FAQs for search results.',
+        category: 'SEO & Web',
+        iconName: 'Layout',
+        keywords: ['schema markup preview', 'rich snippets', 'json-ld test', 'seo faq preview'],
+        longDescription: 'Take up more space on the SERP. Preview exactly how your FAQ, Review, or Product schema will appear as a "Rich Snippet" in Google search results, ensuring your schema markup is visually optimized for higher clicks.'
+    },
+    {
+        slug: 'adsense-revenue-calc',
         title: 'AdSense Revenue Calculator',
-            description: 'Estimate your website potential earnings based on traffic and niche.',
-                category: 'SEO & Web',
-                    iconName: 'DollarSign',
-                        keywords: ['adsense calculator', 'website earnings', 'cpc estimator', 'blog revenue'],
-                            longDescription: 'Plan your content monetization. Input your monthly pageviews and niche (e.g., Tech, Finance, Health) to estimate your potential Google AdSense earnings based on average CTR and CPC data for your industry.'
-},
-{
-    slug: 'robots-txt-validator',
+        description: 'Estimate your website potential earnings based on traffic and niche.',
+        category: 'SEO & Web',
+        iconName: 'DollarSign',
+        keywords: ['adsense calculator', 'website earnings', 'cpc estimator', 'blog revenue'],
+        longDescription: 'Plan your content monetization. Input your monthly pageviews and niche (e.g., Tech, Finance, Health) to estimate your potential Google AdSense earnings based on average CTR and CPC data for your industry.'
+    },
+    {
+        slug: 'robots-txt-validator',
         title: 'Robots.txt Validator',
-            description: 'Check your robots.txt file for syntax errors and blocking conflicts.',
-                category: 'SEO & Web',
-                    iconName: 'FileText',
-                        keywords: ['robots.txt test', 'crawler access', 'googlebot block', 'seo indexing'],
-                            longDescription: 'Ensure search engines can crawl your site. Our validator parses your robots.txt rules to detect syntax mistakes or accidental blocks on critical pages, ensuring your SEO effort is not wasted by a single "Disallow" line.'
-},
-// Unit Converters Expansion
-{
-    slug: 'temperature-converter',
+        description: 'Check your robots.txt file for syntax errors and blocking conflicts.',
+        category: 'SEO & Web',
+        iconName: 'FileText',
+        keywords: ['robots.txt test', 'crawler access', 'googlebot block', 'seo indexing'],
+        longDescription: 'Ensure search engines can crawl your site. Our validator parses your robots.txt rules to detect syntax mistakes or accidental blocks on critical pages, ensuring your SEO effort is not wasted by a single "Disallow" line.'
+    },
+    // Unit Converters Expansion
+    {
+        slug: 'temperature-converter',
         title: 'Temperature Converter',
-            description: 'Convert between Celsius, Fahrenheit, and Kelvin instantly.',
-                category: 'Unit Converters',
-                    iconName: 'Thermometer',
-                        keywords: ['celsius to fahrenheit', 'f to c', 'kelvin converter', 'temperature tool'],
-                            longDescription: 'Precise temperature conversion for cooking, science, and travel. Switch between Celsius, Fahrenheit, and Kelvin with real-time updates and helpful reference points like boiling and freezing temperatures.'
-},
-{
-    slug: 'speed-converter',
+        description: 'Convert between Celsius, Fahrenheit, and Kelvin instantly.',
+        category: 'Unit Converters',
+        iconName: 'Thermometer',
+        keywords: ['celsius to fahrenheit', 'f to c', 'kelvin converter', 'temperature tool'],
+        longDescription: 'Precise temperature conversion for cooking, science, and travel. Switch between Celsius, Fahrenheit, and Kelvin with real-time updates and helpful reference points like boiling and freezing temperatures.'
+    },
+    {
+        slug: 'speed-converter',
         title: 'Speed Converter',
-            description: 'Convert between km/h, mph, knots, and m/s.',
-                category: 'Unit Converters',
-                    iconName: 'Zap',
-                        keywords: ['kmh to mph', 'mph to kmh', 'knots to kmh', 'speed conversion online'],
-                            longDescription: 'Essential for travelers and automotive enthusiasts. Convert speed measurements across metric and imperial systems, including nautical knots and scientific meters per second.'
-},
-{
-    slug: 'volume-converter',
+        description: 'Convert between km/h, mph, knots, and m/s.',
+        category: 'Unit Converters',
+        iconName: 'Zap',
+        keywords: ['kmh to mph', 'mph to kmh', 'knots to kmh', 'speed conversion online'],
+        longDescription: 'Essential for travelers and automotive enthusiasts. Convert speed measurements across metric and imperial systems, including nautical knots and scientific meters per second.'
+    },
+    {
+        slug: 'volume-converter',
         title: 'Volume Converter',
-            description: 'Convert between Liters, Gallons, Quarts, and more.',
-                category: 'Unit Converters',
-                    iconName: 'Beaker',
-                        keywords: ['liters to gallons', 'ml to oz', 'volume conversion', 'liquid measure tool'],
-                            longDescription: 'Master liquid and solid volume measurements. Perfect for international recipes or shipping logistics, covering everything from milliliters and fluid ounces to gallons and cubic meters.'
-},
-{
-    slug: 'area-converter',
+        description: 'Convert between Liters, Gallons, Quarts, and more.',
+        category: 'Unit Converters',
+        iconName: 'Beaker',
+        keywords: ['liters to gallons', 'ml to oz', 'volume conversion', 'liquid measure tool'],
+        longDescription: 'Master liquid and solid volume measurements. Perfect for international recipes or shipping logistics, covering everything from milliliters and fluid ounces to gallons and cubic meters.'
+    },
+    {
+        slug: 'area-converter',
         title: 'Area Converter',
-            description: 'Convert between Square Meters, Square Feet, Acres, and more.',
-                category: 'Unit Converters',
-                    iconName: 'Maximize',
-                        keywords: ['sq ft to sq m', 'acres to hectares', 'area conversion', 'realty calculator'],
-                            longDescription: 'Ideal for real estate and construction. Convert between common area units like square feet, square meters, acres, and hectares with precision.'
-},
-{
-    slug: 'pressure-converter',
+        description: 'Convert between Square Meters, Square Feet, Acres, and more.',
+        category: 'Unit Converters',
+        iconName: 'Maximize',
+        keywords: ['sq ft to sq m', 'acres to hectares', 'area conversion', 'realty calculator'],
+        longDescription: 'Ideal for real estate and construction. Convert between common area units like square feet, square meters, acres, and hectares with precision.'
+    },
+    {
+        slug: 'pressure-converter',
         title: 'Pressure Converter',
-            description: 'Convert between PSI, Bar, Pascal, and Atmospheres.',
-                category: 'Unit Converters',
-                    iconName: 'Gauge',
-                        keywords: ['psi to bar', 'pascal to psi', 'pressure tool', 'atmospheric pressure conversion'],
-                            longDescription: 'Professional grade pressure conversion for engineering and automotive needs. Toggle between PSI, Bar, Kilopascals, and standard atmospheres.'
-},
-{
-    slug: 'energy-converter',
+        description: 'Convert between PSI, Bar, Pascal, and Atmospheres.',
+        category: 'Unit Converters',
+        iconName: 'Gauge',
+        keywords: ['psi to bar', 'pascal to psi', 'pressure tool', 'atmospheric pressure conversion'],
+        longDescription: 'Professional grade pressure conversion for engineering and automotive needs. Toggle between PSI, Bar, Kilopascals, and standard atmospheres.'
+    },
+    {
+        slug: 'energy-converter',
         title: 'Energy Converter',
-            description: 'Convert between Joules, Calories, BTU, and kWh.',
-                category: 'Unit Converters',
-                    iconName: 'Zap',
-                        keywords: ['joules to calories', 'kwh to joules', 'energy conversion', 'physics calculator'],
-                            longDescription: 'Analyze energy consumption and physics data. Convert between scientific Joules, nutritional Calories, and electrical Kilowatt-hours (kWh) instantly.'
-},
-{
-    slug: 'power-converter',
+        description: 'Convert between Joules, Calories, BTU, and kWh.',
+        category: 'Unit Converters',
+        iconName: 'Zap',
+        keywords: ['joules to calories', 'kwh to joules', 'energy conversion', 'physics calculator'],
+        longDescription: 'Analyze energy consumption and physics data. Convert between scientific Joules, nutritional Calories, and electrical Kilowatt-hours (kWh) instantly.'
+    },
+    {
+        slug: 'power-converter',
         title: 'Power Converter',
-            description: 'Convert between Watts, Horsepower, and BTUs/hr.',
-                category: 'Unit Converters',
-                    iconName: 'Zap',
-                        keywords: ['watts to horsepower', 'hp to watts', 'power conversion', 'electrical tool'],
-                            longDescription: 'Compare power outputs across different domains. Bridge the gap between electrical Watts, mechanical Horsepower, and thermal BTU per hour.'
-},
-{
-    slug: 'angle-converter',
+        description: 'Convert between Watts, Horsepower, and BTUs/hr.',
+        category: 'Unit Converters',
+        iconName: 'Zap',
+        keywords: ['watts to horsepower', 'hp to watts', 'power conversion', 'electrical tool'],
+        longDescription: 'Compare power outputs across different domains. Bridge the gap between electrical Watts, mechanical Horsepower, and thermal BTU per hour.'
+    },
+    {
+        slug: 'angle-converter',
         title: 'Angle Converter',
-            description: 'Convert between Degrees, Radians, and Gradians.',
-                category: 'Unit Converters',
-                    iconName: 'Compass',
-                        keywords: ['degrees to radians', 'rad to deg', 'angle calculation', 'geometry tool'],
-                            longDescription: 'Essential geometry utility for students and engineers. Seamlessly switch between DEG, RAD, and GRAD units for mathematical and CAD precision.'
-},
-{
-    slug: 'fuel-economy-converter',
+        description: 'Convert between Degrees, Radians, and Gradians.',
+        category: 'Unit Converters',
+        iconName: 'Compass',
+        keywords: ['degrees to radians', 'rad to deg', 'angle calculation', 'geometry tool'],
+        longDescription: 'Essential geometry utility for students and engineers. Seamlessly switch between DEG, RAD, and GRAD units for mathematical and CAD precision.'
+    },
+    {
+        slug: 'fuel-economy-converter',
         title: 'Fuel Economy Converter',
-            description: 'Convert between MPG (US/UK) and L/100km.',
-                category: 'Unit Converters',
-                    iconName: 'Fuel',
-                        keywords: ['mpg to l100km', 'fuel efficiency converter', 'gas mileage tool', 'car efficiency'],
-                            longDescription: 'Understand your vehicle s efficiency better. Convert between international fuel economy standards like Miles Per Gallon and Liters per 100 Kilometers.'
-},
-{
-    slug: 'torque-converter',
+        description: 'Convert between MPG (US/UK) and L/100km.',
+        category: 'Unit Converters',
+        iconName: 'Fuel',
+        keywords: ['mpg to l100km', 'fuel efficiency converter', 'gas mileage tool', 'car efficiency'],
+        longDescription: 'Understand your vehicle s efficiency better. Convert between international fuel economy standards like Miles Per Gallon and Liters per 100 Kilometers.'
+    },
+    {
+        slug: 'torque-converter',
         title: 'Torque Converter',
-            description: 'Convert between Newton-meters (Nm) and Pound-feet (lb-ft).',
-                category: 'Unit Converters',
-                    iconName: 'Wrench',
-                        keywords: ['nm to lbft', 'torque conversion', 'automotive tools', 'wrench settings'],
-                            longDescription: 'Perfect for mechanics and DIY enthusiasts. Accurately translate torque specifications from car manuals between metric Nm and imperial lb-ft.'
-},
-{
-    slug: 'force-converter',
+        description: 'Convert between Newton-meters (Nm) and Pound-feet (lb-ft).',
+        category: 'Unit Converters',
+        iconName: 'Wrench',
+        keywords: ['nm to lbft', 'torque conversion', 'automotive tools', 'wrench settings'],
+        longDescription: 'Perfect for mechanics and DIY enthusiasts. Accurately translate torque specifications from car manuals between metric Nm and imperial lb-ft.'
+    },
+    {
+        slug: 'force-converter',
         title: 'Force Converter',
-            description: 'Convert between Newtons, Pound-force, and Dynes.',
-                category: 'Unit Converters',
-                    iconName: 'Hammer',
-                        keywords: ['newtons to pounds', 'force conversion', 'physics tools', 'kn to lbs'],
-                            longDescription: 'Convert physical force measurements. Supports scientific Newtons (N), imperial pound-force (lbf), and kiloponds for engineering applications.'
-},
-{
-    slug: 'number-base-converter',
+        description: 'Convert between Newtons, Pound-force, and Dynes.',
+        category: 'Unit Converters',
+        iconName: 'Hammer',
+        keywords: ['newtons to pounds', 'force conversion', 'physics tools', 'kn to lbs'],
+        longDescription: 'Convert physical force measurements. Supports scientific Newtons (N), imperial pound-force (lbf), and kiloponds for engineering applications.'
+    },
+    {
+        slug: 'number-base-converter',
         title: 'Number Base Converter',
-            description: 'Convert numbers between Decimal, Binary, Hex, and Octal.',
-                category: 'Unit Converters',
-                    iconName: 'Binary',
-                        keywords: ['binary to decimal', 'hex to binary', 'octal converter', 'base 10 to base 16'],
-                            longDescription: 'A must-have for computer science students and developers. Convert any integer between base 2 (Binary), base 8 (Octal), base 10 (Decimal), and base 16 (Hexadecimal).'
-},
-{
-    slug: 'roman-numeral-converter',
+        description: 'Convert numbers between Decimal, Binary, Hex, and Octal.',
+        category: 'Unit Converters',
+        iconName: 'Binary',
+        keywords: ['binary to decimal', 'hex to binary', 'octal converter', 'base 10 to base 16'],
+        longDescription: 'A must-have for computer science students and developers. Convert any integer between base 2 (Binary), base 8 (Octal), base 10 (Decimal), and base 16 (Hexadecimal).'
+    },
+    {
+        slug: 'roman-numeral-converter',
         title: 'Roman Numeral Converter',
-            description: 'Convert standard numbers to Roman numerals and vice versa.',
-                category: 'Unit Converters',
-                    iconName: 'History',
-                        keywords: ['number to roman', 'roman numerals decoder', 'classic numbers tool'],
-                            longDescription: 'Easily translate between the modern Hindu-Arabic numeral system and classic Roman Numerals (I, V, X, L, C, D, M). Great for history projects, clock reading, and legal docs.'
-},
-{
-    slug: 'data-rate-converter',
+        description: 'Convert standard numbers to Roman numerals and vice versa.',
+        category: 'Unit Converters',
+        iconName: 'History',
+        keywords: ['number to roman', 'roman numerals decoder', 'classic numbers tool'],
+        longDescription: 'Easily translate between the modern Hindu-Arabic numeral system and classic Roman Numerals (I, V, X, L, C, D, M). Great for history projects, clock reading, and legal docs.'
+    },
+    {
+        slug: 'data-rate-converter',
         title: 'Data Rate Converter',
-            description: 'Convert between Mbps, MB/s, and other transfer speeds.',
-                category: 'Unit Converters',
-                    iconName: 'Activity',
-                        keywords: ['mbps to mbs converter', 'internet speed tool', 'download speed calculator'],
-                            longDescription: 'Calculate actual download times. Understand the difference between Megabits and Megabytes per second to accurately estimate file transfer speeds based on your ISP plan.'
-},
-{
-    slug: 'digital-storage-pro',
+        description: 'Convert between Mbps, MB/s, and other transfer speeds.',
+        category: 'Unit Converters',
+        iconName: 'Activity',
+        keywords: ['mbps to mbs converter', 'internet speed tool', 'download speed calculator'],
+        longDescription: 'Calculate actual download times. Understand the difference between Megabits and Megabytes per second to accurately estimate file transfer speeds based on your ISP plan.'
+    },
+    {
+        slug: 'digital-storage-pro',
         title: 'Digital Storage Pro',
-            description: 'Advanced conversion between bits, Bytes, KiB, MiB, and GiB.',
-                category: 'Unit Converters',
-                    iconName: 'Database',
-                        keywords: ['mb to mib', 'binary storage converter', 'gb to gib', 'data size tool'],
-                            longDescription: 'Decode the difference between Decimal (MB) and Binary (MiB) storage standards. Essential for server admins and developers auditing file sizes and disk space.'
-},
-{
-    slug: 'cooking-unit-converter',
+        description: 'Advanced conversion between bits, Bytes, KiB, MiB, and GiB.',
+        category: 'Unit Converters',
+        iconName: 'Database',
+        keywords: ['mb to mib', 'binary storage converter', 'gb to gib', 'data size tool'],
+        longDescription: 'Decode the difference between Decimal (MB) and Binary (MiB) storage standards. Essential for server admins and developers auditing file sizes and disk space.'
+    },
+    {
+        slug: 'cooking-unit-converter',
         title: 'Cooking Unit Converter',
-            description: 'Convert between Cups, Spoons, Ounces, and Grams.',
-                category: 'Unit Converters',
-                    iconName: 'Utensils',
-                        keywords: ['cups to grams', 'tbsp to tsp', 'baking converter', 'kitchen unit tool'],
-                            longDescription: 'Your kitchen companion for international recipes. Convert volume (cups, spoons) to weight (grams, ounces) for common baking ingredients like flour, sugar, and butter.'
-},
-{
-    slug: 'frequency-converter',
+        description: 'Convert between Cups, Spoons, Ounces, and Grams.',
+        category: 'Unit Converters',
+        iconName: 'Utensils',
+        keywords: ['cups to grams', 'tbsp to tsp', 'baking converter', 'kitchen unit tool'],
+        longDescription: 'Your kitchen companion for international recipes. Convert volume (cups, spoons) to weight (grams, ounces) for common baking ingredients like flour, sugar, and butter.'
+    },
+    {
+        slug: 'frequency-converter',
         title: 'Frequency Converter',
-            description: 'Convert between Hertz, MHz, and GHz.',
-                category: 'Unit Converters',
-                    iconName: 'Radio',
-                        keywords: ['hz to mhz', 'frequency conversion', 'radio wave tool', 'system clock converter'],
-                            longDescription: 'Quickly switch between audio, radio, and CPU frequencies ranging from standard Hertz to high-end Gigahertz.'
-},
-// Finance Expansion
-{
-    slug: 'mortgage-calculator',
+        description: 'Convert between Hertz, MHz, and GHz.',
+        category: 'Unit Converters',
+        iconName: 'Radio',
+        keywords: ['hz to mhz', 'frequency conversion', 'radio wave tool', 'system clock converter'],
+        longDescription: 'Quickly switch between audio, radio, and CPU frequencies ranging from standard Hertz to high-end Gigahertz.'
+    },
+    // Finance Expansion
+    {
+        slug: 'mortgage-calculator',
         title: 'Mortgage Calculator',
-            description: 'Plan your home purchase with detailed monthly breakdowns.',
-                category: 'Finance',
-                    iconName: 'Home',
-                        keywords: ['home loan calculator', 'mortgage payment', 'realty finance', 'piti calculator'],
-                            longDescription: 'Estimate your monthly home ownership costs. Includes Principal, Interest, Property Taxes, and Home Insurance (PITI) with interactive amortization schedules.'
-},
-{
-    slug: 'investment-roi-calc',
+        description: 'Plan your home purchase with detailed monthly breakdowns.',
+        category: 'Finance',
+        iconName: 'Home',
+        keywords: ['home loan calculator', 'mortgage payment', 'realty finance', 'piti calculator'],
+        longDescription: 'Estimate your monthly home ownership costs. Includes Principal, Interest, Property Taxes, and Home Insurance (PITI) with interactive amortization schedules.'
+    },
+    {
+        slug: 'investment-roi-calc',
         title: 'Investment ROI Calculator',
-            description: 'Measure the Return on Investment for any capital outlay.',
-                category: 'Finance',
-                    iconName: 'PieChart',
-                        keywords: ['roi calculator', 'profit percentage', 'investment gain', 'finance tracker'],
-                            longDescription: 'Calculate the total gain or loss onto your investments. Analyze the annualized ROI and net profit based on your initial buy price and final sell/current value.'
-},
-{
-    slug: 'retirement-planner',
+        description: 'Measure the Return on Investment for any capital outlay.',
+        category: 'Finance',
+        iconName: 'PieChart',
+        keywords: ['roi calculator', 'profit percentage', 'investment gain', 'finance tracker'],
+        longDescription: 'Calculate the total gain or loss onto your investments. Analyze the annualized ROI and net profit based on your initial buy price and final sell/current value.'
+    },
+    {
+        slug: 'retirement-planner',
         title: 'Retirement Goal Planner',
-            description: 'Estimate how much you need to save to retire comfortably.',
-                category: 'Finance',
-                    iconName: 'Palmtree',
-                        keywords: ['retirement calculator', '401k planner', 'pension estimator', 'savings target'],
-                            longDescription: 'Visualize your future. Calculate the required monthly savings to reach your retirement nest egg based on your current age, desired retirement age, and expected inflation.'
-},
-{
-    slug: 'savings-goal-calc',
+        description: 'Estimate how much you need to save to retire comfortably.',
+        category: 'Finance',
+        iconName: 'Palmtree',
+        keywords: ['retirement calculator', '401k planner', 'pension estimator', 'savings target'],
+        longDescription: 'Visualize your future. Calculate the required monthly savings to reach your retirement nest egg based on your current age, desired retirement age, and expected inflation.'
+    },
+    {
+        slug: 'savings-goal-calc',
         title: 'Savings Goal Calculator',
-            description: 'Find out how much to save monthly to reach your target.',
-                category: 'Finance',
-                    iconName: 'PiggyBank',
-                        keywords: ['savings target', 'money goal calculator', 'budgeting tool', 'emergency fund planner'],
-                            longDescription: 'Determine the exact monthly contribution needed to reach your financial milestones, whether it is for a new car, a vacation, or an emergency fund.'
-},
-{
-    slug: 'crypto-price-converter',
+        description: 'Find out how much to save monthly to reach your target.',
+        category: 'Finance',
+        iconName: 'PiggyBank',
+        keywords: ['savings target', 'money goal calculator', 'budgeting tool', 'emergency fund planner'],
+        longDescription: 'Determine the exact monthly contribution needed to reach your financial milestones, whether it is for a new car, a vacation, or an emergency fund.'
+    },
+    {
+        slug: 'crypto-price-converter',
         title: 'Crypto Price Converter',
-            description: 'Check current values of BTC, ETH, and other coins in USD.',
-                category: 'Finance',
-                    iconName: 'Coins',
-                        keywords: ['btc to usd', 'eth price converter', 'crypto calculator', 'bitcoin value tool'],
-                            longDescription: 'Stay updated with its global crypto markets. Convert between major cryptocurrencies and fiat currencies using simulated real-time market averages.'
-},
-{
-    slug: 'inflation-calculator',
+        description: 'Check current values of BTC, ETH, and other coins in USD.',
+        category: 'Finance',
+        iconName: 'Coins',
+        keywords: ['btc to usd', 'eth price converter', 'crypto calculator', 'bitcoin value tool'],
+        longDescription: 'Stay updated with its global crypto markets. Convert between major cryptocurrencies and fiat currencies using simulated real-time market averages.'
+    },
+    {
+        slug: 'inflation-calculator',
         title: 'Inflation Calculator',
-            description: 'See how much your money has lost or gained value over time.',
-                category: 'Finance',
-                    iconName: 'TrendingDown',
-                        keywords: ['inflation check', 'purchasing power', 'historical money value', 'cpi calculator'],
-                            longDescription: 'Understand the "hidden tax" of inflation. Calculate how the purchasing power of your currency has changed over historical periods using CPI data simulation.'
-},
-{
-    slug: 'unit-price-calc',
+        description: 'See how much your money has lost or gained value over time.',
+        category: 'Finance',
+        iconName: 'TrendingDown',
+        keywords: ['inflation check', 'purchasing power', 'historical money value', 'cpi calculator'],
+        longDescription: 'Understand the "hidden tax" of inflation. Calculate how the purchasing power of your currency has changed over historical periods using CPI data simulation.'
+    },
+    {
+        slug: 'unit-price-calc',
         title: 'Unit Price Comparison',
-            description: 'Find the best deal by comparing prices per unit/weight.',
-                category: 'Finance',
-                    iconName: 'Scale',
-                        keywords: ['price comparison', 'grocery calculator', 'best deal finder', 'shopping tool'],
-                            longDescription: 'Don t be fooled by packaging. Compare the actual cost per kilogram, liter, or ounce between two products to find the truly cheaper option every time you shop.'
-},
-{
-    slug: 'break-even-calc',
+        description: 'Find the best deal by comparing prices per unit/weight.',
+        category: 'Finance',
+        iconName: 'Scale',
+        keywords: ['price comparison', 'grocery calculator', 'best deal finder', 'shopping tool'],
+        longDescription: 'Don t be fooled by packaging. Compare the actual cost per kilogram, liter, or ounce between two products to find the truly cheaper option every time you shop.'
+    },
+    {
+        slug: 'break-even-calc',
         title: 'Break Even Calculator',
-            description: 'Find the point where your business starts making profit.',
-                category: 'Finance',
-                    iconName: 'BarChart2',
-                        keywords: ['break even point', 'business finance tool', 'profitability calculator', 'startup metrics'],
-                            longDescription: 'A vital tool for entrepreneurs. Calculate the number of units you must sell to cover your fixed and variable costs, reaching the critical "Zero-Profit" point.'
-},
-{
-    slug: 'margin-markup-calc',
+        description: 'Find the point where your business starts making profit.',
+        category: 'Finance',
+        iconName: 'BarChart2',
+        keywords: ['break even point', 'business finance tool', 'profitability calculator', 'startup metrics'],
+        longDescription: 'A vital tool for entrepreneurs. Calculate the number of units you must sell to cover your fixed and variable costs, reaching the critical "Zero-Profit" point.'
+    },
+    {
+        slug: 'margin-markup-calc',
         title: 'Margin vs Markup Calculator',
-            description: 'Switch between profit margin and mark-up percentages.',
-                category: 'Finance',
-                    iconName: 'TrendingUp',
-                        keywords: ['margin calculator', 'markup tool', 'business profit', 'retail finance'],
-                            longDescription: 'Clarify your pricing strategy. Instantly calculate profit margin based on cost/sell and understand the difference between gross margin and markup percentage.'
-},
-{
-    slug: 'credit-card-payoff-calc',
+        description: 'Switch between profit margin and mark-up percentages.',
+        category: 'Finance',
+        iconName: 'TrendingUp',
+        keywords: ['margin calculator', 'markup tool', 'business profit', 'retail finance'],
+        longDescription: 'Clarify your pricing strategy. Instantly calculate profit margin based on cost/sell and understand the difference between gross margin and markup percentage.'
+    },
+    {
+        slug: 'credit-card-payoff-calc',
         title: 'Credit Card Payoff Tool',
-            description: 'See how long it will take to be debt-free.',
-                category: 'Finance',
-                    iconName: 'CreditCard',
-                        keywords: ['debt payoff', 'credit card interest', 'finance freedom', 'loan repayment'],
-                            longDescription: 'Visualize your path to financial freedom. Calculate the time and total interest paid based on your balance, APR, and monthly payment strategy.'
-},
-{
-    slug: 'net-worth-calc',
+        description: 'See how long it will take to be debt-free.',
+        category: 'Finance',
+        iconName: 'CreditCard',
+        keywords: ['debt payoff', 'credit card interest', 'finance freedom', 'loan repayment'],
+        longDescription: 'Visualize your path to financial freedom. Calculate the time and total interest paid based on your balance, APR, and monthly payment strategy.'
+    },
+    {
+        slug: 'net-worth-calc',
         title: 'Net Worth Calculator',
-            description: 'Map out your total assets and liabilities.',
-                category: 'Finance',
-                    iconName: 'ShieldCheck',
-                        keywords: ['net worth check', 'personal finance snapshot', 'wealth tracker', 'assets minus liabilities'],
-                            longDescription: 'Get a snapshot of your financial health. Log your cash, investments, and property vs your debts and loans to find your true Net Worth value.'
-},
-{
-    slug: 'dividend-reinvestment-calc',
+        description: 'Map out your total assets and liabilities.',
+        category: 'Finance',
+        iconName: 'ShieldCheck',
+        keywords: ['net worth check', 'personal finance snapshot', 'wealth tracker', 'assets minus liabilities'],
+        longDescription: 'Get a snapshot of your financial health. Log your cash, investments, and property vs your debts and loans to find your true Net Worth value.'
+    },
+    {
+        slug: 'dividend-reinvestment-calc',
         title: 'Dividend Reinvestment (DRIP)',
-            description: 'See the power of reinvesting your stock dividends.',
-                category: 'Finance',
-                    iconName: 'ArrowRightCircle',
-                        keywords: ['drip calculator', 'dividend growth', 'passive income', 'stock market tools'],
-                            longDescription: 'Analyze the impact of reinvesting dividends back into your portfolio. Watch how your share count and passive income grow exponentially over decades.'
-},
-// Daily Tools Expansion
-{
-    slug: 'alarm-clock',
+        description: 'See the power of reinvesting your stock dividends.',
+        category: 'Finance',
+        iconName: 'ArrowRightCircle',
+        keywords: ['drip calculator', 'dividend growth', 'passive income', 'stock market tools'],
+        longDescription: 'Analyze the impact of reinvesting dividends back into your portfolio. Watch how your share count and passive income grow exponentially over decades.'
+    },
+    // Daily Tools Expansion
+    {
+        slug: 'alarm-clock',
         title: 'Online Alarm Clock',
-            description: 'Set custom alarms with multiple sound options and snooze features.',
-                category: 'Daily Tools',
-                    iconName: 'AlarmClock',
-                        keywords: ['alarm clock', 'online alarm', 'wake up timer', 'reminder tool'],
-                            longDescription: 'A reliable online alarm clock that works in your browser. Features multiple alarm sounds, snooze functionality, and a beautiful full-screen mode for your nightstand or desk.'
-},
-{
-    slug: 'world-clock',
+        description: 'Set custom alarms with multiple sound options and snooze features.',
+        category: 'Daily Tools',
+        iconName: 'AlarmClock',
+        keywords: ['alarm clock', 'online alarm', 'wake up timer', 'reminder tool'],
+        longDescription: 'A reliable online alarm clock that works in your browser. Features multiple alarm sounds, snooze functionality, and a beautiful full-screen mode for your nightstand or desk.'
+    },
+    {
+        slug: 'world-clock',
         title: 'World Clock',
-            description: 'Track time across multiple cities worldwide in a single dashboard.',
-                category: 'Daily Tools',
-                    iconName: 'Globe',
-                        keywords: ['world clock', 'global time', 'city time zones', 'world time dashboard'],
-                            longDescription: 'Keep track of global time zones. Add multiple cities to your custom dashboard and see the current time and day/night status across the world at a glance.'
-},
-{
-    slug: 'daily-planner',
+        description: 'Track time across multiple cities worldwide in a single dashboard.',
+        category: 'Daily Tools',
+        iconName: 'Globe',
+        keywords: ['world clock', 'global time', 'city time zones', 'world time dashboard'],
+        longDescription: 'Keep track of global time zones. Add multiple cities to your custom dashboard and see the current time and day/night status across the world at a glance.'
+    },
+    {
+        slug: 'daily-planner',
         title: 'Visual Daily Planner',
-            description: 'A simple, local-storage based task list to organize your day.',
-                category: 'Daily Tools',
-                    iconName: 'ListChecks',
-                        keywords: ['daily planner', 'to do list', 'day organizer', 'task tracker'],
-                            longDescription: 'Stay organized with our privacy-focused daily planner. All your tasks are saved locally in your browser, ensuring your schedule remains private while providing a clean, aesthetic interface for productivity.'
-},
-{
-    slug: 'bmi-calculator',
+        description: 'A simple, local-storage based task list to organize your day.',
+        category: 'Daily Tools',
+        iconName: 'ListChecks',
+        keywords: ['daily planner', 'to do list', 'day organizer', 'task tracker'],
+        longDescription: 'Stay organized with our privacy-focused daily planner. All your tasks are saved locally in your browser, ensuring your schedule remains private while providing a clean, aesthetic interface for productivity.'
+    },
+    {
+        slug: 'bmi-calculator',
         title: 'BMI Calculator',
-            description: 'Calculate your Body Mass Index and see your health category.',
-                category: 'Daily Tools',
-                    iconName: 'Activity',
-                        keywords: ['bmi calculator', 'body mass index', 'health weight check', 'fitness calculator'],
-                            longDescription: 'Calculate your Body Mass Index (BMI) using metric or imperial units. Get instant feedback on your health category and see where you fall on the clinical spectrum.'
-},
-{
-    slug: 'calorie-calculator',
+        description: 'Calculate your Body Mass Index and see your health category.',
+        category: 'Daily Tools',
+        iconName: 'Activity',
+        keywords: ['bmi calculator', 'body mass index', 'health weight check', 'fitness calculator'],
+        longDescription: 'Calculate your Body Mass Index (BMI) using metric or imperial units. Get instant feedback on your health category and see where you fall on the clinical spectrum.'
+    },
+    {
+        slug: 'calorie-calculator',
         title: 'Calorie Requirement Calc',
-            description: 'Estimate your daily calorie needs based on age, weight, and activity.',
-                category: 'Daily Tools',
-                    iconName: 'Flame',
-                        keywords: ['calorie calculator', 'tdee calculator', 'daily calories', 'weight loss tool'],
-                            longDescription: 'Find your Total Daily Energy Expenditure (TDEE). Our calculator helps you determine how many calories you burn per day based on your lifestyle, helping you plan for weight loss, maintenance, or muscle gain.'
-},
-{
-    slug: 'water-intake-tracker',
+        description: 'Estimate your daily calorie needs based on age, weight, and activity.',
+        category: 'Daily Tools',
+        iconName: 'Flame',
+        keywords: ['calorie calculator', 'tdee calculator', 'daily calories', 'weight loss tool'],
+        longDescription: 'Find your Total Daily Energy Expenditure (TDEE). Our calculator helps you determine how many calories you burn per day based on your lifestyle, helping you plan for weight loss, maintenance, or muscle gain.'
+    },
+    {
+        slug: 'water-intake-tracker',
         title: 'Water Intake Tracker',
-            description: 'Track your daily water consumption and set hydration goals.',
-                category: 'Daily Tools',
-                    iconName: 'Droplet',
-                        keywords: ['water tracker', 'hydration goal', 'drink water reminder', 'daily intake tracker'],
-                            longDescription: 'Stay hydrated for peak performance. Set your daily water goal and log your consumption throughout the day with our interactive, animated water tracker.'
-},
-{
-    slug: 'meditation-timer',
+        description: 'Track your daily water consumption and set hydration goals.',
+        category: 'Daily Tools',
+        iconName: 'Droplet',
+        keywords: ['water tracker', 'hydration goal', 'drink water reminder', 'daily intake tracker'],
+        longDescription: 'Stay hydrated for peak performance. Set your daily water goal and log your consumption throughout the day with our interactive, animated water tracker.'
+    },
+    {
+        slug: 'meditation-timer',
         title: 'Zen Meditation Timer',
-            description: 'Guided mindfulness timer with ambient sounds and intervals.',
-                category: 'Daily Tools',
-                    iconName: 'Wind',
-                        keywords: ['meditation timer', 'zen timer', 'mindfulness tool', 'breath timer'],
-                            longDescription: 'Find your calm with our specialized meditation timer. Features soft bell sounds for intervals, ambient background noise, and a minimalist design to help you focus on your breath.'
-},
-{
-    slug: 'metronome',
+        description: 'Guided mindfulness timer with ambient sounds and intervals.',
+        category: 'Daily Tools',
+        iconName: 'Wind',
+        keywords: ['meditation timer', 'zen timer', 'mindfulness tool', 'breath timer'],
+        longDescription: 'Find your calm with our specialized meditation timer. Features soft bell sounds for intervals, ambient background noise, and a minimalist design to help you focus on your breath.'
+    },
+    {
+        slug: 'metronome',
         title: 'Professional Metronome',
-            description: 'Keep perfect time for your music practice with adjustable BPM.',
-                category: 'Daily Tools',
-                    iconName: 'Music',
-                        keywords: ['metronome online', 'tempo keeper', 'music timer', 'bpm counter'],
-                            longDescription: 'A rock-solid metronome for musicians. Adjust BPM, choose time signatures, and select from multiple click sounds to stay in perfect time during practice or recording sessions.'
-},
-{
-    slug: 'virtual-ruler',
+        description: 'Keep perfect time for your music practice with adjustable BPM.',
+        category: 'Daily Tools',
+        iconName: 'Music',
+        keywords: ['metronome online', 'tempo keeper', 'music timer', 'bpm counter'],
+        longDescription: 'A rock-solid metronome for musicians. Adjust BPM, choose time signatures, and select from multiple click sounds to stay in perfect time during practice or recording sessions.'
+    },
+    {
+        slug: 'virtual-ruler',
         title: 'Virtual Screen Ruler',
-            description: 'A precise on-screen ruler for measuring small objects or screen elements.',
-                category: 'Daily Tools',
-                    iconName: 'Ruler',
-                        keywords: ['screen ruler', 'online ruler', 'measure on screen', 'px to cm ruler'],
-                            longDescription: 'Measure small physical objects by calibrating your screen ruler, or use it to measure digital assets. Supports pixels, centimeters, and inches with easy calibration tools.'
-},
-{
-    slug: 'dice-roller',
+        description: 'A precise on-screen ruler for measuring small objects or screen elements.',
+        category: 'Daily Tools',
+        iconName: 'Ruler',
+        keywords: ['screen ruler', 'online ruler', 'measure on screen', 'px to cm ruler'],
+        longDescription: 'Measure small physical objects by calibrating your screen ruler, or use it to measure digital assets. Supports pixels, centimeters, and inches with easy calibration tools.'
+    },
+    {
+        slug: 'dice-roller',
         title: '3D Dice Roller',
-            description: 'Roll custom dice for board games, RPGs, or decision making.',
-                category: 'Daily Tools',
-                    iconName: 'Dice5',
-                        keywords: ['dice roller', 'roll a die', 'dnd dice', 'random dice generator'],
-                            longDescription: 'Your digital dice bag for any occasion. Roll standard 6-sided dice or specialized D20s for tabletop games. Features physics-based movements and history tracking.'
-},
-{
-    slug: 'random-number-gen',
+        description: 'Roll custom dice for board games, RPGs, or decision making.',
+        category: 'Daily Tools',
+        iconName: 'Dice5',
+        keywords: ['dice roller', 'roll a die', 'dnd dice', 'random dice generator'],
+        longDescription: 'Your digital dice bag for any occasion. Roll standard 6-sided dice or specialized D20s for tabletop games. Features physics-based movements and history tracking.'
+    },
+    {
+        slug: 'random-number-gen',
         title: 'Random Number Generator',
-            description: 'Generate sets of random numbers within your custom range.',
-                category: 'Daily Tools',
-                    iconName: 'Hash',
-                        keywords: ['random number', 'number generator', 'pick a number', 'rng tool'],
-                            longDescription: 'Generate one or multiple random numbers instantly. Customize the range, allow or prevent duplicates, and sort your results. Perfect for lotteries, research, or games.'
-},
-{
-    slug: 'coin-flipper',
+        description: 'Generate sets of random numbers within your custom range.',
+        category: 'Daily Tools',
+        iconName: 'Hash',
+        keywords: ['random number', 'number generator', 'pick a number', 'rng tool'],
+        longDescription: 'Generate one or multiple random numbers instantly. Customize the range, allow or prevent duplicates, and sort your results. Perfect for lotteries, research, or games.'
+    },
+    {
+        slug: 'coin-flipper',
         title: '3D Coin Flipper',
-            description: 'Flip a virtual coin for quick 50/50 decisions.',
-                category: 'Daily Tools',
-                    iconName: 'Circle',
-                        keywords: ['coin flip', 'heads or tails', 'toss a coin', 'decision maker'],
-                            longDescription: 'Heads or Tails? Settle arguments and make quick choices with our fast, animated coin flipper. Tracks your flip history to see your luck over time.'
-},
-{
-    slug: 'anagram-solver',
+        description: 'Flip a virtual coin for quick 50/50 decisions.',
+        category: 'Daily Tools',
+        iconName: 'Circle',
+        keywords: ['coin flip', 'heads or tails', 'toss a coin', 'decision maker'],
+        longDescription: 'Heads or Tails? Settle arguments and make quick choices with our fast, animated coin flipper. Tracks your flip history to see your luck over time.'
+    },
+    {
+        slug: 'anagram-solver',
         title: 'Anagram Solver',
-            description: 'Find all possible words that can be formed from your letters.',
-                category: 'Daily Tools',
-                    iconName: 'Languages',
-                        keywords: ['anagram solver', 'word unscrambler', 'scrabble helper', 'letter solver'],
-                            longDescription: 'Unscramble any set of letters into a list of valid words. A must-have for word games like Scrabble, Words with Friends, or solving difficult anagram puzzles.'
-},
-{
-    slug: 'scrabble-score-calc',
+        description: 'Find all possible words that can be formed from your letters.',
+        category: 'Daily Tools',
+        iconName: 'Languages',
+        keywords: ['anagram solver', 'word unscrambler', 'scrabble helper', 'letter solver'],
+        longDescription: 'Unscramble any set of letters into a list of valid words. A must-have for word games like Scrabble, Words with Friends, or solving difficult anagram puzzles.'
+    },
+    {
+        slug: 'scrabble-score-calc',
         title: 'Scrabble Score Calc',
-            description: 'Calculate the point value of words with multipliers.',
-                category: 'Daily Tools',
-                    iconName: 'Type',
-                        keywords: ['scrabble score', 'word points', 'scrabble helper', 'score calculator'],
-                            longDescription: 'Never argue over points again. Enter your words and apply Double/Triple Letter and Word bonuses to calculate your exact Scrabble score instantly.'
-},
-{
-    slug: 'quote-generator',
+        description: 'Calculate the point value of words with multipliers.',
+        category: 'Daily Tools',
+        iconName: 'Type',
+        keywords: ['scrabble score', 'word points', 'scrabble helper', 'score calculator'],
+        longDescription: 'Never argue over points again. Enter your words and apply Double/Triple Letter and Word bonuses to calculate your exact Scrabble score instantly.'
+    },
+    {
+        slug: 'quote-generator',
         title: 'Inspirational Quote Gen',
-            description: 'Generate random inspirational quotes to boost your mood.',
-                category: 'Daily Tools',
-                    iconName: 'Quote',
-                        keywords: ['quote generator', 'daily quotes', 'inspirational text', 'random wisdom'],
-                            longDescription: 'Get a boost of motivation. Our generator provides thousands of curated quotes from history\'s greatest minds, perfectly formatted for social media sharing.'
-},
-{
-    slug: 'wheel-of-fortune',
+        description: 'Generate random inspirational quotes to boost your mood.',
+        category: 'Daily Tools',
+        iconName: 'Quote',
+        keywords: ['quote generator', 'daily quotes', 'inspirational text', 'random wisdom'],
+        longDescription: 'Get a boost of motivation. Our generator provides thousands of curated quotes from history\'s greatest minds, perfectly formatted for social media sharing.'
+    },
+    {
+        slug: 'wheel-of-fortune',
         title: 'Decision Wheel',
-            description: 'Create custom spinning wheels to make fun decisions.',
-                category: 'Daily Tools',
-                    iconName: 'Disc',
-                        keywords: ['decision wheel', 'spin the wheel', 'random picker', 'prize wheel'],
-                            longDescription: 'Customize your own spinning wheel with names, prizes, or choices. Perfect for picking a winner, deciding where to eat, or adding fun to group activities.'
-},
-{
-    slug: 'password-strength-tester',
+        description: 'Create custom spinning wheels to make fun decisions.',
+        category: 'Daily Tools',
+        iconName: 'Disc',
+        keywords: ['decision wheel', 'spin the wheel', 'random picker', 'prize wheel'],
+        longDescription: 'Customize your own spinning wheel with names, prizes, or choices. Perfect for picking a winner, deciding where to eat, or adding fun to group activities.'
+    },
+    {
+        slug: 'password-strength-tester',
         title: 'Password Strength Tester',
-            description: 'Check how secure your password is and how long it would take to crack.',
-                category: 'Daily Tools',
-                    iconName: 'ShieldCheck',
-                        keywords: ['password strength', 'security check', 'password crack time', 'secure password test'],
-                            longDescription: 'Analyze your password security. This tool checks for complexity, entropy, and common patterns to estimate how long a brute-force attack would take to succeed.'
-},
+        description: 'Check how secure your password is and how long it would take to crack.',
+        category: 'Daily Tools',
+        iconName: 'ShieldCheck',
+        keywords: ['password strength', 'security check', 'password crack time', 'secure password test'],
+        longDescription: 'Analyze your password security. This tool checks for complexity, entropy, and common patterns to estimate how long a brute-force attack would take to succeed.'
+    },
 
-// Design & UI Expansion
-{
-    slug: 'box-shadow-generator',
+    // Design & UI Expansion
+    {
+        slug: 'box-shadow-generator',
         title: 'Box Shadow Generator',
-            description: 'Create layered, realistic CSS box shadows with ease.',
-                category: 'Design & UI',
-                    iconName: 'Layers',
-                        keywords: ['box shadow generator', 'css shadow maker', 'ui shadow tool', 'realistic shadows'],
-                            longDescription: 'Design professional UI shadows. Adjust spread, blur, and opacity for multiple layers to create the trendy "layered shadow" effect used in modern top-tier interfaces.'
-},
-{
-    slug: 'border-radius-customizer',
+        description: 'Create layered, realistic CSS box shadows with ease.',
+        category: 'Design & UI',
+        iconName: 'Layers',
+        keywords: ['box shadow generator', 'css shadow maker', 'ui shadow tool', 'realistic shadows'],
+        longDescription: 'Design professional UI shadows. Adjust spread, blur, and opacity for multiple layers to create the trendy "layered shadow" effect used in modern top-tier interfaces.'
+    },
+    {
+        slug: 'border-radius-customizer',
         title: 'Fancy Border Radius',
-            description: 'Generate complex organic shapes using the 8-value border-radius property.',
-                category: 'Design & UI',
-                    iconName: 'MousePointer2',
-                        keywords: ['border radius generator', 'fancy border radius', 'css blobs', 'organic shapes'],
-                            longDescription: 'Go beyond simple rounded corners. Create organic, blob-like shapes using the advanced 8-value CSS border-radius attribute, perfect for modern brand elements and background assets.'
-},
-{
-    slug: 'flexbox-playground',
+        description: 'Generate complex organic shapes using the 8-value border-radius property.',
+        category: 'Design & UI',
+        iconName: 'MousePointer2',
+        keywords: ['border radius generator', 'fancy border radius', 'css blobs', 'organic shapes'],
+        longDescription: 'Go beyond simple rounded corners. Create organic, blob-like shapes using the advanced 8-value CSS border-radius attribute, perfect for modern brand elements and background assets.'
+    },
+    {
+        slug: 'flexbox-playground',
         title: 'Flexbox Playground',
-            description: 'Visualize and generate CSS for flexbox layouts interactively.',
-                category: 'Design & UI',
-                    iconName: 'Layout',
-                        keywords: ['flexbox generator', 'css flexbox tool', 'layout playground', 'flex visualizer'],
-                            longDescription: 'Master CSS Flexbox through visualization. Drag and click to see how justify-content, align-items, and flex-direction affect your elements in real-time.'
-},
-{
-    slug: 'grid-layout-helper',
+        description: 'Visualize and generate CSS for flexbox layouts interactively.',
+        category: 'Design & UI',
+        iconName: 'Layout',
+        keywords: ['flexbox generator', 'css flexbox tool', 'layout playground', 'flex visualizer'],
+        longDescription: 'Master CSS Flexbox through visualization. Drag and click to see how justify-content, align-items, and flex-direction affect your elements in real-time.'
+    },
+    {
+        slug: 'grid-layout-helper',
         title: 'CSS Grid Helper',
-            description: 'Design complex CSS Grid structures and export the clean code.',
-                category: 'Design & UI',
-                    iconName: 'Grid',
-                        keywords: ['css grid generator', 'grid layout tool', 'web design grid', 'grid code gen'],
-                            longDescription: 'Take the complexity out of CSS Grid. Visually define your rows, columns, and gaps to generate robust, production-ready grid code for your layouts.'
-},
-{
-    slug: 'pixel-to-rem-converter',
+        description: 'Design complex CSS Grid structures and export the clean code.',
+        category: 'Design & UI',
+        iconName: 'Grid',
+        keywords: ['css grid generator', 'grid layout tool', 'web design grid', 'grid code gen'],
+        longDescription: 'Take the complexity out of CSS Grid. Visually define your rows, columns, and gaps to generate robust, production-ready grid code for your layouts.'
+    },
+    {
+        slug: 'pixel-to-rem-converter',
         title: 'Pixel to REM Converter',
-            description: 'Convert PX measurements to accessible REM units for typography.',
-                category: 'Design & UI',
-                    iconName: 'Scaling',
-                        keywords: ['px to rem', 'rem converter', 'accessible typography', 'web design units'],
-                            longDescription: 'Ensure your typography is responsive and accessible. Convert standard pixels to REM units based on your base font size, a best practice for modern web development.'
-},
-{
-    slug: 'typographic-scale-gen',
+        description: 'Convert PX measurements to accessible REM units for typography.',
+        category: 'Design & UI',
+        iconName: 'Scaling',
+        keywords: ['px to rem', 'rem converter', 'accessible typography', 'web design units'],
+        longDescription: 'Ensure your typography is responsive and accessible. Convert standard pixels to REM units based on your base font size, a best practice for modern web development.'
+    },
+    {
+        slug: 'typographic-scale-gen',
         title: 'Typographic Scale Gen',
-            description: 'Create harmonious font size hierarchies based on musical scales.',
-                category: 'Design & UI',
-                    iconName: 'Type',
-                        keywords: ['type scale generator', 'font size hierarchy', 'musical typography', 'design system tool'],
-                            longDescription: 'Build a solid typography system. Use mathematical ratios like the Golden Ratio or Perfect Fourth to generate a balanced scale for your headers and body text.'
-},
-{
-    slug: 'golden-ratio-calc',
+        description: 'Create harmonious font size hierarchies based on musical scales.',
+        category: 'Design & UI',
+        iconName: 'Type',
+        keywords: ['type scale generator', 'font size hierarchy', 'musical typography', 'design system tool'],
+        longDescription: 'Build a solid typography system. Use mathematical ratios like the Golden Ratio or Perfect Fourth to generate a balanced scale for your headers and body text.'
+    },
+    {
+        slug: 'golden-ratio-calc',
         title: 'Golden Ratio Calculator',
-            description: 'Calculate perfectly balanced dimensions based on the 1.618 ratio.',
-                category: 'Design & UI',
-                    iconName: 'Compass',
-                        keywords: ['golden ratio', 'phi calculator', 'design proportions', 'aesthetic math'],
-                            longDescription: 'Apply nature\'s math to your designs. Quickly find the golden proportions for your UI elements, layouts, and typography for peak aesthetic balance.'
-},
-{
-    slug: 'color-blindness-sim',
+        description: 'Calculate perfectly balanced dimensions based on the 1.618 ratio.',
+        category: 'Design & UI',
+        iconName: 'Compass',
+        keywords: ['golden ratio', 'phi calculator', 'design proportions', 'aesthetic math'],
+        longDescription: 'Apply nature\'s math to your designs. Quickly find the golden proportions for your UI elements, layouts, and typography for peak aesthetic balance.'
+    },
+    {
+        slug: 'color-blindness-sim',
         title: 'Color Blindness Sim',
-            description: 'Preview how your brand colors look to users with color vision deficiencies.',
-                category: 'Design & UI',
-                    iconName: 'Eye',
-                        keywords: ['color blindness simulator', 'inclusive design', 'accessibility tool', 'color vision check'],
-                            longDescription: 'Design for everyone. Simulate Protanopia, Deuteranopia, and Tritanopia on your color themes to ensure your UI remains usable and readable for all users.'
-},
-{
-    slug: 'mesh-gradient-gen',
+        description: 'Preview how your brand colors look to users with color vision deficiencies.',
+        category: 'Design & UI',
+        iconName: 'Eye',
+        keywords: ['color blindness simulator', 'inclusive design', 'accessibility tool', 'color vision check'],
+        longDescription: 'Design for everyone. Simulate Protanopia, Deuteranopia, and Tritanopia on your color themes to ensure your UI remains usable and readable for all users.'
+    },
+    {
+        slug: 'mesh-gradient-gen',
         title: 'CSS Mesh Gradient Gen',
-            description: 'Create stunning, complex mesh gradients with liquid-like movements.',
-                category: 'Design & UI',
-                    iconName: 'Palette',
-                        keywords: ['mesh gradient generator', 'liquid gradient css', 'abstract background generator', 'modern ui design'],
-                            longDescription: 'Design high-end, abstract backgrounds. Create organic "liquid" mesh gradients with multiple control points and export the CSS/Canvas code and animated styles.'
-},
-{
-    slug: 'neuomorphism-gen',
+        description: 'Create stunning, complex mesh gradients with liquid-like movements.',
+        category: 'Design & UI',
+        iconName: 'Palette',
+        keywords: ['mesh gradient generator', 'liquid gradient css', 'abstract background generator', 'modern ui design'],
+        longDescription: 'Design high-end, abstract backgrounds. Create organic "liquid" mesh gradients with multiple control points and export the CSS/Canvas code and animated styles.'
+    },
+    {
+        slug: 'neuomorphism-gen',
         title: 'Neuomorphism Generator',
-            description: 'Generate soft, extruded UI elements with perfectly matched shadows.',
-                category: 'Design & UI',
-                    iconName: 'Box',
-                        keywords: ['neuomorphism generator', 'soft ui maker', 'css neumo tool', 'modern ui effects'],
-                            longDescription: 'Master the "Soft UI" aesthetic. Adjust depth, light source, and color to generate the perfect neumorphic CSS for your buttons, cards, and input fields.'
-},
-{
-    slug: 'tailwind-color-picker',
+        description: 'Generate soft, extruded UI elements with perfectly matched shadows.',
+        category: 'Design & UI',
+        iconName: 'Box',
+        keywords: ['neuomorphism generator', 'soft ui maker', 'css neumo tool', 'modern ui effects'],
+        longDescription: 'Master the "Soft UI" aesthetic. Adjust depth, light source, and color to generate the perfect neumorphic CSS for your buttons, cards, and input fields.'
+    },
+    {
+        slug: 'tailwind-color-picker',
         title: 'Tailwind Color Picker',
-            description: 'Browse the full Tailwind CSS color palette and copy color codes.',
-                category: 'Design & UI',
-                    iconName: 'Palette',
-                        keywords: ['tailwind colors', 'tailwind color picker', 'utility-first colors', 'web design palette'],
-                            longDescription: 'A quick reference for Tailwind CSS developers. Search and copy Hex, RGB, or HSL codes from the official Tailwind palette with a simple, grouped interface.'
-},
-{
-    slug: 'svg-path-editor',
+        description: 'Browse the full Tailwind CSS color palette and copy color codes.',
+        category: 'Design & UI',
+        iconName: 'Palette',
+        keywords: ['tailwind colors', 'tailwind color picker', 'utility-first colors', 'web design palette'],
+        longDescription: 'A quick reference for Tailwind CSS developers. Search and copy Hex, RGB, or HSL codes from the official Tailwind palette with a simple, grouped interface.'
+    },
+    {
+        slug: 'svg-path-editor',
         title: 'SVG Path Editor',
-            description: 'Visually edit and optimize SVG path data strings in real-time.',
-                category: 'Design & UI',
-                    iconName: 'Wind',
-                        keywords: ['svg editor', 'path data tool', 'vector editor online', 'svg optimization'],
-                            longDescription: 'Manipulate vector paths without complex software. Directly edit and visualize SVG path commands (M, L, C, Z) and see the results instantly on a high-precision grid.'
-},
-{
-    slug: 'custom-button-generator',
+        description: 'Visually edit and optimize SVG path data strings in real-time.',
+        category: 'Design & UI',
+        iconName: 'Wind',
+        keywords: ['svg editor', 'path data tool', 'vector editor online', 'svg optimization'],
+        longDescription: 'Manipulate vector paths without complex software. Directly edit and visualize SVG path commands (M, L, C, Z) and see the results instantly on a high-precision grid.'
+    },
+    {
+        slug: 'custom-button-generator',
         title: 'Premium Button Gen',
-            description: 'Design high-end CSS buttons with hover effects and animations.',
-                category: 'Design & UI',
-                    iconName: 'Square',
-                        keywords: ['button generator', 'css buttons', 'ui button maker', 'hover effects'],
-                            longDescription: 'Create call-to-action buttons that pop. Customize gradients, borders, shadows, and secondary transition effects to build premium buttons for your landing pages.'
-},
-{
-    slug: 'glassmorphism-pro',
+        description: 'Design high-end CSS buttons with hover effects and animations.',
+        category: 'Design & UI',
+        iconName: 'Square',
+        keywords: ['button generator', 'css buttons', 'ui button maker', 'hover effects'],
+        longDescription: 'Create call-to-action buttons that pop. Customize gradients, borders, shadows, and secondary transition effects to build premium buttons for your landing pages.'
+    },
+    {
+        slug: 'glassmorphism-pro',
         title: 'Glassmorphism Pro',
-            description: 'Advanced glass effect generator with texture and grain options.',
-                category: 'Design & UI',
-                    iconName: 'Layers',
-                        keywords: ['glassmorphism pro', 'frosted glass css', 'noise texture generator', 'modern ui backgrounds'],
-                            longDescription: 'Take the glass effect to the next level. includes advanced options for adding noise textures, secondary highlights, and complex backdrop filters for a truly premium feel.'
-},
-{
-    slug: 'color-shades-generator',
+        description: 'Advanced glass effect generator with texture and grain options.',
+        category: 'Design & UI',
+        iconName: 'Layers',
+        keywords: ['glassmorphism pro', 'frosted glass css', 'noise texture generator', 'modern ui backgrounds'],
+        longDescription: 'Take the glass effect to the next level. includes advanced options for adding noise textures, secondary highlights, and complex backdrop filters for a truly premium feel.'
+    },
+    {
+        slug: 'color-shades-generator',
         title: 'Color Shades Generator',
-            description: 'Generate monochrome tints and shades for any base color.',
-                category: 'Design & UI',
-                    iconName: 'Palette',
-                        keywords: ['color shades', 'color tints', 'monochrome palette', 'css colors'],
-                            longDescription: 'Create perfect color scales. Generate 10 lighter and 10 darker variations of any hex color, perfect for building cohesive UI themes and states.'
-},
-{
-    slug: 'color-harmony-tool',
+        description: 'Generate monochrome tints and shades for any base color.',
+        category: 'Design & UI',
+        iconName: 'Palette',
+        keywords: ['color shades', 'color tints', 'monochrome palette', 'css colors'],
+        longDescription: 'Create perfect color scales. Generate 10 lighter and 10 darker variations of any hex color, perfect for building cohesive UI themes and states.'
+    },
+    {
+        slug: 'color-harmony-tool',
         title: 'Color Harmony Tool',
-            description: 'Explore classical color relationships based on the color wheel.',
-                category: 'Design & UI',
-                    iconName: 'Sparkles',
-                        keywords: ['color harmony', 'complementary colors', 'triadic colors', 'analogous colors', 'palette generator'],
-                            longDescription: 'Master color theory. Generate complementary, analogous, triadic, and tetradic color schemes instantly from a single base color.'
-},
-{
-    slug: 'contrast-checker-pro',
+        description: 'Explore classical color relationships based on the color wheel.',
+        category: 'Design & UI',
+        iconName: 'Sparkles',
+        keywords: ['color harmony', 'complementary colors', 'triadic colors', 'analogous colors', 'palette generator'],
+        longDescription: 'Master color theory. Generate complementary, analogous, triadic, and tetradic color schemes instantly from a single base color.'
+    },
+    {
+        slug: 'contrast-checker-pro',
         title: 'Contrast Checker Pro',
-            description: 'Verify WCAG 2.1 accessibility standards for color combinations.',
-                category: 'Design & UI',
-                    iconName: 'ShieldCheck',
-                        keywords: ['wcag contrast', 'accessibility checker', 'color contrast', 'a11y tool'],
-                            longDescription: 'Ensure your designs are accessible. Check contrast ratios against WCAG 2.1 AA and AAA standards for both normal and large text.'
-},
-{
-    slug: 'material-design-palette',
+        description: 'Verify WCAG 2.1 accessibility standards for color combinations.',
+        category: 'Design & UI',
+        iconName: 'ShieldCheck',
+        keywords: ['wcag contrast', 'accessibility checker', 'color contrast', 'a11y tool'],
+        longDescription: 'Ensure your designs are accessible. Check contrast ratios against WCAG 2.1 AA and AAA standards for both normal and large text.'
+    },
+    {
+        slug: 'material-design-palette',
         title: 'Material Design Palette',
-            description: 'Official Google Material Design color system reference.',
-                category: 'Design & UI',
-                    iconName: 'Palette',
-                        keywords: ['material design colors', 'google color palette', 'android design colors', 'ui color reference'],
-                            longDescription: 'Access the complete Material Design color system. Browse official shades and weights from 50 to 900 for every primary Material color.'
-},
-{
-    slug: 'flat-ui-colors',
+        description: 'Official Google Material Design color system reference.',
+        category: 'Design & UI',
+        iconName: 'Palette',
+        keywords: ['material design colors', 'google color palette', 'android design colors', 'ui color reference'],
+        longDescription: 'Access the complete Material Design color system. Browse official shades and weights from 50 to 900 for every primary Material color.'
+    },
+    {
+        slug: 'flat-ui-colors',
         title: 'Flat UI Colors',
-            description: 'Handpicked color palettes for flat design interfaces.',
-                category: 'Design & UI',
-                    iconName: 'Palette',
-                        keywords: ['flat design colors', 'ui palettes', 'spanish palette', 'american palette', 'german palette'],
-                            longDescription: 'Curated collection of beautiful flat UI colors. Includes popular palettes like Spanish, American, and German for modern, clean interface designs.'
-},
-{
-    slug: 'css-filter-generator',
+        description: 'Handpicked color palettes for flat design interfaces.',
+        category: 'Design & UI',
+        iconName: 'Palette',
+        keywords: ['flat design colors', 'ui palettes', 'spanish palette', 'american palette', 'german palette'],
+        longDescription: 'Curated collection of beautiful flat UI colors. Includes popular palettes like Spanish, American, and German for modern, clean interface designs.'
+    },
+    {
+        slug: 'css-filter-generator',
         title: 'CSS Filter Generator',
-            description: 'Visually adjust CSS filters and generate optimized code.',
-                category: 'Design & UI',
-                    iconName: 'Sliders',
-                        keywords: ['css filters', 'image effects', 'css brightness', 'css contrast', 'hue-rotate'],
-                            longDescription: 'Create stunning image effects with pure CSS. Adjust brightness, contrast, saturation, blur, and more with a live preview and instant code generation.'
-},
-{
-    slug: 'css-text-shadow-generator',
+        description: 'Visually adjust CSS filters and generate optimized code.',
+        category: 'Design & UI',
+        iconName: 'Sliders',
+        keywords: ['css filters', 'image effects', 'css brightness', 'css contrast', 'hue-rotate'],
+        longDescription: 'Create stunning image effects with pure CSS. Adjust brightness, contrast, saturation, blur, and more with a live preview and instant code generation.'
+    },
+    {
+        slug: 'css-text-shadow-generator',
         title: 'CSS Text Shadow Generator',
-            description: 'Layer multiple shadows for realistic and aesthetic text effects.',
-                category: 'Design & UI',
-                    iconName: 'Type',
-                        keywords: ['text shadow', 'css text effects', 'layered shadows', 'text styling'],
-                            longDescription: 'Add depth to your typography. Create complex, multi-layered text shadows with individual control over blur, spread, and color.'
-},
-{
-    slug: 'css-clip-path-generator',
+        description: 'Layer multiple shadows for realistic and aesthetic text effects.',
+        category: 'Design & UI',
+        iconName: 'Type',
+        keywords: ['text shadow', 'css text effects', 'layered shadows', 'text styling'],
+        longDescription: 'Add depth to your typography. Create complex, multi-layered text shadows with individual control over blur, spread, and color.'
+    },
+    {
+        slug: 'css-clip-path-generator',
         title: 'CSS Clip Path Generator',
-            description: 'Drag the handles to create custom polygon shapes with clip-path.',
-                category: 'Design & UI',
-                    iconName: 'Scissors',
-                        keywords: ['clip path', 'css shapes', 'polygon generator', 'masking css'],
-                            longDescription: 'Break out of the box. Use our interactive editor to create custom polygon clip-paths with drag-and-drop point manipulation and presets.'
-},
-{
-    slug: 'css-animation-keyframes',
+        description: 'Drag the handles to create custom polygon shapes with clip-path.',
+        category: 'Design & UI',
+        iconName: 'Scissors',
+        keywords: ['clip path', 'css shapes', 'polygon generator', 'masking css'],
+        longDescription: 'Break out of the box. Use our interactive editor to create custom polygon clip-paths with drag-and-drop point manipulation and presets.'
+    },
+    {
+        slug: 'css-animation-keyframes',
         title: 'CSS Animation Keyframes',
-            description: 'Generate keyframes and utility classes for common UI animations.',
-                category: 'Design & UI',
-                    iconName: 'Zap',
-                        keywords: ['css animation', 'keyframes generator', 'ui motion', 'bounce animation', 'pulse effect'],
-                            longDescription: 'Bring your UI to life. Generate ready-to-use CSS keyframes for animations like bounce, shake, fade, and spin with customizable timing and duration.'
-},
-{
-    slug: 'css-scrollbar-customizer',
+        description: 'Generate keyframes and utility classes for common UI animations.',
+        category: 'Design & UI',
+        iconName: 'Zap',
+        keywords: ['css animation', 'keyframes generator', 'ui motion', 'bounce animation', 'pulse effect'],
+        longDescription: 'Bring your UI to life. Generate ready-to-use CSS keyframes for animations like bounce, shake, fade, and spin with customizable timing and duration.'
+    },
+    {
+        slug: 'css-scrollbar-customizer',
         title: 'CSS Scrollbar Customizer',
-            description: 'Design custom scrollbars for Webkit browsers (Chrome, Edge, Safari).',
-                category: 'Design & UI',
-                    iconName: 'MousePointer',
-                        keywords: ['scrollbar styling', 'webkit scrollbar', 'custom scrollbar', 'css ui'],
-                            longDescription: 'Style your scrollbars to match your brand. Customize thumb and track colors, rounded corners, and borders for a cohesive browsing experience.'
-},
-{
-    slug: 'css-loader-generator',
+        description: 'Design custom scrollbars for Webkit browsers (Chrome, Edge, Safari).',
+        category: 'Design & UI',
+        iconName: 'MousePointer',
+        keywords: ['scrollbar styling', 'webkit scrollbar', 'custom scrollbar', 'css ui'],
+        longDescription: 'Style your scrollbars to match your brand. Customize thumb and track colors, rounded corners, and borders for a cohesive browsing experience.'
+    },
+    {
+        slug: 'css-loader-generator',
         title: 'CSS Loader Generator',
-            description: 'Create lightweight, CSS-only loading indicators.',
-                category: 'Design & UI',
-                    iconName: 'Loader2',
-                        keywords: ['css loader', 'loading spinner', 'css activity indicator', 'wait animation'],
-                            longDescription: 'Zero-dependency loading animations. Design spinners, bouncing dots, and progress bars using pure CSS for maximum performance.'
-},
-{
-    slug: 'css-tooltip-generator',
+        description: 'Create lightweight, CSS-only loading indicators.',
+        category: 'Design & UI',
+        iconName: 'Loader2',
+        keywords: ['css loader', 'loading spinner', 'css activity indicator', 'wait animation'],
+        longDescription: 'Zero-dependency loading animations. Design spinners, bouncing dots, and progress bars using pure CSS for maximum performance.'
+    },
+    {
+        slug: 'css-tooltip-generator',
         title: 'CSS Tooltip Generator',
-            description: 'Generate clean, arrow-tip css tooltips with easy customization.',
-                category: 'Design & UI',
-                    iconName: 'MessageSquareAction',
-                        keywords: ['css tooltip', 'hover label', 'ui tooltips', 'pure css components'],
-                            longDescription: 'Professional tooltips without JavaScript. Generate accessible tooltips for any element with customizable positions (top, bottom, left, right).'
-},
-{
-    slug: 'css-ribbon-generator',
+        description: 'Generate clean, arrow-tip css tooltips with easy customization.',
+        category: 'Design & UI',
+        iconName: 'MessageSquareAction',
+        keywords: ['css tooltip', 'hover label', 'ui tooltips', 'pure css components'],
+        longDescription: 'Professional tooltips without JavaScript. Generate accessible tooltips for any element with customizable positions (top, bottom, left, right).'
+    },
+    {
+        slug: 'css-ribbon-generator',
         title: 'CSS Ribbon Generator',
-            description: 'Create decorative corner ribbons for cards and product listing.',
-                category: 'Design & UI',
-                    iconName: 'Bookmark',
-                        keywords: ['css ribbon', 'badge generator', 'corner ribbon', 'ecommerce ui'],
-                            longDescription: 'Add "New" or "Sale" ribbons to your components. Customize size, offset, and rotate positions for perfect corner badges.'
-},
-{
-    slug: 'css-input-field-stylizer',
+        description: 'Create decorative corner ribbons for cards and product listing.',
+        category: 'Design & UI',
+        iconName: 'Bookmark',
+        keywords: ['css ribbon', 'badge generator', 'corner ribbon', 'ecommerce ui'],
+        longDescription: 'Add "New" or "Sale" ribbons to your components. Customize size, offset, and rotate positions for perfect corner badges.'
+    },
+    {
+        slug: 'css-input-field-stylizer',
         title: 'CSS Input Field Stylizer',
-            description: 'Custom style generator for text inputs with focus states.',
-                category: 'Design & UI',
-                    iconName: 'Type',
-                        keywords: ['input styling', 'css text input', 'form design', 'focus states'],
-                            longDescription: 'Design beautiful, interactive form fields. Customize padding, borders, and focus rings with smooth transitions and modern aesthetics.'
-},
-{
-    slug: 'css-checkbox-stylizer',
+        description: 'Custom style generator for text inputs with focus states.',
+        category: 'Design & UI',
+        iconName: 'Type',
+        keywords: ['input styling', 'css text input', 'form design', 'focus states'],
+        longDescription: 'Design beautiful, interactive form fields. Customize padding, borders, and focus rings with smooth transitions and modern aesthetics.'
+    },
+    {
+        slug: 'css-checkbox-stylizer',
         title: 'CSS Checkbox Stylizer',
-            description: 'Design custom checkboxes without external image dependencies.',
-                category: 'Design & UI',
-                    iconName: 'ToggleLeft',
-                        keywords: ['custom checkbox', 'css radio button', 'form components', 'checkbox style'],
-                            longDescription: 'Replace native checkboxes with custom designs. Lightweight CSS-only checkboxes that work across all modern browsers.'
-},
-{
-    slug: 'svg-pattern-generator',
+        description: 'Design custom checkboxes without external image dependencies.',
+        category: 'Design & UI',
+        iconName: 'ToggleLeft',
+        keywords: ['custom checkbox', 'css radio button', 'form components', 'checkbox style'],
+        longDescription: 'Replace native checkboxes with custom designs. Lightweight CSS-only checkboxes that work across all modern browsers.'
+    },
+    {
+        slug: 'svg-pattern-generator',
         title: 'SVG Pattern Generator',
-            description: 'Generate lightweight CSS backgrounds using repeatable SVG patterns.',
-                category: 'Design & UI',
-                    iconName: 'Grid3X3',
-                        keywords: ['svg patterns', 'css backgrounds', 'noise patterns', 'geometric backgrounds'],
-                            longDescription: 'Create infinite backgrounds with tiny file sizes. Generate polka dots, stripes, and squares using Base64-encoded SVG patterns directly in your CSS.'
-},
-{
-    slug: 'component-mockup-generator',
+        description: 'Generate lightweight CSS backgrounds using repeatable SVG patterns.',
+        category: 'Design & UI',
+        iconName: 'Grid3X3',
+        keywords: ['svg patterns', 'css backgrounds', 'noise patterns', 'geometric backgrounds'],
+        longDescription: 'Create infinite backgrounds with tiny file sizes. Generate polka dots, stripes, and squares using Base64-encoded SVG patterns directly in your CSS.'
+    },
+    {
+        slug: 'component-mockup-generator',
         title: 'Component Mockup Generator',
-            description: 'Present your web components in realistic CSS-based device frames.',
-                category: 'Design & UI',
-                    iconName: 'Laptop',
-                        keywords: ['device mockup', 'ui presentation', 'laptop mockup', 'phone mockup', 'marketing assets'],
-                            longDescription: 'Showcase your work in context. Generate CSS-only laptop, phone, and desktop frames to present your UI snippets professionally.'
-},
-{
-    slug: 'neumorphism-advanced',
+        description: 'Present your web components in realistic CSS-based device frames.',
+        category: 'Design & UI',
+        iconName: 'Laptop',
+        keywords: ['device mockup', 'ui presentation', 'laptop mockup', 'phone mockup', 'marketing assets'],
+        longDescription: 'Showcase your work in context. Generate CSS-only laptop, phone, and desktop frames to present your UI snippets professionally.'
+    },
+    {
+        slug: 'neumorphism-advanced',
         title: 'Neumorphism Advanced',
-            description: 'Generate Soft UI effects with realistic inner and outer shadows.',
-                category: 'Design & UI',
-                    iconName: 'Sparkles',
-                        keywords: ['neumorphism generator', 'soft ui pro', 'extruded ui', 'modern css effects'],
-                            longDescription: 'Master the art of soft shadows. Create complex convex, concave, and pressed neumorphic elements with precise control over light source and intensity.'
-},
-{
-    slug: 'card-layout-visualizer',
+        description: 'Generate Soft UI effects with realistic inner and outer shadows.',
+        category: 'Design & UI',
+        iconName: 'Sparkles',
+        keywords: ['neumorphism generator', 'soft ui pro', 'extruded ui', 'modern css effects'],
+        longDescription: 'Master the art of soft shadows. Create complex convex, concave, and pressed neumorphic elements with precise control over light source and intensity.'
+    },
+    {
+        slug: 'card-layout-visualizer',
         title: 'Card Layout Visualizer',
-            description: 'Test and compare different card component styles and grid layouts.',
-                category: 'Design & UI',
-                    iconName: 'Layout',
-                        keywords: ['card designs', 'grid layouts', 'ui patterns', 'layout testing'],
-                            longDescription: 'Prototype your card layouts instantly. Compare glassmorphism, minimal, and elevated designs across different grid configurations.'
-},
-{
-    slug: 'css-buttons-pack',
+        description: 'Test and compare different card component styles and grid layouts.',
+        category: 'Design & UI',
+        iconName: 'Layout',
+        keywords: ['card designs', 'grid layouts', 'ui patterns', 'layout testing'],
+        longDescription: 'Prototype your card layouts instantly. Compare glassmorphism, minimal, and elevated designs across different grid configurations.'
+    },
+    {
+        slug: 'css-buttons-pack',
         title: 'CSS Buttons Pack',
-            description: 'A collection of premium web button styles with copy-paste code.',
-                category: 'Design & UI',
-                    iconName: 'MousePointerClick',
-                        keywords: ['premium buttons', 'css button pack', 'cta design', 'button styles'],
-                            longDescription: 'Jumpstart your UI with professional buttons. Includes Glow, Glass, Neumorphic, and Retro button styles with optimized CSS.'
-},
+        description: 'A collection of premium web button styles with copy-paste code.',
+        category: 'Design & UI',
+        iconName: 'MousePointerClick',
+        keywords: ['premium buttons', 'css button pack', 'cta design', 'button styles'],
+        longDescription: 'Jumpstart your UI with professional buttons. Includes Glow, Glass, Neumorphic, and Retro button styles with optimized CSS.'
+    },
 
-// Image Tools Expansion
-{
-    slug: 'image-compressor',
+    // Image Tools Expansion
+    {
+        slug: 'image-compressor',
         title: 'Smart Image Compressor',
-            description: 'Reduce image file size with controlled quality for web optimization.',
-                category: 'Image Tools',
-                    iconName: 'Minimize',
-                        keywords: ['image compressor', 'shrink photo', 'web optimization', 'reduce size'],
-                            longDescription: 'Optimize your assets for the web. Reduce file sizes by up to 80% with our smart compression algorithm while maintaining visual clarity. All processing happens in-browser.'
-},
-{
-    slug: 'image-filters-pro',
+        description: 'Reduce image file size with controlled quality for web optimization.',
+        category: 'Image Tools',
+        iconName: 'Minimize',
+        keywords: ['image compressor', 'shrink photo', 'web optimization', 'reduce size'],
+        longDescription: 'Optimize your assets for the web. Reduce file sizes by up to 80% with our smart compression algorithm while maintaining visual clarity. All processing happens in-browser.'
+    },
+    {
+        slug: 'image-filters-pro',
         title: 'Image Filters Pro',
-            description: 'Apply professional filters like Grayscale, Sepia, and Blur to your photos.',
-                category: 'Image Tools',
-                    iconName: 'Sliders',
-                        keywords: ['image filters', 'photo effects', 'blur image', 'grayscale converter', 'online photo editor'],
-                            longDescription: 'Quickly modify your images with professional filters. Adjust brightness, contrast, saturation, and apply artistic effects directly in your browser with zero upload wait.'
-},
-{
-    slug: 'exif-data-viewer',
+        description: 'Apply professional filters like Grayscale, Sepia, and Blur to your photos.',
+        category: 'Image Tools',
+        iconName: 'Sliders',
+        keywords: ['image filters', 'photo effects', 'blur image', 'grayscale converter', 'online photo editor'],
+        longDescription: 'Quickly modify your images with professional filters. Adjust brightness, contrast, saturation, and apply artistic effects directly in your browser with zero upload wait.'
+    },
+    {
+        slug: 'exif-data-viewer',
         title: 'EXIF Metadata Viewer',
-            description: 'Extract and view hidden metadata (ISO, Camera, Location) from JPG images.',
-                category: 'Image Tools',
-                    iconName: 'Info',
-                        keywords: ['exif viewer', 'image metadata', 'photo info', 'gps data from image'],
-                            longDescription: 'See the technical story behind your photos. Extract hidden EXIF data including camera settings, timestamp, and even GPS coordinates where the photo was taken.'
-},
-{
-    slug: 'svg-to-png-converter',
+        description: 'Extract and view hidden metadata (ISO, Camera, Location) from JPG images.',
+        category: 'Image Tools',
+        iconName: 'Info',
+        keywords: ['exif viewer', 'image metadata', 'photo info', 'gps data from image'],
+        longDescription: 'See the technical story behind your photos. Extract hidden EXIF data including camera settings, timestamp, and even GPS coordinates where the photo was taken.'
+    },
+    {
+        slug: 'svg-to-png-converter',
         title: 'SVG to PNG Converter',
-            description: 'Convert vector SVG files into high-resolution transparent PNGs.',
-                category: 'Image Tools',
-                    iconName: 'RefreshCw',
-                        keywords: ['svg to png', 'vector to raster', 'transparent image converter', 'svg export'],
-                            longDescription: 'Transform your scalable vectors into standard raster images. Select custom resolutions and maintain transparency, perfect for app icons and web assets.'
-},
-{
-    slug: 'webp-to-image-converter',
+        description: 'Convert vector SVG files into high-resolution transparent PNGs.',
+        category: 'Image Tools',
+        iconName: 'RefreshCw',
+        keywords: ['svg to png', 'vector to raster', 'transparent image converter', 'svg export'],
+        longDescription: 'Transform your scalable vectors into standard raster images. Select custom resolutions and maintain transparency, perfect for app icons and web assets.'
+    },
+    {
+        slug: 'webp-to-image-converter',
         title: 'WebP to JPG/PNG',
-            description: 'Convert modern WebP images to standard JPG or PNG formats.',
-                category: 'Image Tools',
-                    iconName: 'RefreshCw',
-                        keywords: ['webp to jpg', 'webp to png', 'convert webp online', 'image legacy tool'],
-                            longDescription: 'Make modern web images compatible with legacy software. Quickly convert WebP files back into the widely supported JPG or PNG formats without data loss.'
-},
-{
-    slug: 'image-to-base64',
+        description: 'Convert modern WebP images to standard JPG or PNG formats.',
+        category: 'Image Tools',
+        iconName: 'RefreshCw',
+        keywords: ['webp to jpg', 'webp to png', 'convert webp online', 'image legacy tool'],
+        longDescription: 'Make modern web images compatible with legacy software. Quickly convert WebP files back into the widely supported JPG or PNG formats without data loss.'
+    },
+    {
+        slug: 'image-to-base64',
         title: 'Image to Base64',
-            description: 'Convert any image file into a Base64 string for embedding.',
-                category: 'Image Tools',
-                    iconName: 'Code',
-                        keywords: ['image to base64', 'encode image', 'b64 image maker', 'inline css image'],
-                            longDescription: 'Turn your images into text for easy embedding. Generate clean Base64 data strings that can be used directly in your CSS or HTML without extra file requests.'
-},
-{
-    slug: 'base64-to-image',
+        description: 'Convert any image file into a Base64 string for embedding.',
+        category: 'Image Tools',
+        iconName: 'Code',
+        keywords: ['image to base64', 'encode image', 'b64 image maker', 'inline css image'],
+        longDescription: 'Turn your images into text for easy embedding. Generate clean Base64 data strings that can be used directly in your CSS or HTML without extra file requests.'
+    },
+    {
+        slug: 'base64-to-image',
         title: 'Base64 to Image',
-            description: 'Convert a Base64 data string back into a downloadable image file.',
-                category: 'Image Tools',
-                    iconName: 'Image',
-                        keywords: ['base64 to image', 'decode base64', 'b64 to png', 'restore image from text'],
-                            longDescription: 'Restore your images from text strings. Paste a Base64 URI to instantly visualize and download the corresponding image file in its original quality.'
-},
-{
-    slug: 'color-picker-from-image',
+        description: 'Convert a Base64 data string back into a downloadable image file.',
+        category: 'Image Tools',
+        iconName: 'Image',
+        keywords: ['base64 to image', 'decode base64', 'b64 to png', 'restore image from text'],
+        longDescription: 'Restore your images from text strings. Paste a Base64 URI to instantly visualize and download the corresponding image file in its original quality.'
+    },
+    {
+        slug: 'color-picker-from-image',
         title: 'Image Color Picker',
-            description: 'Upload an image and extract exact Hex/RGB codes from any pixel.',
-                category: 'Image Tools',
-                    iconName: 'Pipette',
-                        keywords: ['color picker', 'extract colors from photo', 'get hex from image', 'palette from photo'],
-                            longDescription: 'Get the exact colors from your inspiration. Upload any photo and click anywhere to get precise Hex, RGB, and HSL codes for your design projects.'
-},
-{
-    slug: 'favicon-generator-utility',
+        description: 'Upload an image and extract exact Hex/RGB codes from any pixel.',
+        category: 'Image Tools',
+        iconName: 'Pipette',
+        keywords: ['color picker', 'extract colors from photo', 'get hex from image', 'palette from photo'],
+        longDescription: 'Get the exact colors from your inspiration. Upload any photo and click anywhere to get precise Hex, RGB, and HSL codes for your design projects.'
+    },
+    {
+        slug: 'favicon-generator-utility',
         title: 'Quick Favicon Gen',
-            description: 'Generate standard 16x16 and 32x32 favicons from your logo.',
-                category: 'Image Tools',
-                    iconName: 'Target',
-                        keywords: ['favicon generator', 'make favicon', 'ico file creator', 'web identity tool'],
-                            longDescription: 'The fastest way to create a website icon. Upload your logo and get perfectly sized .ico and .png files for your browser tabs and bookmarks.'
-},
-{
-    slug: 'gif-to-frames-extractor',
+        description: 'Generate standard 16x16 and 32x32 favicons from your logo.',
+        category: 'Image Tools',
+        iconName: 'Target',
+        keywords: ['favicon generator', 'make favicon', 'ico file creator', 'web identity tool'],
+        longDescription: 'The fastest way to create a website icon. Upload your logo and get perfectly sized .ico and .png files for your browser tabs and bookmarks.'
+    },
+    {
+        slug: 'gif-to-frames-extractor',
         title: 'GIF to Frames',
-            description: 'Extract individual static frames from any animated GIF.',
-                category: 'Image Tools',
-                    iconName: 'Layers',
-                        keywords: ['gif frames', 'extract gif', 'animated to static', 'gif analyzer'],
-                            longDescription: 'Deconstruct animations. Upload an animated GIF to see and download every individual frame, allowing you to salvage specific moments or analyze the animation sequence.'
-},
-{
-    slug: 'image-sprite-sheet-gen',
+        description: 'Extract individual static frames from any animated GIF.',
+        category: 'Image Tools',
+        iconName: 'Layers',
+        keywords: ['gif frames', 'extract gif', 'animated to static', 'gif analyzer'],
+        longDescription: 'Deconstruct animations. Upload an animated GIF to see and download every individual frame, allowing you to salvage specific moments or analyze the animation sequence.'
+    },
+    {
+        slug: 'image-sprite-sheet-gen',
         title: 'Sprite Sheet Maker',
-            description: 'Combine multiple images into a single sprite sheet for gaming or web.',
-                category: 'Image Tools',
-                    iconName: 'Grid',
-                        keywords: ['sprite sheet generator', 'atlas maker', 'combine images', 'gaming textures'],
-                            longDescription: 'Optimize your game or web app by merging multiple assets into one texture atlas. Reduce loading times and manage your frames with our visual sprite sheet packager.'
-},
-{
-    slug: 'qr-code-scanner',
+        description: 'Combine multiple images into a single sprite sheet for gaming or web.',
+        category: 'Image Tools',
+        iconName: 'Grid',
+        keywords: ['sprite sheet generator', 'atlas maker', 'combine images', 'gaming textures'],
+        longDescription: 'Optimize your game or web app by merging multiple assets into one texture atlas. Reduce loading times and manage your frames with our visual sprite sheet packager.'
+    },
+    {
+        slug: 'qr-code-scanner',
         title: 'QR Code Scanner',
-            description: 'Upload an image to scan and decode QR codes instantly.',
-                category: 'Image Tools',
-                    iconName: 'Scan',
-                        keywords: ['scan qr code', 'qr decoder', 'read qr from image', 'qr link finder'],
-                            longDescription: 'Read QR codes without a camera. Simply upload a photo or screenshot containing a QR code to instantly extract the encoded URL or text information.'
-},
-{
-    slug: 'barcode-generator',
+        description: 'Upload an image to scan and decode QR codes instantly.',
+        category: 'Image Tools',
+        iconName: 'Scan',
+        keywords: ['scan qr code', 'qr decoder', 'read qr from image', 'qr link finder'],
+        longDescription: 'Read QR codes without a camera. Simply upload a photo or screenshot containing a QR code to instantly extract the encoded URL or text information.'
+    },
+    {
+        slug: 'barcode-generator',
         title: 'Barcode Generator',
-            description: 'Create standard barcodes (EAN, UPC, Code 128) for print or retail.',
-                category: 'Image Tools',
-                    iconName: 'Barcode',
-                        keywords: ['barcode generator', 'make barcode', 'upc creator', 'ean13 tool'],
-                            longDescription: 'Generate professional barcodes for inventory or retail. Supports all major international standards including EAN-13, UPC-A, and Code 128 with high-resolution export.'
-},
-{
-    slug: 'image-upscaler-ui',
+        description: 'Create standard barcodes (EAN, UPC, Code 128) for print or retail.',
+        category: 'Image Tools',
+        iconName: 'Barcode',
+        keywords: ['barcode generator', 'make barcode', 'upc creator', 'ean13 tool'],
+        longDescription: 'Generate professional barcodes for inventory or retail. Supports all major international standards including EAN-13, UPC-A, and Code 128 with high-resolution export.'
+    },
+    {
+        slug: 'image-upscaler-ui',
         title: 'Visual Image Upscaler',
-            description: 'Premium UI for upscaling small images with smooth resampling.',
-                category: 'Image Tools',
-                    iconName: 'Maximize2',
-                        keywords: ['image upscaler', 'hq resize', 'enlarge photo', 'image resampling tool'],
-                            longDescription: 'Make small images usable. Our upscaler uses high-quality resampling algorithms to enlarge your images while minimizing pixelation and blurriness.'
-},
-{
-    slug: 'image-mirror-tool',
+        description: 'Premium UI for upscaling small images with smooth resampling.',
+        category: 'Image Tools',
+        iconName: 'Maximize2',
+        keywords: ['image upscaler', 'hq resize', 'enlarge photo', 'image resampling tool'],
+        longDescription: 'Make small images usable. Our upscaler uses high-quality resampling algorithms to enlarge your images while minimizing pixelation and blurriness.'
+    },
+    {
+        slug: 'image-mirror-tool',
         title: 'Horizontal/Vertical Mirror',
-            description: 'Flip your images horizontally or vertically in one click.',
-                category: 'Image Tools',
-                    iconName: 'ArrowLeftRight',
-                        keywords: ['mirror image', 'flip photo', 'reflect image', 'image orientation'],
-                            longDescription: 'Instantly mirror your graphics. Whether you need to flip a logo or create a reflected effect, our tool provides fast horizontal and vertical flipping at original quality.'
-},
-{
-    slug: 'image-rotation-expert',
+        description: 'Flip your images horizontally or vertically in one click.',
+        category: 'Image Tools',
+        iconName: 'ArrowLeftRight',
+        keywords: ['mirror image', 'flip photo', 'reflect image', 'image orientation'],
+        longDescription: 'Instantly mirror your graphics. Whether you need to flip a logo or create a reflected effect, our tool provides fast horizontal and vertical flipping at original quality.'
+    },
+    {
+        slug: 'image-rotation-expert',
         title: 'Exact Image Rotator',
-            description: 'Rotate images by precise degrees or standard 90/180 angles.',
-                category: 'Image Tools',
-                    iconName: 'RefreshCw',
-                        keywords: ['rotate image', 'straighten photo', 'image angle tool', 'orientation fix'],
-                            longDescription: 'Fix tilted photos or change orientations. Rotate your images by 90-degree steps or use the fine-tuning slider to straighten horizons with precision.'
-},
-{
-    slug: 'image-masking-shapes',
+        description: 'Rotate images by precise degrees or standard 90/180 angles.',
+        category: 'Image Tools',
+        iconName: 'RefreshCw',
+        keywords: ['rotate image', 'straighten photo', 'image angle tool', 'orientation fix'],
+        longDescription: 'Fix tilted photos or change orientations. Rotate your images by 90-degree steps or use the fine-tuning slider to straighten horizons with precision.'
+    },
+    {
+        slug: 'image-masking-shapes',
         title: 'Image Masking & Shapes',
-            description: 'Apply circular, star, or custom geometric masks to your images.',
-                category: 'Image Tools',
-                    iconName: 'Shapes',
-                        keywords: ['image masking', 'circular crop', 'shape crop', 'geometric image', 'avatar maker'],
-                            longDescription: 'Beyond square grids. Apply creative masks to your photos, turning them into circles, triangles, stars, or hexagons. Perfect for creating unique profile pictures or design assets.'
-},
-{
-    slug: 'image-canvas-padding',
+        description: 'Apply circular, star, or custom geometric masks to your images.',
+        category: 'Image Tools',
+        iconName: 'Shapes',
+        keywords: ['image masking', 'circular crop', 'shape crop', 'geometric image', 'avatar maker'],
+        longDescription: 'Beyond square grids. Apply creative masks to your photos, turning them into circles, triangles, stars, or hexagons. Perfect for creating unique profile pictures or design assets.'
+    },
+    {
+        slug: 'image-canvas-padding',
         title: 'Image Canvas Adder',
-            description: 'Add specific padding or a colored background canvas around your images.',
-                category: 'Image Tools',
-                    iconName: 'Maximize',
-                        keywords: ['image padding', 'add border', 'canvas resize', 'social media crop', 'image background'],
-                            longDescription: 'Prepare your images for framing or social media. Add whitespace or custom-colored padding around your image to fit specific aspect ratios without stretching.'
-},
-{
-    slug: 'image-metadata-cleaner',
+        description: 'Add specific padding or a colored background canvas around your images.',
+        category: 'Image Tools',
+        iconName: 'Maximize',
+        keywords: ['image padding', 'add border', 'canvas resize', 'social media crop', 'image background'],
+        longDescription: 'Prepare your images for framing or social media. Add whitespace or custom-colored padding around your image to fit specific aspect ratios without stretching.'
+    },
+    {
+        slug: 'image-metadata-cleaner',
         title: 'Metadata Cleaner',
-            description: 'Remove all hidden EXIF and location data from images for privacy.',
-                category: 'Image Tools',
-                    iconName: 'ShieldCheck',
-                        keywords: ['remove exif', 'clean image', 'privacy photo', 'metadata remover', 'scrub location'],
-                            longDescription: 'Protect your privacy. Scrub all hidden metadata from your JPEG and PNG files, including GPS coordinates, camera models, and timestamps, before sharing them online.'
-},
-{
-    slug: 'image-overlay-pro',
+        description: 'Remove all hidden EXIF and location data from images for privacy.',
+        category: 'Image Tools',
+        iconName: 'ShieldCheck',
+        keywords: ['remove exif', 'clean image', 'privacy photo', 'metadata remover', 'scrub location'],
+        longDescription: 'Protect your privacy. Scrub all hidden metadata from your JPEG and PNG files, including GPS coordinates, camera models, and timestamps, before sharing them online.'
+    },
+    {
+        slug: 'image-overlay-pro',
         title: 'Image Overlay Pro',
-            description: 'Overlay logos, watermarks, or text onto your images with transparency.',
-                category: 'Image Tools',
-                    iconName: 'Layers',
-                        keywords: ['watermark adder', 'image overlay', 'add logo to photo', 'branding tool', 'batch watermark'],
-                            longDescription: 'Protect your creative work. Overlay custom logos or watermarks onto your images with full control over opacity, positioning, and scale for professional branding.'
-},
-{
-    slug: 'cyberpunk-glitcher',
+        description: 'Overlay logos, watermarks, or text onto your images with transparency.',
+        category: 'Image Tools',
+        iconName: 'Layers',
+        keywords: ['watermark adder', 'image overlay', 'add logo to photo', 'branding tool', 'batch watermark'],
+        longDescription: 'Protect your creative work. Overlay custom logos or watermarks onto your images with full control over opacity, positioning, and scale for professional branding.'
+    },
+    {
+        slug: 'cyberpunk-glitcher',
         title: 'Cyberpunk Glitcher',
-            description: 'Add stylistic digital artifacts and glitch effects to your photos.',
-                category: 'Image Tools',
-                    iconName: 'Zap',
-                        keywords: ['image glitch', 'digital art', 'cyberpunk effect', 'photo artifacts'],
-                            longDescription: 'Embrace the aesthetic of digital error. Add RGB shifts, scanlines, and block distortions to your images to create a unique cyberpunk or retro-electronic look.'
-},
-{
-    slug: 'pixel-art-generator',
+        description: 'Add stylistic digital artifacts and glitch effects to your photos.',
+        category: 'Image Tools',
+        iconName: 'Zap',
+        keywords: ['image glitch', 'digital art', 'cyberpunk effect', 'photo artifacts'],
+        longDescription: 'Embrace the aesthetic of digital error. Add RGB shifts, scanlines, and block distortions to your images to create a unique cyberpunk or retro-electronic look.'
+    },
+    {
+        slug: 'pixel-art-generator',
         title: 'Pixel Art Generator',
-            description: 'Convert any photo into high-quality retro pixel art.',
-                category: 'Image Tools',
-                    iconName: 'Grid',
-                        keywords: ['pixelate image', '8bit converter', 'pixel art tool', 'retro photo'],
-                            longDescription: 'Go retro. Reduce your image resolution to a specific grid size while preserving color data to create authentic 8-bit or 16-bit style pixel art.'
-},
-{
-    slug: 'photo-text-art',
+        description: 'Convert any photo into high-quality retro pixel art.',
+        category: 'Image Tools',
+        iconName: 'Grid',
+        keywords: ['pixelate image', '8bit converter', 'pixel art tool', 'retro photo'],
+        longDescription: 'Go retro. Reduce your image resolution to a specific grid size while preserving color data to create authentic 8-bit or 16-bit style pixel art.'
+    },
+    {
+        slug: 'photo-text-art',
         title: 'Photo Text Art',
-            description: 'Quickly add stylized text captions or quotes onto your images.',
-                category: 'Image Tools',
-                    iconName: 'Type',
-                        keywords: ['add text to image', 'photo caption', 'text overlay', 'meme maker'],
-                            longDescription: 'Make your images speak. Add beautiful, customizable text overlays to your photos with control over fonts, colors, shadow effects, and positioning.'
-},
-{
-    slug: 'social-aspect-studio',
+        description: 'Quickly add stylized text captions or quotes onto your images.',
+        category: 'Image Tools',
+        iconName: 'Type',
+        keywords: ['add text to image', 'photo caption', 'text overlay', 'meme maker'],
+        longDescription: 'Make your images speak. Add beautiful, customizable text overlays to your photos with control over fonts, colors, shadow effects, and positioning.'
+    },
+    {
+        slug: 'social-aspect-studio',
         title: 'Social Aspect Studio',
-            description: 'Instantly crop or pad images for Instagram, TikTok, and YouTube.',
-                category: 'Image Tools',
-                    iconName: 'Smartphone',
-                        keywords: ['aspect ratio', 'social media crop', 'instagram size', 'tiktok aspect', 'image resize'],
-                            longDescription: 'Prepare for the feed. Instantly adjust your image aspect ratio with professional presets for all major social platforms, ensuring your content looks perfect in every post.'
-},
-{
-    slug: 'gpa-calculator',
+        description: 'Instantly crop or pad images for Instagram, TikTok, and YouTube.',
+        category: 'Image Tools',
+        iconName: 'Smartphone',
+        keywords: ['aspect ratio', 'social media crop', 'instagram size', 'tiktok aspect', 'image resize'],
+        longDescription: 'Prepare for the feed. Instantly adjust your image aspect ratio with professional presets for all major social platforms, ensuring your content looks perfect in every post.'
+    },
+    {
+        slug: 'gpa-calculator',
         title: 'GPA Calculator Pro',
-            description: 'Calculate your semester or cumulative GPA across multiple scales (4.0, 5.0, 10.0).',
-                category: 'Education',
-                    iconName: 'Calculator',
-                        keywords: ['gpa calculator', 'calculate grades', 'cgpa to percentage', 'semester gpa', 'academic grades'],
-                            longDescription: 'Manage your academic success with our professional GPA calculator. Support for weighted credits, multiple grading scales, and cumulative semester tracking to keep you on top of your educational goals.'
-},
-{
-    slug: 'scientific-calculator-pro',
+        description: 'Calculate your semester or cumulative GPA across multiple scales (4.0, 5.0, 10.0).',
+        category: 'Education',
+        iconName: 'Calculator',
+        keywords: ['gpa calculator', 'calculate grades', 'cgpa to percentage', 'semester gpa', 'academic grades'],
+        longDescription: 'Manage your academic success with our professional GPA calculator. Support for weighted credits, multiple grading scales, and cumulative semester tracking to keep you on top of your educational goals.'
+    },
+    {
+        slug: 'scientific-calculator-pro',
         title: 'Adv. Scientific Calculator',
-            description: 'Perform complex mathematical functions including trig, logs, and exponents.',
-                category: 'Advanced Scholar Tools',
-                    iconName: 'Calculator',
-                        keywords: ['scientific calculator', 'online math tool', 'trigonometry calculator', 'logarithm tool', 'engineering calculator'],
-                            longDescription: 'A fully-featured scientific calculator in your browser. Handles everything from basic arithmetic to advanced trigonometry, logarithms, power functions, and constant values for physics and chemistry.'
-},
-{
-    slug: 'citation-generator-pro',
+        description: 'Perform complex mathematical functions including trig, logs, and exponents.',
+        category: 'Advanced Scholar Tools',
+        iconName: 'Calculator',
+        keywords: ['scientific calculator', 'online math tool', 'trigonometry calculator', 'logarithm tool', 'engineering calculator'],
+        longDescription: 'A fully-featured scientific calculator in your browser. Handles everything from basic arithmetic to advanced trigonometry, logarithms, power functions, and constant values for physics and chemistry.'
+    },
+    {
+        slug: 'citation-generator-pro',
         title: 'Quick Citation Gen',
-            description: 'Generate accurate APA, MLA, and Chicago style citations for books and web.',
-                category: 'Education',
-                    iconName: 'Quote',
-                        keywords: ['citation generator', 'mla generator', 'apa citation maker', 'chicago style', 'bibliography tool'],
-                            longDescription: 'Eliminate the stress of academic formatting. Our citation generator creates perfectly structured references for your research papers, supporting the latest versions of MLA, APA, and Chicago styles.'
-},
-{
-    slug: 'periodic-table-pro',
+        description: 'Generate accurate APA, MLA, and Chicago style citations for books and web.',
+        category: 'Education',
+        iconName: 'Quote',
+        keywords: ['citation generator', 'mla generator', 'apa citation maker', 'chicago style', 'bibliography tool'],
+        longDescription: 'Eliminate the stress of academic formatting. Our citation generator creates perfectly structured references for your research papers, supporting the latest versions of MLA, APA, and Chicago styles.'
+    },
+    {
+        slug: 'periodic-table-pro',
         title: 'Interactive Periodic Table',
-            description: 'Explore chemical elements with detailed atomic, physical, and historical data.',
-                category: 'Education',
-                    iconName: 'Grid',
-                        keywords: ['periodic table', 'chemistry elements', 'atomic mass', 'element groups', 'electron configuration'],
-                            longDescription: 'A comprehensive interactive reference for the chemical elements. View real-time data on atomic weights, electron shells, group properties, and discovery history for every element in the periodic table.'
-},
-{
-    slug: 'math-step-solver',
+        description: 'Explore chemical elements with detailed atomic, physical, and historical data.',
+        category: 'Education',
+        iconName: 'Grid',
+        keywords: ['periodic table', 'chemistry elements', 'atomic mass', 'element groups', 'electron configuration'],
+        longDescription: 'A comprehensive interactive reference for the chemical elements. View real-time data on atomic weights, electron shells, group properties, and discovery history for every element in the periodic table.'
+    },
+    {
+        slug: 'math-step-solver',
         title: 'Visual Math Step-Solver',
-            description: 'Visualize the logic behind solving algebra and basic math problems.',
-                category: 'Advanced Scholar Tools',
-                    iconName: 'Braces',
-                        keywords: ['math solver', 'step by step math', 'algebra calculator', 'math logic solver', 'equation solver'],
-                            longDescription: 'Dont just get the answer—understand the process. Our visual step-solver breaks down complex algebra problems into logical parts, helping students master the underlying concepts of mathematics.'
-},
-{
-    slug: 'flashcard-study-pro',
+        description: 'Visualize the logic behind solving algebra and basic math problems.',
+        category: 'Advanced Scholar Tools',
+        iconName: 'Braces',
+        keywords: ['math solver', 'step by step math', 'algebra calculator', 'math logic solver', 'equation solver'],
+        longDescription: 'Dont just get the answer—understand the process. Our visual step-solver breaks down complex algebra problems into logical parts, helping students master the underlying concepts of mathematics.'
+    },
+    {
+        slug: 'flashcard-study-pro',
         title: 'Interactive Flashcards',
-            description: 'Create digital study decks with flip-animations for effective memorization.',
-                category: 'Education',
-                    iconName: 'Layers',
-                        keywords: ['flashcard maker', 'study cards', 'memorization tool', 'active recall', 'online study aid'],
-                            longDescription: 'Harness the power of active recall and spaced repetition. Create custom study decks with our interactive flashcard tool, designed to help you memorize vocabulary, dates, and concepts for your upcoming exams.'
-},
-{
-    slug: 'weighted-grade-calc',
+        description: 'Create digital study decks with flip-animations for effective memorization.',
+        category: 'Education',
+        iconName: 'Layers',
+        keywords: ['flashcard maker', 'study cards', 'memorization tool', 'active recall', 'online study aid'],
+        longDescription: 'Harness the power of active recall and spaced repetition. Create custom study decks with our interactive flashcard tool, designed to help you memorize vocabulary, dates, and concepts for your upcoming exams.'
+    },
+    {
+        slug: 'weighted-grade-calc',
         title: 'Weighted Grade Calc',
-            description: 'Calculate your current grade based on category weights (Homework, Exams, etc.).',
-                category: 'Education',
-                    iconName: 'BarChart3',
-                        keywords: ['grade calculator', 'weighted average', 'final grade calc', 'semester marks', 'weighted mean'],
-                            longDescription: 'Understand exactly where you stand in your courses. Input your category weights and scores to calculate your true current grade, allowing you to prioritize your study efforts where they matter most.'
-},
-{
-    slug: 'final-exam-calc',
+        description: 'Calculate your current grade based on category weights (Homework, Exams, etc.).',
+        category: 'Education',
+        iconName: 'BarChart3',
+        keywords: ['grade calculator', 'weighted average', 'final grade calc', 'semester marks', 'weighted mean'],
+        longDescription: 'Understand exactly where you stand in your courses. Input your category weights and scores to calculate your true current grade, allowing you to prioritize your study efforts where they matter most.'
+    },
+    {
+        slug: 'final-exam-calc',
         title: 'Final Grade Required',
-            description: 'Determine the exact score you need on your final exam to reach your target grade.',
-                category: 'Education',
-                    iconName: 'Target',
-                        keywords: ['final exam calculator', 'needed grade calc', 'exam score solver', 'grade target tool'],
-                            longDescription: 'Calculate the pressure before the test. Our final grade required tool tells you exactly what score you need on your remaining assignments or final exams to achieve your desired course grade.'
-},
-{
-    slug: 'essay-outline-gen',
+        description: 'Determine the exact score you need on your final exam to reach your target grade.',
+        category: 'Education',
+        iconName: 'Target',
+        keywords: ['final exam calculator', 'needed grade calc', 'exam score solver', 'grade target tool'],
+        longDescription: 'Calculate the pressure before the test. Our final grade required tool tells you exactly what score you need on your remaining assignments or final exams to achieve your desired course grade.'
+    },
+    {
+        slug: 'essay-outline-gen',
         title: 'Essay Outline Generator',
-            description: 'Generate structured academic outlines based on your thesis and arguments.',
-                category: 'Education',
-                    iconName: 'ListChecks',
-                        keywords: ['essay outline', 'academic writing helper', 'thesis generator', 'paper structure tool', 'writing planner'],
-                            longDescription: 'Break through writer s block. Provide your main thesis and core arguments, and our generator will create a logical, professional outline to guide your academic writing process from introduction to conclusion.'
-},
-{
-    slug: 'percentage-gpa-converter',
+        description: 'Generate structured academic outlines based on your thesis and arguments.',
+        category: 'Education',
+        iconName: 'ListChecks',
+        keywords: ['essay outline', 'academic writing helper', 'thesis generator', 'paper structure tool', 'writing planner'],
+        longDescription: 'Break through writer s block. Provide your main thesis and core arguments, and our generator will create a logical, professional outline to guide your academic writing process from introduction to conclusion.'
+    },
+    {
+        slug: 'percentage-gpa-converter',
         title: 'Percent to GPA Solver',
-            description: 'Convert between percentage marks and various GPA scales used globally.',
-                category: 'Education',
-                    iconName: 'RefreshCw',
-                        keywords: ['percent to gpa', 'marks to gpa', 'grade conversion', 'global grade scales', 'cgpa converter'],
-                            longDescription: 'Simplify international grade comparisons. Convert your percentage marks into 4.0, 5.0, and 10.0 GPA scales instantly using standard academic conversion formulas used by universities worldwide.'
-},
-{
-    slug: 'physics-formula-solver',
+        description: 'Convert between percentage marks and various GPA scales used globally.',
+        category: 'Education',
+        iconName: 'RefreshCw',
+        keywords: ['percent to gpa', 'marks to gpa', 'grade conversion', 'global grade scales', 'cgpa converter'],
+        longDescription: 'Simplify international grade comparisons. Convert your percentage marks into 4.0, 5.0, and 10.0 GPA scales instantly using standard academic conversion formulas used by universities worldwide.'
+    },
+    {
+        slug: 'physics-formula-solver',
         title: 'Advanced Physics Solver',
-            description: 'Solve for force, velocity, acceleration, and energy with step-by-step logic.',
-                category: 'Education',
-                    iconName: 'Zap',
-                        keywords: ['physics calculator', 'force solver', 'velocity calculator', 'kinematics solver', 'physics homework helper'],
-                            longDescription: 'Master the laws of motion. Our Physics Solver handles core kinematic and dynamic equations, allowing you to solve for unknown variables while showing the mathematical steps involved in each derivation.'
-},
-{
-    slug: 'chem-equation-balancer',
+        description: 'Solve for force, velocity, acceleration, and energy with step-by-step logic.',
+        category: 'Education',
+        iconName: 'Zap',
+        keywords: ['physics calculator', 'force solver', 'velocity calculator', 'kinematics solver', 'physics homework helper'],
+        longDescription: 'Master the laws of motion. Our Physics Solver handles core kinematic and dynamic equations, allowing you to solve for unknown variables while showing the mathematical steps involved in each derivation.'
+    },
+    {
+        slug: 'chem-equation-balancer',
         title: 'Chem-Equator Balancer',
-            description: 'Balance chemical reactions and calculate stoichiometric ratios instantly.',
-                category: 'Education',
-                    iconName: 'Droplet',
-                        keywords: ['chemical balancer', 'reaction balancer', 'chemistry solver', 'stoichiometry tool', 'balancing equations'],
-                            longDescription: 'Ensure the conservation of mass. Our chemical equation balancer uses specialized algorithms to find the coefficients needed to balance any standard chemical reaction, saving you time on complex chemistry homework.'
-},
-{
-    slug: 'study-planner-pro',
+        description: 'Balance chemical reactions and calculate stoichiometric ratios instantly.',
+        category: 'Education',
+        iconName: 'Droplet',
+        keywords: ['chemical balancer', 'reaction balancer', 'chemistry solver', 'stoichiometry tool', 'balancing equations'],
+        longDescription: 'Ensure the conservation of mass. Our chemical equation balancer uses specialized algorithms to find the coefficients needed to balance any standard chemical reaction, saving you time on complex chemistry homework.'
+    },
+    {
+        slug: 'study-planner-pro',
         title: 'Student Session Planner',
-            description: 'Plan your study sessions with sub-tasks, timers, and subject-tracking.',
-                category: 'Education',
-                    iconName: 'CalendarCheck',
-                        keywords: ['study planner', 'exam schedule', 'session tracker', 'academic planning', 'subject management'],
-                            longDescription: 'Organize your academic life. Break down your subjects into manageable study sessions with dedicated timers and task checklists, helping you maintain focus and hit your study goals during finals week.'
-},
-{
-    slug: 'bibliography-automator',
+        description: 'Plan your study sessions with sub-tasks, timers, and subject-tracking.',
+        category: 'Education',
+        iconName: 'CalendarCheck',
+        keywords: ['study planner', 'exam schedule', 'session tracker', 'academic planning', 'subject management'],
+        longDescription: 'Organize your academic life. Break down your subjects into manageable study sessions with dedicated timers and task checklists, helping you maintain focus and hit your study goals during finals week.'
+    },
+    {
+        slug: 'bibliography-automator',
         title: 'Bibliography Automator',
-            description: 'Compile and format complete bibliography lists from multiple sources.',
-                category: 'Education',
-                    iconName: 'ListChecks',
-                        keywords: ['bibliography maker', 'works cited tool', 'reference list', 'academic writing', 'source formatter'],
-                            longDescription: 'Build professional-grade bibliographies. This tool allows you to compile multiple citations into a single, alphabetized list formatted for your Works Cited or References page.'
-},
-{
-    slug: 'vocabulary-builder-pro',
+        description: 'Compile and format complete bibliography lists from multiple sources.',
+        category: 'Education',
+        iconName: 'ListChecks',
+        keywords: ['bibliography maker', 'works cited tool', 'reference list', 'academic writing', 'source formatter'],
+        longDescription: 'Build professional-grade bibliographies. This tool allows you to compile multiple citations into a single, alphabetized list formatted for your Works Cited or References page.'
+    },
+    {
+        slug: 'vocabulary-builder-pro',
         title: 'Academic Vocab Builder',
-            description: 'Master advanced academic vocabulary with interactive word exploration.',
-                category: 'Education',
-                    iconName: 'Languages',
-                        keywords: ['vocabulary builder', 'sat vocab', 'academic words', 'language learning', 'word of the day'],
-                            longDescription: 'Expand your academic lexicon. Explore high-level vocabulary commonly found in peer-reviewed journals and standardized tests, with detailed definitions, synonyms, and contextual usage examples.'
-},
-{
-    slug: 'graphing-tool-lite',
+        description: 'Master advanced academic vocabulary with interactive word exploration.',
+        category: 'Education',
+        iconName: 'Languages',
+        keywords: ['vocabulary builder', 'sat vocab', 'academic words', 'language learning', 'word of the day'],
+        longDescription: 'Expand your academic lexicon. Explore high-level vocabulary commonly found in peer-reviewed journals and standardized tests, with detailed definitions, synonyms, and contextual usage examples.'
+    },
+    {
+        slug: 'graphing-tool-lite',
         title: 'Visual Graph Plotter',
-            description: 'Plot and visualize linear and quadratic functions with an interactive graph.',
-                category: 'Education',
-                    iconName: 'LineChart',
-                        keywords: ['graph plotter', 'function visualizer', 'math graph', 'linear function', 'quadratic plot'],
-                            longDescription: 'Bring mathematics to life. Plot your algebraic functions on our interactive grid to visualize intercepts, slopes, and curves, making abstract mathematical concepts easier to grasp.'
-},
-{
-    slug: 'venn-diagram-maker',
+        description: 'Plot and visualize linear and quadratic functions with an interactive graph.',
+        category: 'Education',
+        iconName: 'LineChart',
+        keywords: ['graph plotter', 'function visualizer', 'math graph', 'linear function', 'quadratic plot'],
+        longDescription: 'Bring mathematics to life. Plot your algebraic functions on our interactive grid to visualize intercepts, slopes, and curves, making abstract mathematical concepts easier to grasp.'
+    },
+    {
+        slug: 'venn-diagram-maker',
         title: 'Interactive Venn Diagram',
-            description: 'Visualize relationships between topic sets with overlapping diagrams.',
-                category: 'Education',
-                    iconName: 'Circle',
-                        keywords: ['venn diagram generator', 'comparison tool', 'logical sets', 'subject analysis', 'visual organizer'],
-                            longDescription: 'Compare and contrast with clarity. Create perfectly proportioned Venn diagrams to visualize the intersections and differences between multiple concepts or data sets for your research projects.'
-},
-{
-    slug: 'advanced-prime-analyzer',
+        description: 'Visualize relationships between topic sets with overlapping diagrams.',
+        category: 'Education',
+        iconName: 'Circle',
+        keywords: ['venn diagram generator', 'comparison tool', 'logical sets', 'subject analysis', 'visual organizer'],
+        longDescription: 'Compare and contrast with clarity. Create perfectly proportioned Venn diagrams to visualize the intersections and differences between multiple concepts or data sets for your research projects.'
+    },
+    {
+        slug: 'advanced-prime-analyzer',
         title: 'Prime Number Analyzer',
-            description: 'Analyze primality, find factors, and explore prime distributions.',
-                category: 'Education',
-                    iconName: 'Hash',
-                        keywords: ['prime number checker', 'factorization tool', 'primality test', 'math number theory', 'prime factors'],
-                            longDescription: 'Explore the building blocks of number theory. Our analyzer checks for primality using high-speed algorithms and provides complete factor trees for any integer within the educational range.'
-},
-{
-    slug: 'matrix-calculator-pro',
+        description: 'Analyze primality, find factors, and explore prime distributions.',
+        category: 'Education',
+        iconName: 'Hash',
+        keywords: ['prime number checker', 'factorization tool', 'primality test', 'math number theory', 'prime factors'],
+        longDescription: 'Explore the building blocks of number theory. Our analyzer checks for primality using high-speed algorithms and provides complete factor trees for any integer within the educational range.'
+    },
+    {
+        slug: 'matrix-calculator-pro',
         title: 'Linear Matrix Solver',
-            description: 'Perform matrix addition, subtraction, and multiplication with step-display.',
-                category: 'Education',
-                    iconName: 'Grid',
-                        keywords: ['matrix calculator', 'linear algebra', 'matrix math', 'array solver', 'matrix multiplication'],
-                            longDescription: 'Simplify linear algebra. Our matrix solver handles basic array operations while showing the specific row-column calculations, helping students understand the mechanics of matrix arithmetic.'
-},
-{
-    slug: 'trig-unit-circle-pro',
+        description: 'Perform matrix addition, subtraction, and multiplication with step-display.',
+        category: 'Education',
+        iconName: 'Grid',
+        keywords: ['matrix calculator', 'linear algebra', 'matrix math', 'array solver', 'matrix multiplication'],
+        longDescription: 'Simplify linear algebra. Our matrix solver handles basic array operations while showing the specific row-column calculations, helping students understand the mechanics of matrix arithmetic.'
+    },
+    {
+        slug: 'trig-unit-circle-pro',
         title: 'Unit Circle Interactive',
-            description: 'Explore trigonometric functions (sin, cos, tan) through an interactive unit circle.',
-                category: 'Education',
-                    iconName: 'Compass',
-                        keywords: ['unit circle', 'trigonometry tool', 'sin cos tan', 'angle visualizer', 'math trig help'],
-                            longDescription: 'Master trigonometry visually. Rotate the unit circle to see how sine, cosine, and tangent values change with the angle, providing a deep intuitive understanding of periodic functions.'
-},
-{
-    slug: 'calculus-rule-solver',
+        description: 'Explore trigonometric functions (sin, cos, tan) through an interactive unit circle.',
+        category: 'Education',
+        iconName: 'Compass',
+        keywords: ['unit circle', 'trigonometry tool', 'sin cos tan', 'angle visualizer', 'math trig help'],
+        longDescription: 'Master trigonometry visually. Rotate the unit circle to see how sine, cosine, and tangent values change with the angle, providing a deep intuitive understanding of periodic functions.'
+    },
+    {
+        slug: 'calculus-rule-solver',
         title: 'Differentiator & Integrator',
-            description: 'Reference and solve derivative and integral problems using core calculus rules.',
-                category: 'Education',
-                    iconName: 'Braces',
-                        keywords: ['calculus solver', 'derivative calculator', 'integral tool', 'math rules', 'derivation helper'],
-                            longDescription: 'Master the rules of change. Our calculus aid provides interactive solvers for power, product, and chain rules, helping students apply the fundamental theorems of calculus correctly.'
-},
-{
-    slug: 'assignment-kanban-board',
+        description: 'Reference and solve derivative and integral problems using core calculus rules.',
+        category: 'Education',
+        iconName: 'Braces',
+        keywords: ['calculus solver', 'derivative calculator', 'integral tool', 'math rules', 'derivation helper'],
+        longDescription: 'Master the rules of change. Our calculus aid provides interactive solvers for power, product, and chain rules, helping students apply the fundamental theorems of calculus correctly.'
+    },
+    {
+        slug: 'assignment-kanban-board',
         title: 'Student Task Board',
-            description: 'Organize your academic workload with a visual Kanban task management board.',
-                category: 'Education',
-                    iconName: 'Layout',
-                        keywords: ['assignment tracker', 'kanban for students', 'task board', 'study organization', 'project manager'],
-                            longDescription: 'Stop missing deadlines. Organize your assignments into "To Do", "In Progress", and "Done" columns with a visual board designed for the fast-paced academic workflow.'
-},
-{
-    slug: 'standardized-test-conv',
+        description: 'Organize your academic workload with a visual Kanban task management board.',
+        category: 'Education',
+        iconName: 'Layout',
+        keywords: ['assignment tracker', 'kanban for students', 'task board', 'study organization', 'project manager'],
+        longDescription: 'Stop missing deadlines. Organize your assignments into "To Do", "In Progress", and "Done" columns with a visual board designed for the fast-paced academic workflow.'
+    },
+    {
+        slug: 'standardized-test-conv',
         title: 'SAT & ACT Converter',
-            description: 'Convert scores between SAT and ACT standardized tests using official scales.',
-                category: 'Education',
-                    iconName: 'RefreshCw',
-                        keywords: ['sat to act converter', 'test score conversion', 'standardized testing', 'college prep', 'score solver'],
-                            longDescription: 'Compare your standardized test performance. Our converter uses the official concordance tables to provide accurate equivalent scores between the SAT and ACT formats for college admissions.'
-},
-{
-    slug: 'mind-map-logic',
+        description: 'Convert scores between SAT and ACT standardized tests using official scales.',
+        category: 'Education',
+        iconName: 'RefreshCw',
+        keywords: ['sat to act converter', 'test score conversion', 'standardized testing', 'college prep', 'score solver'],
+        longDescription: 'Compare your standardized test performance. Our converter uses the official concordance tables to provide accurate equivalent scores between the SAT and ACT formats for college admissions.'
+    },
+    {
+        slug: 'mind-map-logic',
         title: 'Mind Map Visualizer',
-            description: 'Brainstorm and map out your academic projects with visual node hierarchies.',
-                category: 'Education',
-                    iconName: 'Layers',
-                        keywords: ['mind map creator', 'brainstorming tool', 'visual mapping', 'essay planning', 'concept map'],
-                            longDescription: 'Visualize your ideas. Create hierarchical branches for your research topics and essay arguments, allowing you to see the big picture and the fine details of your academic projects simultaneously.'
-},
-{
-    slug: 'molar-mass-pro',
+        description: 'Brainstorm and map out your academic projects with visual node hierarchies.',
+        category: 'Education',
+        iconName: 'Layers',
+        keywords: ['mind map creator', 'brainstorming tool', 'visual mapping', 'essay planning', 'concept map'],
+        longDescription: 'Visualize your ideas. Create hierarchical branches for your research topics and essay arguments, allowing you to see the big picture and the fine details of your academic projects simultaneously.'
+    },
+    {
+        slug: 'molar-mass-pro',
         title: 'Molar Mass Pro',
-            description: 'Advanced chemical formula parser for calculating molar mass of complex compounds.',
-                category: 'Advanced Scholar Tools',
-                    iconName: 'Droplet',
-                        keywords: ['molar mass calculator', 'chemical formula parser', 'atomic weight', 'molecular mass', 'chemistry solver'],
-                            longDescription: 'A professional-grade chemical formula parser. Handles complex notation including parentheses, hydrates, and nested groups (e.g., (NH4)2SO4 or CuSO4*5H2O) with high-precision atomic weight data.'
-},
-{
-    slug: 'projectile-simulator',
+        description: 'Advanced chemical formula parser for calculating molar mass of complex compounds.',
+        category: 'Advanced Scholar Tools',
+        iconName: 'Droplet',
+        keywords: ['molar mass calculator', 'chemical formula parser', 'atomic weight', 'molecular mass', 'chemistry solver'],
+        longDescription: 'A professional-grade chemical formula parser. Handles complex notation including parentheses, hydrates, and nested groups (e.g., (NH4)2SO4 or CuSO4*5H2O) with high-precision atomic weight data.'
+    },
+    {
+        slug: 'projectile-simulator',
         title: 'Projectile Simulator',
-            description: 'Interactive physics simulator to visualize 2D trajectories with air resistance.',
-                category: 'Advanced Scholar Tools',
-                    iconName: 'Zap',
-                        keywords: ['projectile motion', 'physics simulator', 'trajectory visualizer', 'kinematics tool', 'motion physics'],
-                            longDescription: 'Master kinematics with visual intuition. Adjust initial velocity, launch angle, and atmospheric drag to see real-time trajectory plotting and kinematic data breakdowns.'
-},
-{
-    slug: 'circuit-solver-pro',
+        description: 'Interactive physics simulator to visualize 2D trajectories with air resistance.',
+        category: 'Advanced Scholar Tools',
+        iconName: 'Zap',
+        keywords: ['projectile motion', 'physics simulator', 'trajectory visualizer', 'kinematics tool', 'motion physics'],
+        longDescription: 'Master kinematics with visual intuition. Adjust initial velocity, launch angle, and atmospheric drag to see real-time trajectory plotting and kinematic data breakdowns.'
+    },
+    {
+        slug: 'circuit-solver-pro',
         title: 'Circuit Solver Pro',
-            description: 'Analyze series and parallel circuits with visual resistance and voltage mapping.',
-                category: 'Advanced Scholar Tools',
-                    iconName: 'Zap',
-                        keywords: ['circuit calculator', 'ohms law', 'series parallel', 'electronics solver', 'dc circuit analyzer'],
-                            longDescription: 'A premium tool for DC circuit analysis. Build series and parallel resistor networks to calculate equivalent resistance, total current, and voltage drops across specific components.'
-},
-{
-    slug: 'complex-number-pro',
+        description: 'Analyze series and parallel circuits with visual resistance and voltage mapping.',
+        category: 'Advanced Scholar Tools',
+        iconName: 'Zap',
+        keywords: ['circuit calculator', 'ohms law', 'series parallel', 'electronics solver', 'dc circuit analyzer'],
+        longDescription: 'A premium tool for DC circuit analysis. Build series and parallel resistor networks to calculate equivalent resistance, total current, and voltage drops across specific components.'
+    },
+    {
+        slug: 'complex-number-pro',
         title: 'Complex Number Pro',
-            description: 'Perform arithmetic and polar conversions on complex numbers (a + bi).',
-                category: 'Advanced Scholar Tools',
-                    iconName: 'Hash',
-                        keywords: ['complex numbers', 'imaginary numbers', 'polar coordinates', 'phasor calculator', 'advanced math'],
-                            longDescription: 'A dedicated calculator for imaginary and complex numbers. Supports basic arithmetic, modulus/argument calculation, and seamless switching between rectangular and polar forms.'
-},
-{
-    slug: 'probability-pro',
+        description: 'Perform arithmetic and polar conversions on complex numbers (a + bi).',
+        category: 'Advanced Scholar Tools',
+        iconName: 'Hash',
+        keywords: ['complex numbers', 'imaginary numbers', 'polar coordinates', 'phasor calculator', 'advanced math'],
+        longDescription: 'A dedicated calculator for imaginary and complex numbers. Supports basic arithmetic, modulus/argument calculation, and seamless switching between rectangular and polar forms.'
+    },
+    {
+        slug: 'probability-pro',
         title: 'Probability Pro',
-            description: 'Analyze Normal and Binomial distributions with interactive visualizations.',
-                category: 'Advanced Scholar Tools',
-                    iconName: 'BarChart3',
-                        keywords: ['probability distribution', 'normal distribution', 'binomial calculator', 'statistics tool', 'z-score solver'],
-                            longDescription: 'Deep statistical analysis in your browser. Visualize probability density functions, calculate cumulative probabilities, and find critical values for standard distributions.'
-},
-{
-    slug: 'ph-calculator-pro',
+        description: 'Analyze Normal and Binomial distributions with interactive visualizations.',
+        category: 'Advanced Scholar Tools',
+        iconName: 'BarChart3',
+        keywords: ['probability distribution', 'normal distribution', 'binomial calculator', 'statistics tool', 'z-score solver'],
+        longDescription: 'Deep statistical analysis in your browser. Visualize probability density functions, calculate cumulative probabilities, and find critical values for standard distributions.'
+    },
+    {
+        slug: 'ph-calculator-pro',
         title: 'pH Calculator Pro',
-            description: 'Calculate pH, pOH, and concentration for strong and weak acid-base systems.',
-                category: 'Advanced Scholar Tools',
-                    iconName: 'Droplet',
-                        keywords: ['ph calculator', 'acid base solver', 'titration math', 'poh calculator', 'chemistry tools'],
-                            longDescription: 'Master aqueous chemistry. Calculate the pH of various solutions, including weak acids and bases using equilibrium constants (Ka/Kb), with detailed molar concentration readouts.'
-},
-{
-    slug: 'gas-law-advanced',
+        description: 'Calculate pH, pOH, and concentration for strong and weak acid-base systems.',
+        category: 'Advanced Scholar Tools',
+        iconName: 'Droplet',
+        keywords: ['ph calculator', 'acid base solver', 'titration math', 'poh calculator', 'chemistry tools'],
+        longDescription: 'Master aqueous chemistry. Calculate the pH of various solutions, including weak acids and bases using equilibrium constants (Ka/Kb), with detailed molar concentration readouts.'
+    },
+    {
+        slug: 'gas-law-advanced',
         title: 'Gas Law Advanced',
-            description: 'Solve Ideal, Boyles, and Charles gas laws with integrated unit conversions.',
-                category: 'Advanced Scholar Tools',
-                    iconName: 'Wind',
-                        keywords: ['gas law calculator', 'ideal gas law', 'pv=nrt solver', 'chemistry thermodynamics', 'physics of gases'],
-                            longDescription: 'A comprehensive solver for gas thermodynamics. Handle variables for pressure, volume, temperature, and moles across multiple unit systems (atm, kPa, Celsius, Kelvin) flawlessly.'
-},
-{
-    slug: 'differential-equation-pro',
+        description: 'Solve Ideal, Boyles, and Charles gas laws with integrated unit conversions.',
+        category: 'Advanced Scholar Tools',
+        iconName: 'Wind',
+        keywords: ['gas law calculator', 'ideal gas law', 'pv=nrt solver', 'chemistry thermodynamics', 'physics of gases'],
+        longDescription: 'A comprehensive solver for gas thermodynamics. Handle variables for pressure, volume, temperature, and moles across multiple unit systems (atm, kPa, Celsius, Kelvin) flawlessly.'
+    },
+    {
+        slug: 'differential-equation-pro',
         title: 'Differential Eq. Pro',
-            description: 'Heuristic solver for first-order linear and separable differential equations.',
-                category: 'Advanced Scholar Tools',
-                    iconName: 'Braces',
-                        keywords: ['differential equation solver', 'calculus tool', 'separable equations', 'first order linear', 'math solver'],
-                            longDescription: 'Advance your calculus skills. Our heuristic solver identifies and breaks down standard first-order differential equations, providing step-by-step logic and integration constants.'
-},
-{
-    slug: 'relativity-dilation',
+        description: 'Heuristic solver for first-order linear and separable differential equations.',
+        category: 'Advanced Scholar Tools',
+        iconName: 'Braces',
+        keywords: ['differential equation solver', 'calculus tool', 'separable equations', 'first order linear', 'math solver'],
+        longDescription: 'Advance your calculus skills. Our heuristic solver identifies and breaks down standard first-order differential equations, providing step-by-step logic and integration constants.'
+    },
+    {
+        slug: 'relativity-dilation',
         title: 'Relativity Time Dilation',
-            description: 'Visualize Einsteins Special Relativity and calculate Lorentz time dilation.',
-                category: 'Advanced Scholar Tools',
-                    iconName: 'Clock',
-                        keywords: ['relativity', 'time dilation', 'lorentz factor', 'physics', 'special relativity', 'einstein'],
-                            longDescription: 'Experience the physics of the very fast. Calculate the time dilation between a moving observer and a stationary one using the Lorentz factor ($ \gamma $), with visual context for speeds approaching $c$.'
-},
-{
-    slug: 'reaction-kinetics',
+        description: 'Visualize Einsteins Special Relativity and calculate Lorentz time dilation.',
+        category: 'Advanced Scholar Tools',
+        iconName: 'Clock',
+        keywords: ['relativity', 'time dilation', 'lorentz factor', 'physics', 'special relativity', 'einstein'],
+        longDescription: 'Experience the physics of the very fast. Calculate the time dilation between a moving observer and a stationary one using the Lorentz factor ($ \gamma $), with visual context for speeds approaching $c$.'
+    },
+    {
+        slug: 'reaction-kinetics',
         title: 'Reaction Kinetics Pro',
-            description: 'Advanced tool for calculating rate laws, half-life, and activation energy.',
-                category: 'Advanced Scholar Tools',
-                    iconName: 'Activity',
-                        keywords: ['reaction kinetics', 'rate law', 'half life', 'chemistry solver', 'arrhenius equation'],
-                            longDescription: 'A professional physical chemistry solver. Determine reaction order, calculate rate constants across temperatures using the Arrhenius equation, and track half-life decay patterns.'
-},
-{
-    slug: 'laplace-solver-pro',
+        description: 'Advanced tool for calculating rate laws, half-life, and activation energy.',
+        category: 'Advanced Scholar Tools',
+        iconName: 'Activity',
+        keywords: ['reaction kinetics', 'rate law', 'half life', 'chemistry solver', 'arrhenius equation'],
+        longDescription: 'A professional physical chemistry solver. Determine reaction order, calculate rate constants across temperatures using the Arrhenius equation, and track half-life decay patterns.'
+    },
+    {
+        slug: 'laplace-solver-pro',
         title: 'Laplace Solver Pro',
-            description: 'Reference and solver for Laplace and Inverse Laplace transforms.',
-                category: 'Advanced Scholar Tools',
-                    iconName: 'Calculator',
-                        keywords: ['laplace transform', 'inverse laplace', 'engineering math', 'signals and systems', 'math tool'],
-                            longDescription: 'The ultimate tool for engineering mathematics. Access a comprehensive library of s-domain transforms and apply them to standard time-domain functions with clear step-by-step logic.'
-},
-{
-    slug: 'vector-calc-pro',
+        description: 'Reference and solver for Laplace and Inverse Laplace transforms.',
+        category: 'Advanced Scholar Tools',
+        iconName: 'Calculator',
+        keywords: ['laplace transform', 'inverse laplace', 'engineering math', 'signals and systems', 'math tool'],
+        longDescription: 'The ultimate tool for engineering mathematics. Access a comprehensive library of s-domain transforms and apply them to standard time-domain functions with clear step-by-step logic.'
+    },
+    {
+        slug: 'vector-calc-pro',
         title: 'Vector Calc Pro',
-            description: 'Perform advanced vector operations including Cross Product and Dot Product.',
-                category: 'Advanced Scholar Tools',
-                    iconName: 'MoveUpRight',
-                        keywords: ['vector algebra', 'cross product', 'dot product', 'magnitude', 'linear algebra', 'math'],
-                            longDescription: 'High-precision vector algebra. Calculate cross products, dot products, vector magnitudes, and the angles between vectors in 3D space with visual coordinate readouts.'
-},
-{
-    slug: 'titration-curve-sim',
+        description: 'Perform advanced vector operations including Cross Product and Dot Product.',
+        category: 'Advanced Scholar Tools',
+        iconName: 'MoveUpRight',
+        keywords: ['vector algebra', 'cross product', 'dot product', 'magnitude', 'linear algebra', 'math'],
+        longDescription: 'High-precision vector algebra. Calculate cross products, dot products, vector magnitudes, and the angles between vectors in 3D space with visual coordinate readouts.'
+    },
+    {
+        slug: 'titration-curve-sim',
         title: 'Titration Curve Sim',
-            description: 'Interactive visual simulator for acid-base titration and equivalence points.',
-                category: 'Advanced Scholar Tools',
-                    iconName: 'Beaker',
-                        keywords: ['titration curve', 'chemistry simulator', 'equivalence point', 'buffer region', 'acid base'],
-                            longDescription: 'Visualize aqueous chemistry in motion. Simulate the titration of strong/weak acids and bases to see real-time pH curve plotting and identify fundamental equivalence points.'
-},
-// Mathematics Tools
-{
-    slug: 'algebra-solver',
+        description: 'Interactive visual simulator for acid-base titration and equivalence points.',
+        category: 'Advanced Scholar Tools',
+        iconName: 'Beaker',
+        keywords: ['titration curve', 'chemistry simulator', 'equivalence point', 'buffer region', 'acid base'],
+        longDescription: 'Visualize aqueous chemistry in motion. Simulate the titration of strong/weak acids and bases to see real-time pH curve plotting and identify fundamental equivalence points.'
+    },
+    // Mathematics Tools
+    {
+        slug: 'algebra-solver',
         title: 'Algebra Solver',
-            description: 'Solve linear, quadratic, and polynomial equations instantly.',
-                category: 'Mathematics Tools',
-                    iconName: 'Calculator',
-                        keywords: ['algebra solver', 'quadratic equation solver', 'polynomial calculator', 'factorization tool', 'math solver'],
-                            longDescription: `
+        description: 'Solve linear, quadratic, and polynomial equations instantly.',
+        category: 'Mathematics Tools',
+        iconName: 'Calculator',
+        keywords: ['algebra solver', 'quadratic equation solver', 'polynomial calculator', 'factorization tool', 'math solver'],
+        longDescription: `
 The Algebra Solver is your all -in -one tool for mastering algebraic equations.Whether you're a high school student or a college engineering major, this tool handles the core problems you face daily.
 
 ### Features
@@ -4278,15 +4278,15 @@ The Algebra Solver is your all -in -one tool for mastering algebraic equations.W
 2. ** Input Equation **: Enter your coefficients or the full equation.
 3. ** Calculate **: Get step - by - step solutions(where applicable) and the final answer.
         `
-},
-{
-    slug: 'calculus-solver',
+    },
+    {
+        slug: 'calculus-solver',
         title: 'Calculus Solver',
-            description: 'Compute limits, derivatives, and integrals.',
-                category: 'Mathematics Tools',
-                    iconName: 'Sigma',
-                        keywords: ['calculus solver', 'derivative calculator', 'integral calculator', 'limit solver', 'differentiation'],
-                            longDescription: `
+        description: 'Compute limits, derivatives, and integrals.',
+        category: 'Mathematics Tools',
+        iconName: 'Sigma',
+        keywords: ['calculus solver', 'derivative calculator', 'integral calculator', 'limit solver', 'differentiation'],
+        longDescription: `
 Focus on the solution, not the tedious arithmetic.Our Basic Calculus Solver helps you check your homework and understand the behavior of functions.
 
 ### Capabilities
@@ -4298,15 +4298,15 @@ Focus on the solution, not the tedious arithmetic.Our Basic Calculus Solver help
 ### Note
 This tool is designed for standard high - school and college - level problems.
         `
-},
-{
-    slug: 'trigonometry-solver',
+    },
+    {
+        slug: 'trigonometry-solver',
         title: 'Trigonometry Solver',
-            description: 'Solve triangles, verify identities, and calculate trig values.',
-                category: 'Mathematics Tools',
-                    iconName: 'Triangle',
-                        keywords: ['trigonometry solver', 'triangle calculator', 'trig identities', 'heights and distances'],
-                            longDescription: `
+        description: 'Solve triangles, verify identities, and calculate trig values.',
+        category: 'Mathematics Tools',
+        iconName: 'Triangle',
+        keywords: ['trigonometry solver', 'triangle calculator', 'trig identities', 'heights and distances'],
+        longDescription: `
 Master the relationships between side lengths and angles of triangles.The Trigonometry Solver is perfect for board exams and entry tests.
 
 ### Features
@@ -4315,15 +4315,15 @@ Master the relationships between side lengths and angles of triangles.The Trigon
 *   ** Heights & Distances **: Calculate unknown heights using angle of elevation / depression.
 *   ** Graphs **: Visualize sine, cosine, and tangent waves.
         `
-},
-{
-    slug: 'coordinate-geometry',
+    },
+    {
+        slug: 'coordinate-geometry',
         title: 'Coordinate Geometry',
-            description: 'Analyze lines, circles, and parabolas on a 2D plane.',
-                category: 'Mathematics Tools',
-                    iconName: 'Axis3d',
-                        keywords: ['coordinate geometry', 'circle equation', 'parabola calculator', 'distance formula', 'midpoint calculator'],
-                            longDescription: `
+        description: 'Analyze lines, circles, and parabolas on a 2D plane.',
+        category: 'Mathematics Tools',
+        iconName: 'Axis3d',
+        keywords: ['coordinate geometry', 'circle equation', 'parabola calculator', 'distance formula', 'midpoint calculator'],
+        longDescription: `
 Visualize and solve problems in the Cartesian plane.
 
 ### Tools
@@ -4332,15 +4332,15 @@ Visualize and solve problems in the Cartesian plane.
 *   ** Parabola **: Analyze dimensions of basic parabolas.
 *   ** Distance & Midpoint **: Calculate the distance between two points and find their center.
         `
-},
-{
-    slug: 'matrix-determinant',
+    },
+    {
+        slug: 'matrix-determinant',
         title: 'Matrix & Determinants',
-            description: 'Perform matrix operations and solve linear systems.',
-                category: 'Mathematics Tools',
-                    iconName: 'Grid',
-                        keywords: ['matrix calculator', 'determinant solver', 'matrix multiplication', 'inverse matrix', 'system of equations'],
-                            longDescription: `
+        description: 'Perform matrix operations and solve linear systems.',
+        category: 'Mathematics Tools',
+        iconName: 'Grid',
+        keywords: ['matrix calculator', 'determinant solver', 'matrix multiplication', 'inverse matrix', 'system of equations'],
+        longDescription: `
 A lightweight tool for handling matrix algebra without the headache of manual calculations.
 
 ### Operations
@@ -4348,15 +4348,15 @@ A lightweight tool for handling matrix algebra without the headache of manual ca
 *   ** Determinant **: Calculate the determinant of 2x2 and 3x3 matrices.
 *   ** Linear Systems **: Solve systems of linear equations(Cramer's Rule / Inverse method).
             `
-},
-{
-    slug: 'cramers-rule-solver',
+    },
+    {
+        slug: 'cramers-rule-solver',
         title: 'Cramer\'s Rule Solver',
-            description: 'Solve systems of linear equations using Cramer\'s Rule with step-by-step details.',
-                category: 'Mathematics Tools',
-                    iconName: 'Grid',
-                        keywords: ['cramers rule', 'system of equations', 'linear algebra solver', 'matrix solver', 'determinant method'],
-                            longDescription: `
+        description: 'Solve systems of linear equations using Cramer\'s Rule with step-by-step details.',
+        category: 'Mathematics Tools',
+        iconName: 'Grid',
+        keywords: ['cramers rule', 'system of equations', 'linear algebra solver', 'matrix solver', 'determinant method'],
+        longDescription: `
 Solve systems of linear equations(2x2, 3x3, 4x4) using the famous Cramer's Rule. This tool calculates the main determinant (D) and the determinants for each variable (Dx, Dy, Dz) to find the unique solution.
 
 ### How to Use
@@ -4364,15 +4364,15 @@ Solve systems of linear equations(2x2, 3x3, 4x4) using the famous Cramer's Rule.
 2. ** Enter Constants **: Input your vector B(constants).
 3. ** Solve **: The calculator will show each determinant calculation and the final values for x, y, z.
         `
-},
-{
-    slug: 'probability-statistics',
+    },
+    {
+        slug: 'probability-statistics',
         title: 'Probability & Stats',
-            description: 'Calculate mean, median, mode, and probability.',
-                category: 'Mathematics Tools',
-                    iconName: 'BarChart3',
-                        keywords: ['statistics calculator', 'mean median mode', 'probability calculator', 'permutations combinations'],
-                            longDescription: `
+        description: 'Calculate mean, median, mode, and probability.',
+        category: 'Mathematics Tools',
+        iconName: 'BarChart3',
+        keywords: ['statistics calculator', 'mean median mode', 'probability calculator', 'permutations combinations'],
+        longDescription: `
 Essential tools for data analysis and probability theory.
 
 ### Features
@@ -4380,503 +4380,503 @@ Essential tools for data analysis and probability theory.
 *   ** Simple Probability **: Calculate odds for simple events.
 *   ** Counting **: Permutations(nPr) and Combinations(nCr) calculator.
         `
-},
-{
-    slug: 'partial-fraction-decomposer',
+    },
+    {
+        slug: 'partial-fraction-decomposer',
         title: 'Partial Fraction Decomposer',
-            description: 'Decompose rational functions into simpler partial fractions.',
-                category: 'Mathematics Tools',
-                    iconName: 'Divide',
-                        keywords: ['partial fraction', 'rational function', 'math decomposition', 'algebra solver', 'calculus helper'],
-                            longDescription: 'Simplify complex rational expressions. Decompose algebraic fractions into sums of simpler distinct or repeated linear and quadratic factors, essential for integration and inverse Laplace transforms.'
-},
-{
-    slug: 'binomial-expansion-tool',
+        description: 'Decompose rational functions into simpler partial fractions.',
+        category: 'Mathematics Tools',
+        iconName: 'Divide',
+        keywords: ['partial fraction', 'rational function', 'math decomposition', 'algebra solver', 'calculus helper'],
+        longDescription: 'Simplify complex rational expressions. Decompose algebraic fractions into sums of simpler distinct or repeated linear and quadratic factors, essential for integration and inverse Laplace transforms.'
+    },
+    {
+        slug: 'binomial-expansion-tool',
         title: 'Binomial Expansion Tool',
-            description: 'Expand binomial expressions (a+b)^n using Pascal\'s Triangle.',
-                category: 'Mathematics Tools',
-                    iconName: 'Sigma',
-                        keywords: ['binomial theorem', 'polynomial expansion', 'pascals triangle', 'algebra expansion', 'math series'],
-                            longDescription: 'Expand powers of binomials instantly. Get the full expansion of (a + b)^n for any integer power n, showing coefficients derived from the Binomial Theorem.'
-},
-{
-    slug: 'synthetic-division-calculator',
+        description: 'Expand binomial expressions (a+b)^n using Pascal\'s Triangle.',
+        category: 'Mathematics Tools',
+        iconName: 'Sigma',
+        keywords: ['binomial theorem', 'polynomial expansion', 'pascals triangle', 'algebra expansion', 'math series'],
+        longDescription: 'Expand powers of binomials instantly. Get the full expansion of (a + b)^n for any integer power n, showing coefficients derived from the Binomial Theorem.'
+    },
+    {
+        slug: 'synthetic-division-calculator',
         title: 'Synthetic Division',
-            description: 'Perform synthetic division of polynomials by linear divisors.',
-                category: 'Mathematics Tools',
-                    iconName: 'Divide',
-                        keywords: ['synthetic division', 'polynomial division', 'remainder theorem', 'algebra tool', 'math division'],
-                            longDescription: 'Divide polynomials efficiently. Use synthetic division to divide a polynomial P(x) by a linear binomial (x - c), providing the quotient and remainder with a clear tabular step-by-step format.'
-},
-{
-    slug: 'complex-roots-finder',
+        description: 'Perform synthetic division of polynomials by linear divisors.',
+        category: 'Mathematics Tools',
+        iconName: 'Divide',
+        keywords: ['synthetic division', 'polynomial division', 'remainder theorem', 'algebra tool', 'math division'],
+        longDescription: 'Divide polynomials efficiently. Use synthetic division to divide a polynomial P(x) by a linear binomial (x - c), providing the quotient and remainder with a clear tabular step-by-step format.'
+    },
+    {
+        slug: 'complex-roots-finder',
         title: 'Complex Roots Finder',
-            description: 'Find all roots (real and complex) of polynomial equations.',
-                category: 'Mathematics Tools',
-                    iconName: 'Hash',
-                        keywords: ['complex roots', 'polynomial solver', 'imaginary numbers', 'fundamental theorem of algebra', 'root finder'],
-                            longDescription: 'Solve for every solution. Find all n roots of an n-th degree polynomial, including complex conjugate pairs, ensuring no solution is missed.'
-},
-{
-    slug: 'logarithm-solver',
+        description: 'Find all roots (real and complex) of polynomial equations.',
+        category: 'Mathematics Tools',
+        iconName: 'Hash',
+        keywords: ['complex roots', 'polynomial solver', 'imaginary numbers', 'fundamental theorem of algebra', 'root finder'],
+        longDescription: 'Solve for every solution. Find all n roots of an n-th degree polynomial, including complex conjugate pairs, ensuring no solution is missed.'
+    },
+    {
+        slug: 'logarithm-solver',
         title: 'Logarithm Solver',
-            description: 'Solve logarithmic equations and simplify log expressions.',
-                category: 'Mathematics Tools',
-                    iconName: 'Calculator',
-                        keywords: ['logarithm calculator', 'log solver', 'natural log', 'log rules', 'exponential equations'],
-                            longDescription: 'Master logarithmic properties. Solve for x in logarithmic equations via exponentiation, change bases, and simplify expanded log expressions into single terms.'
-},
-{
-    slug: 'sequence-series-solver',
+        description: 'Solve logarithmic equations and simplify log expressions.',
+        category: 'Mathematics Tools',
+        iconName: 'Calculator',
+        keywords: ['logarithm calculator', 'log solver', 'natural log', 'log rules', 'exponential equations'],
+        longDescription: 'Master logarithmic properties. Solve for x in logarithmic equations via exponentiation, change bases, and simplify expanded log expressions into single terms.'
+    },
+    {
+        slug: 'sequence-series-solver',
         title: 'Sequence & Series (AP/GP)',
-            description: 'Calculate nth term and sum of Arithmetic and Geometric progressions.',
-                category: 'Mathematics Tools',
-                    iconName: 'ListOrdered',
-                        keywords: ['arithmetic progression', 'geometric progression', 'series sum', 'nth term', 'math sequences'],
-                            longDescription: 'Analyze mathematical patterns. Calculate the nth term, sum to n terms, and infinite sums (for GP) for Arithmetic and Geometric progressions effortlessly.'
-},
-{
-    slug: 'conic-section-analyzer',
+        description: 'Calculate nth term and sum of Arithmetic and Geometric progressions.',
+        category: 'Mathematics Tools',
+        iconName: 'ListOrdered',
+        keywords: ['arithmetic progression', 'geometric progression', 'series sum', 'nth term', 'math sequences'],
+        longDescription: 'Analyze mathematical patterns. Calculate the nth term, sum to n terms, and infinite sums (for GP) for Arithmetic and Geometric progressions effortlessly.'
+    },
+    {
+        slug: 'conic-section-analyzer',
         title: 'Conic Section Analyzer',
-            description: 'Analyze properties of Parabolas, Ellipses, and Hyperbolas.',
-                category: 'Mathematics Tools',
-                    iconName: 'Circle',
-                        keywords: ['conics', 'parabola', 'ellipse', 'hyperbola', 'focus directrix'],
-                            longDescription: 'Explore the geometry of curves. Input standard equations to find vertices, foci, directrices, lattice rectum length, and eccentricity of any conic section.'
-},
-{
-    slug: 'plane-geometry-3d',
+        description: 'Analyze properties of Parabolas, Ellipses, and Hyperbolas.',
+        category: 'Mathematics Tools',
+        iconName: 'Circle',
+        keywords: ['conics', 'parabola', 'ellipse', 'hyperbola', 'focus directrix'],
+        longDescription: 'Explore the geometry of curves. Input standard equations to find vertices, foci, directrices, lattice rectum length, and eccentricity of any conic section.'
+    },
+    {
+        slug: 'plane-geometry-3d',
         title: '3D Plane Geometry',
-            description: 'Calculate plane equations and distances in 3D space.',
-                category: 'Mathematics Tools',
-                    iconName: 'Box',
-                        keywords: ['3d geometry', 'plane equation', 'normal vector', 'distance to plane', 'math 3d'],
-                            longDescription: 'Navigate three-dimensional space. Find the equation of a plane from three points, calculate the distance from a point to a plane, and find the angle between two planes.'
-},
-{
-    slug: 'limits-evaluator',
+        description: 'Calculate plane equations and distances in 3D space.',
+        category: 'Mathematics Tools',
+        iconName: 'Box',
+        keywords: ['3d geometry', 'plane equation', 'normal vector', 'distance to plane', 'math 3d'],
+        longDescription: 'Navigate three-dimensional space. Find the equation of a plane from three points, calculate the distance from a point to a plane, and find the angle between two planes.'
+    },
+    {
+        slug: 'limits-evaluator',
         title: 'Limits Evaluator',
-            description: 'Evaluate limits of functions as they approach a value or infinity.',
-                category: 'Mathematics Tools',
-                    iconName: 'ArrowRight',
-                        keywords: ['limit calculator', 'calculus limits', 'continuity', 'math analysis', 'infinity limits'],
-                            longDescription: 'Approach the answer. Evaluate one-sided and two-sided limits of functions, handling indeterminate forms and discontinuities with heuristic analysis.'
-},
-{
-    slug: 'tangent-normal-calculator',
+        description: 'Evaluate limits of functions as they approach a value or infinity.',
+        category: 'Mathematics Tools',
+        iconName: 'ArrowRight',
+        keywords: ['limit calculator', 'calculus limits', 'continuity', 'math analysis', 'infinity limits'],
+        longDescription: 'Approach the answer. Evaluate one-sided and two-sided limits of functions, handling indeterminate forms and discontinuities with heuristic analysis.'
+    },
+    {
+        slug: 'tangent-normal-calculator',
         title: 'Tangent & Normal',
-            description: 'Find the equation of the tangent and normal lines at a point.',
-                category: 'Mathematics Tools',
-                    iconName: 'TrendingUp',
-                        keywords: ['tangent line', 'normal line', 'derivative application', 'calculus tool', 'slope calculator'],
-                            longDescription: 'Visualize rates of change. Calculate the slope of the curve at a specific point to derive the exact linear equations for the tangent and normal lines.'
-},
-{
-    slug: 'area-under-curve',
+        description: 'Find the equation of the tangent and normal lines at a point.',
+        category: 'Mathematics Tools',
+        iconName: 'TrendingUp',
+        keywords: ['tangent line', 'normal line', 'derivative application', 'calculus tool', 'slope calculator'],
+        longDescription: 'Visualize rates of change. Calculate the slope of the curve at a specific point to derive the exact linear equations for the tangent and normal lines.'
+    },
+    {
+        slug: 'area-under-curve',
         title: 'Area Under Curve',
-            description: 'Calculate the area under a function curve using definite integration.',
-                category: 'Mathematics Tools',
-                    iconName: 'AreaChart',
-                        keywords: ['definite integral', 'area calculator', 'calculus area', 'integration tool', 'riemann sum'],
-                            longDescription: 'Measure accumulation. numeric integration to finding the exact area bounded by a function, the x-axis, and specified limits.'
-},
-{
-    slug: 'improper-integral-solver',
+        description: 'Calculate the area under a function curve using definite integration.',
+        category: 'Mathematics Tools',
+        iconName: 'AreaChart',
+        keywords: ['definite integral', 'area calculator', 'calculus area', 'integration tool', 'riemann sum'],
+        longDescription: 'Measure accumulation. numeric integration to finding the exact area bounded by a function, the x-axis, and specified limits.'
+    },
+    {
+        slug: 'improper-integral-solver',
         title: 'Improper Integrals',
-            description: 'Evaluate integrals with infinite limits or discontinuities.',
-                category: 'Mathematics Tools',
-                    iconName: 'Infinity',
-                        keywords: ['improper integral', 'infinite limits', 'calculus convergence', 'math integration', 'analysis'],
-                            longDescription: 'Go beyond finite bounds. Evaluate Type I and Type II improper integrals to determine convergence or divergence and calculate the finite value if it exists.'
-},
-{
-    slug: 'arc-length-calculator',
+        description: 'Evaluate integrals with infinite limits or discontinuities.',
+        category: 'Mathematics Tools',
+        iconName: 'Infinity',
+        keywords: ['improper integral', 'infinite limits', 'calculus convergence', 'math integration', 'analysis'],
+        longDescription: 'Go beyond finite bounds. Evaluate Type I and Type II improper integrals to determine convergence or divergence and calculate the finite value if it exists.'
+    },
+    {
+        slug: 'arc-length-calculator',
         title: 'Arc Length Calculator',
-            description: 'Calculate the length of a curve segment over an interval.',
-                category: 'Mathematics Tools',
-                    iconName: 'Activity',
-                        keywords: ['arc length', 'curve length', 'calculus path', 'integration application', 'math geometry'],
-                            longDescription: 'Measure the path. Compute the exact length of a smooth curve segment f(x) between two points using the standard arc length integral formula.'
-},
-{
-    slug: 'surface-area-revolution',
+        description: 'Calculate the length of a curve segment over an interval.',
+        category: 'Mathematics Tools',
+        iconName: 'Activity',
+        keywords: ['arc length', 'curve length', 'calculus path', 'integration application', 'math geometry'],
+        longDescription: 'Measure the path. Compute the exact length of a smooth curve segment f(x) between two points using the standard arc length integral formula.'
+    },
+    {
+        slug: 'surface-area-revolution',
         title: 'Surface Area of Revolution',
-            description: 'Calculate surface area generated by rotating a curve around an axis.',
-                category: 'Mathematics Tools',
-                    iconName: 'Orbit',
-                        keywords: ['surface area', 'solid of revolution', 'calculus rotation', 'integration tool', 'math 3d'],
-                            longDescription: 'Spin into 3D. Determine the surface area formed when a 2D curve is rotated about the x-axis or y-axis using integral calculus.'
-},
-{
-    slug: 'truth-table-generator',
+        description: 'Calculate surface area generated by rotating a curve around an axis.',
+        category: 'Mathematics Tools',
+        iconName: 'Orbit',
+        keywords: ['surface area', 'solid of revolution', 'calculus rotation', 'integration tool', 'math 3d'],
+        longDescription: 'Spin into 3D. Determine the surface area formed when a 2D curve is rotated about the x-axis or y-axis using integral calculus.'
+    },
+    {
+        slug: 'truth-table-generator',
         title: 'Truth Table Generator',
-            description: 'Generate logic truth tables for boolean expressions.',
-                category: 'Mathematics Tools',
-                    iconName: 'Binary',
-                        keywords: ['truth table', 'boolean logic', 'logic gates', 'discrete math', 'propositional logic'],
-                            longDescription: 'Verify logical arguments. Input complex boolean expressions using AND, OR, NOT, implies, and XOR to generate a complete truth table verifying all possible truth values.'
-},
-{
-    slug: 'set-theory-visualizer',
+        description: 'Generate logic truth tables for boolean expressions.',
+        category: 'Mathematics Tools',
+        iconName: 'Binary',
+        keywords: ['truth table', 'boolean logic', 'logic gates', 'discrete math', 'propositional logic'],
+        longDescription: 'Verify logical arguments. Input complex boolean expressions using AND, OR, NOT, implies, and XOR to generate a complete truth table verifying all possible truth values.'
+    },
+    {
+        slug: 'set-theory-visualizer',
         title: 'Set Theory Visualizer',
-            description: 'Perform Union, Intersection, and Difference operations on sets.',
-                category: 'Mathematics Tools',
-                    iconName: 'Combine',
-                        keywords: ['set theory', 'union intersection', 'venn diagram', 'discrete math', 'math sets'],
-                            longDescription: 'Manage collections. Input data sets to calculate their Union, Intersection, Difference, and Symmetric Difference, helpful for probability and logic problems.'
-},
-{
-    slug: 'number-base-operations',
+        description: 'Perform Union, Intersection, and Difference operations on sets.',
+        category: 'Mathematics Tools',
+        iconName: 'Combine',
+        keywords: ['set theory', 'union intersection', 'venn diagram', 'discrete math', 'math sets'],
+        longDescription: 'Manage collections. Input data sets to calculate their Union, Intersection, Difference, and Symmetric Difference, helpful for probability and logic problems.'
+    },
+    {
+        slug: 'number-base-operations',
         title: 'Number Base Operations',
-            description: 'Perform arithmetic (Add, Sub, Mul, Div) in any base system.',
-                category: 'Mathematics Tools',
-                    iconName: 'Hash',
-                        keywords: ['base calculator', 'binary math', 'hexadecimal arithmetic', 'number systems', 'base converter'],
-                            longDescription: 'Calculate beyond base-10. Perform addition, subtraction, multiplication, and division directly in Binary, Octal, Hexadecimal, or any custom base up to 36.'
-},
-{
-    slug: 'modulo-arithmetic-tool',
+        description: 'Perform arithmetic (Add, Sub, Mul, Div) in any base system.',
+        category: 'Mathematics Tools',
+        iconName: 'Hash',
+        keywords: ['base calculator', 'binary math', 'hexadecimal arithmetic', 'number systems', 'base converter'],
+        longDescription: 'Calculate beyond base-10. Perform addition, subtraction, multiplication, and division directly in Binary, Octal, Hexadecimal, or any custom base up to 36.'
+    },
+    {
+        slug: 'modulo-arithmetic-tool',
         title: 'Modulo Arithmetic',
-            description: 'Calculate modular exponentiation, inverses, and congruences.',
-                category: 'Mathematics Tools',
-                    iconName: 'Percent',
-                        keywords: ['modulo calculator', 'modular arithmetic', 'number theory', 'cryptography math', 'remainder tool'],
-                            longDescription: 'Explore the math of cycles. Compute (a^b) mod n, find modular inverses, and solve linear congruences, essential for understanding cryptography and number theory.'
-},
-{
-    slug: 'prime-factorization-tree',
+        description: 'Calculate modular exponentiation, inverses, and congruences.',
+        category: 'Mathematics Tools',
+        iconName: 'Percent',
+        keywords: ['modulo calculator', 'modular arithmetic', 'number theory', 'cryptography math', 'remainder tool'],
+        longDescription: 'Explore the math of cycles. Compute (a^b) mod n, find modular inverses, and solve linear congruences, essential for understanding cryptography and number theory.'
+    },
+    {
+        slug: 'prime-factorization-tree',
         title: 'Prime Factorization Tree',
-            description: 'Visualize the prime factors of a number as a tree diagram.',
-                category: 'Mathematics Tools',
-                    iconName: 'Network',
-                        keywords: ['prime factors', 'factor tree', 'divisibility', 'number theory', 'math visualizer'],
-                            longDescription: 'Break it down completely. Input any composite number to generate a visual hierarchical tree showing its breakdown into prime number building blocks.'
-},
-{
-    slug: 'regression-analysis-tool',
+        description: 'Visualize the prime factors of a number as a tree diagram.',
+        category: 'Mathematics Tools',
+        iconName: 'Network',
+        keywords: ['prime factors', 'factor tree', 'divisibility', 'number theory', 'math visualizer'],
+        longDescription: 'Break it down completely. Input any composite number to generate a visual hierarchical tree showing its breakdown into prime number building blocks.'
+    },
+    {
+        slug: 'regression-analysis-tool',
         title: 'Regression Analysis',
-            description: 'Find best-fit lines and curves (Linear, Quadratic, Exponential) for data.',
-                category: 'Mathematics Tools',
-                    iconName: 'ScatterChart',
-                        keywords: ['regression calculator', 'best fit line', 'statistics modeling', 'linear regression', 'data analysis'],
-                            longDescription: 'Model your data. Input xy-data points to calculate the Equation of Best Fit (Linear, Quadratic, or Exponential) along with the R-squared correlation coefficient.'
-},
-{
-    slug: 'quantum-level-solver',
+        description: 'Find best-fit lines and curves (Linear, Quadratic, Exponential) for data.',
+        category: 'Mathematics Tools',
+        iconName: 'ScatterChart',
+        keywords: ['regression calculator', 'best fit line', 'statistics modeling', 'linear regression', 'data analysis'],
+        longDescription: 'Model your data. Input xy-data points to calculate the Equation of Best Fit (Linear, Quadratic, or Exponential) along with the R-squared correlation coefficient.'
+    },
+    {
+        slug: 'quantum-level-solver',
         title: 'Quantum Level Solver',
-            description: 'Calculate and visualize energy levels for a particle in a 1D infinite well.',
-                category: 'Advanced Scholar Tools',
-                    iconName: 'Atom',
-                        keywords: ['quantum mechanics', 'schrodinger equation', 'energy levels', 'wave function', 'physics solver'],
-                            longDescription: 'Master the basics of quantum mechanics. This tool calculates the energy levels and wavefunctions for the classic "particle in a box" problem, showing both the math and the physical probability densities.'
-},
-{
-    slug: 'thermo-cycle-analyzer',
+        description: 'Calculate and visualize energy levels for a particle in a 1D infinite well.',
+        category: 'Advanced Scholar Tools',
+        iconName: 'Atom',
+        keywords: ['quantum mechanics', 'schrodinger equation', 'energy levels', 'wave function', 'physics solver'],
+        longDescription: 'Master the basics of quantum mechanics. This tool calculates the energy levels and wavefunctions for the classic "particle in a box" problem, showing both the math and the physical probability densities.'
+    },
+    {
+        slug: 'thermo-cycle-analyzer',
         title: 'Thermodynamic Cycle Analyzer',
-            description: 'Analyze Carnot and Rankine heat engine cycles for efficiency.',
-                category: 'Advanced Scholar Tools',
-                    iconName: 'Thermometer',
-                        keywords: ['thermodynamics', 'carnot cycle', 'rankine cycle', 'thermal efficiency', 'entropy', 'physics'],
-                            longDescription: 'Explore the limits of heat engines. Compare the theoretical maximum efficiency of the Carnot cycle with real-world Rankine cycle estimations based on reservoir temperatures.'
-},
-{
-    slug: 'orbit-simulator-pro',
+        description: 'Analyze Carnot and Rankine heat engine cycles for efficiency.',
+        category: 'Advanced Scholar Tools',
+        iconName: 'Thermometer',
+        keywords: ['thermodynamics', 'carnot cycle', 'rankine cycle', 'thermal efficiency', 'entropy', 'physics'],
+        longDescription: 'Explore the limits of heat engines. Compare the theoretical maximum efficiency of the Carnot cycle with real-world Rankine cycle estimations based on reservoir temperatures.'
+    },
+    {
+        slug: 'orbit-simulator-pro',
         title: 'Astrophysics Orbit Simulator',
-            description: 'Simulate orbital mechanics, escape velocity, and Keplerian paths.',
-                category: 'Advanced Scholar Tools',
-                    iconName: 'Orbit',
-                        keywords: ['orbital mechanics', 'escape velocity', 'astrophysics', 'kepler laws', 'satellite physics'],
-                            longDescription: 'Calculate the physics of space travel. Determine orbital speeds, periods, and escape velocities for any planet or custom celestial body using gravitational field equations.'
-},
-{
-    slug: 'em-wave-calculator',
+        description: 'Simulate orbital mechanics, escape velocity, and Keplerian paths.',
+        category: 'Advanced Scholar Tools',
+        iconName: 'Orbit',
+        keywords: ['orbital mechanics', 'escape velocity', 'astrophysics', 'kepler laws', 'satellite physics'],
+        longDescription: 'Calculate the physics of space travel. Determine orbital speeds, periods, and escape velocities for any planet or custom celestial body using gravitational field equations.'
+    },
+    {
+        slug: 'em-wave-calculator',
         title: 'EM Wave Calculator',
-            description: 'Explore the electromagnetic spectrum and calculate photon energy.',
-                category: 'Advanced Scholar Tools',
-                    iconName: 'Waves',
-                        keywords: ['em spectrum', 'wavelength frequency', 'photon energy', 'light physics', 'planck constant'],
-                            longDescription: 'Navigate the electromagnetic spectrum. Convert between frequency and wavelength, calculate energy per photon (hf), and identify the spectrum range from radio to gamma rays.'
-},
-{
-    slug: 'nuclear-decay-sim',
+        description: 'Explore the electromagnetic spectrum and calculate photon energy.',
+        category: 'Advanced Scholar Tools',
+        iconName: 'Waves',
+        keywords: ['em spectrum', 'wavelength frequency', 'photon energy', 'light physics', 'planck constant'],
+        longDescription: 'Navigate the electromagnetic spectrum. Convert between frequency and wavelength, calculate energy per photon (hf), and identify the spectrum range from radio to gamma rays.'
+    },
+    {
+        slug: 'nuclear-decay-sim',
         title: 'Nuclear Decay Simulator',
-            description: 'Simulate radioactive decay law and half-life calculations.',
-                category: 'Advanced Scholar Tools',
-                    iconName: 'ShieldAlert',
-                        keywords: ['nuclear physics', 'radioactive decay', 'half life', 'carbon dating', 'activity rate'],
-                            longDescription: 'Visualize the exponential nature of time. Simulate radioactive decay for various isotopes, calculate remaining masses over time, and determine the decay constant (λ) and current activity.'
-},
-// Chemistry Category
-{
-    slug: 'molar-mass-pro',
+        description: 'Simulate radioactive decay law and half-life calculations.',
+        category: 'Advanced Scholar Tools',
+        iconName: 'ShieldAlert',
+        keywords: ['nuclear physics', 'radioactive decay', 'half life', 'carbon dating', 'activity rate'],
+        longDescription: 'Visualize the exponential nature of time. Simulate radioactive decay for various isotopes, calculate remaining masses over time, and determine the decay constant (λ) and current activity.'
+    },
+    // Chemistry Category
+    {
+        slug: 'molar-mass-pro',
         title: 'Molar Mass Pro',
-            description: 'Advanced molecular weight calculator with complex formula parsing.',
-                category: 'Chemistry',
-                    iconName: 'Scale',
-                        keywords: ['molar mass', 'molecular weight', 'chemistry calculator', 'atomic mass', 'stoichiometry'],
-                            longDescription: 'Precision matters in the lab. Input complex chemical formulas (supporting brackets like Mg(OH)2 or hydrates like CuSO4·5H2O) to calculate precise molar masses based on the latest IUPAC atomic weights.'
-},
-{
-    slug: 'equation-balancer',
+        description: 'Advanced molecular weight calculator with complex formula parsing.',
+        category: 'Chemistry',
+        iconName: 'Scale',
+        keywords: ['molar mass', 'molecular weight', 'chemistry calculator', 'atomic mass', 'stoichiometry'],
+        longDescription: 'Precision matters in the lab. Input complex chemical formulas (supporting brackets like Mg(OH)2 or hydrates like CuSO4·5H2O) to calculate precise molar masses based on the latest IUPAC atomic weights.'
+    },
+    {
+        slug: 'equation-balancer',
         title: 'Auto Balancer Pro',
-            description: 'Balance complex chemical equations and identify reaction types.',
-                category: 'Chemistry',
-                    iconName: 'GitMerge',
-                        keywords: ['balance equation', 'chemical reaction', 'stoichiometry balancer', 'redox balancer'],
-                            longDescription: 'Stop guessing coefficients. This tool uses matrix algebra to balance any valid chemical equation instantly, including polyatomic ion groups and redox reactions.'
-},
-{
-    slug: 'stoichiometry-solver',
+        description: 'Balance complex chemical equations and identify reaction types.',
+        category: 'Chemistry',
+        iconName: 'GitMerge',
+        keywords: ['balance equation', 'chemical reaction', 'stoichiometry balancer', 'redox balancer'],
+        longDescription: 'Stop guessing coefficients. This tool uses matrix algebra to balance any valid chemical equation instantly, including polyatomic ion groups and redox reactions.'
+    },
+    {
+        slug: 'stoichiometry-solver',
         title: 'Stoichiometry Solver',
-            description: 'Convert between grams, moles, and particles for any chemical reaction.',
-                category: 'Chemistry',
-                    iconName: 'Repeat',
-                        keywords: ['stoichiometry', 'mole conversion', 'theoretical yield', 'mass mass conversion'],
-                            longDescription: 'The heart of chemistry. Enter a balanced equation and any known quantity to solve for all other reactants and products in grams, moles, or molecules.'
-},
-{
-    slug: 'ideal-gas-law',
+        description: 'Convert between grams, moles, and particles for any chemical reaction.',
+        category: 'Chemistry',
+        iconName: 'Repeat',
+        keywords: ['stoichiometry', 'mole conversion', 'theoretical yield', 'mass mass conversion'],
+        longDescription: 'The heart of chemistry. Enter a balanced equation and any known quantity to solve for all other reactants and products in grams, moles, or molecules.'
+    },
+    {
+        slug: 'ideal-gas-law',
         title: 'Ideal Gas Pro',
-            description: 'Solve for P, V, n, or T using the Ideal Gas Law (PV=nRT).',
-                category: 'Chemistry',
-                    iconName: 'Wind',
-                        keywords: ['ideal gas law', 'boyles law', 'charles law', 'gas constant', 'chemistry physics'],
-                            longDescription: 'Simulate gas behavior. Toggle between units (atm, kPa, mmHg, Celsius, Kelvin) and solve for any unknown variable in the ideal gas equation.'
-},
-{
-    slug: 'molarity-calculator',
+        description: 'Solve for P, V, n, or T using the Ideal Gas Law (PV=nRT).',
+        category: 'Chemistry',
+        iconName: 'Wind',
+        keywords: ['ideal gas law', 'boyles law', 'charles law', 'gas constant', 'chemistry physics'],
+        longDescription: 'Simulate gas behavior. Toggle between units (atm, kPa, mmHg, Celsius, Kelvin) and solve for any unknown variable in the ideal gas equation.'
+    },
+    {
+        slug: 'molarity-calculator',
         title: 'Molarity Plus',
-            description: 'Calculate concentration, volume, and solute mass for solutions.',
-                category: 'Chemistry',
-                    iconName: 'FlaskConical',
-                        keywords: ['molarity', 'concentration', 'solubility', 'chemistry solution', 'molality'],
-                            longDescription: 'Prepare your solutions accurately. Calculate molarity (M), molality (m), or mass percent by inputting solute and solvent details.'
-},
-{
-    slug: 'dilution-calculator',
+        description: 'Calculate concentration, volume, and solute mass for solutions.',
+        category: 'Chemistry',
+        iconName: 'FlaskConical',
+        keywords: ['molarity', 'concentration', 'solubility', 'chemistry solution', 'molality'],
+        longDescription: 'Prepare your solutions accurately. Calculate molarity (M), molality (m), or mass percent by inputting solute and solvent details.'
+    },
+    {
+        slug: 'dilution-calculator',
         title: 'Dilution Master',
-            description: 'Quickly calculate final concentrations using M1V1 = M2V2.',
-                category: 'Chemistry',
-                    iconName: 'Droplets',
-                        keywords: ['dilution', 'serial dilution', 'stock solution', 'chemistry lab'],
-                            longDescription: 'Master of the bench. Determine exact amounts of stock solution and solvent needed to reach your target concentration.'
-},
-{
-    slug: 'ph-poh-calculator',
+        description: 'Quickly calculate final concentrations using M1V1 = M2V2.',
+        category: 'Chemistry',
+        iconName: 'Droplets',
+        keywords: ['dilution', 'serial dilution', 'stock solution', 'chemistry lab'],
+        longDescription: 'Master of the bench. Determine exact amounts of stock solution and solvent needed to reach your target concentration.'
+    },
+    {
+        slug: 'ph-poh-calculator',
         title: 'pH/pOH Master',
-            description: 'Calculate pH, pOH, and ion concentrations for acids and bases.',
-                category: 'Chemistry',
-                    iconName: 'TestTube2',
-                        keywords: ['ph calculator', 'poh', 'acid base', 'h3o concentration', 'oh concentration'],
-                            longDescription: 'Navigate the logarithmic scale. Convert between pH, pOH, [H+], and [OH-] instantly for any aqueous solution.'
-},
-{
-    slug: 'buffer-calculator',
+        description: 'Calculate pH, pOH, and ion concentrations for acids and bases.',
+        category: 'Chemistry',
+        iconName: 'TestTube2',
+        keywords: ['ph calculator', 'poh', 'acid base', 'h3o concentration', 'oh concentration'],
+        longDescription: 'Navigate the logarithmic scale. Convert between pH, pOH, [H+], and [OH-] instantly for any aqueous solution.'
+    },
+    {
+        slug: 'buffer-calculator',
         title: 'Henderson-Hasselbalch Pro',
-            description: 'Calculate the pH of buffer solutions with specific pKa values.',
-                category: 'Chemistry',
-                    iconName: 'Pipette',
-                        keywords: ['buffer solution', 'pKa', 'henderson hasselbalch', 'acid base equilibrium'],
-                            longDescription: 'Predict buffer behavior. Input the concentrations of a weak acid and its conjugate base to find the resulting pH, or determine the required ratio for a target pH.'
-},
-{
-    slug: 'enthalpy-calculator',
+        description: 'Calculate the pH of buffer solutions with specific pKa values.',
+        category: 'Chemistry',
+        iconName: 'Pipette',
+        keywords: ['buffer solution', 'pKa', 'henderson hasselbalch', 'acid base equilibrium'],
+        longDescription: 'Predict buffer behavior. Input the concentrations of a weak acid and its conjugate base to find the resulting pH, or determine the required ratio for a target pH.'
+    },
+    {
+        slug: 'enthalpy-calculator',
         title: 'Enthalpy Solver',
-            description: 'Calculate ΔH using bond energies or heats of formation.',
-                category: 'Chemistry',
-                    iconName: 'Flame',
-                        keywords: ['enthalpy', 'delta H', 'heat of reaction', 'thermochemistry', 'hess law'],
-                            longDescription: 'Measure the heat. Calculate the enthalpy change of a reaction using standard heats of formation (Hess Law) or by analyzing bond dissociation energies.'
-},
-{
-    slug: 'gibbs-free-energy',
+        description: 'Calculate ΔH using bond energies or heats of formation.',
+        category: 'Chemistry',
+        iconName: 'Flame',
+        keywords: ['enthalpy', 'delta H', 'heat of reaction', 'thermochemistry', 'hess law'],
+        longDescription: 'Measure the heat. Calculate the enthalpy change of a reaction using standard heats of formation (Hess Law) or by analyzing bond dissociation energies.'
+    },
+    {
+        slug: 'gibbs-free-energy',
         title: 'Gibbs & Spontaneity',
-            description: 'Predict reaction spontaneity using ΔG = ΔH - TΔS.',
-                category: 'Chemistry',
-                    iconName: 'Zap',
-                        keywords: ['gibbs free energy', 'spontaneity', 'entropy', 'thermodynamics', 'delta G'],
-                            longDescription: 'Will it react? Determine if a process is spontaneous by analyzing the balance between enthalpy, entropy, and temperature.'
-},
-{
-    slug: 'specific-heat-calc',
+        description: 'Predict reaction spontaneity using ΔG = ΔH - TΔS.',
+        category: 'Chemistry',
+        iconName: 'Zap',
+        keywords: ['gibbs free energy', 'spontaneity', 'entropy', 'thermodynamics', 'delta G'],
+        longDescription: 'Will it react? Determine if a process is spontaneous by analyzing the balance between enthalpy, entropy, and temperature.'
+    },
+    {
+        slug: 'specific-heat-calc',
         title: 'Specific Heat (q=mcΔT)',
-            description: 'Calculate heat transfer, mass, or temperature changes.',
-                category: 'Chemistry',
-                    iconName: 'Thermometer',
-                        keywords: ['specific heat', 'calorimetry', 'heat flow', 'thermodynamics'],
-                            longDescription: 'Understand energy transfer. Solve for any variable in the specific heat equation, including final temperatures in calorimetry problems.'
-},
-{
-    slug: 'rate-law-calculator',
+        description: 'Calculate heat transfer, mass, or temperature changes.',
+        category: 'Chemistry',
+        iconName: 'Thermometer',
+        keywords: ['specific heat', 'calorimetry', 'heat flow', 'thermodynamics'],
+        longDescription: 'Understand energy transfer. Solve for any variable in the specific heat equation, including final temperatures in calorimetry problems.'
+    },
+    {
+        slug: 'rate-law-calculator',
         title: 'Kinetics Rate Law',
-            description: 'Determine reaction orders and rate constants from data.',
-                category: 'Chemistry',
-                    iconName: 'Timer',
-                        keywords: ['rate law', 'kinetics', 'reaction order', 'rate constant', 'chemistry'],
-                            longDescription: 'Crack the code of speed. Input concentration and rate data to determine the mathematical rate law and the overall order of a reaction.'
-},
-{
-    slug: 'arrhenius-equation',
+        description: 'Determine reaction orders and rate constants from data.',
+        category: 'Chemistry',
+        iconName: 'Timer',
+        keywords: ['rate law', 'kinetics', 'reaction order', 'rate constant', 'chemistry'],
+        longDescription: 'Crack the code of speed. Input concentration and rate data to determine the mathematical rate law and the overall order of a reaction.'
+    },
+    {
+        slug: 'arrhenius-equation',
         title: 'Arrhenius Pro',
-            description: 'Calculate activation energy (Ea) and temperature effects.',
-                category: 'Chemistry',
-                    iconName: 'ArrowUpRight',
-                        keywords: ['arrhenius equation', 'activation energy', 'reaction rate', 'temperature effect'],
-                            longDescription: 'Speed up your chemistry. Use the Arrhenius equation to solve for activation energy or predict how warming a reaction will increase the rate constant.'
-},
-{
-    slug: 'equilibrium-constant',
+        description: 'Calculate activation energy (Ea) and temperature effects.',
+        category: 'Chemistry',
+        iconName: 'ArrowUpRight',
+        keywords: ['arrhenius equation', 'activation energy', 'reaction rate', 'temperature effect'],
+        longDescription: 'Speed up your chemistry. Use the Arrhenius equation to solve for activation energy or predict how warming a reaction will increase the rate constant.'
+    },
+    {
+        slug: 'equilibrium-constant',
         title: 'Equilibrium (Kc/Kp)',
-            description: 'Solve for equilibrium concentrations or constants.',
-                category: 'Chemistry',
-                    iconName: 'RefreshCw',
-                        keywords: ['equilibrium constant', 'Kc', 'Kp', 'ICE table', 'le chatelier'],
-                            longDescription: 'The balance of nature. Calculate equilibrium constants from concentrations, or use Kc values to predict the final composition of a reaction mixture.'
-},
-{
-    slug: 'solubility-product',
+        description: 'Solve for equilibrium concentrations or constants.',
+        category: 'Chemistry',
+        iconName: 'RefreshCw',
+        keywords: ['equilibrium constant', 'Kc', 'Kp', 'ICE table', 'le chatelier'],
+        longDescription: 'The balance of nature. Calculate equilibrium constants from concentrations, or use Kc values to predict the final composition of a reaction mixture.'
+    },
+    {
+        slug: 'solubility-product',
         title: 'Ksp & Solubility',
-            description: 'Calculate molar solubility and precipitate formation.',
-                category: 'Chemistry',
-                    iconName: 'Microscope',
-                        keywords: ['Ksp', 'solubility product', 'molar solubility', 'precipitation', 'common ion effect'],
-                            longDescription: 'Will it dissolve? Calculate the solubility product constant (Ksp) or determine if a precipitate will form when two solutions are mixed.'
-},
-{
-    slug: 'nernst-equation',
+        description: 'Calculate molar solubility and precipitate formation.',
+        category: 'Chemistry',
+        iconName: 'Microscope',
+        keywords: ['Ksp', 'solubility product', 'molar solubility', 'precipitation', 'common ion effect'],
+        longDescription: 'Will it dissolve? Calculate the solubility product constant (Ksp) or determine if a precipitate will form when two solutions are mixed.'
+    },
+    {
+        slug: 'nernst-equation',
         title: 'Nernst Pro',
-            description: 'Calculate cell potential under non-standard conditions.',
-                category: 'Chemistry',
-                    iconName: 'BatteryCharging',
-                        keywords: ['nernst equation', 'cell potential', 'electrochemistry', 'voltage', 'redox'],
-                            longDescription: 'Power your calculations. Adjust standard reduction potentials for temperature and concentration to find the real-world voltage of an electrochemical cell.'
-},
-{
-    slug: 'faradays-law',
+        description: 'Calculate cell potential under non-standard conditions.',
+        category: 'Chemistry',
+        iconName: 'BatteryCharging',
+        keywords: ['nernst equation', 'cell potential', 'electrochemistry', 'voltage', 'redox'],
+        longDescription: 'Power your calculations. Adjust standard reduction potentials for temperature and concentration to find the real-world voltage of an electrochemical cell.'
+    },
+    {
+        slug: 'faradays-law',
         title: 'Faraday’s Electrolysis',
-            description: 'Calculate mass deposited during electrolysis.',
-                category: 'Chemistry',
-                    iconName: 'Zap',
-                        keywords: ['faraday law', 'electrolysis', 'plating', 'charge', 'coulombs'],
-                            longDescription: 'Electroplating precision. Calculate the mass of a metal deposited or the time required for a specific current to plate a surface.'
-},
-{
-    slug: 'half-life-calculator',
+        description: 'Calculate mass deposited during electrolysis.',
+        category: 'Chemistry',
+        iconName: 'Zap',
+        keywords: ['faraday law', 'electrolysis', 'plating', 'charge', 'coulombs'],
+        longDescription: 'Electroplating precision. Calculate the mass of a metal deposited or the time required for a specific current to plate a surface.'
+    },
+    {
+        slug: 'half-life-calculator',
         title: 'Nuclear Half-Life',
-            description: 'Track radioactive decay and remaining isotope mass.',
-                category: 'Chemistry',
-                    iconName: 'Radiation',
-                        keywords: ['half life', 'radioactive decay', 'isotope', 'nuclear chemistry', 'decay constant'],
-                            longDescription: 'Time and transition. Use isotopes half-lives to calculate remaining quantities, total time elapsed, or the decay constant.'
-},
-{
-    slug: 'vsepr-predictor',
+        description: 'Track radioactive decay and remaining isotope mass.',
+        category: 'Chemistry',
+        iconName: 'Radiation',
+        keywords: ['half life', 'radioactive decay', 'isotope', 'nuclear chemistry', 'decay constant'],
+        longDescription: 'Time and transition. Use isotopes half-lives to calculate remaining quantities, total time elapsed, or the decay constant.'
+    },
+    {
+        slug: 'vsepr-predictor',
         title: 'VSEPR Shape Master',
-            description: 'Predict molecular geometry based on steric numbers.',
-                category: 'Chemistry',
-                    iconName: 'Shapes',
-                        keywords: ['vsepr theory', 'molecular geometry', 'lone pairs', 'chemical bonding', 'hybridization'],
-                            longDescription: 'Visualize the 3D world. Input the number of bonding atoms and lone pairs on a central atom to determine the molecular and electron geometry.'
-},
-{
-    slug: 'formal-charge-calc',
+        description: 'Predict molecular geometry based on steric numbers.',
+        category: 'Chemistry',
+        iconName: 'Shapes',
+        keywords: ['vsepr theory', 'molecular geometry', 'lone pairs', 'chemical bonding', 'hybridization'],
+        longDescription: 'Visualize the 3D world. Input the number of bonding atoms and lone pairs on a central atom to determine the molecular and electron geometry.'
+    },
+    {
+        slug: 'formal-charge-calc',
         title: 'Formal Charge Solver',
-            description: 'Calculate formal charges to find the best Lewis structure.',
-                category: 'Chemistry',
-                    iconName: 'PlusMinus',
-                        keywords: ['formal charge', 'lewis structure', 'valence electrons', 'chemistry bonding'],
-                            longDescription: 'Perfect your Lewis structures. Calculate formal charges for every atom in a molecule to identify the most stable resonance structures.'
-},
-{
-    slug: 'electronegativity-diff',
+        description: 'Calculate formal charges to find the best Lewis structure.',
+        category: 'Chemistry',
+        iconName: 'PlusMinus',
+        keywords: ['formal charge', 'lewis structure', 'valence electrons', 'chemistry bonding'],
+        longDescription: 'Perfect your Lewis structures. Calculate formal charges for every atom in a molecule to identify the most stable resonance structures.'
+    },
+    {
+        slug: 'electronegativity-diff',
         title: 'Bond Polarity Pro',
-            description: 'Predict bond types based on Pauling electronegativity.',
-                category: 'Chemistry',
-                    iconName: 'ArrowLeftRight',
-                        keywords: ['electronegativity', 'bond polarity', 'ionic vs covalent', 'pauling scale'],
-                            longDescription: 'Ionic or Covalent? Calculate the ΔEN between atoms to classify bonds and predict dipole moments.'
-},
-{
-    slug: 'empirical-formula',
+        description: 'Predict bond types based on Pauling electronegativity.',
+        category: 'Chemistry',
+        iconName: 'ArrowLeftRight',
+        keywords: ['electronegativity', 'bond polarity', 'ionic vs covalent', 'pauling scale'],
+        longDescription: 'Ionic or Covalent? Calculate the ΔEN between atoms to classify bonds and predict dipole moments.'
+    },
+    {
+        slug: 'empirical-formula',
         title: 'Empirical Finder',
-            description: 'Convert percentage composition to empirical formulas.',
-                category: 'Chemistry',
-                    iconName: 'Search',
-                        keywords: ['empirical formula', 'molecular formula', 'percent composition', 'chemistry analysis'],
-                            longDescription: 'Solve the chemical puzzle. Input mass percentages of elements to derive the simplest whole-number ratio of atoms in a compound.'
-},
-{
-    slug: 'percentage-composition',
+        description: 'Convert percentage composition to empirical formulas.',
+        category: 'Chemistry',
+        iconName: 'Search',
+        keywords: ['empirical formula', 'molecular formula', 'percent composition', 'chemistry analysis'],
+        longDescription: 'Solve the chemical puzzle. Input mass percentages of elements to derive the simplest whole-number ratio of atoms in a compound.'
+    },
+    {
+        slug: 'percentage-composition',
         title: 'Percent Composition',
-            description: 'Calculate the percent by mass of each element in a formula.',
-                category: 'Chemistry',
-                    iconName: 'PieChart',
-                        keywords: ['percent composition', 'mass percent', 'formula mass', 'chemical analysis'],
-                            longDescription: 'Anatomize your molecules. Determine exactly what percentage of a compound’s mass comes from each constituent element.'
-},
-{
-    slug: 'limiting-reagent',
+        description: 'Calculate the percent by mass of each element in a formula.',
+        category: 'Chemistry',
+        iconName: 'PieChart',
+        keywords: ['percent composition', 'mass percent', 'formula mass', 'chemical analysis'],
+        longDescription: 'Anatomize your molecules. Determine exactly what percentage of a compound’s mass comes from each constituent element.'
+    },
+    {
+        slug: 'limiting-reagent',
         title: 'Yield & Limiting Reagent',
-            description: 'Identify the limiting reactant and calculate percent yield.',
-                category: 'Chemistry',
-                    iconName: 'Activity',
-                        keywords: ['limiting reagent', 'theoretical yield', 'percent yield', 'stoichiometry'],
-                            longDescription: 'Efficiency in the lab. Identify which reactant will run out first and calculate the theoretical maximum vs actual yield of your reaction.'
-},
-{
-    slug: 'beer-lambert-law',
+        description: 'Identify the limiting reactant and calculate percent yield.',
+        category: 'Chemistry',
+        iconName: 'Activity',
+        keywords: ['limiting reagent', 'theoretical yield', 'percent yield', 'stoichiometry'],
+        longDescription: 'Efficiency in the lab. Identify which reactant will run out first and calculate the theoretical maximum vs actual yield of your reaction.'
+    },
+    {
+        slug: 'beer-lambert-law',
         title: 'Beer-Lambert Solver',
-            description: 'Calculate absorbance, molar absorptivity, or concentration.',
-                category: 'Chemistry',
-                    iconName: 'Sun',
-                        keywords: ['beer lambert law', 'absorbance', 'spectrophotometry', 'molar absorptivity'],
-                            longDescription: 'The chemistry of light. Use spectroscopy data to determine solute concentration or identify standard coefficients for specific substances.'
-},
-{
-    slug: 'boiling-point-elevation',
+        description: 'Calculate absorbance, molar absorptivity, or concentration.',
+        category: 'Chemistry',
+        iconName: 'Sun',
+        keywords: ['beer lambert law', 'absorbance', 'spectrophotometry', 'molar absorptivity'],
+        longDescription: 'The chemistry of light. Use spectroscopy data to determine solute concentration or identify standard coefficients for specific substances.'
+    },
+    {
+        slug: 'boiling-point-elevation',
         title: 'Boiling Point Pro',
-            description: 'Calculate boiling point changes for non-volatile solutes.',
-                category: 'Chemistry',
-                    iconName: 'ArrowUp',
-                        keywords: ['boiling point elevation', 'colligative properties', 'molality', 'van t hoff'],
-                            longDescription: 'Turning up the heat. Predict how adding a solute changes the boiling point of a solvent using the ebullioscopic constant and van \'t Hoff factor.'
-},
-{
-    slug: 'freezing-point-depression',
+        description: 'Calculate boiling point changes for non-volatile solutes.',
+        category: 'Chemistry',
+        iconName: 'ArrowUp',
+        keywords: ['boiling point elevation', 'colligative properties', 'molality', 'van t hoff'],
+        longDescription: 'Turning up the heat. Predict how adding a solute changes the boiling point of a solvent using the ebullioscopic constant and van \'t Hoff factor.'
+    },
+    {
+        slug: 'freezing-point-depression',
         title: 'Freezing Point Pro',
-            description: 'Calculate freezing point changes for solutions.',
-                category: 'Chemistry',
-                    iconName: 'ArrowDown',
-                        keywords: ['freezing point depression', 'colligative properties', 'cryoscopic constant', 'chemistry'],
-                            longDescription: 'Cooling calculations. Determine the new freezing point of a solution, essential for understanding antifreeze and biological cryoprotectants.'
-},
-{
-    slug: 'density-calculator',
+        description: 'Calculate freezing point changes for solutions.',
+        category: 'Chemistry',
+        iconName: 'ArrowDown',
+        keywords: ['freezing point depression', 'colligative properties', 'cryoscopic constant', 'chemistry'],
+        longDescription: 'Cooling calculations. Determine the new freezing point of a solution, essential for understanding antifreeze and biological cryoprotectants.'
+    },
+    {
+        slug: 'density-calculator',
         title: 'Precision Density',
-            description: 'Solve for Density, Mass, or Volume with precision units.',
-                category: 'Chemistry',
-                    iconName: 'Table',
-                        keywords: ['density calculator', 'mass volume', 'specific gravity', 'chemistry basics'],
-                            longDescription: 'Fundamental measurements. Convert between various units and solve the density equation with high numerical precision.'
-},
-{
-    slug: 'celsius-kelvin-conv',
+        description: 'Solve for Density, Mass, or Volume with precision units.',
+        category: 'Chemistry',
+        iconName: 'Table',
+        keywords: ['density calculator', 'mass volume', 'specific gravity', 'chemistry basics'],
+        longDescription: 'Fundamental measurements. Convert between various units and solve the density equation with high numerical precision.'
+    },
+    {
+        slug: 'celsius-kelvin-conv',
         title: 'Advanced Temp Lab',
-            description: 'Professional kelvin, celsius, and rankine conversions.',
-                category: 'Chemistry',
-                    iconName: 'Thermometer',
-                        keywords: ['kelvin converter', 'celsius to kelvin', 'rankine', 'absolute zero', 'temperature'],
-                            longDescription: 'Absolute precision. Convert between scientific temperature scales, keeping track of absolute zero and standard laboratory conditions.'
-},
-{
-    slug: 'molecular-weight-calc',
+        description: 'Professional kelvin, celsius, and rankine conversions.',
+        category: 'Chemistry',
+        iconName: 'Thermometer',
+        keywords: ['kelvin converter', 'celsius to kelvin', 'rankine', 'absolute zero', 'temperature'],
+        longDescription: 'Absolute precision. Convert between scientific temperature scales, keeping track of absolute zero and standard laboratory conditions.'
+    },
+    {
+        slug: 'molecular-weight-calc',
         title: 'Molecular Weight Pro',
-            description: 'Fast weight lookup for thousand of chemical names.',
-                category: 'Chemistry',
-                    iconName: 'Scale',
-                        keywords: ['molecular weight', 'chemical database', 'molar mass lookup', 'biochemistry'],
-                            longDescription: 'Beyond formulas. Look up or calculate molecular weights for complex reagents and biological molecules with ease.'
-},
+        description: 'Fast weight lookup for thousand of chemical names.',
+        category: 'Chemistry',
+        iconName: 'Scale',
+        keywords: ['molecular weight', 'chemical database', 'molar mass lookup', 'biochemistry'],
+        longDescription: 'Beyond formulas. Look up or calculate molecular weights for complex reagents and biological molecules with ease.'
+    },
 ];
 
 export const getToolBySlug = (slug: string) => {
