@@ -69,6 +69,9 @@ export const metadata: Metadata = {
     icon: '/logo.svg',
     apple: '/logo.svg',
   },
+  verification: {
+    google: 'zGfzKah3LQLunaCKb8px4zZd6xJ0-IJOaM89ogx7fhM',
+  },
 };
 
 import { CookieConsent } from '@/components/ui/CookieConsent';
