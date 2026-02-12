@@ -152,7 +152,7 @@ export default function RootLayout({
           id="adsbygoogle-init"
           strategy="afterInteractive"
           crossOrigin="anonymous"
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0000000000000000"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5717591731699543"
         />
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <FavoritesProvider>
