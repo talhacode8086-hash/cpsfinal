@@ -20,12 +20,12 @@ lines.forEach(line => {
 });
 
 const definedSlugs = tools.map(t => t.slug);
-const missing implementation = definedSlugs.filter(s => !implementedSlugs.has(s));
+const missingImplementation = definedSlugs.filter(s => !implementedSlugs.has(s));
 
 console.log(`Total defined tools: ${definedSlugs.length}`);
 console.log(`Total implemented tools: ${implementedSlugs.size}`);
-console.log(`Missing implementations: ${missing implementation.length}`);
+console.log(`Missing implementations: ${missingImplementation.length}`);
 
-if (missing implementation.length > 0) {
-    console.log('Examples of missing tools:', missing implementation.slice(0, 10));
+if (missingImplementation.length > 0) {
+    console.log('Examples of missing tools:', missingImplementation.slice(0, 10));
 }
