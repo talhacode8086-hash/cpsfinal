@@ -2,7 +2,7 @@ export interface Tool {
     slug: string;
     title: string;
     description: string;
-    category: 'Mouse Skills' | 'Keyboard Skills' | 'Aim & Reflex' | 'Gaming Utilities' | 'Text Tools' | 'Unit Converters' | 'Development Tools' | 'SEO & Web' | 'Design & UI' | 'Finance' | 'Daily Tools' | 'Image Tools' | 'Education' | 'Mathematics Tools' | 'Advanced Scholar Tools' | 'Chemistry';
+    category: 'Mouse Skills' | 'Keyboard Skills' | 'Aim & Reflex' | 'Gaming Utilities' | 'Text Tools' | 'Unit Converters' | 'Development Tools' | 'SEO & Web' | 'Design & UI' | 'Finance' | 'Daily Tools' | 'Image Tools' | 'Productivity' | 'Education' | 'Mathematics Tools' | 'Advanced Scholar Tools' | 'Chemistry' | 'AI Math Solver';
     iconName: string; // key for Lucide icons
     keywords?: string[];
     longDescription?: string;
@@ -118,7 +118,7 @@ If you decide to change your eDPI, don't just change it by a tiny bit. Change it
         description: 'Test your clicking speed in clicks per second (CPS) with different time modes.',
         category: 'Mouse Skills',
         iconName: 'MousePointer2',
-        keywords: ['cps test', 'clicks per second', 'click speed test', 'jitter clicking', 'butterfly clicking', 'minecraft clicking test', 'mouse speed test', 'fast clicking tool', 'kohiclick test', 'click speed challenge'],
+        keywords: ['cps test', 'clicks per second', 'click speed test', 'jitter clicking', 'butterfly clicking', 'minecraft clicking test', 'mouse speed test', 'fast clicking tool', 'kohiclick test', 'click speed challenge', 'aim trainer click', 'cps counter', 'mouse test online', 'gaming mouse speed test', 'cps tester', 'spacebar counter', 'fastest clicker in the world', 'click test 10s', 'click test 5s', 'click test 1s', 'minecraft pvp', 'gaming mouse test'],
         longDescription: `
 ### Master Your Reflexes with the Professional CPS Test
 Test and improve your finger speed with our professional-grade Click Speed Test (CPS Test). In the competitive world of gaming, especially in titles like Minecraft, League of Legends, and various FPS games, your ability to click rapidly and consistently can be the difference between victory and defeat. Whether you are a Minecraft pro mastering "Jitter Clicking" or a competitive gamer practicing "Butterfly Clicking," our tool provides the sub-millisecond accuracy and real-time visual feedback you need to reach peak performance.
@@ -871,7 +871,7 @@ This tool is "Client-Side Only." The password logic runs entirely on your device
         description: 'Test your clicking speed using the jitter clicking technique.',
         category: 'Mouse Skills',
         iconName: 'Zap',
-        keywords: ['jitter click test', 'minecraft jitter clicking', 'click speed tester', 'pvp clicking speed'],
+        keywords: ['jitter click test', 'jitter clicking', 'jitter clicking tutorial', 'how to jitter click', 'minecraft pvp', 'cps test', 'fast clicking', 'arm aiming', 'vibration clicking', 'muscle tension clicking', 'high cps technique', 'pvp clicking methods', 'jitter click record', 'safe jitter clicking'],
         longDescription: `
 ### Master the Art of High-Speed Clicking
 "Jitter Clicking" is an advanced technique used primarily by Minecraft PvP players to achieve extremely high Clicks Per Second (CPS). By vibrating the muscles in the forearm and wrist, players can generate a "shaking" motion that triggers the mouse switch 10 to 14 times per second. This Jitter Click Test allows you to practice, measure, and refine this difficult mechanical skill in a controlled environment.
@@ -903,7 +903,7 @@ Unlike normal clicking (which relies on finger movement), jitter clicking relies
         description: 'Classic Minecraft-style click speed test.',
         category: 'Mouse Skills',
         iconName: 'MousePointer2',
-        keywords: ['kohi click test', 'minecraft click test', 'kohi cps', 'minecraft pvp speed', 'classic cps test'],
+        keywords: ['kohi click test', 'minecraft click test', 'kohi cps', 'minecraft pvp speed', 'classic cps test', 'badlion click test', 'mcpvp', 'drag clicking', 'butterfly clicking', 'cps test minecraft', 'competitive clicking', 'kohi server test', 'minecraft pvp practice', 'clicking speed benchmark'],
         longDescription: `
 ### The Legendary Minecraft PvP Benchmark
 The **Kohi Click Test** is a piece of internet gaming history. Originating from the "Kohi" Minecraft server (a hardcore PvP faction server), this specific test became the gold standard for verifying a player's legitimacy. Unlike generic speed tests, the Kohi algorithm is known for its strict registration window, designed to mimic the exact hit-registration feel of a Minecraft Java Edition server.
@@ -4877,6 +4877,378 @@ Essential tools for data analysis and probability theory.
         keywords: ['molecular weight', 'chemical database', 'molar mass lookup', 'biochemistry'],
         longDescription: 'Beyond formulas. Look up or calculate molecular weights for complex reagents and biological molecules with ease.'
     },
+
+    {
+        slug: 'elite-fps-aim-master',
+        title: 'Elite FPS Aim Master',
+        description: 'Professional grade aim trainer with static, flick, and tracking modes.',
+        category: 'Mouse Skills',
+        iconName: 'Crosshair',
+        keywords: ['aim trainer', 'fps trainer', 'mouse accuracy', 'flick shots', 'tracking aim', 'pro gamer tools'],
+        longDescription: 'The Elite FPS Aim Master is designed for competitive gamers looking to reach their peak performance. Featuring three distinct training modes—Precision, Flick Drills, and Pro Tracking—this tool helps you develop muscle memory, neural response speed, and consistent tracking accuracy. Perfect your aim with professional-grade diagnostics and real-time performance feedback.'
+    },
+
+    // AI Math Solver - Pakistan Class 9-12 Syllabus Coverage
+    {
+        slug: 'quadratic-equation-solver-ai',
+        title: 'AI Quadratic Equation Solver',
+        description: 'Solve quadratic equations with step-by-step solutions. Perfect for Class 10 mathematics.',
+        category: 'AI Math Solver',
+        iconName: 'Calculator',
+        keywords: ['quadratic equation', 'class 10', 'mathematics pakistan', 'ax2+bx+c', 'discriminant', 'roots'],
+        longDescription: `Solve quadratic equations of the form ax² + bx + c = 0 with complete step-by-step solutions. Learn about discriminants, nature of roots, and see formula applications for Pakistan's Class 10 syllabus.`
+    },
+    {
+        slug: 'matrix-calculator-pro-ai',
+        title: 'Matrix Calculator Pro',
+        description: 'Perform matrix operations: addition, multiplication, determinant, inverse. Class 9-12 coverage.',
+        category: 'AI Math Solver',
+        iconName: 'Grid3x3',
+        keywords: ['matrix calculator', 'determinant', 'cramer rule', 'class 9', 'class 12 math'],
+        longDescription: `Professional matrix calculator supporting addition, subtraction, multiplication, and determinant calculation. Essential for Pakistan Class 9-12 matrices and Cramer's Rule.`
+    },
+    {
+        slug: 'derivative-calculator-ai',
+        title: 'Derivative Calculator',
+        description: 'Calculate derivatives with step-by-step solutions. Class 11-12 calculus made easy.',
+        category: 'AI Math Solver',
+        iconName: 'TrendingUp',
+        keywords: ['derivative', 'calculus', 'class 11', 'class 12', 'differentiation'],
+        longDescription: `Calculate derivatives of polynomial functions with detailed step-by-step explanations. Covers power rule, product rule, quotient rule for Pakistan Class 11-12 calculus.`
+    },
+    {
+        slug: 'complex-number-calculator-ai',
+        title: 'Complex Number Calculator',
+        description: 'Perform operations with complex numbers. Class 11 mathematics essential tool.',
+        category: 'AI Math Solver',
+        iconName: 'Workflow',
+        keywords: ['complex numbers', 'imaginary', 'class 11', 'a+bi', 'modulus'],
+        longDescription: `Calculate with complex numbers: addition, subtraction, multiplication, modulus. Perfect for Pakistan Class 11 complex number chapter.`
+    },
+    {
+        slug: 'linear-equation-solver-ai',
+        title: 'Linear Equation Solver',
+        description: 'Solve linear equations instantly. Class 9 fundamental mathematics.',
+        category: 'AI Math Solver',
+        iconName: 'TrendingUp',
+        keywords: ['linear equation', 'class 9', 'algebra', 'solve for x'],
+        longDescription: `Solve linear equations of the form ax + b = 0 with instant solutions. Essential for Class 9 algebra foundations.`
+    },
+    {
+        slug: 'statistics-calculator-ai',
+        title: 'Statistics Calculator',
+        description: 'Calculate mean, median, mode. Class 9-10 statistics made simple.',
+        category: 'AI Math Solver',
+        iconName: 'BarChart3',
+        keywords: ['statistics', 'mean', 'median', 'mode', 'class 9', 'class 10'],
+        longDescription: `Calculate mean, median, and mode from data sets. Covers Pakistan Class 9-10 statistics curriculum with frequency tables support.`
+    },
+    {
+        slug: 'logarithm-calculator-ai',
+        title: 'Logarithm Calculator',
+        description: 'Calculate logarithms with any base. Class 9-10 logarithm laws.',
+        category: 'AI Math Solver',
+        iconName: 'Calculator',
+        keywords: ['logarithm', 'log', 'class 9', 'common log', 'natural log'],
+        longDescription: `Calculate logarithms with custom bases. Understand logarithm laws for Class 9-10 Pakistan mathematics.`
+    },
+    {
+        slug: 'permutation-combination-calculator',
+        title: 'Permutation & Combination Calculator',
+        description: 'Calculate P(n,r) and C(n,r). Class 11 counting principles.',
+        category: 'AI Math Solver',
+        iconName: 'Sigma',
+        keywords: ['permutation', 'combination', 'factorial', 'class 11', 'probability'],
+        longDescription: `Calculate permutations and combinations with factorials. Essential for Class 11 probability and counting.`
+    },
+    {
+        slug: 'trigonometry-calculator-ai',
+        title: 'Trigonometry Calculator',
+        description: 'Calculate sin, cos, tan values. Class 9-11 trigonometry essential.',
+        category: 'AI Math Solver',
+        iconName: 'Triangle',
+        keywords: ['trigonometry', 'sin', 'cos', 'tan', 'class 9', 'class 10', 'class 11'],
+        longDescription: `Calculate trigonometric ratios and identities. Supports degrees and radians for Class 9-11 trigonometry.`
+    },
+    {
+        slug: 'vector-calculator-3d-ai',
+        title: '3D Vector Calculator',
+        description: 'Dot product, cross product, magnitude. Class 12 vectors.',
+        category: 'AI Math Solver',
+        iconName: 'Boxes',
+        keywords: ['vectors', '3d', 'dot product', 'cross product', 'class 12'],
+        longDescription: `Calculate vector operations in 3D space: dot product, cross product, magnitude. Essential for Class 12 vector algebra.`
+    },
+    {
+        slug: 'probability-calculator-ai',
+        title: 'Probability Calculator',
+        description: 'Calculate probability from outcomes. Class 11-12 probability basics.',
+        category: 'AI Math Solver',
+        iconName: 'Dices',
+        keywords: ['probability', 'class 11', 'class 12', 'outcomes', 'bayes theorem'],
+        longDescription: `Calculate classical probability from favorable and total outcomes. Foundation for Class 11-12 probability theory.`
+    },
+    {
+        slug: 'integral-calculator-ai',
+        title: 'Integral Calculator',
+        description: 'Calculate definite and indefinite integrals. Class 12 integration.',
+        category: 'AI Math Solver',
+        iconName: 'Activity',
+        keywords: ['integration', 'integral', 'calculus', 'class 12', 'area under curve'],
+        longDescription: `Calculate integrals of polynomial functions with step-by-step solutions. Supports definite and indefinite integration for Class 12 calculus.`
+    },
+    {
+        slug: 'polynomial-analyzer-ai',
+        title: 'Polynomial Analyzer',
+        description: 'Analyze polynomial functions. Class 10 algebra tool.',
+        category: 'AI Math Solver',
+        iconName: 'FileCode2',
+        keywords: ['polynomial', 'degree', 'class 10', 'algebra', 'function analysis'],
+        longDescription: `Analyze polynomial functions to determine degree, type, and leading coefficient. Essential for Class 10 polynomial mathematics.`
+    },
+    {
+        slug: 'limit-calculator-ai',
+        title: 'Limit Calculator',
+        description: 'Calculate limits as x approaches a value. Class 11 calculus.',
+        category: 'AI Math Solver',
+        iconName: 'Infinity',
+        keywords: ['limits', 'calculus', 'class 11', 'continuity'],
+        longDescription: `Calculate limits of functions as x approaches specific values. Foundation for Class 11-12 calculus and continuity.`
+    },
+    {
+        slug: 'sequence-series-solver-ai',
+        title: 'Sequence & Series Solver',
+        description: 'Solve AP and GP problems. Class 11 sequences.',
+        category: 'AI Math Solver',
+        iconName: 'List',
+        keywords: ['arithmetic progression', 'geometric progression', 'AP', 'GP', 'class 11', 'sequences'],
+        longDescription: `Solve Arithmetic and Geometric Progression problems. Calculate nth term and sum of series for Class 11 mathematics.`
+    },
+    {
+        slug: 'triangle-solver-ai',
+        title: 'Triangle Solver',
+        description: 'Calculate triangle properties. Class 9 geometry essential.',
+        category: 'AI Math Solver',
+        iconName: 'Triangle',
+        keywords: ['triangle', 'geometry', 'class 9', 'heron formula', 'area'],
+        longDescription: `Solve triangles using Heron's formula and cosine rule. Calculate area, perimeter, and angles for Class 9 geometry.`
+    },
+    {
+        slug: 'lcm-gcf-calculator-ai',
+        title: 'LCM & GCF Calculator',
+        description: 'Find LCM and GCF of numbers. Class 9 number theory.',
+        category: 'AI Math Solver',
+        iconName: 'Hash',
+        keywords: ['LCM', 'GCF', 'HCF', 'class 9', 'number theory', 'factors'],
+        longDescription: `Calculate Least Common Multiple and Greatest Common Factor using Euclidean algorithm. Essential for Class 9 number theory.`
+    },
+    {
+        slug: 'distance-formula-calculator-ai',
+        title: 'Distance Formula Calculator',
+        description: 'Calculate distance, midpoint, slope. Class 10 coordinate geometry.',
+        category: 'AI Math Solver',
+        iconName: 'MapPin',
+        keywords: ['distance formula', 'coordinate geometry', 'class 10', 'midpoint', 'slope'],
+        longDescription: `Calculate distance between two points, midpoint, and slope. Complete Class 10 coordinate geometry tool.`
+    },
+    {
+        slug: 'percentage-calculator-ai',
+        title: 'Percentage Calculator',
+        description: 'Calculate percentages and variations. Class 9-10 essential.',
+        category: 'AI Math Solver',
+        iconName: 'Percent',
+        keywords: ['percentage', 'class 9', 'class 10', 'increase', 'decrease'],
+        longDescription: `Calculate percentages, percentage increase, and percentage decrease. Essential for Class 9-10 mathematics and daily calculations.`
+    },
+    {
+        slug: 'factorization-tool-ai',
+        title: 'Factorization Tool',
+        description: 'Factor quadratic expressions. Class 10 algebra essential.',
+        category: 'AI Math Solver',
+        iconName: 'SplitSquareVertical',
+        keywords: ['factorization', 'factor', 'quadratic', 'class 10', 'algebra'],
+        longDescription: `Factor quadratic expressions into linear factors using discriminant. Essential Class 10 algebra tool.`
+    },
+    {
+        slug: 'system-equations-solver-ai',
+        title: 'System of Equations Solver',
+        description: 'Solve 2x2 systems using Cramer\'s Rule. Class 10-11 algebra.',
+        category: 'AI Math Solver',
+        iconName: 'Layers',
+        keywords: ['system of equations', 'simultaneous equations', 'class 10', 'class 11', 'cramers rule'],
+        longDescription: `Solve systems of linear equations using Cramer's Rule. Essential for Class 10-11 simultaneous equations.`
+    },
+    {
+        slug: 'exponent-calculator-ai',
+        title: 'Exponent Calculator',
+        description: 'Calculate powers and roots. Class 9 exponents.',
+        category: 'AI Math Solver',
+        iconName: 'Zap',
+        keywords: ['exponents', 'powers', 'roots', 'class 9', 'square root', 'cube root'],
+        longDescription: `Calculate powers, square roots, and cube roots. Master Class 9 exponents and radicals.`
+    },
+    {
+        slug: 'circle-geometry-calculator-ai',
+        title: 'Circle Geometry Calculator',
+        description: 'Calculate circle properties. Class 10 coordinate geometry.',
+        category: 'AI Math Solver',
+        iconName: 'Circle',
+        keywords: ['circle', 'geometry', 'class 10', 'area', 'circumference', 'equation'],
+        longDescription: `Calculate circle equation, area, circumference, and diameter. Complete Class 10 circle geometry tool.`
+    },
+    {
+        slug: 'binomial-theorem-calculator-ai',
+        title: 'Binomial Theorem Expander',
+        description: 'Expand binomials. Class 11 binomial theorem.',
+        category: 'AI Math Solver',
+        iconName: 'Binary',
+        keywords: ['binomial theorem', 'class 11', 'expansion', 'pascal triangle'],
+        longDescription: `Expand binomial expressions using binomial theorem. Essential for Class 11 algebra and combinatorics.`
+    },
+    {
+        slug: 'fraction-calculator-ai',
+        title: 'Fraction Calculator',
+        description: 'All fraction operations. Class 9 essential.',
+        category: 'AI Math Solver',
+        iconName: 'Divide',
+        keywords: ['fractions', 'class 9', 'simplify', 'add fractions', 'multiply fractions'],
+        longDescription: `Add, subtract, multiply, divide, and simplify fractions. Essential Class 9 arithmetic tool.`
+    },
+    {
+        slug: 'slope-intercept-form-ai',
+        title: 'Slope-Intercept Form Calculator',
+        description: 'Find line equation from points. Class 10 coordinate geometry.',
+        category: 'AI Math Solver',
+        iconName: 'TrendingUp',
+        keywords: ['slope intercept', 'line equation', 'class 10', 'y=mx+b', 'linear equations'],
+        longDescription: `Find equation of line in slope-intercept form from two points. Class 10 coordinate geometry essential.`
+    },
+    {
+        slug: 'pythagorean-calculator-ai',
+        title: 'Pythagorean Theorem Calculator',
+        description: 'Calculate right triangle sides. Class 9-10 geometry.',
+        category: 'AI Math Solver',
+        iconName: 'Triangle',
+        keywords: ['pythagorean theorem', 'right triangle', 'class 9', 'class 10', 'geometry'],
+        longDescription: `Calculate missing side of right triangle using Pythagorean theorem. Essential for Class 9-10 geometry.`
+    },
+    {
+        slug: 'mensuration-calculator-ai',
+        title: 'Mensuration Calculator',
+        description: '3D shapes: area & volume. Class 9-10 mensuration.',
+        category: 'AI Math Solver',
+        iconName: 'Box',
+        keywords: ['mensuration', 'volume', 'surface area', 'class 9', 'class 10', '3D shapes'],
+        longDescription: `Calculate surface area and volume of 3D shapes: cube, cuboid, cylinder, sphere, cone. Complete Class 9-10 mensuration.`
+    },
+    {
+        slug: 'scientific-notation-converter-ai',
+        title: 'Scientific Notation Converter',
+        description: 'Convert to/from scientific notation. Class 9 essential.',
+        category: 'AI Math Solver',
+        iconName: 'Hash',
+        keywords: ['scientific notation', 'class 9', 'standard form', 'exponent notation'],
+        longDescription: `Convert between standard and scientific notation. Essential for Class 9 large numbers and scientific calculations.`
+    },
+    {
+        slug: 'surd-simplifier-ai',
+        title: 'Surd Simplifier',
+        description: 'Simplify square roots to radical form. Class 9 surds.',
+        category: 'AI Math Solver',
+        iconName: 'Sparkles',
+        keywords: ['surds', 'radicals', 'square root', 'simplify', 'class 9'],
+        longDescription: `Simplify square roots into their simplest radical form (e.g., √18 = 3√2). Master Class 9 surds and radicals.`
+    },
+    {
+        slug: 'remainder-theorem-solver-ai',
+        title: 'Remainder & Factor Theorem Solver',
+        description: 'Solve polynomial remainder problems. Class 10 algebra.',
+        category: 'AI Math Solver',
+        iconName: 'Variable',
+        keywords: ['remainder theorem', 'factor theorem', 'polynomials', 'class 10', 'algebra'],
+        longDescription: `Calculate the remainder of a polynomial division and check if a linear expression is a factor. Essential for Class 10 algebra.`
+    },
+    {
+        slug: 'partial-fraction-decomposer-ai',
+        title: 'Partial Fraction Decomposer',
+        description: 'Decompose rational functions. Class 12 algebra.',
+        category: 'AI Math Solver',
+        iconName: 'Braces',
+        keywords: ['partial fractions', 'decomposition', 'rational functions', 'class 12', 'algebra'],
+        longDescription: `Decompose complex rational functions into simpler partial fractions. Essential for Class 12 integration preparation.`
+    },
+    {
+        slug: 'maxima-minima-finder-ai',
+        title: 'Maxima & Minima Finder',
+        description: 'Find relative extrema using derivatives. Class 11 calculus.',
+        category: 'AI Math Solver',
+        iconName: 'ArrowUpCircle',
+        keywords: ['maxima', 'minima', 'extrema', 'calculus', 'class 11', 'stationary points'],
+        longDescription: `Find relative maximum and minimum points of a function using first and second derivative tests. Master Class 11 application of derivatives.`
+    },
+    {
+        slug: 'bayes-theorem-solver-ai',
+        title: 'Bayes Theorem Solver',
+        description: 'Solve conditional probability problems. Class 12 probability.',
+        category: 'AI Math Solver',
+        iconName: 'Percent',
+        keywords: ['bayes theorem', 'probability', 'conditional probability', 'class 12', 'prior', 'likelihood'],
+        longDescription: `Calculate conditional probabilities using Bayes' Theorem. Essential for Class 12 statistics and probability.`
+    },
+    {
+        slug: 'linear-graph-plotter-ai',
+        title: 'Linear Graph Plotter',
+        description: 'Plot y = mx + c and find intercepts. Class 9 geometry.',
+        category: 'AI Math Solver',
+        iconName: 'LineChart',
+        keywords: ['linear graph', 'plotter', 'y=mx+c', 'intercepts', 'class 9', 'geometry'],
+        longDescription: `Plot linear equations, identify slope (m) and y-intercept (c), and find x/y intercepts. Essential for Class 9 coordinate geometry.`
+    },
+    {
+        slug: 'continuity-checker-ai',
+        title: 'Continuity Checker',
+        description: 'Verify if f(x) is continuous at a point. Class 11 calculus.',
+        category: 'AI Math Solver',
+        iconName: 'Activity',
+        keywords: ['continuity', 'continuous function', 'calculus', 'class 11', 'limits'],
+        longDescription: `Check if a function is continuous at a given point by comparing LHL, RHL, and f(a). Master Class 11 calculus foundations.`
+    },
+    {
+        slug: 'area-under-curve-ai',
+        title: 'Area Under Curve Calculator',
+        description: 'Calculate area using definite integrals. Class 12 calculus.',
+        category: 'AI Math Solver',
+        iconName: 'AreaChart',
+        keywords: ['area under curve', 'integration', 'definite integral', 'class 12', 'calculus'],
+        longDescription: `Calculate the area between a curve and the x-axis within given limits using definite integration. Application of Class 12 calculus.`
+    },
+    {
+        slug: 'geometry-theorem-checker-ai',
+        title: 'Geometry Theorem Checker',
+        description: 'Verify triangle properties and theorems. Class 9 geometry.',
+        category: 'AI Math Solver',
+        iconName: 'ShieldCheck',
+        keywords: ['geometry', 'theorems', 'triangle inequality', 'angle sum', 'class 9'],
+        longDescription: `Verify core geometric theorems like Angle Sum Property and Triangle Inequality Theorem for given inputs. Master Class 9 geometry basics.`
+    },
+    {
+        slug: 'mean-deviation-calculator-ai',
+        title: 'Mean Deviation Calculator',
+        description: 'Calculate mean deviation for data. Class 10-11 statistics.',
+        category: 'AI Math Solver',
+        iconName: 'ListChecks',
+        keywords: ['mean deviation', 'statistics', 'class 10', 'class 11', 'dispersion', 'mean'],
+        longDescription: `Calculate Mean Deviation about Mean for ungrouped data sets. Essential Class 10-11 statistics for measuring dispersion.`
+    },
+    {
+        slug: 'partial-fraction-repeated-ai',
+        title: 'Partial Fractions (Repeated)',
+        description: 'Decompose repeated linear factors. Class 12 algebra.',
+        category: 'AI Math Solver',
+        iconName: 'Braces',
+        keywords: ['partial fractions', 'repeated linear factors', 'class 12', 'algebra', 'decomposition'],
+        longDescription: `Decompose rational functions where the denominator contains repeated linear factors (e.g., (x-a)²). Advanced Class 12 algebra tool.`
+    }
 ];
 
 export const getToolBySlug = (slug: string) => {

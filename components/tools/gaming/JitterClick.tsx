@@ -1,10 +1,18 @@
 'use client';
 
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { MousePointer2, Timer, Zap, Trophy, RotateCcw, LineChart, Activity } from 'lucide-react';
+import { MousePointer2, Timer, Zap, Trophy, RotateCcw, LineChart, Activity, Fingerprint, Share2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { ResponsiveContainer, AreaChart, Area, XAxis, YAxis, Tooltip } from 'recharts';
+
+interface ClickPoint {
+    id: number;
+    x: number;
+    y: number;
+    timestamp: number;
+}
 
 export default function JitterClickTest() {
     const [isActive, setIsActive] = useState(false);
@@ -12,44 +20,104 @@ export default function JitterClickTest() {
     const [clicks, setClicks] = useState(0);
     const [bestCPS, setBestCPS] = useState(0);
     const [isFinished, setIsFinished] = useState(false);
-    const [duration, setDuration] = useState(10);
+    const [duration] = useState(10);
+    const [clickPoints, setClickPoints] = useState<ClickPoint[]>([]);
+    const [cpsHistory, setCpsHistory] = useState<{ time: number; cps: number }[]>([]);
+    const [vibrationIntensity, setVibrationIntensity] = useState(0);
 
     const timerRef = useRef<NodeJS.Timeout | null>(null);
+    const lastClickTimeRef = useRef<number>(0);
+    const intervalsRef = useRef<number[]>([]);
 
     const startTest = useCallback(() => {
         setIsActive(true);
         setClicks(0);
         setTimeLeft(duration);
         setIsFinished(false);
+        setClickPoints([]);
+        setCpsHistory([]);
+        setVibrationIntensity(0);
+        intervalsRef.current = [];
+        lastClickTimeRef.current = performance.now();
     }, [duration]);
 
-    const handleClick = () => {
-        if (!isActive && !isFinished) {
+    const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
+        if (isFinished) return;
+
+        const now = performance.now();
+        if (!isActive) {
             startTest();
         }
+
         if (isActive) {
-            setClicks((prev) => prev + 1);
+            const rect = e.currentTarget.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            const newPoint = { id: Date.now(), x, y, timestamp: now };
+            setClickPoints(prev => [...prev, newPoint]);
+            setClicks(prev => prev + 1);
+
+            // Calculate interval for stability
+            if (lastClickTimeRef.current > 0) {
+                intervalsRef.current.push(now - lastClickTimeRef.current);
+            }
+            lastClickTimeRef.current = now;
+
+            // Update vibration intensity (instant CPS feel)
+            setVibrationIntensity(prev => Math.min(100, prev + 15));
         }
     };
+
+    // Decay vibration intensity
+    useEffect(() => {
+        if (!isActive) return;
+        const decay = setInterval(() => {
+            setVibrationIntensity(prev => Math.max(0, prev - 5));
+        }, 50);
+        return () => clearInterval(decay);
+    }, [isActive]);
 
     useEffect(() => {
         if (isActive && timeLeft > 0) {
             timerRef.current = setInterval(() => {
                 setTimeLeft((prev) => {
-                    if (prev <= 0.1) {
+                    const next = Math.max(0, prev - 0.1);
+
+                    // Update CPS history
+                    if (Math.floor(next * 10) % 5 === 0) {
+                        const elapsed = duration - next;
+                        const instantCps = elapsed > 0 ? clicks / elapsed : 0;
+                        setCpsHistory(h => [...h, {
+                            time: parseFloat(elapsed.toFixed(1)),
+                            cps: parseFloat(instantCps.toFixed(2))
+                        }]);
+                    }
+
+                    if (next <= 0) {
                         clearInterval(timerRef.current!);
                         setIsActive(false);
                         setIsFinished(true);
                         return 0;
                     }
-                    return parseFloat((prev - 0.1).toFixed(1));
+                    return parseFloat(next.toFixed(1));
                 });
             }, 100);
         }
         return () => {
             if (timerRef.current) clearInterval(timerRef.current);
         };
-    }, [isActive, timeLeft]);
+    }, [isActive, timeLeft, clicks, duration]);
+
+    const stabilityScore = useMemo(() => {
+        if (intervalsRef.current.length < 2) return 0;
+        const avg = intervalsRef.current.reduce((a, b) => a + b, 0) / intervalsRef.current.length;
+        const variance = intervalsRef.current.reduce((a, b) => a + Math.pow(b - avg, 2), 0) / intervalsRef.current.length;
+        const stdDev = Math.sqrt(variance);
+        // Stability = 100 - (Coefficient of Variation * 100)
+        const cv = stdDev / avg;
+        return Math.max(0, Math.min(100, 100 - (cv * 100)));
+    }, [isFinished]);
 
     useEffect(() => {
         if (isFinished) {
@@ -61,153 +129,176 @@ export default function JitterClickTest() {
     const currentCPS = isActive ? (clicks / (duration - timeLeft) || 0) : (clicks / duration || 0);
 
     return (
-        <div className="mx-auto max-w-4xl space-y-8">
-            {/* HUD */}
-            <div className="grid gap-4 md:grid-cols-3">
-                <Card className="bg-primary/5 border-primary/20">
-                    <CardContent className="pt-6 text-center">
-                        <Timer className="h-5 w-5 text-primary mx-auto mb-1" />
-                        <p className="text-[10px] font-bold uppercase text-muted-foreground">Time Left</p>
-                        <p className="text-3xl font-black">{timeLeft}s</p>
-                    </CardContent>
-                </Card>
-                <Card className="bg-primary/5 border-primary/20">
-                    <CardContent className="pt-6 text-center">
-                        <Zap className="h-5 w-5 text-primary mx-auto mb-1" />
-                        <p className="text-[10px] font-bold uppercase text-muted-foreground">Current CPS</p>
-                        <p className="text-3xl font-black">{currentCPS.toFixed(1)}</p>
-                    </CardContent>
-                </Card>
-                <Card className="bg-primary/5 border-primary/20">
-                    <CardContent className="pt-6 text-center">
-                        <Trophy className="h-5 w-5 text-yellow-500 mx-auto mb-1" />
-                        <p className="text-[10px] font-bold uppercase text-muted-foreground">Best CPS</p>
-                        <p className="text-3xl font-black">{bestCPS.toFixed(1)}</p>
-                    </CardContent>
-                </Card>
-            </div>
-
-            {/* Click Area */}
-            <Card className="overflow-hidden border-2 border-dashed border-primary/30 bg-muted/20 relative group">
-                <div
-                    className={cn(
-                        "h-[400px] flex flex-col items-center justify-center cursor-pointer select-none transition-all duration-300",
-                        isActive ? "bg-primary/5" : "hover:bg-primary/5"
-                    )}
-                    onClick={handleClick}
-                >
-                    <AnimatePresence mode="wait">
-                        {!isActive && !isFinished && (
-                            <motion.div
-                                key="start"
-                                initial={{ scale: 0.9, opacity: 0 }}
-                                animate={{ scale: 1, opacity: 1 }}
-                                className="text-center space-y-4"
-                            >
-                                <div className="h-20 w-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform">
-                                    <MousePointer2 className="h-10 w-10 text-primary" />
+        <div className="mx-auto max-w-6xl space-y-8 pb-20">
+            <div className="grid gap-6 lg:grid-cols-12">
+                {/* Left Side: Interaction & Visuals */}
+                <div className="lg:col-span-8 space-y-6">
+                    <Card className={`overflow-hidden border-2 transition-all duration-300 rounded-[2.5rem] bg-card/50 backdrop-blur-xl ${isActive ? 'border-primary shadow-[0_0_50px_rgba(var(--primary-rgb),0.2)]' : 'border-primary/10'}`}>
+                        <CardHeader className="bg-muted/30 border-b flex flex-row items-center justify-between py-4 px-8">
+                            <div className="flex items-center gap-3">
+                                <div className="h-10 w-10 bg-primary/10 rounded-xl flex items-center justify-center text-primary">
+                                    <Zap className={`h-5 w-5 ${isActive ? 'animate-pulse' : ''}`} />
                                 </div>
                                 <div>
-                                    <h3 className="text-2xl font-black tracking-tight">JITTER CLICK TEST</h3>
-                                    <p className="text-muted-foreground text-sm uppercase font-bold tracking-widest">Click to start the challenge</p>
+                                    <CardTitle className="text-xl font-black">Jitter Master Pro</CardTitle>
+                                    <CardDescription>Advanced Vibration Analysis</CardDescription>
                                 </div>
-                            </motion.div>
-                        )}
-
-                        {isActive && (
-                            <motion.div
-                                key="active"
-                                initial={{ scale: 0.9, opacity: 0 }}
-                                animate={{ scale: 1, opacity: 1 }}
-                                className="text-center"
-                            >
-                                <p className="text-8xl font-black text-primary drop-shadow-2xl">{clicks}</p>
-                                <p className="text-sm font-bold uppercase tracking-widest text-muted-foreground">KEEP VIBRATING!</p>
-                            </motion.div>
-                        )}
-
-                        {isFinished && (
-                            <motion.div
-                                key="finished"
-                                initial={{ y: 20, opacity: 0 }}
-                                animate={{ y: 0, opacity: 1 }}
-                                className="text-center space-y-6"
-                            >
-                                <div className="space-y-1">
-                                    <p className="text-sm font-bold uppercase text-primary">Test Results</p>
-                                    <h3 className="text-6xl font-black tracking-tighter">{currentCPS.toFixed(2)} <span className="text-2xl">CPS</span></h3>
-                                    <p className="text-muted-foreground">You clicked {clicks} times in {duration} seconds.</p>
+                            </div>
+                            <div className="flex items-center gap-4">
+                                <div className="text-right">
+                                    <p className="text-[10px] font-black uppercase opacity-40">Intensity</p>
+                                    <div className="h-1.5 w-24 bg-muted rounded-full overflow-hidden mt-1">
+                                        <motion.div
+                                            className="h-full bg-primary"
+                                            animate={{ width: `${vibrationIntensity}%` }}
+                                        />
+                                    </div>
                                 </div>
-                                <Button size="lg" onClick={() => setIsFinished(false)} className="rounded-xl h-12 px-8 gap-2">
-                                    <RotateCcw className="h-4 w-4" /> Try Again
-                                </Button>
+                            </div>
+                        </CardHeader>
+
+                        <CardContent className="p-0 relative h-[450px]">
+                            <motion.div
+                                animate={isActive ? {
+                                    x: [0, (Math.random() - 0.5) * vibrationIntensity * 0.1, 0],
+                                    y: [0, (Math.random() - 0.5) * vibrationIntensity * 0.1, 0]
+                                } : {}}
+                                transition={{ repeat: Infinity, duration: 0.1 }}
+                                onClick={handleClick}
+                                className={`h-full flex flex-col items-center justify-center cursor-crosshair select-none relative overflow-hidden`}
+                            >
+                                {/* Heatmap Overlay */}
+                                <div className="absolute inset-0 pointer-events-none opacity-40">
+                                    {clickPoints.map(p => (
+                                        <div
+                                            key={p.id}
+                                            className="absolute w-4 h-4 rounded-full bg-primary blur-md animate-out fade-out duration-1000"
+                                            style={{ left: p.x - 8, top: p.y - 8 }}
+                                        />
+                                    ))}
+                                </div>
+
+                                <AnimatePresence mode="wait">
+                                    {!isActive && !isFinished && (
+                                        <motion.div key="start" initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-center z-10 group">
+                                            <div className="h-24 w-24 bg-primary/10 rounded-[2rem] flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all border border-primary/20">
+                                                <MousePointer2 className="h-12 w-12 text-primary" />
+                                            </div>
+                                            <h3 className="text-4xl font-black tracking-tighter mb-2">READY TO VIBRATE?</h3>
+                                            <p className="text-muted-foreground font-bold uppercase tracking-widest text-xs">First click starts the 10s drone pulse</p>
+                                        </motion.div>
+                                    )}
+
+                                    {isActive && (
+                                        <motion.div key="active" initial={{ scale: 0.8 }} animate={{ scale: 1 }} className="text-center z-10">
+                                            <motion.div
+                                                key={clicks}
+                                                animate={{ scale: [1, 1.1, 1] }}
+                                                className="text-9xl font-black text-primary drop-shadow-[0_0_20px_rgba(var(--primary-rgb),0.5)]"
+                                            >
+                                                {clicks}
+                                            </motion.div>
+                                            <div className="flex items-center gap-2 justify-center mt-4">
+                                                <Activity className="h-4 w-4 text-primary animate-pulse" />
+                                                <p className="text-sm font-black uppercase tracking-[0.2em]">{currentCPS.toFixed(1)} CPS</p>
+                                            </div>
+                                        </motion.div>
+                                    )}
+
+                                    {isFinished && (
+                                        <motion.div key="finish" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center z-20 space-y-6 bg-background/80 backdrop-blur-md p-10 rounded-[3rem] border shadow-2xl mx-10">
+                                            <div className="flex justify-center gap-8 mb-4">
+                                                <div className="text-center">
+                                                    <p className="text-[10px] font-black uppercase opacity-50">Stability</p>
+                                                    <p className="text-3xl font-black text-primary">{stabilityScore.toFixed(0)}%</p>
+                                                </div>
+                                                <div className="text-center">
+                                                    <p className="text-[10px] font-black uppercase opacity-50">Avg Speed</p>
+                                                    <p className="text-3xl font-black text-primary">{currentCPS.toFixed(2)}</p>
+                                                </div>
+                                            </div>
+                                            <h3 className="text-6xl font-black tracking-tighter">ELITE DRILL DONE</h3>
+                                            <div className="flex gap-4 justify-center">
+                                                <Button size="lg" onClick={startTest} className="rounded-2xl h-14 px-8 font-black gap-2 shadow-xl shadow-primary/20">
+                                                    <RotateCcw className="h-5 w-5" /> Retake
+                                                </Button>
+                                                <Button size="lg" variant="outline" className="rounded-2xl h-14 px-8 font-black gap-2">
+                                                    <Share2 className="h-5 w-5" /> Share
+                                                </Button>
+                                            </div>
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
                             </motion.div>
-                        )}
-                    </AnimatePresence>
+                        </CardContent>
+                    </Card>
+
+                    {/* Stability Graph */}
+                    <Card className="rounded-[2.5rem] bg-muted/20 border-primary/5 overflow-hidden h-48">
+                        <CardHeader className="py-3 px-8 flex flex-row items-center justify-between bg-muted/40">
+                            <CardTitle className="text-[10px] font-black uppercase tracking-widest opacity-60 flex items-center gap-2">
+                                <LineChart className="h-4 w-4" /> Velocity Consistency
+                            </CardTitle>
+                        </CardHeader>
+                        <CardContent className="p-0 h-32">
+                            <ResponsiveContainer width="100%" height="100%">
+                                <AreaChart data={cpsHistory}>
+                                    <Area type="monotone" dataKey="cps" stroke="hsl(var(--primary))" fill="hsl(var(--primary)/0.1)" strokeWidth={3} />
+                                    <Tooltip contentStyle={{ borderRadius: '12px', border: 'none', background: 'hsl(var(--card))' }} />
+                                </AreaChart>
+                            </ResponsiveContainer>
+                        </CardContent>
+                    </Card>
                 </div>
 
-                {/* Visual Clicks (Ripple Effect placeholder logic) */}
-                {isActive && (
-                    <div className="absolute top-4 right-4 text-[10px] font-bold text-primary opacity-50 flex items-center gap-1">
-                        <Activity className="h-3 w-3 animate-pulse" /> LIVE ACCURACY TRACKING
-                    </div>
-                )}
-            </Card>
+                {/* Right Side: Metrics & Info */}
+                <div className="lg:col-span-4 space-y-6">
+                    <Card className="rounded-[2.5rem] bg-primary text-primary-foreground p-8 shadow-xl shadow-primary/20 relative overflow-hidden">
+                        <div className="absolute -right-10 -bottom-10 h-40 w-40 bg-white/10 rounded-full blur-3xl" />
+                        <div className="relative z-10 text-center space-y-4">
+                            <p className="text-[10px] font-black uppercase tracking-widest opacity-80 flex items-center justify-center gap-2">
+                                <Timer className="h-4 w-4" /> Pulse Remaining
+                            </p>
+                            <h2 className="text-7xl font-black tracking-tighter tabular-nums">{timeLeft}<span className="text-xl">s</span></h2>
+                            <div className="h-1.5 w-full bg-white/20 rounded-full overflow-hidden">
+                                <motion.div className="h-full bg-white" initial={{ width: '100%' }} animate={{ width: `${(timeLeft / duration) * 100}%` }} />
+                            </div>
+                        </div>
+                    </Card>
 
-            <div className="grid gap-6 md:grid-cols-2">
-                <div className="p-8 rounded-2xl border bg-muted/30 space-y-4">
-                    <h3 className="text-xl font-bold flex items-center gap-2">
-                        <Zap className="h-5 w-5 text-primary" />
-                        What is Jitter Clicking?
-                    </h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                        Jitter clicking is a technique involving fast arm muscles vibrations to achieve high click rates (10-14 CPS).
-                        It is popular among Minecraft PvPers for better knockback and hit registration.
-                    </p>
-                    <div className="text-[10px] text-destructive font-bold uppercase p-2 border border-destructive/20 rounded-lg bg-destructive/5 leading-relaxed">
-                        ⚠️ Warning: Excessive jitter clicking can lead to strain. Take regular breaks and stop if you feel pain.
+                    <div className="grid grid-cols-2 gap-4">
+                        <Card className="rounded-3xl p-6 text-center border-primary/10">
+                            <p className="text-[10px] font-black uppercase opacity-40 mb-1">Max CPS</p>
+                            <p className="text-3xl font-black">{bestCPS.toFixed(1)}</p>
+                        </Card>
+                        <Card className="rounded-3xl p-6 text-center border-primary/10">
+                            <p className="text-[10px] font-black uppercase opacity-40 mb-1">Total Hits</p>
+                            <p className="text-3xl font-black">{clicks}</p>
+                        </Card>
                     </div>
-                </div>
-                <div className="p-8 rounded-2xl border bg-primary/5 space-y-4">
-                    <h3 className="text-xl font-bold flex items-center gap-2">
-                        <LineChart className="h-5 w-5 text-primary" />
-                        Pro Technique Tips
-                    </h3>
-                    <ul className="space-y-2">
-                        {[
-                            'Position your hand like a claw.',
-                            'Vibrate your hand by tensing your forearm.',
-                            'Keep your wrist locked and use your arm muscles.',
-                            'Practice in short 5s bursts first.'
-                        ].map(tip => (
-                            <li key={tip} className="flex gap-2 text-xs text-muted-foreground">
-                                <ChevronRight className="h-3 w-3 text-primary shrink-0 transition-transform" />
-                                {tip}
-                            </li>
-                        ))}
-                    </ul>
+
+                    <Card className="rounded-[2rem] border-primary/5 bg-secondary/20 p-6 space-y-4">
+                        <h3 className="text-sm font-black flex items-center gap-2">
+                            <Fingerprint className="h-4 w-4 text-primary" /> TECHNIQUE GUIDE
+                        </h3>
+                        <div className="space-y-3">
+                            <div className="flex gap-3">
+                                <span className="h-6 w-6 rounded-lg bg-primary/20 text-primary flex items-center justify-center text-xs font-black">1</span>
+                                <p className="text-[11px] font-medium opacity-70">Tense your forearm to create high-frequency micro-shaking.</p>
+                            </div>
+                            <div className="flex gap-3">
+                                <span className="h-6 w-6 rounded-lg bg-primary/20 text-primary flex items-center justify-center text-xs font-black">2</span>
+                                <p className="text-[11px] font-medium opacity-70">Focus on the center; wide jittering reduces accuracy and speed.</p>
+                            </div>
+                            <div className="flex gap-3">
+                                <span className="h-6 w-6 rounded-lg bg-primary/20 text-primary flex items-center justify-center text-xs font-black">3</span>
+                                <p className="text-[11px] font-medium opacity-70 text-destructive font-bold">Limit sessions to 10s to avoid RSI and maintain peak muscle tension.</p>
+                            </div>
+                        </div>
+                    </Card>
                 </div>
             </div>
         </div>
-    );
-}
-
-function ChevronRight(props: any) {
-    return (
-        <svg
-            {...props}
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-        >
-            <path d="m9 18 6-6-6-6" />
-        </svg>
     );
 }
 

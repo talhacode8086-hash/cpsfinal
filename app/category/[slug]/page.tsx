@@ -46,21 +46,23 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
 
     const description = categoryDescriptions[lowerSlug] ||
-        `Explore our collection of free online ${categoryName.toLowerCase()} tools. Professional utilities for gamers, developers, and creators. ${categoryTools.length} tools available.`;
+        `Explore our collection of free online ${categoryName.toLowerCase().endsWith('tools') ? categoryName.toLowerCase() : categoryName.toLowerCase() + ' tools'}. Professional utilities for gamers, developers, and creators. ${categoryTools.length} tools available.`;
+
+    const displayCategory = categoryName.toLowerCase().endsWith('tools') ? categoryName : `${categoryName} Tools`;
 
     return {
-        title: `${categoryName} - Free Online Tools | Assets Tools Hub`,
+        title: `${displayCategory} - Free Online Tools | Assets Tools Hub`,
         description,
         keywords: categoryTools.flatMap(t => t.keywords || []).slice(0, 20),
         openGraph: {
-            title: `${categoryName} - Professional Free Tools`,
+            title: `${displayCategory} - Professional Free Tools`,
             description,
             type: 'website',
             url: `https://www.assetstoolshub.com/category/${slug}`,
         },
         twitter: {
             card: 'summary_large_image',
-            title: `${categoryName} Tools`,
+            title: displayCategory,
             description,
         }
     };
@@ -95,7 +97,7 @@ export default async function CategoryPage({ params }: PageProps) {
     };
 
     const description = categoryDescriptions[lowerSlug] ||
-        `Explore our collection of free online ${categoryName.toLowerCase()} tools. Professional utilities for gamers, developers, and creators. ${categoryTools.length} tools available.`;
+        `Explore our collection of free online ${categoryName.toLowerCase().endsWith('tools') ? categoryName.toLowerCase() : categoryName.toLowerCase() + ' tools'}. Professional utilities for gamers, developers, and creators. ${categoryTools.length} tools available.`;
 
     return (
         <>
@@ -128,7 +130,7 @@ export default async function CategoryPage({ params }: PageProps) {
                     __html: JSON.stringify({
                         "@context": "https://schema.org",
                         "@type": "CollectionPage",
-                        "name": `${categoryName} Tools - Assets Tools Hub`,
+                        "name": `${categoryName.toLowerCase().endsWith('tools') ? categoryName : categoryName + ' Tools'} - Assets Tools Hub`,
                         "description": description,
                         "url": `https://www.assetstoolshub.com/category/${slug}`,
                         "mainEntity": {

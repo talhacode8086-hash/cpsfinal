@@ -117,12 +117,12 @@ export default function BlogClient({ post }: BlogClientProps) {
                 <div className="flex flex-col lg:flex-row gap-16 relative">
 
                     {/* Left Sidebar */}
-                    <aside className="hidden lg:block w-72 shrink-0">
+                    <aside className="hidden lg:block w-72 shrink-0 relative h-full">
                         <motion.div
                             initial={{ opacity: 0, x: -30 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: 0.5, duration: 0.8 }}
-                            className="sticky top-24 space-y-12"
+                            className="sticky top-24 max-h-[calc(100vh-8rem)] overflow-y-auto custom-scrollbar space-y-12 pb-10"
                         >
                             <Link href="/blog">
                                 <Button variant="ghost" className="group rounded-2xl h-12 w-full justify-start text-muted-foreground hover:text-primary hover:bg-primary/5 transition-all">

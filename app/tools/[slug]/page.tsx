@@ -136,6 +136,7 @@ import GridShotMini from '@/components/tools/gaming/GridShotMini';
 import PressureReflexTest from '@/components/tools/gaming/PressureReflexTest';
 import ReflexPatternMatch from '@/components/tools/gaming/ReflexPatternMatch';
 import StrafeAimingSim from '@/components/tools/gaming/StrafeAimingSim';
+import FPSAimMaster from '@/components/tools/gaming/FPSAimMaster';
 
 import MouseGlideTest from '@/components/tools/gaming/MouseGlideTest';
 import LODTestGuide from '@/components/tools/gaming/LODTestGuide';
@@ -400,6 +401,48 @@ import OrbitSimulator from '@/components/tools/education/OrbitSimulator';
 import EMWaveCalculator from '@/components/tools/education/EMWaveCalculator';
 import NuclearDecaySim from '@/components/tools/education/NuclearDecaySim';
 
+// AI Math Solver
+import QuadraticSolver from '@/components/tools/ai-math/QuadraticSolver';
+import MatrixCalculatorAI from '@/components/tools/ai-math/MatrixCalculatorAI';
+import DerivativeCalculator from '@/components/tools/ai-math/DerivativeCalculator';
+import ComplexNumberCalc from '@/components/tools/ai-math/ComplexNumberCalc';
+import LinearEquationSolver from '@/components/tools/ai-math/LinearEquationSolver';
+import StatisticsCalc from '@/components/tools/ai-math/StatisticsCalc';
+import LogarithmCalc from '@/components/tools/ai-math/LogarithmCalc';
+import PermutationCombination from '@/components/tools/ai-math/PermutationCombination';
+import TrigCalc from '@/components/tools/ai-math/TrigCalc';
+import VectorCalc from '@/components/tools/ai-math/VectorCalc';
+import ProbabilityCalc from '@/components/tools/ai-math/ProbabilityCalc';
+import IntegralCalculator from '@/components/tools/ai-math/IntegralCalculator';
+import PolynomialAnalyzer from '@/components/tools/ai-math/PolynomialAnalyzer';
+import LimitCalculator from '@/components/tools/ai-math/LimitCalculator';
+import SequenceSeriesSolverAI from '@/components/tools/ai-math/SequenceSeriesSolverAI';
+import TriangleSolver from '@/components/tools/ai-math/TriangleSolver';
+import LCMGCFCalculator from '@/components/tools/ai-math/LCMGCFCalculator';
+import DistanceFormulaCalc from '@/components/tools/ai-math/DistanceFormulaCalc';
+import PercentageCalculatorAI from '@/components/tools/ai-math/PercentageCalculatorAI';
+import FactorizationTool from '@/components/tools/ai-math/FactorizationTool';
+import SystemEquationsSolver from '@/components/tools/ai-math/SystemEquationsSolver';
+import ExponentCalculator from '@/components/tools/ai-math/ExponentCalculator';
+import CircleGeometry from '@/components/tools/ai-math/CircleGeometry';
+import BinomialTheorem from '@/components/tools/ai-math/BinomialTheorem';
+import FractionCalculator from '@/components/tools/ai-math/FractionCalculator';
+import SlopeInterceptForm from '@/components/tools/ai-math/SlopeInterceptForm';
+import PythagoreanCalculator from '@/components/tools/ai-math/PythagoreanCalculator';
+import MensurationCalculator from '@/components/tools/ai-math/MensurationCalculator';
+import ScientificNotation from '@/components/tools/ai-math/ScientificNotation';
+import SurdSimplifier from '@/components/tools/ai-math/SurdSimplifier';
+import RemainderTheoremSolver from '@/components/tools/ai-math/RemainderTheoremSolver';
+import PartialFractions from '@/components/tools/ai-math/PartialFractions';
+import MaximaMinimaFinder from '@/components/tools/ai-math/MaximaMinimaFinder';
+import BayesTheoremSolver from '@/components/tools/ai-math/BayesTheoremSolver';
+import LinearGraphPlotter from '@/components/tools/ai-math/LinearGraphPlotter';
+import ContinuityChecker from '@/components/tools/ai-math/ContinuityChecker';
+import AreaUnderCurveAI from '@/components/tools/ai-math/AreaUnderCurve';
+import GeometryTheoremChecker from '@/components/tools/ai-math/GeometryTheoremChecker';
+import MeanDeviationCalc from '@/components/tools/ai-math/MeanDeviationCalc';
+import PartialFractionsRepeated from '@/components/tools/ai-math/PartialFractionsRepeated';
+
 const ToolComponents: Record<string, any> = {
     'mouse-sensitivity-converter': SensitivityConverter,
     'word-counter': WordCounter,
@@ -410,6 +453,7 @@ const ToolComponents: Record<string, any> = {
     'keyboard-latency-tester': KeyboardLatency,
     'aim-trainer': AimTrainer,
     'mouse-polling-rate-checker': PollingRateChecker,
+    'elite-fps-aim-master': FPSAimMaster,
     'cm-360-calculator': CM360Calculator,
     'fps-refresh-rate-calc': FPSCalculator,
     'reaction-time-test': ReactionTest,
@@ -460,6 +504,7 @@ const ToolComponents: Record<string, any> = {
     'reverse-text': ReverseText,
     'whitespace-remover': WhitespaceRemover,
     'text-to-binary': TextBinaryConverter,
+    'binary-to-text-converter': TextBinaryConverter,
     'random-string-generator': RandomStringGen,
     'text-to-slug': TextToSlug,
     'morse-code-translator': MorseCodeTranslator,
@@ -799,6 +844,48 @@ const ToolComponents: Record<string, any> = {
     'molecular-weight-calc': MolecularWeightPro,
     'osmotic-pressure': OsmoticPressure,
     'gas-viscosity-calc': GasViscosity,
+
+    // AI Math Solver - Pakistan Class 9-12 Syllabus
+    'quadratic-equation-solver-ai': QuadraticSolver,
+    'matrix-calculator-pro-ai': MatrixCalculatorAI,
+    'derivative-calculator-ai': DerivativeCalculator,
+    'complex-number-calculator-ai': ComplexNumberCalc,
+    'linear-equation-solver-ai': LinearEquationSolver,
+    'statistics-calculator-ai': StatisticsCalc,
+    'logarithm-calculator-ai': LogarithmCalc,
+    'permutation-combination-calculator': PermutationCombination,
+    'trigonometry-calculator-ai': TrigCalc,
+    'vector-calculator-3d-ai': VectorCalc,
+    'probability-calculator-ai': ProbabilityCalc,
+    'integral-calculator-ai': IntegralCalculator,
+    'polynomial-analyzer-ai': PolynomialAnalyzer,
+    'limit-calculator-ai': LimitCalculator,
+    'sequence-series-solver-ai': SequenceSeriesSolverAI,
+    'triangle-solver-ai': TriangleSolver,
+    'lcm-gcf-calculator-ai': LCMGCFCalculator,
+    'distance-formula-calculator-ai': DistanceFormulaCalc,
+    'percentage-calculator-ai': PercentageCalculatorAI,
+    'factorization-tool-ai': FactorizationTool,
+    'system-equations-solver-ai': SystemEquationsSolver,
+    'exponent-calculator-ai': ExponentCalculator,
+    'circle-geometry-calculator-ai': CircleGeometry,
+    'binomial-theorem-calculator-ai': BinomialTheorem,
+    'fraction-calculator-ai': FractionCalculator,
+    'slope-intercept-form-ai': SlopeInterceptForm,
+    'pythagorean-calculator-ai': PythagoreanCalculator,
+    'mensuration-calculator-ai': MensurationCalculator,
+    'scientific-notation-converter-ai': ScientificNotation,
+    'surd-simplifier-ai': SurdSimplifier,
+    'remainder-theorem-solver-ai': RemainderTheoremSolver,
+    'partial-fraction-decomposer-ai': PartialFractions,
+    'maxima-minima-finder-ai': MaximaMinimaFinder,
+    'bayes-theorem-solver-ai': BayesTheoremSolver,
+    'linear-graph-plotter-ai': LinearGraphPlotter,
+    'continuity-checker-ai': ContinuityChecker,
+    'area-under-curve-ai': AreaUnderCurveAI,
+    'geometry-theorem-checker-ai': GeometryTheoremChecker,
+    'mean-deviation-calculator-ai': MeanDeviationCalc,
+    'partial-fraction-repeated-ai': PartialFractionsRepeated,
 };
 
 interface PageProps {
@@ -817,7 +904,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
     if (!tool) return { title: 'Tool Not Found' };
 
-    const title = `${tool.title} | Free Online ${tool.category} Tool`;
+    const categoryDisplay = tool.category.toLowerCase().endsWith('tools') ? tool.category.replace(/Tools$/i, 'Tool') : `${tool.category} Tool`;
+    const title = `${tool.title} | Free Online ${categoryDisplay}`;
     const description = `${tool.description} Use our free ${tool.title.toLowerCase()} to improve your ${tool.category.toLowerCase()} workflow. No signup required.`;
 
     return {

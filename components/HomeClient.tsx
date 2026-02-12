@@ -17,6 +17,8 @@ import { useRouter } from 'next/navigation';
 import ScrollReveal from '@/components/layout/ScrollReveal';
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
+import { useFavorites } from '@/components/providers/FavoritesProvider';
+import { Heart } from 'lucide-react';
 import {
     Accordion,
     AccordionContent,
@@ -29,6 +31,11 @@ export default function HomeClient() {
     const [searchQuery, setSearchQuery] = useState('');
     const [randomTool, setRandomTool] = useState<any>(null);
     const [isLoaded, setIsLoaded] = useState(false);
+    const { favorites } = useFavorites();
+
+    const favoriteTools = useMemo(() => {
+        return tools.filter(tool => favorites.includes(tool.slug));
+    }, [favorites]);
 
     useEffect(() => {
         setRandomTool(tools[Math.floor(Math.random() * tools.length)]);
@@ -178,7 +185,7 @@ export default function HomeClient() {
                             {[
                                 'Mouse Skills', 'Keyboard Skills', 'Aim & Reflex', 'Gaming Utilities',
                                 'Text Tools', 'Unit Converters', 'Development Tools', 'SEO & Web',
-                                'Design & UI', 'Finance', 'Daily Tools', 'Image Tools', 'Education', 'Mathematics Tools', 'Advanced Scholar Tools', 'Productivity', 'Chemistry'
+                                'Design & UI', 'Finance', 'Daily Tools', 'Image Tools', 'Education', 'Mathematics Tools', 'Advanced Scholar Tools', 'AI Math Solver', 'Productivity', 'Chemistry'
                             ].map((category, idx) => (
                                 <motion.div
                                     key={category}
@@ -204,6 +211,43 @@ export default function HomeClient() {
                     </div>
                 </motion.div>
             </section>
+
+            {/* Favorites Section */}
+            {favoriteTools.length > 0 && (
+                <ScrollReveal className="max-w-7xl mx-auto px-4 -mt-12">
+                    <div className="text-center space-y-4 mb-10">
+                        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-500/10 text-red-500 border border-red-500/20 text-xs font-black uppercase tracking-widest">
+                            <Heart className="h-3 w-3 fill-current" /> Saved for You
+                        </div>
+                        <h2 className="text-3xl md:text-4xl font-black tracking-tight">Your Favorite Tools</h2>
+                    </div>
+                    <div className="flex flex-wrap justify-center gap-4">
+                        {favoriteTools.map((tool, idx) => (
+                            <motion.div
+                                key={tool.slug}
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ delay: idx * 0.05 }}
+                                whileHover={{ scale: 1.05, y: -4 }}
+                            >
+                                <Link
+                                    href={`/tools/${tool.slug}`}
+                                    className="group flex items-center gap-3 px-6 py-4 rounded-2xl bg-secondary/30 backdrop-blur-md border border-red-500/10 hover:border-red-500/30 transition-all shadow-xl shadow-black/5"
+                                >
+                                    <div className="p-2 rounded-xl bg-red-500/10 group-hover:bg-red-500 group-hover:text-white transition-colors">
+                                        <Heart className="h-4 w-4 fill-current" />
+                                    </div>
+                                    <div className="space-y-0.5">
+                                        <div className="font-bold text-sm">{tool.title}</div>
+                                        <div className="text-[10px] text-muted-foreground font-medium">{tool.category}</div>
+                                    </div>
+                                    <ArrowRight className="h-4 w-4 ml-2 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all text-red-500" />
+                                </Link>
+                            </motion.div>
+                        ))}
+                    </div>
+                </ScrollReveal>
+            )}
 
             {/* Stats Section */}
             <ScrollReveal>

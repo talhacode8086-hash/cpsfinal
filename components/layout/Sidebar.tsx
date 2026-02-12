@@ -91,13 +91,16 @@ import {
     GraduationCap,
     Lightbulb,
     Grid,
-    Smartphone
+    Smartphone,
+    Sparkles
 } from 'lucide-react';
 import { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { tools, Tool, slugifyCategory } from '@/lib/tools-config';
 import { useSidebar } from '@/components/providers/SidebarProvider';
+import { useFavorites } from '@/components/providers/FavoritesProvider';
+import { Heart } from 'lucide-react';
 
 const navItems = [
     { name: 'Home', href: '/', icon: Home },
@@ -124,7 +127,7 @@ const IconMap: Record<string, any> = {
     GitMerge, Repeat, Wind, FlaskConical, Droplets, TestTube2, Pipette,
     ArrowUpRight, Microscope, BatteryCharging, Radiation, Shapes,
     ArrowLeftRight, PieChart, Sun, ArrowUp, ArrowDown, Table,
-    Snowflake, Boxes, ThermometerSun, Waves, ShieldCheck, Grid, Smartphone
+    Snowflake, Boxes, ThermometerSun, Waves, ShieldCheck, Grid, Smartphone, Sparkles
 };
 
 // Category Icon Mapping
@@ -145,7 +148,8 @@ const CategoryIcons: Record<string, any> = {
     'Education': GraduationCap,
     'Mathematics Tools': Sigma,
     'Advanced Scholar Tools': BookOpen,
-    'Productivity': Lightbulb
+    'AI Math Solver': Sparkles,
+    'Productivity': Lightbulb,
 };
 
 interface DropdownMenuProps {
@@ -264,6 +268,11 @@ export function Sidebar() {
 
     const toggleSidebar = () => setIsMobileOpen(!isMobileOpen);
 
+    const { favorites } = useFavorites();
+    const favoriteTools = useMemo(() => {
+        return tools.filter(tool => favorites.includes(tool.slug));
+    }, [favorites]);
+
     const SidebarContent = (
         <div className="flex flex-col h-full py-4 px-3 overflow-y-auto custom-scrollbar">
             <div className="px-3 mb-6">
@@ -304,6 +313,39 @@ export function Sidebar() {
                     })}
                 </div>
             </div>
+
+            {favoriteTools.length > 0 && (
+                <div className="px-3 mb-6 border-t pt-4">
+                    <h2 className="text-xs font-bold uppercase tracking-widest text-red-500 mb-4 p-1 flex items-center gap-2">
+                        <Heart className="h-3 w-3 fill-current" /> Your Favorites
+                    </h2>
+                    <div className="space-y-1">
+                        {favoriteTools.map((tool) => {
+                            const Icon = IconMap[tool.iconName] || Box;
+                            const isActive = pathname === `/tools/${tool.slug}`;
+                            return (
+                                <Link
+                                    key={tool.slug}
+                                    href={`/tools/${tool.slug}`}
+                                    onClick={() => isMobile && setIsMobileOpen(false)}
+                                    className={cn(
+                                        "group flex items-center justify-between rounded-xl px-3 py-2.5 text-sm font-medium transition-all duration-200",
+                                        isActive
+                                            ? "bg-red-500 text-white shadow-lg shadow-red-500/20"
+                                            : "text-muted-foreground hover:bg-red-500/10 hover:text-red-600"
+                                    )}
+                                >
+                                    <div className="flex items-center gap-3">
+                                        <Icon className={cn("h-4 w-4 shrink-0", isActive ? "" : "group-hover:text-red-500 transition-colors")} />
+                                        <span className="truncate max-w-[140px]">{tool.title}</span>
+                                    </div>
+                                    {isActive && <ChevronRight className="h-3 w-3 opacity-50" />}
+                                </Link>
+                            );
+                        })}
+                    </div>
+                </div>
+            )}
 
             <div className="px-3 space-y-4 border-t pt-4">
                 <h2 className="text-xs font-bold uppercase tracking-widest text-muted-foreground/60 mb-2 p-1 flex items-center gap-2">

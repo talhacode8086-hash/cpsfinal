@@ -2,12 +2,14 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { ArrowLeft, ChevronRight, Home, MousePointer2, Keyboard, AlertCircle } from 'lucide-react';
+import { ArrowLeft, ChevronRight, Home, MousePointer2, Keyboard, AlertCircle, Heart } from 'lucide-react';
 import { Tool, slugifyCategory } from '@/lib/tools-config';
 import AdUnit from '@/components/ads/AdUnit';
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import ToolFeedback from '@/components/tools/ToolFeedback';
+import { useFavorites } from '@/components/providers/FavoritesProvider';
+import { cn } from '@/lib/utils';
 
 interface ToolPageClientProps {
     tool: Tool;
@@ -16,6 +18,9 @@ interface ToolPageClientProps {
 }
 
 export default function ToolPageClient({ tool, children }: ToolPageClientProps) {
+    const { toggleFavorite, isFavorite } = useFavorites();
+    const favoritestatus = isFavorite(tool.slug);
+
     return (
         <div className="mx-auto max-w-5xl space-y-6 sm:space-y-8 py-4 sm:py-6 md:py-8 px-3 sm:px-4 md:px-0">
             {/* Breadcrumbs */}
@@ -39,7 +44,20 @@ export default function ToolPageClient({ tool, children }: ToolPageClientProps) 
             >
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
                     <div className="space-y-1.5 sm:space-y-2">
-                        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight">{tool.title}</h1>
+                        <div className="flex items-center gap-3">
+                            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight">{tool.title}</h1>
+                            <Button
+                                variant="ghost"
+                                size="icon"
+                                onClick={() => toggleFavorite(tool.slug)}
+                                className={cn(
+                                    "rounded-full transition-all duration-300",
+                                    favoritestatus ? "text-red-500 bg-red-500/10 hover:bg-red-500/20" : "text-muted-foreground hover:text-red-500 hover:bg-red-500/5"
+                                )}
+                            >
+                                <Heart className={cn("h-6 w-6", favoritestatus && "fill-current")} />
+                            </Button>
+                        </div>
                         <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-[700px]">{tool.description}</p>
                     </div>
                     <Link href={`/category/${slugifyCategory(tool.category)}`}>

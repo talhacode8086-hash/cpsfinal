@@ -10,6 +10,7 @@ import ScrollProvider from '@/components/providers/ScrollProvider';
 import ScrollProgressBar from '@/components/ui/ScrollProgressBar';
 import Script from 'next/script';
 import { SidebarProvider } from '@/components/providers/SidebarProvider';
+import { FavoritesProvider } from '@/components/providers/FavoritesProvider';
 import MainLayout from '@/components/layout/MainLayout';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -154,15 +155,17 @@ export default function RootLayout({
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0000000000000000"
         />
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <SidebarProvider>
-            <ScrollProvider>
-              <ScrollProgressBar />
-              <MainLayout>
-                {children}
-              </MainLayout>
-              <CookieConsent />
-            </ScrollProvider>
-          </SidebarProvider>
+          <FavoritesProvider>
+            <SidebarProvider>
+              <ScrollProvider>
+                <ScrollProgressBar />
+                <MainLayout>
+                  {children}
+                </MainLayout>
+                <CookieConsent />
+              </ScrollProvider>
+            </SidebarProvider>
+          </FavoritesProvider>
         </ThemeProvider>
         <Analytics />
       </body>

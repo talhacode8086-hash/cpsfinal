@@ -3,11 +3,11 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { RotateCcw, Timer, MousePointer2, Trophy, BarChart3, Fingerprint } from 'lucide-react';
+import { RotateCcw, Timer, MousePointer2, Trophy, BarChart3, Fingerprint, Zap, Clock } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ResponsiveContainer, AreaChart, Area, XAxis, YAxis, Tooltip } from 'recharts';
 
-const TIME_MODES = [1, 5, 10, 30, 60];
+const TIME_MODES = [1, 5, 10, 30, 60, 100];
 
 interface ClickRipple {
     id: number;
@@ -22,11 +22,13 @@ export default function CPSTest() {
     const [isActive, setIsActive] = useState(false);
     const [isFinished, setIsFinished] = useState(false);
     const [maxCps, setMaxCps] = useState(0);
+    const [peakBurst, setPeakBurst] = useState(0);
     const [ripples, setRipples] = useState<ClickRipple[]>([]);
     const [cpsHistory, setCpsHistory] = useState<{ time: number; cps: number }[]>([]);
 
     const timerRef = useRef<NodeJS.Timeout | null>(null);
     const clickCountRef = useRef(0);
+    const lastWindowClicksRef = useRef<number[]>([]);
 
     const getRank = (cps: number) => {
         if (cps >= 15) return { name: 'The Flash', color: 'text-purple-500', bg: 'bg-purple-500/10', desc: 'God-like clicking speed!' };
@@ -41,7 +43,9 @@ export default function CPSTest() {
         setIsActive(true);
         setIsFinished(false);
         setClicks(0);
+        setPeakBurst(0);
         clickCountRef.current = 0;
+        lastWindowClicksRef.current = [];
         setTimeLeft(selectedTime);
         setCpsHistory([]);
     }, [selectedTime]);
@@ -63,11 +67,15 @@ export default function CPSTest() {
                 setTimeLeft((prev) => {
                     const next = Math.max(0, prev - 0.1);
 
-                    // Update CPS history every 0.5s or so
-                    if (Math.floor(next * 10) % 5 === 0) {
-                        const elapsed = selectedTime - next;
-                        const instantCps = elapsed > 0 ? clickCountRef.current / elapsed : 0;
-                        setCpsHistory(h => [...h, { time: parseFloat(elapsed.toFixed(1)), cps: parseFloat(instantCps.toFixed(2)) }]);
+                    // Update CPS history every 0.1s for high precision
+                    const elapsed = selectedTime - next;
+                    const instantCps = elapsed > 0 ? clickCountRef.current / elapsed : 0;
+
+                    if (Math.floor(next * 10) % 2 === 0) { // Every 0.2s
+                        setCpsHistory(h => [...h, {
+                            time: parseFloat(elapsed.toFixed(1)),
+                            cps: parseFloat(instantCps.toFixed(2))
+                        }].slice(-50)); // Keep last 50 points for long tests
                     }
 
                     if (next <= 0) {
@@ -90,8 +98,16 @@ export default function CPSTest() {
             startTest();
         }
 
+        const now = performance.now();
         setClicks((prev) => prev + 1);
         clickCountRef.current += 1;
+
+        // Calculate burst (last 1 second rolling window)
+        lastWindowClicksRef.current.push(now);
+        const oneSecAgo = now - 1000;
+        lastWindowClicksRef.current = lastWindowClicksRef.current.filter(t => t > oneSecAgo);
+        const currentBurst = lastWindowClicksRef.current.length;
+        if (currentBurst > peakBurst) setPeakBurst(currentBurst);
 
         // Add ripple
         const rect = e.currentTarget.getBoundingClientRect();
@@ -108,6 +124,7 @@ export default function CPSTest() {
         setIsActive(false);
         setIsFinished(false);
         setClicks(0);
+        setPeakBurst(0);
         clickCountRef.current = 0;
         setTimeLeft(selectedTime);
         setCpsHistory([]);
@@ -117,29 +134,29 @@ export default function CPSTest() {
     const rank = getRank(currentCps);
 
     return (
-        <div className="mx-auto max-w-6xl space-y-8">
+        <div className="mx-auto max-w-6xl space-y-8 pb-20">
             <div className="grid gap-8 lg:grid-cols-12">
                 {/* Main Interaction Area */}
                 <div className="lg:col-span-8 space-y-6">
-                    <Card className="overflow-hidden border-primary/20 shadow-2xl relative bg-card/50 backdrop-blur-md rounded-[2.5rem]">
-                        <CardHeader className="bg-muted/30 border-b pb-6">
-                            <div className="flex items-center justify-between">
-                                <div className="flex items-center gap-3">
-                                    <div className="h-10 w-10 bg-primary/10 rounded-xl flex items-center justify-center text-primary">
-                                        <MousePointer2 className="h-5 w-5" />
+                    <Card className="overflow-hidden border-2 border-primary/10 shadow-2xl relative bg-card/50 backdrop-blur-xl rounded-[3rem] transition-all hover:border-primary/30">
+                        <CardHeader className="bg-muted/30 border-b pb-6 px-8">
+                            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                                <div className="flex items-center gap-4">
+                                    <div className="h-12 w-12 bg-primary/10 rounded-2xl flex items-center justify-center text-primary border border-primary/20">
+                                        <MousePointer2 className="h-6 w-6" />
                                     </div>
                                     <div>
-                                        <CardTitle>Click Arena</CardTitle>
-                                        <CardDescription>Test your trigger speed</CardDescription>
+                                        <CardTitle className="text-2xl font-black italic">ELITE ARENA</CardTitle>
+                                        <CardDescription className="font-bold uppercase tracking-widest text-[10px]">Neural-Speed Calibration</CardDescription>
                                     </div>
                                 </div>
-                                <div className="flex gap-2 bg-muted/50 p-1 rounded-2xl">
+                                <div className="flex flex-wrap gap-2 bg-muted/50 p-1.5 rounded-2xl border">
                                     {TIME_MODES.map((mode) => (
                                         <Button
                                             key={mode}
                                             variant={selectedTime === mode ? 'default' : 'ghost'}
                                             size="sm"
-                                            className="rounded-xl h-9 px-4 font-bold"
+                                            className="rounded-xl h-10 px-4 font-black text-xs"
                                             onClick={() => {
                                                 setSelectedTime(mode);
                                                 setTimeLeft(mode);
@@ -153,17 +170,17 @@ export default function CPSTest() {
                                 </div>
                             </div>
                         </CardHeader>
-                        <CardContent className="p-0 relative h-[450px]">
+                        <CardContent className="p-0 relative h-[480px]">
                             <motion.div
                                 onClick={handleClick}
-                                className={`h-full flex flex-col items-center justify-center cursor-crosshair select-none transition-colors relative overflow-hidden ${isActive ? 'bg-primary/5' : 'bg-background hover:bg-muted/30'}`}
+                                className={`h-full flex flex-col items-center justify-center cursor-crosshair select-none transition-all relative overflow-hidden ${isActive ? 'bg-primary/5' : 'bg-background hover:bg-muted/20'}`}
                             >
                                 <AnimatePresence>
                                     {ripples.map(ripple => (
                                         <motion.div
                                             key={ripple.id}
-                                            initial={{ scale: 0, opacity: 0.5 }}
-                                            animate={{ scale: 4, opacity: 0 }}
+                                            initial={{ scale: 0, opacity: 0.6 }}
+                                            animate={{ scale: 6, opacity: 0 }}
                                             exit={{ opacity: 0 }}
                                             style={{
                                                 position: 'absolute',
@@ -173,54 +190,64 @@ export default function CPSTest() {
                                                 height: 40,
                                                 borderRadius: '50%',
                                                 backgroundColor: 'hsl(var(--primary))',
-                                                pointerEvents: 'none'
+                                                pointerEvents: 'none',
+                                                zIndex: 1
                                             }}
                                         />
                                     ))}
                                 </AnimatePresence>
 
                                 {isActive ? (
-                                    <div className="text-center space-y-2 z-10">
+                                    <div className="text-center space-y-4 z-10">
                                         <motion.div
                                             key={clicks}
-                                            initial={{ scale: 0.9, opacity: 0.8 }}
+                                            initial={{ scale: 0.8, opacity: 0.5 }}
                                             animate={{ scale: 1, opacity: 1 }}
-                                            className="text-9xl font-black tracking-tighter text-primary drop-shadow-2xl"
+                                            className="text-[12rem] font-black tracking-tighter text-primary drop-shadow-[0_0_40px_rgba(var(--primary-rgb),0.3)] leading-none"
                                         >
                                             {clicks}
                                         </motion.div>
-                                        <p className="text-muted-foreground font-black uppercase tracking-[0.2em] animate-pulse">Live Speed: {currentCps.toFixed(1)} CPS</p>
+                                        <div className="flex flex-col items-center gap-1">
+                                            <p className="text-muted-foreground font-black uppercase tracking-[0.3em] text-xs animate-pulse">Live Optimization: {currentCps.toFixed(1)} CPS</p>
+                                            <div className="flex gap-2">
+                                                <Badge variant="secondary" className="bg-primary/10 text-primary font-black">BURST: {peakBurst} CPS</Badge>
+                                            </div>
+                                        </div>
                                     </div>
                                 ) : isFinished ? (
                                     <motion.div
-                                        initial={{ opacity: 0, scale: 0.9 }}
-                                        animate={{ opacity: 1, scale: 1 }}
-                                        className="text-center space-y-8 p-12 z-20 bg-background/80 backdrop-blur-xl rounded-[3rem] border shadow-2xl mx-12"
+                                        initial={{ opacity: 0, scale: 0.9, y: 30 }}
+                                        animate={{ opacity: 1, scale: 1, y: 0 }}
+                                        className="text-center space-y-8 p-12 z-20 bg-background/90 backdrop-blur-2xl rounded-[4rem] border shadow-[0_32px_64px_rgba(0,0,0,0.2)] mx-12 border-primary/20"
                                     >
-                                        <div className="flex justify-center -mt-20">
-                                            <div className={`h-24 w-24 ${rank.bg} rounded-3xl flex items-center justify-center shadow-xl`}>
-                                                <Trophy className={`h-12 w-12 ${rank.color}`} />
-                                            </div>
+                                        <div className="flex justify-center -mt-24">
+                                            <motion.div
+                                                animate={{ rotate: [0, 10, -10, 0] }}
+                                                transition={{ repeat: Infinity, duration: 2 }}
+                                                className={`h-28 w-28 ${rank.bg} rounded-[2.5rem] flex items-center justify-center shadow-2xl border border-white/10`}
+                                            >
+                                                <Trophy className={`h-14 w-14 ${rank.color}`} />
+                                            </motion.div>
                                         </div>
-                                        <div className="space-y-1">
-                                            <p className={`text-sm font-black uppercase tracking-widest ${rank.color}`}>Rank: {rank.name}</p>
-                                            <h3 className="text-7xl font-black tracking-tighter">{currentCps.toFixed(2)} <span className="text-2xl opacity-50">CPS</span></h3>
-                                            <p className="text-muted-foreground font-medium">{rank.desc}</p>
+                                        <div className="space-y-2">
+                                            <p className={`text-xs font-black uppercase tracking-[0.4em] ${rank.color}`}>Classification: {rank.name}</p>
+                                            <h3 className="text-8xl font-black tracking-tighter">{currentCps.toFixed(2)} <span className="text-3xl opacity-30 font-light">CPS</span></h3>
+                                            <p className="text-muted-foreground font-bold tracking-tight max-w-xs mx-auto text-sm">{rank.desc}</p>
                                         </div>
                                         <div className="flex gap-4 justify-center">
-                                            <Button onClick={resetTest} size="lg" className="rounded-2xl px-10 h-14 font-black text-lg shadow-xl shadow-primary/20">
-                                                <RotateCcw className="mr-2 h-5 w-5" /> Retake
+                                            <Button onClick={resetTest} size="lg" className="rounded-2xl px-12 h-16 font-black text-xl shadow-2xl shadow-primary/30 transition-transform hover:scale-105 active:scale-95">
+                                                <RotateCcw className="mr-3 h-6 w-6" /> PULSE RESTART
                                             </Button>
                                         </div>
                                     </motion.div>
                                 ) : (
-                                    <div className="text-center space-y-6 z-10">
-                                        <div className="h-24 w-24 bg-primary/10 rounded-[2rem] flex items-center justify-center mx-auto mb-4 border border-primary/20 animate-bounce">
-                                            <MousePointer2 className="h-12 w-12 text-primary" />
+                                    <div className="text-center space-y-8 z-10 group">
+                                        <div className="h-28 w-28 bg-primary/10 rounded-[2.5rem] flex items-center justify-center mx-auto mb-4 border-2 border-primary/20 transition-all group-hover:rotate-6 group-hover:scale-110 shadow-xl shadow-primary/5">
+                                            <MousePointer2 className="h-14 w-14 text-primary" />
                                         </div>
-                                        <div className="space-y-1">
-                                            <h3 className="text-4xl font-black tracking-tight">Click to Start</h3>
-                                            <p className="text-muted-foreground max-w-xs mx-auto">The timer will begin as soon as you perform your first click.</p>
+                                        <div className="space-y-3">
+                                            <h3 className="text-5xl font-black tracking-tighter text-foreground/90 uppercase italic">Init Sequence</h3>
+                                            <p className="text-muted-foreground max-w-xs mx-auto font-medium opacity-60">Timer triggers on the first interaction vector.</p>
                                         </div>
                                     </div>
                                 )}
@@ -228,26 +255,26 @@ export default function CPSTest() {
                         </CardContent>
                     </Card>
 
-                    {/* Live Analytics Chart */}
-                    <Card className="rounded-[2.5rem] border-primary/5 shadow-xl overflow-hidden bg-muted/20">
-                        <CardHeader className="py-4 px-8 border-b bg-muted/40 flex flex-row items-center justify-between">
-                            <CardTitle className="text-sm font-black uppercase tracking-widest opacity-60 flex items-center gap-2">
-                                <BarChart3 className="h-4 w-4" /> Performance Graph
+                    {/* High Precision Analytics */}
+                    <Card className="rounded-[3rem] border-primary/5 shadow-2xl overflow-hidden bg-muted/20">
+                        <CardHeader className="py-5 px-10 border-b bg-muted/40 flex flex-row items-center justify-between">
+                            <CardTitle className="text-[10px] font-black uppercase tracking-[0.3em] opacity-60 flex items-center gap-3 italic">
+                                <BarChart3 className="h-4 w-4 text-primary" /> Velocity Vector Stream
                             </CardTitle>
-                            {isActive && <div className="text-[10px] font-bold text-primary animate-pulse flex items-center gap-1"><div className="w-1.5 h-1.5 bg-primary rounded-full" /> RECORDING...</div>}
+                            {isActive && <div className="text-[10px] font-bold text-primary animate-pulse flex items-center gap-2"><div className="w-2 h-2 bg-primary rounded-full" /> CAPTURING DATA...</div>}
                         </CardHeader>
-                        <CardContent className="p-0 h-48">
+                        <CardContent className="p-0 h-56">
                             {cpsHistory.length > 0 ? (
                                 <ResponsiveContainer width="100%" height="100%">
                                     <AreaChart data={cpsHistory}>
                                         <defs>
-                                            <linearGradient id="cpsGradient" x1="0" y1="0" x2="0" y2="1">
-                                                <stop offset="5%" stopColor="hsl(var(--primary))" stopOpacity={0.3} />
-                                                <stop offset="95%" stopColor="hsl(var(--primary))" stopOpacity={0} />
+                                            <linearGradient id="cpsGlow" x1="0" y1="0" x2="0" y2="1">
+                                                <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity={0.4} />
+                                                <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity={0} />
                                             </linearGradient>
                                         </defs>
                                         <Tooltip
-                                            contentStyle={{ backgroundColor: 'hsl(var(--card))', borderRadius: '12px', border: '1px solid hsl(var(--primary)/0.1)', fontSize: '10px' }}
+                                            contentStyle={{ backgroundColor: 'hsl(var(--card))', borderRadius: '16px', border: '1px solid hsl(var(--primary)/20%)', fontSize: '12px', fontWeight: '900', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }}
                                             labelStyle={{ display: 'none' }}
                                         />
                                         <Area
@@ -255,87 +282,95 @@ export default function CPSTest() {
                                             dataKey="cps"
                                             stroke="hsl(var(--primary))"
                                             fillOpacity={1}
-                                            fill="url(#cpsGradient)"
-                                            strokeWidth={3}
-                                            animationDuration={300}
+                                            fill="url(#cpsGlow)"
+                                            strokeWidth={4}
+                                            animationDuration={150}
                                         />
                                     </AreaChart>
                                 </ResponsiveContainer>
                             ) : (
-                                <div className="h-full flex items-center justify-center text-muted-foreground/30 font-bold uppercase tracking-widest text-xs">
-                                    Practice to see data
+                                <div className="h-full flex flex-col items-center justify-center opacity-20 space-y-4">
+                                    <BarChart3 className="h-10 w-10" />
+                                    <p className="font-black uppercase tracking-widest text-[10px]">Awaiting active stream...</p>
                                 </div>
                             )}
                         </CardContent>
                     </Card>
                 </div>
 
-                {/* Sidebar Stats */}
+                {/* Sidebar Stats & Expert Info */}
                 <div className="lg:col-span-4 space-y-6">
-                    <Card className="rounded-[2rem] border-primary/10 bg-primary shadow-xl shadow-primary/20 text-primary-foreground overflow-hidden relative">
-                        <div className="absolute -right-10 -top-10 h-40 w-40 bg-white/10 rounded-full blur-3xl" />
-                        <CardContent className="pt-8 text-center relative z-10">
-                            <p className="text-[10px] font-black uppercase tracking-[0.3em] opacity-80 mb-2">Timer Status</p>
-                            <div className="text-7xl font-black tabular-nums tracking-tighter mb-4">
-                                {timeLeft.toFixed(1)}<span className="text-xl opacity-70 ml-1">s</span>
+                    <Card className="rounded-[2.5rem] border-none bg-primary shadow-2xl shadow-primary/30 text-primary-foreground overflow-hidden relative group">
+                        <div className="absolute -right-20 -top-20 h-60 w-60 bg-white/10 rounded-full blur-[80px] transition-transform group-hover:scale-150 duration-700" />
+                        <CardContent className="pt-10 pb-8 text-center relative z-10 transition-transform group-hover:translate-y-[-4px]">
+                            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 rounded-full mb-4">
+                                <Clock className="h-3 w-3" />
+                                <span className="text-[10px] font-black uppercase tracking-widest">Temporal Sync</span>
                             </div>
-                            <div className="h-2 md:h-2.5 w-full bg-primary-foreground/20 rounded-full overflow-hidden">
-                                <motion.div
-                                    className="h-full bg-primary-foreground"
-                                    initial={{ width: '100%' }}
-                                    animate={{ width: `${(timeLeft / selectedTime) * 100}%` }}
-                                    transition={{ duration: 0.1 }}
-                                />
+                            <div className="text-[10rem] md:text-[8rem] font-black tabular-nums tracking-[-0.08em] leading-none mb-4 drop-shadow-2xl">
+                                {timeLeft.toFixed(1)}
+                            </div>
+                            <div className="px-10">
+                                <div className="h-3 w-full bg-white/20 rounded-full overflow-hidden border border-white/10">
+                                    <motion.div
+                                        className="h-full bg-white shadow-[0_0_15px_white]"
+                                        initial={{ width: '100%' }}
+                                        animate={{ width: `${(timeLeft / selectedTime) * 100}%` }}
+                                        transition={{ duration: 0.1 }}
+                                    />
+                                </div>
                             </div>
                         </CardContent>
                     </Card>
 
                     <div className="grid grid-cols-2 gap-4">
-                        <Card className="rounded-3xl border-primary/10 shadow-sm">
-                            <CardContent className="pt-6 text-center">
-                                <p className="text-[10px] font-bold uppercase tracking-widest opacity-40 mb-1">High Score</p>
-                                <p className="text-3xl font-black tabular-nums">{maxCps.toFixed(2)}</p>
-                            </CardContent>
-                        </Card>
-                        <Card className="rounded-3xl border-primary/10 shadow-sm">
-                            <CardContent className="pt-6 text-center">
-                                <p className="text-[10px] font-bold uppercase tracking-widest opacity-40 mb-1">Clicks</p>
-                                <p className="text-3xl font-black tabular-nums">{clicks}</p>
-                            </CardContent>
-                        </Card>
+                        <StatWidget icon={<Zap className="h-4 w-4 text-orange-400" />} label="Peak Burst" value={`${peakBurst} CPS`} />
+                        <StatWidget icon={<Fingerprint className="h-4 w-4 text-primary" />} label="Total Hits" value={clicks} />
                     </div>
 
-                    <Card className="rounded-3xl border-primary/5 bg-secondary/20 shadow-inner">
-                        <CardHeader className="py-4">
-                            <CardTitle className="text-xs font-black uppercase tracking-widest flex items-center gap-2">
-                                <Fingerprint className="h-4 w-4" /> Global Benchmarks
+                    <Card className="rounded-[2.5rem] border-primary/5 bg-secondary/20 shadow-inner p-2">
+                        <CardHeader className="py-5 px-6">
+                            <CardTitle className="text-xs font-black uppercase tracking-[0.2em] flex items-center gap-3">
+                                <Trophy className="h-4 w-4 text-primary" /> Mastery tiers
                             </CardTitle>
                         </CardHeader>
-                        <CardContent className="p-0 text-[11px]">
+                        <CardContent className="p-0 text-[11px] space-y-1">
                             {[
-                                { name: 'Normal', cps: '3-6', level: 'Casual' },
-                                { name: 'Gaming', cps: '7-9', level: 'Advanced' },
-                                { name: 'Butterfly', cps: '10-15', level: 'Pro' },
-                                { name: 'Jitter', cps: '12-16', level: 'Grandmaster' },
-                                { name: 'DragClick', cps: '20-50', level: 'System Limit' },
+                                { name: 'CASUAL', cps: '2-5', rank: 'A' },
+                                { name: 'PRO-PLAYER', cps: '8-11', rank: 'S' },
+                                { name: 'DRAG-FLICK', cps: '15-25', rank: 'SS' },
+                                { name: 'NEURAL-LIMIT', cps: '50+', rank: 'GOD' },
                             ].map((b, i) => (
-                                <div key={i} className="flex justify-between items-center px-6 py-3 border-b border-primary/5 last:border-0 hover:bg-primary/5 transition-colors">
+                                <div key={i} className="flex justify-between items-center px-6 py-4 rounded-3xl hover:bg-primary/5 transition-all group cursor-default mx-1">
                                     <div className="flex flex-col">
-                                        <span className="font-bold text-primary">{b.name}</span>
-                                        <span className="opacity-50 text-[9px]">{b.level}</span>
+                                        <span className="font-black text-primary/80 group-hover:text-primary transition-colors">{b.name}</span>
+                                        <span className="opacity-40 text-[9px] font-bold">SECTOR RANK: {b.rank}</span>
                                     </div>
-                                    <Badge variant="outline" className="font-mono">{b.cps} CPS</Badge>
+                                    <Badge variant="outline" className="font-black px-3 py-1 bg-background shadow-sm border-primary/10">{b.cps} CPS</Badge>
                                 </div>
                             ))}
                         </CardContent>
                     </Card>
 
-                    <Button variant="outline" className="w-full h-14 rounded-2xl border-2 font-bold hover:bg-destructive hover:text-white transition-colors" onClick={() => { setMaxCps(0); resetTest(); }}>
-                        <RotateCcw className="mr-2 h-4 w-4" /> Reset High Score
+                    <Button variant="outline" className="w-full h-16 rounded-[2rem] border-2 font-black text-xs hover:bg-destructive hover:text-white transition-all shadow-lg active:scale-95 group" onClick={() => { setMaxCps(0); resetTest(); }}>
+                        <RotateCcw className="mr-3 h-5 w-5 transition-transform group-hover:rotate-[-180deg] duration-500" /> WIPE LOCAL CORE DATA
                     </Button>
                 </div>
             </div>
         </div>
+    );
+}
+
+function StatWidget({ icon, label, value }: { icon: React.ReactNode, label: string, value: string | number }) {
+    return (
+        <Card className="rounded-[2rem] border-primary/10 shadow-xl overflow-hidden group hover:border-primary/40 transition-all">
+            <CardContent className="p-6 text-center space-y-2 relative">
+                <div className="absolute top-0 left-0 w-full h-1 bg-primary/5" />
+                <div className="flex justify-center transition-transform group-hover:scale-110">{icon}</div>
+                <p className="text-[10px] font-black uppercase tracking-widest opacity-40">{label}</p>
+                <p className="text-2xl font-black tabular-nums tracking-tighter">{value}</p>
+            </CardContent>
+        </Card>
     );
 }
 

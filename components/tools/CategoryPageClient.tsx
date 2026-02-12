@@ -77,7 +77,15 @@ export default function CategoryPageClient({ categoryTools, categoryName }: Cate
 
                 <div className="space-y-3 sm:space-y-4">
                     <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-black tracking-tighter text-foreground leading-none">
-                        {categoryName} <span className="text-primary italic">Tools</span>
+                        {categoryName.toLowerCase().endsWith('tools') ? (
+                            <>
+                                {categoryName.slice(0, -5)} <span className="text-primary italic">Tools</span>
+                            </>
+                        ) : (
+                            <>
+                                {categoryName} <span className="text-primary italic">Tools</span>
+                            </>
+                        )}
                     </h1>
                     <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-2xl leading-relaxed font-medium">
                         Professional, high-performance {categoryName.toLowerCase()} designed to boost your efficiency.
