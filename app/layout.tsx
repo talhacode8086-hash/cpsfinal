@@ -24,10 +24,10 @@ export const metadata: Metadata = {
     },
   },
   title: {
-    default: 'Assets Tools Hub | 170+ Free Professional Online Tools',
+    default: 'Assets Tools Hub | 300+ Free Professional Online Tools',
     template: '%s | Assets Tools Hub'
   },
-  description: 'Assets Tools Hub offers 170+ free professional web tools for gamers, developers, and creators. Boost gaming performance with CPS tests and aim trainers, or streamline development with JSON formatters and regex testers. No signup required.',
+  description: 'Assets Tools Hub offers 300+ free professional web tools for gamers, developers, and creators. Boost gaming performance with CPS tests and aim trainers, or streamline development with JSON formatters and regex testers. No signup required.',
   keywords: ['Assets Tools Hub', 'online tools', 'free tools', 'cps test', 'gaming tools', 'developer tools', 'productivity tools', 'mouse sensitivity converter', 'json formatter', 'regex tester', 'aim trainer', 'reaction time test', 'text tools', 'unit converters', 'seo tools', 'image tools', 'finance calculators'],
   authors: [{ name: 'Assets Tools Hub' }],
   creator: 'Assets Tools Hub',
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://www.assetstoolshub.com',
-    title: 'Assets Tools Hub - 170+ Free Professional Online Tools',
+    title: 'Assets Tools Hub - 300+ Free Professional Online Tools',
     description: 'The ultimate professional toolkit for gaming performance, web development, and productivity. Free forever, no registration required.',
     images: [{
       url: '/og-image.png',
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Assets Tools Hub - 170+ Free Online Tools',
+    title: 'Assets Tools Hub - 300+ Free Online Tools',
     description: 'Professional tools for gamers, developers, and creators. Free forever.',
     images: ['/og-image.png'],
   },
@@ -93,7 +93,7 @@ export default function RootLayout({
               "@type": "WebSite",
               "name": "Assets Tools Hub",
               "url": "https://www.assetstoolshub.com",
-              "description": "170+ professional free online tools for gaming, development, and productivity.",
+              "description": "300+ professional free online tools for gaming, development, and productivity.",
               "potentialAction": {
                 "@type": "SearchAction",
                 "target": {

@@ -52,7 +52,7 @@ export default function HomeClient() {
     const titleWords = titleText.split(" ");
 
     const stats = [
-        { label: "Active Tools", value: "170+", icon: Rocket },
+        { label: "Active Tools", value: "300+", icon: Rocket },
         { label: "Daily Users", value: "50k+", icon: Users },
         { label: "Uptime", value: "99.9%", icon: Activity },
         { label: "Countries", value: "120+", icon: Globe2 },
@@ -88,7 +88,7 @@ export default function HomeClient() {
         },
         {
             question: "Do I need to create an account?",
-            answer: "No, you can use any of our 170+ tools instantly without any sign-up or registration."
+            answer: "No, you can use any of our 300+ tools instantly without any sign-up or registration."
         },
         {
             question: "Can I use these tools on my phone?",
@@ -141,7 +141,7 @@ export default function HomeClient() {
                         transition={{ delay: 0.8, duration: 0.8 }}
                         className="text-muted-foreground text-xl md:text-2xl max-w-3xl mx-auto font-medium leading-relaxed"
                     >
-                        Discover over 170+ professional tools designed to enhance your gaming performance,
+                        Discover over 300+ professional tools designed to enhance your gaming performance,
                         boost productivity, and streamline development.
                     </motion.p>
                 </div>
@@ -301,7 +301,7 @@ export default function HomeClient() {
                 </div>
                 <div className="text-center mt-12">
                     <Button variant="ghost" className="rounded-full px-8 text-lg font-bold hover:bg-primary/5" asChild>
-                        <Link href="/explore">View All 170+ Tools <ArrowRight className="ml-2 h-5 w-5" /></Link>
+                        <Link href="/explore">View All 300+ Tools <ArrowRight className="ml-2 h-5 w-5" /></Link>
                     </Button>
                 </div>
             </ScrollReveal>
@@ -315,7 +315,7 @@ export default function HomeClient() {
                     </div>
                     <div className="grid md:grid-cols-3 gap-12">
                         {[
-                            { step: "01", title: "Find Your Tool", desc: "Search through our extensive library of 170+ specialized tools across 14 categories." },
+                            { step: "01", title: "Find Your Tool", desc: "Search through our extensive library of 300+ specialized tools across 14 categories." },
                             { step: "02", title: "Input Your Data", desc: "Enter your values, paste your text, or start the test with our easy-to-use interface." },
                             { step: "03", title: "Get Instant Results", desc: "Receive professional-grade calculations, transformations, or performance metrics instantly." }
                         ].map((item, i) => (
@@ -492,7 +492,7 @@ export default function HomeClient() {
 
                     <div className="relative z-10 space-y-6">
                         <h2 className="text-4xl md:text-6xl font-black text-primary-foreground tracking-tighter">Ready to optimize your workflow?</h2>
-                        <p className="text-primary-foreground/80 text-xl max-w-2xl mx-auto font-medium">Join thousands of users using our 170+ powerful tools every day. Start exploring now.</p>
+                        <p className="text-primary-foreground/80 text-xl max-w-2xl mx-auto font-medium">Join thousands of users using our 300+ powerful tools every day. Start exploring now.</p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
                             <Button size="lg" variant="secondary" className="rounded-full px-12 h-16 text-lg font-black shadow-2xl hover:scale-105 transition-transform" asChild>
                                 <Link href="/explore">Explore All Tools</Link>

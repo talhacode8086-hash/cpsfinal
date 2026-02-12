@@ -3,8 +3,8 @@ import CategoryPageClient from '@/components/tools/CategoryPageClient';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'All Tools - Professional Online Toolkit | Assets Tools Hub',
-    description: 'Browse our complete collection of 170+ free professional online tools for gamers, developers, and creators.',
+    title: 'Explore 300+ Free Online Tools | Assets Tools Hub',
+    description: 'Browse our complete collection of 300+ professional tools for gaming, development, productivity, and SEO. Find exactly what you need in seconds.',
 };
 
 export default function ExplorePage() {

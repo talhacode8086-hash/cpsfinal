@@ -42,7 +42,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         'gaming-utilities': 'Essential gaming utilities: DPI calculators, FOV calculators, sensitivity converters, input lag testers, and crosshair generators for competitive gaming.',
         'productivity': 'Boost your productivity with time management tools, calculators, text processors, and automation utilities. Free and easy to use.',
         'dev': 'Developer tools including JSON formatters, regex testers, code minifiers, API testing utilities, and syntax validators. Essential for web development.',
-        'all': 'Browse all 170+ free online tools across gaming, development, productivity, design, finance, education, and more categories.'
+        'all': 'Browse all 300+ free online tools across gaming, development, productivity, design, finance, education, and more categories.'
     };
 
     const description = categoryDescriptions[lowerSlug] ||
@@ -93,7 +93,7 @@ export default async function CategoryPage({ params }: PageProps) {
         'gaming-utilities': 'Essential gaming utilities: DPI calculators, FOV calculators, sensitivity converters, input lag testers, and crosshair generators for competitive gaming.',
         'productivity': 'Boost your productivity with time management tools, calculators, text processors, and automation utilities. Free and easy to use.',
         'dev': 'Developer tools including JSON formatters, regex testers, code minifiers, API testing utilities, and syntax validators. Essential for web development.',
-        'all': 'Browse all 170+ free online tools across gaming, development, productivity, design, finance, education, and more categories.'
+        'all': 'Browse all 300+ free online tools across gaming, development, productivity, design, finance, education, and more categories.'
     };
 
     const description = categoryDescriptions[lowerSlug] ||

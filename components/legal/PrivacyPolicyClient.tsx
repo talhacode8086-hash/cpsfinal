@@ -70,7 +70,7 @@ export default function PrivacyPolicyClient() {
                         We use minimal, anonymized analytics to improve the user experience and detect technical bugs.
                     </p>
                     <div className="grid sm:grid-cols-2 gap-6">
-                        <Card small title="No Accounts" content="Use all 170+ tools without ever creating an account or providing an email address." />
+                        <Card small title="No Accounts" content="Use all 300+ tools without ever creating an account or providing an email address." />
                         <Card small title="No Cookies" content="We don't use tracking cookies to follow your activity across other websites." />
                     </div>
                 </section>

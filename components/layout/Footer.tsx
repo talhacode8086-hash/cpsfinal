@@ -12,9 +12,9 @@ export function Footer() {
                             <Logo className="h-6 w-6" />
                             <span className="font-bold text-xl">Assets Tools Hub</span>
                         </Link>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
-                            The ultimate ecosystem for gamers, developers, and professionals.
-                            170+ tools in one place, 100% free and secure.
+                        <p className="text-sm text-muted-foreground mt-4 max-w-xs">
+                            Assets Tools Hub offers 300+ free professional web tools for gamers, developers, and creators.
+                            Open source and free forever.
                         </p>
                     </div>
 

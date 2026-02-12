@@ -2,14 +2,14 @@ import { Metadata } from 'next';
 import HomeClient from '@/components/HomeClient';
 
 export const metadata: Metadata = {
-  title: 'Assets Tools Hub | 170+ Free Professional Online Tools',
-  description: 'Assets Tools Hub offers 170+ free professional web tools for gamers, developers, and creators. Boost gaming performance with CPS tests and aim trainers, or streamline development with JSON formatters and regex testers. No signup required.',
+  title: 'Assets Tools Hub | 300+ Free Professional Online Tools',
+  description: 'Access 300+ free premium tools for gaming, development, SEO, and productivity. No ads, no signup, just powerful tools.',
   alternates: {
     canonical: 'https://www.assetstoolshub.com',
   },
   openGraph: {
-    title: 'Assets Tools Hub | 170+ Free Professional Online Tools',
-    description: 'Discover over 170+ professional tools designed to enhance your gaming performance, boost productivity, and streamline development. Free forever, no signup required.',
+    title: 'Assets Tools Hub | 300+ Free Professional Online Tools',
+    description: 'Discover over 300+ professional tools designed to enhance your gaming performance, boost productivity, and streamline development. Free forever, no signup required.',
     url: 'https://www.assetstoolshub.com',
     siteName: 'Assets Tools Hub',
     images: [
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Assets Tools Hub | 170+ Free Online Tools',
+    title: 'Assets Tools Hub | 300+ Free Online Tools',
     description: 'Professional tools for gamers, developers, and creators. Free forever, no registration required.',
     images: ['https://www.assetstoolshub.com/og-image.png'],
   },
