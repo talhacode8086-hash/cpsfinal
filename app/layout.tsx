@@ -146,14 +146,13 @@ export default function RootLayout({
             })
           }}
         />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5717591731699543"
+          crossOrigin="anonymous"
+        />
       </head>
       <body className={inter.className} suppressHydrationWarning>
-        <Script
-          id="adsbygoogle-init"
-          strategy="afterInteractive"
-          crossOrigin="anonymous"
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5717591731699543"
-        />
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <FavoritesProvider>
             <SidebarProvider>
